@@ -23,7 +23,7 @@ help:  ## Display this help
 ##@ Clean-up
 
 clean: ## clean up the repo
-	@rm -rf site/_site
+	@rm -rf ./_site
 
 ##@ Utilities
 
@@ -50,4 +50,4 @@ install-bundle: ## install bundle
 ##@ Serve
 
 serve: clean ## serve the site locally
-	@cd site && bundle exec jekyll serve --livereload
+	@cd site && bundle exec jekyll serve --livereload -d ../_site
