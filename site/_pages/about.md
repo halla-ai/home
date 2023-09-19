@@ -19,10 +19,6 @@ image: "/assets/images/about/about.png"
 
 ---
 
-<p><iframe src="https://www.youtube.com/embed/Tv2TuWGf4p0" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
-
----
-
 We need experts with the know-how to lead in this new industry. We are providing a cutting edge engineering education to help students to develop their knowledge. This will be ready for the next generation of technology. Third and fourth year students will participate in project based lessons with support from onsite researchers in local industries. Our students will be ready to enter industries that rely on artificial intelligence, the internet of things, big data, block chain, robotics in Jeju Island
 
 > We Are Cultivating Next-Generation Core Experts in Artificial Intelligence, the 'Internet of Things', Big Data, Blockchain, Information Security, and Intelligent Robots Required by the 4th Industrial Revolution!
