@@ -36,6 +36,8 @@ menu_settings:
       # submenu:
       # - url: "/contact/"
       #   title: "Contact"
+    - title: "공지사항"
+      url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
 # Social Settings
