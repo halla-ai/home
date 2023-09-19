@@ -30,8 +30,12 @@ _Photo by [Freepik](https://www.freepik.com/)_ -->
 
 ##장비소개
 
-####A100 서버 
-<!-- 이미지 넣을 공간 -->
+####A100 서버
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/assets/images/about/Server_image.jpg" loading="lazy" alt="About">
+  </div>
+</div>
 
 ####고성능 노트북
 <!-- 이미지 넣을 공간 -->
