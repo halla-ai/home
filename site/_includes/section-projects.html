@@ -1,0 +1,53 @@
+<!-- begin projects -->
+<section class="section projects animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+
+          {% if site.data.settings.section_projects_title %}
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">{{ site.data.settings.section_projects_title }}</h2>
+              <a class="section__link" href="{{ '/projects' | relative_url }}">View all</a>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+          {% endif %}
+
+          <div class="row">
+            {% assign sorted = site.projects | sort: 'date' | reverse %}
+            {% for project in sorted limit:6 %}
+            <article class="project col col-4 col-w-6 col-t-12">
+              <div class="project__content">
+                {% if project.image %}
+                <div class="project__head">
+                  <div class="project__image">
+                    <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+                  </div>
+                </div>
+                {% endif %}
+                <div class="project__inner">
+                  <div class="project__info">
+                    {% if project.subtitle %}
+                    <div class="project__subtitle">{{ project.subtitle }}</div>
+                    {% endif %}
+                  </div>
+                  <h3 class="project__title">
+                    <a href="{{ project.url }}" class="project__link">{{ project.title }}</a>
+                  </h3>
+                  {% if project.summary %}
+                  <p class="project__excerpt">{{ project.summary }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end projects -->

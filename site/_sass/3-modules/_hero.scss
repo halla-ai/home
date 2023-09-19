@@ -1,0 +1,145 @@
+/* Hero */
+.hero__image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 460px;
+  width: 100%;
+  overflow: hidden;
+
+  .hero__image__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+      background: var(--image-gradient);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    height: 240px;
+  }
+}
+
+.hero__inner {
+  position: relative;
+  text-align: center;
+
+  .hero__title {
+    margin-bottom: 32px;
+    font-size: 93px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--heading-font-color);
+  
+    span {
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .hero__description {
+    margin-bottom: 0;
+    font-size: 32px;
+  }
+
+  .hero__buttons {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    .hero__button__left {
+      margin-right: 20px;
+
+      .hero__button__arrow {
+        transform: rotate(-36deg);
+        margin-left: 4px;
+        font-size: 14px;
+      }
+    }
+    
+    .hero__button__right {
+
+      .hero__button__arrow {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: $wide) {
+    .hero__title {
+      font-size: 88px;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    .hero__title {
+      margin-bottom: 20px;
+      font-size: 62px;
+    }
+
+    .hero__description {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .hero__title {
+      font-size: 50px;
+    }
+
+    .hero__description {
+      font-size: inherit;
+    }
+
+    .hero__buttons {
+      margin-top: 32px;
+  
+      .hero__button__left {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    text-align: left;
+
+    .hero__title {
+      font-size: 40px;
+    }
+
+    .hero__buttons {
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: -8px;
+
+      .hero__button__left {
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+
+      .hero__button__right {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

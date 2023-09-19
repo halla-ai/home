@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  <div class="project-info">
+    {% if page.subtitle %}
+    <p class="project-info__subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+    <h1 class="project-info__title">{{ page.title }}</h1>
+  </div>
+
+  {% if page.image %}
+  <div class="project-info-image">
+    <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+  </div>
+  {% endif %}
+
+  <div class="row">
+    <div class="project-left col col-7 col-d-12">
+      <div class="project-content">
+        {{ content }}
+        {% if page.previous.url %}
+        <div class="project__nav">
+          <div class="project__prev">
+            <div class="project__box">
+              <span class="project__nav-info">Next Project</span>
+              <h2 class="project__nav-title">
+                <a href="{{page.previous.url}}" class="project__nav-link">{{page.previous.title}}</a>
+              </h2>
+            </div>
+          </div>
+          <a class="project__nav-image" href="{{page.previous.url}}">
+            <img class="lazy" data-src="{{page.previous.image}}" alt="{{page.previous.title}}">
+          </a>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div class="project-right col col-5 col-d-12">
+      <aside class="sidebar">
+        {% include sidebar-widgets/widget-project-meta.html %}
+        {% include sidebar-widgets/widget-recent-projects.html %}
+      </aside>
+    </div>
+
+  </div>
+
+</div>

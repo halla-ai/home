@@ -1,0 +1,69 @@
+#-------------------------------
+# General Site Settings
+#-------------------------------
+
+# the subpath of your site, e.g. /blog
+baseurl: "" 
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "https://halla.ai" 
+
+# languages: ["en", "ko"]
+# default_lang: "ko"
+# exclude_from_localizations: ["assets", "_sitemap.xml", "index.html", "404.html"]
+# default_locale_in_subfolder: false
+
+#-------------------------------
+# Build Settings
+#-------------------------------
+
+markdown: kramdown
+permalink: /:title
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  # - jekyll-multiple-languages-plugin
+
+paginate: 6
+paginate_path: "/page/:num"
+
+
+#-------------------------------
+# Collections
+#-------------------------------
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /posts/:slug
+  projects:
+    output: true
+    permalink: /projects/:slug
+
+# Pages Path
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+sass:
+  sass_dir: _sass
+  style: compressed

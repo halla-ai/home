@@ -1,0 +1,12 @@
+<div class="col col-3 col-d-12">
+  <div class="widget-footer widget-nav">
+    <h3 class="widget-title">Navigation</h3>
+    <ul class="footer__nav-list list-reset">
+      {% for item in site.data.settings.footer_menu_settings.menu_items %}
+      <li class="footer__nav-item">
+        <a href="{{ item.url | relative_url }}" class="footer__nav-link{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

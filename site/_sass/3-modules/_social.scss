@@ -1,0 +1,38 @@
+/* Social */
+.social-nav {
+  @media (max-width: $desktop) {
+    display: none;
+  }
+}
+
+.social-footer {
+  margin-left: -4px;
+}
+
+.social__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social__item {
+  margin-bottom: 0;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  font-size: 21px;
+  color: var(--heading-font-color);
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}

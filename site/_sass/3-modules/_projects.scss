@@ -1,0 +1,130 @@
+/* Projects */
+.project {
+  margin-bottom: 32px;
+}
+
+.project__content {
+  position: relative;
+  border-radius: 22px;
+  will-change: transform;
+  transition: transform .3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+
+    .project__title a {
+      text-decoration-color: var(--primary-color);
+    }
+  }
+}
+
+.project__head {
+  display: block;
+  padding: 20px;
+  border-radius: 22px;
+  background: var(--background-alt-color);
+  transition: transform .3s ease;
+
+  @media (max-width: $mobile) {
+    padding: 16px;
+  }
+}
+
+.project__image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  user-select: none;
+  transform: translate(0);
+  overflow: hidden;
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+
+  &::after {
+    content: "";
+    display: table;
+    padding-top: 70%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+}
+
+.project__inner {
+  margin: 20px 20px 0;
+  line-height: 1;
+
+  .project__subtitle {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .project__title {
+    margin-bottom: 8px;
+    font-size: 32px;
+    line-height: 1.2;
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+
+      &:hover {
+        text-decoration-color: var(--primary-color);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border-radius: 22px;
+      }
+    }
+  }
+
+  .project__excerpt {
+    display: -webkit-box;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-y: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  @media (max-width: $desktop) {
+    margin: 20px 20px 0;
+
+    .project__title {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin: 16px 16px 0;
+
+    .project__title {
+      font-size: 26px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+---
+layout: default
+title: 정보광장
+description: Our professors and students share their thoughts, ideas and experiences. News of the department and the university are also posted here.
+image: /assets/images/posts/posts.png
+---
+
+{% if page.image %}
+<!-- begin hero image -->
+<div class="hero__image">
+  <div class="hero__image__inner">
+    <img class="lazy" data-src="{{page.image}}" alt="{{site.data.settings.title}}">
+  </div>
+</div>
+<!-- end hero image -->
+{% endif %}
+
+<!-- begin page-wrapper -->
+<div class="page-wrapper">
+  <div class="container">
+    <div class="page-wrapper__info">
+      <h1 class="page-info__title">{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.blog__settings.blog__title }}{% endif %}</h1>
+      {% if page.description %}
+        <p class="page-info__description">{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      {% if site.posts.size > 0 %}
+        {% for post in site.posts offset:0 %}
+          {% include article.html %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+<!-- end page-wrapper -->

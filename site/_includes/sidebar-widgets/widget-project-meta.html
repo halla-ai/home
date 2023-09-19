@@ -1,0 +1,24 @@
+<div class="widget-sidebar project-meta">
+  <h2 class="widget-sidebar__title">Project Details</h2>
+  {% if page.summary %}
+  <p class="project-meta__summary">{{ page.summary }}</p>
+  {% endif %}
+  {% if page.client %}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Client</h3>
+    <div class="project-meta__text">{{ page.client }}</div>
+  </div>
+  {% endif %}
+  {% if page.tools %}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Made With</h3>
+    <div class="project-meta__text">{{ page.tools }}</div>
+  </div>
+  {% endif %}
+  {% if page.date %}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Date</h3>
+    <time class="project-meta__text" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-B, %Y" %}{{ page.date | date: date_format }}</time>
+  </div>
+  {% endif %}
+</div>

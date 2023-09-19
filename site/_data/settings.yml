@@ -1,0 +1,147 @@
+---
+#-------------------------------
+# Site Settings
+title: Department of Artificial Intelligence Engineering
+logo: "/assets/images/logo/logo-name.png"
+logo_dark: "/assets/images/logo/logo-name-dark.png"
+description: "Department of Artificial Intelligence Engineering, Cheju Halla University"
+color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
+
+#-------------------------------
+# Author Settings
+author_name: Cheju Halla University
+
+#-------------------------------
+# Navigation Settings
+menu_settings:
+  menu_items:
+    - title: "Home"
+      url: "/"
+    - title: "학과소개"
+      url: "/about/"
+    - title: "교과과정"
+      url: "/curriculum/"
+    - title: "입학"
+      url: "/admissions/"
+    - title: "진로"
+      url: "/career/"
+    - title: "연구"
+      url: "/research/"
+    - title: "프로젝트"
+      url: "/projects/"
+    - title: "정보광장"
+      url: "/posts/"
+    - title: "Contact"
+      url: "/contact/"
+      # submenu:
+      # - url: "/contact/"
+      #   title: "Contact"
+
+#-------------------------------
+# Social Settings
+social:
+  - { icon: "fa-brands fa-youtube", link: "https://youtube.com" }
+  - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
+
+# Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
+# Other icons can be found at https://fontawesome.com/icons
+
+#-------------------------------
+# Hero Settings
+hero:
+  enable: true
+  hero_title: 제주한라대학교<br><span><i>인공지능공학과</i></span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
+  hero_description: 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!
+
+
+  hero_image: "/assets/images/home/bg.png"
+  hero_button_contact: Get In Touch
+  hero_button_about: About
+
+#-------------------------------
+# Projects Settings
+section_projects_title: 👨🏻‍💻 Selected Projects
+
+#-------------------------------
+# Testimonials Section
+section_testimonial_title: 🙂 What Students Say
+
+testimonial_items:
+  - name: "Student 1"
+    image: "/assets/images/testimonial/student-1.png"
+    designation: "NLP"
+    link: "https://twitter.com/"
+    content: "NLP is a field of computer science, artificial intelligence and computational linguistics concerned with the interactions between computers and human (natural) languages, and, in particular, concerned with programming computers to fruitfully process large natural language corpora."
+
+  - name: "Student 2"
+    image: "/assets/images/testimonial/student-2.png"
+    designation: "Computer Vision"
+    link: "https://facebook.com/"
+    content: "Computer vision is an interdisciplinary scientific field that deals with how computers can gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to understand and automate tasks that the human visual system can do."
+
+  - name: "Student 3"
+    image: "/assets/images/testimonial/student-3.png"
+    designation: "Robotics"
+    link: "https://twitter.com/"
+    content: "Robotics is an interdisciplinary branch of engineering and science that includes mechanical engineering, electronic engineering, information engineering, computer science, and others. Robotics deals with the design, construction, operation, and use of robots, as well as computer systems for their control, sensory feedback, and information processing."
+
+#-------------------------------
+# Blog Section
+section_blog_title: 📚 Read Latest Posts
+#-------------------------------
+
+# Tags Section
+section_tags_title: ✌️ Explore Topics
+
+#-------------------------------
+# Newsletter Settings
+mailchimp_settings:
+  enable: true
+  mailchimp_title: Get interesting news
+  mailchimp_identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+  mailchimp_input_text: Your email address
+  mailchimp_background_image: /assets/images/mailchimp/subscribe-bg.png
+
+#-------------------------------
+# Footer Settings
+footer_description: 38 Halladaehak-ro, Jeju-si, Jeju Special Self-Governing Province, 63092 Republic of Korea <br>Tel. +82-64-741-7575 / Fax. +82-64-747-3989
+
+#-------------------------------
+# Footer Navigation Settings
+footer_menu_settings:
+  menu_items:
+    - title: "Home"
+      url: "/"
+    - title: "학과소개"
+      url: "/about/"
+    - title: "교과과정"
+      url: "/curriculum/"
+    - title: "입학"
+      url: "/admissions/"
+    - title: "진로"
+      url: "/career/"
+    - title: "연구"
+      url: "/research/"
+    - title: "프로젝트"
+      url: "/projects/"
+    - title: "정보광장"
+      url: "/posts/"
+    - title: "Contact"
+      url: "/contact/"
+
+#-------------------------------
+# Contact Settings
+contact:
+  email: yj.lee@chu.ac.kr # Add your form_id
+  description: If you have any questions, please feel free to contact us.
+
+# NOTE
+# Simpler theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus_identifier: entelecheia # Add your shortname for Disqus Comment. For example anvodstudio-demo
+
+#-------------------------------
+# Google Analytics
+google_analytics: # Add your GA Tracking Id
