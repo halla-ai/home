@@ -45,7 +45,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./site
-          destination: ./site/_site        # Outputs to the './_site' directory by default
+          destination: ./_site        # Outputs to the './_site' directory by default
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
