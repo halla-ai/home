@@ -29,8 +29,8 @@ menu_settings:
       url: "/projects/"
     - title: "정보광장"
       url: "/posts/"
-    - title: "연락처"
-      url: "/contact/"
+    - title: "오시는길"
+      url: "/location/"
       # submenu:
       # - url: "/contact/"
       #   title: "Contact"
@@ -122,8 +122,8 @@ footer_menu_settings:
       url: "/projects/"
     - title: "정보광장"
       url: "/posts/"
-    - title: "Contact"
-      url: "/contact/"
+    - title: "오시는길"
+      url: "/location/"
 
 #-------------------------------
 # Contact Settings
@@ -140,4 +140,4 @@ disqus_identifier: entelecheia # Add your shortname for Disqus Comment. For exam
 
 #-------------------------------
 # Google Analytics
-google_analytics: # Add your GA Tracking Id
+google_analytics: G-QP4FVB9F1X

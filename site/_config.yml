@@ -21,6 +21,7 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  # - jekyll-maps
   # - jekyll-multiple-languages-plugin
 
 paginate: 6
@@ -67,3 +68,7 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed
+
+# maps:
+#   google:
+#     api_key: # Your Google Maps API Key
