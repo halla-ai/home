@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="post-head">
+
+    <div class="post-info">
+
+      <div class="post-meta">
+        {% if page.tags.size >= 1 %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tags/?tag={{ tag | downcase | url_encode }}" class="post__tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-B, %Y" %}{{ page.date | date: date_format }}</time> /
+        <a href="{{site.baseurl}}/about/" class="post-author">{{site.data.settings.author_name}}</a> /
+        <span class="post-minutes">
+          {% assign words = page.content | number_of_words %}
+          {% if words < 360 %}1 min read {% else %}{{ words | divided_by:180 }} min read {% endif %}
+        </span>
+      </div>
+
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+
+      {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+      {% endif %}
+
+    </div>
+
+    {% if page.image %}
+    <div class="post-image">
+      <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+    </div>
+    {% if page.image_caption %}
+    <div class="post-image-caption">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
+    {% endif %}
+    {% endif %}
+
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container">
+
+  <article class="post">
+
+    <div class="post__content">
+      {{ content }}
+    </div>
+
+    {% include share-buttons.html %}
+
+    {% include post-navigation.html %}
+
+  </article>
+</div>
+<!-- end post -->
+
+{% include related-posts.html %}
+
+{% if site.data.settings.disqus_identifier %}
+<div class="container">
+  {% include disqus-comments.html %}
+</div>
+{% endif %}

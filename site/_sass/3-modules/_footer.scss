@@ -1,0 +1,361 @@
+/* Footer */
+.footer {
+  .footer__inner {
+    padding: 60px 0;
+  
+    .row .col {
+      flex-grow: 1;
+    }
+
+    @media (max-width: $desktop) {
+      .row .col {
+        &:last-child>.widget-footer {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Widgets */
+.widget-footer {
+  @media (max-width: $desktop) {
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 48px;
+  }
+}
+
+.widget-title {
+  margin-bottom: 28px;
+  font-size: 24px;
+}
+
+/* Widget Footer Info */
+.logo-footer__link {
+  display: inline-flex;
+  margin-bottom: 28px;
+  font-size: 32px;
+  font-family: $heading-font-family;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -1px;
+  transition: color .25s ease;
+}
+
+.logo-footer__image,
+.logo-footer__image__dark {
+  max-height: 50px;
+}
+
+.logo-footer__image__dark {
+  display: none;
+}
+
+.dark-mode {
+  .logo-footer__image {
+    display: none;
+  }
+
+  .logo-footer__image__dark {
+    display: block;
+  }
+}
+
+.widget-footer__desc {
+  max-width: 480px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Widget Recent Posts */
+.recent-posts {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+}
+
+.recent-posts__image {
+  position: relative;
+  display: block;
+  transform: translate(0);
+  height: 100%;
+  min-width: 100px;
+  margin-right: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--background-alt-color);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &::after {
+    content: "";
+    display: table;
+    padding-top: 90%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $mobile) {
+    min-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    border-radius: 22px;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+.recent-posts__content {
+  font-size: 0;
+  line-height: 1;
+
+  .recent-posts__date {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--text-alt-color);
+  }
+
+  .recent-posts__title {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      color: var(--heading-font-color);
+
+      &:hover {
+        text-decoration-color: var(--heading-font-color);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
+  }
+}
+
+/* Widget Footer Navigation */
+.widget-nav {
+  text-align: right;
+
+  .footer__nav-list {
+    line-height: 1;
+  }
+
+  .footer__nav-item {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer__nav-link {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 700;
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.active-link {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+        background-color: var(--primary-color);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 6px;
+      right: -6px;
+      height: 6px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .2s;
+      border-radius: 50%;
+      background-color: var(--text-alt-color);
+    }
+  }
+
+  @media (max-width: $desktop) {
+    text-align: left;
+  }
+}
+
+/* Footer Info */
+.footer__info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 32px 0;
+  border-top: 1px solid var(--border-color);
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer__info__right {
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  margin-right: auto;
+  font-size: 16px;
+  color: var(--heading-font-color);
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    color: var(--heading-font-color);
+
+    &:hover {
+      text-decoration-color: var(--heading-font-color);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 15px;
+  }
+}
+
+// Toggle Theme
+.toggle-theme {
+  margin-right: 24px;
+  line-height: 1;
+  color: var(--heading-font-color);
+  cursor: pointer;
+
+  &:hover {
+    .toggle-text {
+      text-decoration-color: var(--heading-font-color);
+    }
+  }
+
+  .toggle-text {
+    margin-left: 7px;
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: $global-transition;
+  }
+
+  @media (max-width: $tablet) {
+    margin-right: 16px;
+
+    .toggle-text {
+      font-size: 15px;
+    }
+  }
+}
+
+.toggle-sun,
+.toggle-moon {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+
+  i {
+    font-size: 14px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.toggle-sun {
+  display: none;
+}
+
+.dark-mode {
+  .toggle-sun {
+    display: flex;
+  }
+
+  .toggle-moon {
+    display: none;
+  }
+}
+
+// Scroll Button Top
+.top {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  color: var(--heading-font-color);
+  cursor: pointer;
+
+  i {
+    font-size: 14px;
+  }
+
+  &:hover {
+    .top__text {
+      text-decoration-color: var(--heading-font-color);
+    }
+  }
+
+  .top__text {
+    margin-left: 7px;
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: $global-transition;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+
+    .top__text {
+      font-size: 15px;
+    }
+  }
+}

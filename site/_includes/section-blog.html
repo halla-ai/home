@@ -1,0 +1,30 @@
+<!-- begin blog -->
+<section class="section blog animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+  
+        {% if site.data.settings.section_blog_title %}
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title">{{ site.data.settings.section_blog_title }}</h2>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+        </div>
+        {% endif %}
+  
+        <div class="row grid">
+          {% if site.posts.size > 0 %}
+            {% for post in paginator.posts %}
+              {% include article.html %}
+            {% endfor %}
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% include pagination.html %}
+</section>
+<!-- end blog -->

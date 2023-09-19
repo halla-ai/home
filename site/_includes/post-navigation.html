@@ -1,0 +1,25 @@
+<div class="post__navigation">
+  {% if page.previous.url %}
+    <div class="prev">
+      <a href="{{page.previous.url}}" class="prev__image">
+        <img class="lazy" data-src="{{site.baseurl}}{{page.previous.image}}" alt="{{ page.title }}">
+      </a>
+      <div class="prev__box">
+        <div class="post__nav post__nav__prev">Prev Page</div>
+        <h4 class="post__nav__title"><a href="{{page.previous.url}}">{{ page.previous.title }}</a></h4>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.next.url %}
+  <div class="next">
+    <div class="next__box">
+      <div class="post__nav post__nav__next">Next Page</div>
+      <h4 class="post__nav__title"><a href="{{page.next.url}}">{{ page.next.title }}</a></h4>
+    </div>
+    <a href="{{page.next.url}}" class="next__image">
+      <img class="lazy" data-src="{{site.baseurl}}{{page.next.image}}" alt="{{ page.title }}" loading="lazy">
+    </a>
+  </div>
+  {% endif %}
+</div>

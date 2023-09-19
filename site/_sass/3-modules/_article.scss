@@ -1,0 +1,124 @@
+/* Article */
+.article {
+  margin-bottom: 32px;
+  will-change: transform;
+  transition: transform .3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+.article__inner {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--background-alt-color);
+
+  &::after {
+    content: "";
+    display: table;
+    padding-top: 100%;
+  }
+}
+
+.article__image {
+  position: absolute;
+  transform: translate(0);
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  user-select: none;
+  background: var(--background-alt-color);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+}
+
+.article__content {
+  z-index: 1;
+  width: 100%;
+  margin-top: auto;
+  padding: 28px;
+  font-size: 0;
+  pointer-events: none;
+
+  @media (max-width: $mobile) {
+    padding: 20px;
+  }
+}
+
+.article-tags__box {
+  display: flex;
+  margin-bottom: -4px;
+
+  .article__tag {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 4px 4px 0;
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-transform: capitalize;
+    border: 1px solid var(--white);
+    border-radius: 60px;
+    pointer-events: all;
+    color: var(--white);
+
+    &:hover {
+      color: var(--dark);
+      background-color: var(--white);
+    }
+
+    &:last-child {
+      margin: 0 0 4px 0;
+    }
+  }
+}
+
+.article__title {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 26px;
+
+  a {
+    color: var(--white);
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 24px;
+  }
+}
+
+.article__date,
+.article__minutes {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white);
+  transition: none;
+}

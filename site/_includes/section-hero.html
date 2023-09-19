@@ -1,0 +1,24 @@
+{% if site.data.settings.hero.enable == true %}
+<!-- begin hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col col-10 push-1 col-w-12 push-w-0">
+        <div class="hero__inner">
+          <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
+          <p class="hero__description">{{ site.data.settings.hero.hero_description }}</p>
+          <div class="hero__buttons">
+            {% if site.data.settings.hero.hero_button_contact %}
+            <a href="{{site.baseurl}}/contact/" class="button hero__button__left">{{ site.data.settings.hero.hero_button_contact }} <i class="hero__button__arrow fa-solid fa-arrow-right"></i></a>
+            {% endif %}
+            {% if site.data.settings.hero.hero_button_about %}
+            <a href="{{site.baseurl}}/about/" class="button button--secondary hero__button__right">{{ site.data.settings.hero.hero_button_about }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end hero -->
+{% endif %}

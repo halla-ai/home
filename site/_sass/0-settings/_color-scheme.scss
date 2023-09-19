@@ -1,0 +1,81 @@
+/* Color Scheme */
+
+:root {
+  --primary-color: #f96a6c;
+  --secondary-color: #fa5657;
+  --accent-color: #fbd599;
+  --white: #fff;
+  --light-gray: #e1e4e9;
+  --light-blue: #fbf6f6;
+  --blue-gray: #716f8a;
+  --gray: #60626a;
+  --dark: #161616;
+  --dark-blue: #1e2740;
+  --rgb-image-color: 255, 255, 255;
+
+  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
+
+  --text-gradient: linear-gradient(90deg, rgba(182, 107, 229, 1) -50%, rgba(248, 93, 112, 1) 51%, rgba(252, 140, 92, 1) 103%); // To change the color of the gradient, add an RGB color code. For example - "182, 107, 229", "248, 93, 112" and "252, 140, 92" (You can generate any color here - https://htmlcolorcodes.com).
+
+  --background-color: var(--white);
+  --background-alt-color: var(--light-blue);
+  
+  --text-color: var(--dark);
+  --text-alt-color: var(--gray);
+  
+  --heading-font-color: var(--dark);
+
+  --link-color: var(--dark);
+  --link-color-hover: var(--dark);
+
+  --button-color: var(--white);
+  --button-color-hover: var(--white);
+  --button-background-color: var(--dark);
+  --button-background-hover: var(--primary-color);
+
+  --border-color: var(--light-gray);
+  --border-color-alt: var(--light-blue);
+
+  --th-color: #ededf1;
+  --tr-color: #ededf1;
+
+  --syntax-highlighting-background: #f0f0f0;
+}
+
+:root[dark] {
+  --primary-color: #955cc6;
+  --secondary-color: #e4614f;
+  --accent-color: #fbd599;
+  --white: #fff;
+  --light-gray: #f0f0f0;
+  --gray: #9e9e9e;
+  --dark: #111016;
+  --rgb-image-color: 17, 16, 22;
+
+  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
+
+  --gradient-color: linear-gradient(90deg, rgba(182, 107, 229, 1) 42%, rgba(248, 93, 112, 1) 73%, rgba(252, 140, 92, 1) 103%);
+
+  --background-color: var(--dark);
+  --background-alt-color: #1a1a1f;
+  
+  --text-color: var(--gray);
+  --text-alt-color: var(--gray);
+  
+  --heading-font-color: var(--light-gray);
+
+  --link-color: var(--light-gray);
+  --link-color-hover: var(--light-gray);
+
+  --button-color: var(--dark);
+  --button-background-color: var(--light-gray);
+  --button-background-hover: var(--primary-color);
+
+  --border-color: #252629;
+  --border-color-alt: #080b12;
+
+  --th-color: #18181d;;
+  --tr-color: #080b12;
+
+  --syntax-highlighting-background: #080b12;
+}

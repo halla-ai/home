@@ -1,0 +1,28 @@
+<div class="widget-sidebar recent-projects">
+  <h2 class="widget-sidebar__title">Other Works</h2>
+  {% assign project-collection = site[page.collection] | sample:4 %}
+  {% assign relatedCount = 0 %}
+  {% for project in project-collection %}
+    {% if project.url != page.url %}
+    <div class="recent-project">
+
+      {% if project.image %}
+      <a href="{{ project.url | prepend: site.baseurl }}" class="recent-project__image" aria-hidden="true" tabindex="-1">
+        <img class="lazy" data-src="{{site.baseurl}}{{project.image}}" alt="{{project.title}}">
+      </a>
+      {% endif %}
+
+      <div class="recent-project__content">
+        <h4 class="recent-project__title">
+          <a href="{{ project.url }}">{{ project.title }}</a>
+        </h4>
+        <p class="recent-project__summary">{{ project.summary }}</p>
+      </div>
+    </div>
+    {% assign relatedCount = relatedCount | plus: 1 %}
+    {% if relatedCount >= 3 %}
+      {% break %}
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+  {% if site.data.settings.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+
+    {% if site.data.settings.hero.hero_image and page.url == '/' %}
+    <!-- begin hero image -->
+    <div class="hero__image">
+      <div class="hero__image__inner">
+        <img class="lazy" data-src="{{site.data.settings.hero.hero_image}}" alt="{{site.data.settings.title}}">
+      </div>
+    </div>
+    <!-- end hero image -->
+    {% endif %}
+
+  {% include header.html %}
+
+  <!-- begin content -->
+  <main class="content" aria-label="Content">
+    {{ content }}
+  </main>
+  <!-- end content -->
+
+  {% include subscribe.html %}
+
+  {% include footer.html %}
+
+  <script src="{{ site.baseurl }}/assets/js/scripts.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/common.js"></script>
+</body>
+
+</html>

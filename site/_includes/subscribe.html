@@ -1,0 +1,27 @@
+{% if site.data.settings.mailchimp_settings.enable == true %}
+<!-- begin subscribe -->
+<div class="subscribe animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="subscribe__inner">
+          <div class="subscribe__content">
+          {% if site.data.settings.mailchimp_settings.mailchimp_title %}
+            <h3 class="subscribe__title">{{ site.data.settings.mailchimp_settings.mailchimp_title }}</h3>
+          {% endif %}
+          </div>
+          <form class="subscribe-form validate" action="{% if site.data.settings.mailchimp_settings.mailchimp_identifier %}//{{site.data.settings.mailchimp_settings.mailchimp_identifier}}{% else %}#{% endif %}" method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="subscribe-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="{% if site.data.settings.mailchimp_settings.mailchimp_input_text %}{{ site.data.settings.mailchimp_settings.mailchimp_input_text }}{% else %}Email address{% endif %}">
+            <button class="subscribe-button" id="membedded-subscribe" type="submit" name="subscribe">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if site.data.settings.mailchimp_settings.mailchimp_background_image %}
+    <div class="subscribe__bg lazy" data-bg="{{site.data.settings.mailchimp_settings.mailchimp_background_image}}"></div>
+  {% endif %}
+</div>
+<!-- end subscribe -->
+{% endif %}
