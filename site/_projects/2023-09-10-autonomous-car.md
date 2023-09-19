@@ -1,5 +1,5 @@
 ---
-title: Autonous Car
+title: Autonomous Car
 subtitle: Computer Vision
 summary: An autonomous vehicle navigates a driving course using its onboard sensors and computer vision algorithms.
 tools: 1. OpenCV, 2. TensorFlow, 3. Keras
