@@ -13,6 +13,16 @@ permalink: /faculty/
 - 주요담당분야: 통계, 신호처리
 - 연락처: 064) 741-1617
 - E-Mail: yongnjin@chu.ac.kr
+- 학위 및 경력:
+  - 학위:
+    - 한국과학기술원 정보통신공학과 공학박사
+    - University of Wisconsin-Madison 산업공학 석사
+    - 서울대학교 산업공학과 공학사
+  - 경력:
+    - 현) 제주한라대학교 인공지능공학과 부교수; 학과장 및 정보기술건축학부장
+    - 전) 스웨덴 RISE (Research Institutes of Sweden) 시니어 연구원
+    - 전) 한국과학기술원 연구조교수
+    - 전) 서울아산병원 MI2RL 연구실/울산대학교 의과대학 리서치펠로우
 - 연구소개: [영상 기반 인공지능 연구](https://www.chu.ac.kr/department/36dept/sub01/jang_research.pdf)
 - 사이트: [Google Scholar](http://scholar.google.com/citations?hl=en&user=5zd7X64AAAAJ)
 
