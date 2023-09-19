@@ -27,3 +27,8 @@ We need experts with the know-how to lead in this new industry. We are providing
 _Photo by [Freepik](https://www.freepik.com/)_ -->
 
 ---
+
+##장비소개
+
+<!-- 이미지 넣을 공간 -->
+---
