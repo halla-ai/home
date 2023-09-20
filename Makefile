@@ -23,7 +23,7 @@ help:  ## Display this help
 ##@ Clean-up
 
 clean: ## clean up the repo
-	@rm -rf site/_site
+	@rm -rf ./_site ./site/.jekyll-cache
 
 ##@ Utilities
 
@@ -42,12 +42,18 @@ gc-prune: ## garbage collect and prune
 ##@ Setup
 
 install-jekyll: ## install jekyll
-	@gem install jekyll bundler
+	@export GEM_HOME="$${HOME}/.gem"; \
+	export PATH="$${GEM_HOME}/bin:$${PATH}"; \
+	gem install jekyll bundler
 
-install-bundle: ## install bundle
-	@cd site && bundle install
+install-bundle: install-jekyll ## install bundle
+	@export GEM_HOME="$${HOME}/.gem"; \
+	export PATH="$${GEM_HOME}/bin:$${PATH}"; \
+	cd site && bundle install
 
 ##@ Serve
 
-serve: clean ## serve the site locally
-	@cd site && bundle exec jekyll serve --livereload
+serve: clean install-bundle ## serve the site locally
+	@export GEM_HOME="$${HOME}/.gem"; \
+	export PATH="$${GEM_HOME}/bin:$${PATH}"; \
+	cd site && bundle exec jekyll serve --livereload -d ../_site

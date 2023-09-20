@@ -19,23 +19,25 @@ menu_settings:
       url: "/"
     - title: "학과소개"
       url: "/about/"
+    - title: "교수소개"
+      url: "/faculty/"
     - title: "교과과정"
       url: "/curriculum/"
-    - title: "입학"
-      url: "/admissions/"
+    # - title: "입학"
+    #   url: "/admissions/"
     - title: "진로"
       url: "/career/"
-    - title: "연구"
-      url: "/research/"
-    - title: "프로젝트"
+    - title: "리서치"
       url: "/projects/"
     - title: "정보광장"
       url: "/posts/"
-    - title: "Contact"
-      url: "/contact/"
+    - title: "오시는길"
+      url: "/location/"
       # submenu:
       # - url: "/contact/"
       #   title: "Contact"
+    - title: "공지사항"
+      url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
 # Social Settings
@@ -50,7 +52,7 @@ social:
 # Hero Settings
 hero:
   enable: true
-  hero_title: 제주한라대학교<br><span><i>인공지능공학과</i></span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
+  hero_title: <span>인공지능공학과</span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
   hero_description: 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!
 
 
@@ -114,20 +116,22 @@ footer_menu_settings:
       url: "/"
     - title: "학과소개"
       url: "/about/"
+    - title: "교수소개"
+      url: "/faculty/"
     - title: "교과과정"
       url: "/curriculum/"
-    - title: "입학"
-      url: "/admissions/"
+    # - title: "입학"
+    #   url: "/admissions/"
     - title: "진로"
       url: "/career/"
-    - title: "연구"
-      url: "/research/"
-    - title: "프로젝트"
+    - title: "리서치"
       url: "/projects/"
     - title: "정보광장"
       url: "/posts/"
-    - title: "Contact"
-      url: "/contact/"
+    - title: "오시는길"
+      url: "/location/"
+    - title: "공지사항"
+      url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
 # Contact Settings
@@ -144,4 +148,4 @@ disqus_identifier: entelecheia # Add your shortname for Disqus Comment. For exam
 
 #-------------------------------
 # Google Analytics
-google_analytics: # Add your GA Tracking Id
+google_analytics: G-QP4FVB9F1X

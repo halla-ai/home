@@ -186,6 +186,7 @@
       font-size: 16px;
       line-height: 1;
       font-weight: 700;
+      white-space: nowrap;
 
       &::before {
         content: "";
