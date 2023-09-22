@@ -60,10 +60,16 @@ layout: default
 </div>
 <!-- end post -->
 
-{% include related-posts.html %}
-
 {% if site.data.settings.disqus_identifier %}
 <div class="container">
   {% include disqus-comments.html %}
 </div>
 {% endif %}
+
+{% if site.data.settings.giscus.repo %}
+<div class="container">
+  {% include giscus.html %}
+</div>
+{% endif %}
+
+{% include related-posts.html %}
