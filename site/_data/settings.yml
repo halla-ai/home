@@ -44,6 +44,8 @@ menu_settings:
 social:
   - { icon: "fa-brands fa-youtube", link: "https://youtube.com" }
   - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
+  - { icon: "fa-brands fa-github", link: "https://github.com" }
+  - { icon: "fa-solid fa-building-columns", link: "https://www.chu.ac.kr" }
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
 # Other icons can be found at https://fontawesome.com/icons
@@ -130,7 +132,7 @@ footer_menu_settings:
       url: "/posts/"
     - title: "오시는길"
       url: "/location/"
-    - title: "공지사항"
+    - title: "게시판"
       url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
@@ -144,8 +146,27 @@ contact:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus_identifier: halla-ai # Add your shortname for Disqus Comment. For example anvodstudio-demo
+# Add your shortname for Disqus Comment.
+disqus_identifier: # halla-ai 
 
 #-------------------------------
 # Google Analytics
 google_analytics: G-QP4FVB9F1X
+
+#-------------------------------
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out
+# the information below.
+giscus:
+  repo: chu-aie/.github # <your-github-user-name>/<your-github-repo-name>
+  repo_id: R_kgDOKLOxpQ
+  category: Comments # name of the category under which discussions will be created
+  category_id: DIC_kwDOKLOxpc4CZjrm
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
+  input_position: top # whether to display input form below (bottom) or above (top) the comments
+  theme: light # name of the color scheme
+  emit_metadata: 0
+  lang: ko
+  loading: lazy # lazy, lazy-once, or immediate

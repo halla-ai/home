@@ -33,3 +33,9 @@ layout: default
   </article>
 </div>
 <!-- end page -->
+
+{% if site.data.settings.giscus.repo %}
+<div class="container">
+  {% include giscus.html %}
+</div>
+{% endif %}
