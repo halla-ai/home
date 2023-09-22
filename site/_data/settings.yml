@@ -144,8 +144,27 @@ contact:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus_identifier: halla-ai # Add your shortname for Disqus Comment. For example anvodstudio-demo
+# Add your shortname for Disqus Comment.
+disqus_identifier: # halla-ai 
 
 #-------------------------------
 # Google Analytics
 google_analytics: G-QP4FVB9F1X
+
+#-------------------------------
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out
+# the information below.
+giscus:
+  repo: chu-aie/.github # <your-github-user-name>/<your-github-repo-name>
+  repo_id: R_kgDOKLOxpQ
+  category: Comments # name of the category under which discussions will be created
+  category_id: DIC_kwDOKLOxpc4CZjrm
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
+  input_position: top # whether to display input form below (bottom) or above (top) the comments
+  theme: light # name of the color scheme
+  emit_metadata: 0
+  lang: ko
+  loading: lazy # lazy, lazy-once, or immediate
