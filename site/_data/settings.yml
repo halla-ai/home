@@ -44,6 +44,8 @@ menu_settings:
 social:
   - { icon: "fa-brands fa-youtube", link: "https://youtube.com" }
   - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
+  - { icon: "fa-brands fa-github", link: "https://github.com" }
+  - { icon: "fa-solid fa-building-columns", link: "https://www.chu.ac.kr" }
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
 # Other icons can be found at https://fontawesome.com/icons
