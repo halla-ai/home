@@ -132,7 +132,7 @@ footer_menu_settings:
       url: "/posts/"
     - title: "오시는길"
       url: "/location/"
-    - title: "공지사항"
+    - title: "게시판"
       url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
