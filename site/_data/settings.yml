@@ -101,9 +101,9 @@ section_tags_title: ✌️ Explore Topics
 # Newsletter Settings
 mailchimp_settings:
   enable: true
-  mailchimp_title: Get interesting news
-  mailchimp_identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
-  mailchimp_input_text: Your email address
+  mailchimp_title: 인공지능공학과 뉴스레터 구독
+  mailchimp_identifier: halla.us21.list-manage.com/subscribe/post?u=2bb7450a6c4f2df4098555a00&amp;id=87dede211f&amp
+  mailchimp_input_text: 이메일 주소를 입력해 주세요.
   mailchimp_background_image: /assets/images/mailchimp/subscribe-bg.png
 
 #-------------------------------
