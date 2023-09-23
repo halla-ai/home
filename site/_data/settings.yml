@@ -1,15 +1,15 @@
 ---
 #-------------------------------
 # Site Settings
-title: Department of Artificial Intelligence Engineering
+title: 제주한라대학교 인공지능공학과 (Department of Artificial Intelligence Engineering)
 logo: "/assets/images/logo/logo-name.png"
 logo_dark: "/assets/images/logo/logo-name-dark.png"
-description: "Department of Artificial Intelligence Engineering, Cheju Halla University"
+description: "제주한라대학교 인공지능공학과 (Department of Artificial Intelligence Engineering, Cheju Halla University)"
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 #-------------------------------
 # Author Settings
-author_name: Cheju Halla University
+author_name: 제주한라대학교 (Cheju Halla University)
 
 #-------------------------------
 # Navigation Settings

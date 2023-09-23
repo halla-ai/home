@@ -1,5 +1,19 @@
 <div id="giscus_thread" class="post__comments">
   <script>
+    let giscusTheme = "light";
+    {% if site.data.settings.color_scheme == "auto" %}
+    if (localStorage.getItem("theme") === "dark") {
+      giscusTheme = "dark";
+    }
+    {% elsif site.data.settings.color_scheme == "light" %}
+    giscusTheme = "light";
+    {% elsif site.data.settings.color_scheme == "dark" %}
+    giscusTheme = "dark";
+    {% else %}
+    if (localStorage.getItem("theme") === "dark") {
+      giscusTheme = "dark";
+    }
+    {% endif %}
     let giscusAttributes = {
         "src": "https://giscus.app/client.js",
         "data-repo": "{{ site.data.settings.giscus.repo }}",
@@ -11,7 +25,7 @@
         "data-reactions-enabled": "{{ site.data.settings.giscus.reactions_enabled }}",
         "data-emit-metadata": "{{ site.data.settings.giscus.emit_metadata }}",
         "data-input-position": "{{ site.data.settings.giscus.input_position }}",
-        "data-theme": "{{ site.data.settings.giscus.theme }}",
+        "data-theme": giscusTheme,
         "data-lang": "{{ site.data.settings.giscus.lang }}",
         "data-loading": "{{ site.data.settings.giscus.loading }}",
         "crossorigin": "anonymous",
