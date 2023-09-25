@@ -100,7 +100,7 @@ section_tags_title: ✌️ Explore Topics
 #-------------------------------
 # Newsletter Settings
 mailchimp_settings:
-  enable: true
+  enable: false
   mailchimp_title: 인공지능공학과 뉴스레터 구독
   mailchimp_identifier: halla.us21.list-manage.com/subscribe/post?u=2bb7450a6c4f2df4098555a00&amp;id=87dede211f&amp
   mailchimp_input_text: 이메일 주소를 입력해 주세요.
