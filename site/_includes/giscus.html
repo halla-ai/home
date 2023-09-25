@@ -1,0 +1,41 @@
+<div id="giscus_thread" class="post__comments">
+  <script>
+    let giscusTheme = "light";
+    {% if site.data.settings.color_scheme == "auto" %}
+    if (localStorage.getItem("theme") === "dark") {
+      giscusTheme = "dark";
+    }
+    {% elsif site.data.settings.color_scheme == "light" %}
+    giscusTheme = "light";
+    {% elsif site.data.settings.color_scheme == "dark" %}
+    giscusTheme = "dark";
+    {% else %}
+    if (localStorage.getItem("theme") === "dark") {
+      giscusTheme = "dark";
+    }
+    {% endif %}
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "{{ site.data.settings.giscus.repo }}",
+        "data-repo-id": "{{ site.data.settings.giscus.repo_id }}",
+        "data-category": "{{ site.data.settings.giscus.category }}",
+        "data-category-id": "{{ site.data.settings.giscus.category_id }}",
+        "data-mapping": "{{ site.data.settings.giscus.mapping }}",
+        "data-strict": "{{ site.data.settings.giscus.strict }}",
+        "data-reactions-enabled": "{{ site.data.settings.giscus.reactions_enabled }}",
+        "data-emit-metadata": "{{ site.data.settings.giscus.emit_metadata }}",
+        "data-input-position": "{{ site.data.settings.giscus.input_position }}",
+        "data-theme": giscusTheme,
+        "data-lang": "{{ site.data.settings.giscus.lang }}",
+        "data-loading": "{{ site.data.settings.giscus.loading }}",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+</div>

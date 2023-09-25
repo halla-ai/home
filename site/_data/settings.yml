@@ -1,15 +1,15 @@
 ---
 #-------------------------------
 # Site Settings
-title: Department of Artificial Intelligence Engineering
+title: 제주한라대학교 인공지능공학과 (Department of Artificial Intelligence Engineering)
 logo: "/assets/images/logo/logo-name.png"
 logo_dark: "/assets/images/logo/logo-name-dark.png"
-description: "Department of Artificial Intelligence Engineering, Cheju Halla University"
+description: "제주한라대학교 인공지능공학과 (Department of Artificial Intelligence Engineering, Cheju Halla University)"
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 #-------------------------------
 # Author Settings
-author_name: Cheju Halla University
+author_name: 제주한라대학교 (Cheju Halla University)
 
 #-------------------------------
 # Navigation Settings
@@ -36,7 +36,7 @@ menu_settings:
       # submenu:
       # - url: "/contact/"
       #   title: "Contact"
-    - title: "공지사항"
+    - title: "게시판"
       url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
@@ -44,6 +44,8 @@ menu_settings:
 social:
   - { icon: "fa-brands fa-youtube", link: "https://youtube.com" }
   - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
+  - { icon: "fa-brands fa-github", link: "https://github.com" }
+  - { icon: "fa-solid fa-building-columns", link: "https://www.chu.ac.kr" }
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
 # Other icons can be found at https://fontawesome.com/icons
@@ -99,9 +101,9 @@ section_tags_title: ✌️ Explore Topics
 # Newsletter Settings
 mailchimp_settings:
   enable: true
-  mailchimp_title: Get interesting news
-  mailchimp_identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
-  mailchimp_input_text: Your email address
+  mailchimp_title: 인공지능공학과 뉴스레터 구독
+  mailchimp_identifier: halla.us21.list-manage.com/subscribe/post?u=2bb7450a6c4f2df4098555a00&amp;id=87dede211f&amp
+  mailchimp_input_text: 이메일 주소를 입력해 주세요.
   mailchimp_background_image: /assets/images/mailchimp/subscribe-bg.png
 
 #-------------------------------
@@ -130,7 +132,7 @@ footer_menu_settings:
       url: "/posts/"
     - title: "오시는길"
       url: "/location/"
-    - title: "공지사항"
+    - title: "게시판"
       url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
@@ -144,8 +146,27 @@ contact:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus_identifier: entelecheia # Add your shortname for Disqus Comment. For example anvodstudio-demo
+# Add your shortname for Disqus Comment.
+disqus_identifier: # halla-ai 
 
 #-------------------------------
 # Google Analytics
 google_analytics: G-QP4FVB9F1X
+
+#-------------------------------
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out
+# the information below.
+giscus:
+  repo: chu-aie/.github # <your-github-user-name>/<your-github-repo-name>
+  repo_id: R_kgDOKLOxpQ
+  category: Comments # name of the category under which discussions will be created
+  category_id: DIC_kwDOKLOxpc4CZjrm
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
+  input_position: top # whether to display input form below (bottom) or above (top) the comments
+  theme: light # name of the color scheme
+  emit_metadata: 0
+  lang: ko
+  loading: lazy # lazy, lazy-once, or immediate

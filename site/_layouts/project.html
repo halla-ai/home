@@ -50,3 +50,9 @@ layout: default
   </div>
 
 </div>
+
+{% if site.data.settings.giscus.repo %}
+<div class="container">
+  {% include giscus.html %}
+</div>
+{% endif %}

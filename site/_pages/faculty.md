@@ -21,6 +21,7 @@ permalink: /faculty/
   - 경력:
     - 현) 제주한라대학교 인공지능공학과 부교수; 학과장 및 정보기술건축학부장
     - 전) 스웨덴 RISE (Research Institutes of Sweden) 시니어 연구원
+    - 전) KTH (스웨덴왕립공과대학교) 초청연구원
     - 전) 한국과학기술원 연구조교수
     - 전) 서울아산병원 MI2RL 연구실/울산대학교 의과대학 리서치펠로우
 - 연구소개: [영상 기반 인공지능 연구](https://www.chu.ac.kr/department/36dept/sub01/jang_research.pdf)
