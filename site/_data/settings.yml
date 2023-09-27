@@ -42,10 +42,11 @@ menu_settings:
 #-------------------------------
 # Social Settings
 social:
-  - { icon: "fa-brands fa-youtube", link: "https://www.youtube.com/watch?v=8c9910JKf34" }
-  - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
-  - { icon: "fa-brands fa-github", link: "https://github.com" }
   - { icon: "fa-solid fa-building-columns", link: "https://www.chu.ac.kr" }
+  - { icon: "fa-brands fa-youtube", link: "https://www.youtube.com/watch?v=8c9910JKf34" }
+  # - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
+  # - { icon: "fa-brands fa-github", link: "https://github.com" }
+  - { icon: "icon-kakao-talk", link: "https://accounts.kakao.com" } # dark mode is not working
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
 # Other icons can be found at https://fontawesome.com/icons
