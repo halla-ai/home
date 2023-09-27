@@ -158,6 +158,7 @@ google_analytics: G-QP4FVB9F1X
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out
 # the information below.
 giscus:
+  enable: false
   repo: chu-aie/.github # <your-github-user-name>/<your-github-repo-name>
   repo_id: R_kgDOKLOxpQ
   category: Comments # name of the category under which discussions will be created
