@@ -42,7 +42,7 @@ menu_settings:
 #-------------------------------
 # Social Settings
 social:
-  - { icon: "fa-brands fa-youtube", link: "https://youtube.com" }
+  - { icon: "fa-brands fa-youtube", link: "https://www.youtube.com/watch?v=8c9910JKf34" }
   - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
   - { icon: "fa-brands fa-github", link: "https://github.com" }
   - { icon: "fa-solid fa-building-columns", link: "https://www.chu.ac.kr" }
@@ -59,8 +59,8 @@ hero:
 
 
   hero_image: "/assets/images/home/bg.png"
-  hero_button_contact: Get In Touch
-  hero_button_about: About
+  hero_button_contact: 
+  hero_button_about: 학과소개
 
 #-------------------------------
 # Projects Settings
