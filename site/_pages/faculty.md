@@ -76,15 +76,19 @@ permalink: /faculty/
   - 전) 삼성디스플레이(SDC) YE팀 수석연구원
   - 현) 제주한라대학교 인공지능공학과 조교수
 
-<img src="/assets/images/faculty/yjlee.jpeg" loading="lazy">
+<img src="/assets/images/faculty/yjlee.jpeg" loading="lazy" width="100">
 
 - **이영준**
 - 전공: 경영학(박사), 경제학(석사), 정보산업공학(학사)
-- 관심분야: 인공지능, 자연어처리, Sustainability, ESG, Bio-medical AI
+- 관심분야: 인공지능, 자연어처리, LLMs, Sustainability, ESG, Bio-medical AI, Robotics
 - 주요담당분야: 인공지능, 자연어처리, 빅데이터
 - 연락처: 064)741-6532
 - E-Mail: yj.lee@chu.ac.kr
 - 학위 및 전공:
+  - 연세대학교 컴퓨터과학 학사
+  - 연세대학교 경제학 석사
   - 연세대학교 경영학 박사
   - 전) 스탠포드대학교 방문연구원
-  - 전) 현대증권 계량분석팀장
+  - 전) KB증권 계량분석팀장
+  - 전) 에프앤가이드 R&D팀장
+- 사이트: [entelecheia.me](https://entelecheia.me)
