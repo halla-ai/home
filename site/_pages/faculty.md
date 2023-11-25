@@ -79,16 +79,18 @@ permalink: /faculty/
 
 <img src="/assets/images/faculty/yjlee.jpeg" loading="lazy" width="100">
 
-- **이영준**
+- **이영준 (Young Joon Lee)**
 - 전공: 경영학(박사), 경제학(석사), 정보산업공학(학사)
-- 관심분야: 인공지능, 자연어처리, LLMs, Sustainability, ESG, Bio-medical AI, Robotics
-- 주요담당분야: 인공지능, 자연어처리, 빅데이터
+- 관심분야: 인공지능, 자연어처리, Generative AI, Multi-modal AI, Robotics, Sustainability, ESG
+- 주요담당분야: 자연어처리, 생성형 AI, 멀티모달 AI, 빅데이터, DevOps & MLOps
 - 연락처: 064)741-6532
 - E-Mail: yj.lee@chu.ac.kr
 - 학위 및 경력:
   - 연세대학교 컴퓨터과학 학사
   - 연세대학교 경제학 석사
   - 연세대학교 경영학 박사
+  - 현) 제주한라대학교 혁신추진단장
+  - 현) 자연어연구센터 센터장
   - 전) 스탠포드대학교 방문연구원
   - 전) KB증권 계량분석팀장
   - 전) 에프앤가이드 R&D팀장
