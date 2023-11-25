@@ -53,7 +53,8 @@ permalink: /faculty/
 - 연락처: 064)741-7624
 - E-Mail: r3dzon3@chu.ac.kr
 - 사이트: http://sites.google.com/view/sjkim2020/career?authuser=0
-- 학위 및 전공: 한국과학기술원 (KAIST) 전산학부, 정보보호 공학박사
+- 학위 및 경력:
+  - 한국과학기술원 (KAIST) 전산학부, 정보보호 공학박사
   - 전) 안랩 연구원
   - 전) LG CNS 연구원
   - 전) 엔큐브랩 대표이사
@@ -66,7 +67,7 @@ permalink: /faculty/
 - 주요담당분야: 수학, 통계, 음성신호처리, 디스플레이
 - 연락처: 064)741-1647
 - E-Mail: sjan2020@chu.ac.kr
-- 학위 및 전공:
+- 학위 및 경력:
   - 한국과학기술원(KAIST) 기계공학과 학사
   - 한국과학기술원(KAIST) 수학과 응용수학전공 석/박사 (이학박사)
   - ※ NIPRL(Neural Information Process Research Lab) : 신경정보처리연구실
@@ -84,7 +85,7 @@ permalink: /faculty/
 - 주요담당분야: 인공지능, 자연어처리, 빅데이터
 - 연락처: 064)741-6532
 - E-Mail: yj.lee@chu.ac.kr
-- 학위 및 전공:
+- 학위 및 경력:
   - 연세대학교 컴퓨터과학 학사
   - 연세대학교 경제학 석사
   - 연세대학교 경영학 박사
