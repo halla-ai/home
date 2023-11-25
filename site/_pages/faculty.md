@@ -5,7 +5,7 @@ permalink: /faculty/
 # image: "/assets/images/faculty/faculty.png"
 ---
 
-<img src="/assets/images/faculty/yjchang.jpg" loading="lazy">
+<img src="/assets/images/faculty/yjchang.jpg" loading="lazy" width="100">
 
 - **장용준(정보기술/건축학부장)**
 - 전공: 정보통신공학(박사), 산업공학(석사, 학사)
@@ -27,7 +27,7 @@ permalink: /faculty/
 - 연구소개: [영상 기반 인공지능 연구](https://www.chu.ac.kr/department/36dept/sub01/jang_research.pdf)
 - 사이트: [Google Scholar](http://scholar.google.com/citations?hl=en&user=5zd7X64AAAAJ)
 
-<img src="/assets/images/faculty/jhkim.jpeg" loading="lazy">
+<img src="/assets/images/faculty/jhkim.jpeg" loading="lazy" width="100">
 
 - **김종화 (Jonghwa KIM)**
 - 전공: 컴퓨터과학/인공지능(박사), 정보통신공학(박사)
@@ -44,7 +44,7 @@ permalink: /faculty/
   - 전) 일본 국립정보과학원(NII)/동경대학교대학원 초청교수
 - 연구논문실적: [Google Scholar](http://scholar.google.com/citations?user=nsMAMUkAAAAJ&hl=en)
 
-<img src="/assets/images/faculty/sjkim.jpeg" loading="lazy">
+<img src="/assets/images/faculty/sjkim.jpeg" loading="lazy" width="100">
 
 - **김성진**
 - 전공: 정보보호(공학박사)
@@ -59,7 +59,7 @@ permalink: /faculty/
   - 전) LG CNS 연구원
   - 전) 엔큐브랩 대표이사
 
-<img src="/assets/images/faculty/sjahn.jpeg" loading="lazy">
+<img src="/assets/images/faculty/sjahn.jpeg" loading="lazy" width="100">
 
 - **안성준**
 - 전공: 기계공학(학사), 응용수학(석사 ,박사)
