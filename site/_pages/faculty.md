@@ -5,7 +5,7 @@ permalink: /faculty/
 # image: "/assets/images/faculty/faculty.png"
 ---
 
-<img src="/assets/images/faculty/yjchang.jpg" loading="lazy">
+<img src="/assets/images/faculty/yjchang.jpg" loading="lazy" width="100">
 
 - **장용준(정보기술/건축학부장)**
 - 전공: 정보통신공학(박사), 산업공학(석사, 학사)
@@ -27,7 +27,7 @@ permalink: /faculty/
 - 연구소개: [영상 기반 인공지능 연구](https://www.chu.ac.kr/department/36dept/sub01/jang_research.pdf)
 - 사이트: [Google Scholar](http://scholar.google.com/citations?hl=en&user=5zd7X64AAAAJ)
 
-<img src="/assets/images/faculty/jhkim.jpeg" loading="lazy">
+<img src="/assets/images/faculty/jhkim.jpeg" loading="lazy" width="100">
 
 - **김종화 (Jonghwa KIM)**
 - 전공: 컴퓨터과학/인공지능(박사), 정보통신공학(박사)
@@ -44,7 +44,7 @@ permalink: /faculty/
   - 전) 일본 국립정보과학원(NII)/동경대학교대학원 초청교수
 - 연구논문실적: [Google Scholar](http://scholar.google.com/citations?user=nsMAMUkAAAAJ&hl=en)
 
-<img src="/assets/images/faculty/sjkim.jpeg" loading="lazy">
+<img src="/assets/images/faculty/sjkim.jpeg" loading="lazy" width="100">
 
 - **김성진**
 - 전공: 정보보호(공학박사)
@@ -53,12 +53,13 @@ permalink: /faculty/
 - 연락처: 064)741-7624
 - E-Mail: r3dzon3@chu.ac.kr
 - 사이트: http://sites.google.com/view/sjkim2020/career?authuser=0
-- 학위 및 전공: 한국과학기술원 (KAIST) 전산학부, 정보보호 공학박사
+- 학위 및 경력:
+  - 한국과학기술원 (KAIST) 전산학부, 정보보호 공학박사
   - 전) 안랩 연구원
   - 전) LG CNS 연구원
   - 전) 엔큐브랩 대표이사
 
-<img src="/assets/images/faculty/sjahn.jpeg" loading="lazy">
+<img src="/assets/images/faculty/sjahn.jpeg" loading="lazy" width="100">
 
 - **안성준**
 - 전공: 기계공학(학사), 응용수학(석사 ,박사)
@@ -66,7 +67,7 @@ permalink: /faculty/
 - 주요담당분야: 수학, 통계, 음성신호처리, 디스플레이
 - 연락처: 064)741-1647
 - E-Mail: sjan2020@chu.ac.kr
-- 학위 및 전공:
+- 학위 및 경력:
   - 한국과학기술원(KAIST) 기계공학과 학사
   - 한국과학기술원(KAIST) 수학과 응용수학전공 석/박사 (이학박사)
   - ※ NIPRL(Neural Information Process Research Lab) : 신경정보처리연구실
@@ -76,15 +77,21 @@ permalink: /faculty/
   - 전) 삼성디스플레이(SDC) YE팀 수석연구원
   - 현) 제주한라대학교 인공지능공학과 조교수
 
-<img src="/assets/images/faculty/yjlee.jpeg" loading="lazy">
+<img src="/assets/images/faculty/yjlee.jpeg" loading="lazy" width="100">
 
-- **이영준**
+- **이영준 (Young Joon Lee)**
 - 전공: 경영학(박사), 경제학(석사), 정보산업공학(학사)
-- 관심분야: 인공지능, 자연어처리, Sustainability, ESG, Bio-medical AI
-- 주요담당분야: 인공지능, 자연어처리, 빅데이터
+- 관심분야: 인공지능, 자연어처리, Generative AI, Multi-modal AI, Robotics, Sustainability
+- 주요담당분야: 자연어처리, 생성형 AI, 빅데이터, DevOps & MLOps
 - 연락처: 064)741-6532
 - E-Mail: yj.lee@chu.ac.kr
-- 학위 및 전공:
+- 학위 및 경력:
+  - 연세대학교 컴퓨터과학 학사
+  - 연세대학교 경제학 석사
   - 연세대학교 경영학 박사
+  - 현) 제주한라대학교 혁신추진단장
+  - 현) 자연어연구센터 센터장
   - 전) 스탠포드대학교 방문연구원
-  - 전) 현대증권 계량분석팀장
+  - 전) KB증권 계량분석팀장
+  - 전) 에프앤가이드 R&D팀장
+- 사이트: [entelecheia.me](https://entelecheia.me)
