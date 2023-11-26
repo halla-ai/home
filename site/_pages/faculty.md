@@ -12,7 +12,7 @@ permalink: /faculty/
 - 관심분야: 인공지능(기계학습, 패턴인식), 의료영상, 멀티미디어(비디오) 신호처리
 - 주요담당분야: 통계, 신호처리
 - 연락처: 064) 741-1617
-- E-Mail: yongnjin@chu.ac.kr
+- E-Mail: [yongnjin@chu.ac.kr](mailto:yongnjin@chu.ac.kr)
 - 학위 및 경력:
   - 학위:
     - 한국과학기술원 정보통신공학과 공학박사
@@ -35,7 +35,7 @@ permalink: /faculty/
 - 주요담당분야: 기계학습, 패턴인식, 신호처리, 인공지능
 - 연락처: 064)741-6796 / 010-8607-0515
 - 연구실: 금호세계교육관 A동 605호
-- E-Mail: jkim@chu.ac.kr
+- E-Mail: [jkim@chu.ac.kr](mailto:jkim@chu.ac.kr)
 - 학위 및 경력:
   - 독일 아욱스부르크대학교 컴퓨터과학 박사(Habilitation, 독일정교수자격학위)
   - 독일 베를린공과대학교 정보통신공학 박사(Ph.D.)
@@ -51,7 +51,7 @@ permalink: /faculty/
 - 관심분야: (ML 기반) 악성코드 탐지, 웹보안, SNA, 이상징후 감지, IoT 보안
 - 주요담당분야: 보안
 - 연락처: 064)741-7624
-- E-Mail: r3dzon3@chu.ac.kr
+- E-Mail: [r3dzon3@chu.ac.kr](mailto:r3dzon3@chu.ac.kr)
 - 사이트: http://sites.google.com/view/sjkim2020/career?authuser=0
 - 학위 및 경력:
   - 한국과학기술원 (KAIST) 전산학부, 정보보호 공학박사
@@ -66,7 +66,7 @@ permalink: /faculty/
 - 관심분야: 인공지능, 센서, 오염제어, Big Data, Cleanroom
 - 주요담당분야: 수학, 통계, 음성신호처리, 디스플레이
 - 연락처: 064)741-1647
-- E-Mail: sjan2020@chu.ac.kr
+- E-Mail: [sjan2020@chu.ac.kr](mailto:sjan2020@chu.ac.kr)
 - 학위 및 경력:
   - 한국과학기술원(KAIST) 기계공학과 학사
   - 한국과학기술원(KAIST) 수학과 응용수학전공 석/박사 (이학박사)
@@ -84,7 +84,7 @@ permalink: /faculty/
 - 관심분야: 인공지능, 자연어처리, Generative AI, Multimodal AI, Robotics, Sustainability
 - 주요담당분야: 자연어처리, 생성형 AI, 빅데이터, DevOps & MLOps
 - 연락처: 064)741-6532
-- E-Mail: yj.lee@chu.ac.kr
+- E-Mail: [yj.lee@chu.ac.kr](mailto:yj.lee@chu.ac.kr)
 - 학위 및 경력:
   - 연세대학교 컴퓨터과학 학사
   - 연세대학교 경제학 석사
