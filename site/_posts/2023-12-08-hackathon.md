@@ -4,7 +4,7 @@ title: 2024 제1회 제주 RIS 지능형서비스 고등학생 AI경진대회
 description: 제주한라대, 제주대와 제주관광대에서 '2024 제1회 제주 RIS 지능형서비스 고등학생 AI경진대회'를 개최합니다. 본 대회는 신용카드 사용자의 데이터를 바탕으로 신용카드 연체 가능성이 있는 사용자를 탐지하는 AI를 개발하는 것을 목표로 하며, 이를 통해 고등학생 여러분들께 금융권 데이터 분석가에게 요구되는 데이터 분석 능력과 AI 활용능력을 키울 수 있는 기회를 제공합니다.
 
 date: 2023-12-08 10:00:00 +0900
-image: "/assets/images/posts/hakathon/card_cpt.jpg"
+image: "/assets/images/posts/hackathon/card_cpt.jpg"
 tags: [competition, hackathon]
 ---
 
