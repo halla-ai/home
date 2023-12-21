@@ -45,4 +45,6 @@ tags: [competition, hackathon]
 
 2024년 1월 30일 ~ 2024년 1월 31일 (제주한라대학교 컨벤션홀)
 
-## 문의사항 : [dacon@dacon.io](mailto:dacon@dacon.io)
+## 문의사항
+
+[dacon@dacon.io](mailto:dacon@dacon.io)
