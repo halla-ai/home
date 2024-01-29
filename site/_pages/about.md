@@ -31,11 +31,39 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 ## 장비소개
 
-### A100 서버
+### NVIDIA DGX H100 서버 (x2)
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/assets/images/about/Server_image.jpg" loading="lazy" alt="About">
+    <img src="/assets/images/about/dgx-h100.jpeg" loading="lazy" alt="H100">
+  </div>
+  <div class="gallery">
+    <img src="/assets/images/about/dgx-h100-2.jpeg" loading="lazy" alt="H100-2">
+  </div>
+</div>
+
+### NVIDIA DGX A100 서버
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/assets/images/about/dgx-a100.jpeg" loading="lazy" alt="A100">
+  </div>
+</div>
+
+### NVIDIA DGX 1 서버
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/assets/images/about/dgx-1.jpeg" loading="lazy" alt="DGX1">
+  </div>
+</div>
+
+
+### NVIDIA RTX A6000 GPU Cloud Server
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/assets/images/about/Server_image.jpg" loading="lazy" alt="A6000">
   </div>
 </div>
 
