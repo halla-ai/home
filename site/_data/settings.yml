@@ -73,11 +73,11 @@ section_projects_title: 👨🏻‍💻 Selected Projects
 section_testimonial_title: 🙂 What Students Say
 
 testimonial_items:
-  - name: "Student 1"
+  - name: "이규범"
     image: "/assets/images/testimonial/student-1.png"
-    designation: "NLP"
+    designation: "2024년 학생회장"
     link: "https://twitter.com/"
-    content: "NLP is a field of computer science, artificial intelligence and computational linguistics concerned with the interactions between computers and human (natural) languages, and, in particular, concerned with programming computers to fruitfully process large natural language corpora."
+    content: "인공지능공학과는 현대 기술의 중심에 있는 분야로, 기초적인 컴퓨터 과학, 수학, 통계학, 머신러닝, 딥러닝 등의 이론을 토대로 혁신적인 인공지능 시스템을 설계, 개발, 최적화하는 학문을 탐구합니다. 이 과정에서 학생들은 데이터 분석, 패턴 인식, 자연어 처리, 컴퓨터 비전 등 다양한 분야에서의 문제 해결을 위한 알고리즘을 학습할 수 있습니다."
 
   - name: "Student 2"
     image: "/assets/images/testimonial/student-2.png"
