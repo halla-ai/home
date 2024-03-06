@@ -55,7 +55,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 <div class="gallery-box">
   <div class="gallery">
     <img src="/assets/images/about/dgx-1.jpeg" loading="lazy" alt="DGX1">
-  </div>
+  </div>  
 </div>
 
 
@@ -69,6 +69,16 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 ### 고성능 노트북
 
-<!-- 이미지 넣을 공간 -->
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/assets/images/about/victus.jpg" loading="lazy" alt="Victus">
+  </div>
+</div>
+
+프로세서: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz   2.30 GHz
+
+RAM: 16Gb
+
+GPU: RTX3060 6Gb
 
 ---
