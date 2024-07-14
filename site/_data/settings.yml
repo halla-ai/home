@@ -79,11 +79,11 @@ testimonial_items:
     link: "https://twitter.com/"
     content: "인공지능공학과는 현대 기술의 중심에 있는 분야로, 기초적인 컴퓨터 과학, 수학, 통계학, 머신러닝, 딥러닝 등의 이론을 토대로 혁신적인 인공지능 시스템을 설계, 개발, 최적화하는 학문을 탐구합니다. 이 과정에서 학생들은 데이터 분석, 패턴 인식, 자연어 처리, 컴퓨터 비전 등 다양한 분야에서의 문제 해결을 위한 알고리즘을 학습할 수 있습니다."
 
-  - name: "Student 2"
+  - name: "양필성"
     image: "/assets/images/testimonial/student-2.png"
-    designation: "Computer Vision"
+    designation: "21학번"
     link: "https://facebook.com/"
-    content: "Computer vision is an interdisciplinary scientific field that deals with how computers can gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to understand and automate tasks that the human visual system can do."
+    content: "제주한라대학교 인공지능공학과는 최신 기술을 반영한 교육과정을 통해 학생들이 AI 분야에서 앞서 나갈 수 있도록 돕습니다. Chat GPT와 같은 대규모 언어 모델(LLM)을 다루는 실습을 통해 자연어 처리 능력을 키울 수 있으며, 컴퓨터 비전 분야에서의 다양한 프로젝트를 통해 시각 인공지능 기술을 심도 있게 배울 수 있습니다. 딥러닝과 데이터 처리 능력도 체계적으로 향상시킬 수 있어, 실무에 바로 적용 가능한 스킬을 습득할 수 있습니다. 인공지능에 대한 열정이 있다면, 제주한라대학교 인공지능공학과는 후회 없는 선택이 될 것입니다."
 
   - name: "김은지"
     image: "/assets/images/testimonial/student-3.png"
