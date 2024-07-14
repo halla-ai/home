@@ -28,6 +28,6 @@ We welcome contributions from students, faculty, and the AI community. Please se
 
 ## Contact
 
-For any queries, please reach out to the department through `Discussions` or `Issues`.
+For any queries, please reach out to the department through [`Discussions`](https://github.com/chu-aie/home/discussions) or [`Issues`](https://github.com/chu-aie/home/issues).
 
 Join us in shaping the future of AI engineering!
