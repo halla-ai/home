@@ -85,11 +85,11 @@ testimonial_items:
     link: "https://facebook.com/"
     content: "Computer vision is an interdisciplinary scientific field that deals with how computers can gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to understand and automate tasks that the human visual system can do."
 
-  - name: "Student 3"
+  - name: "김은지"
     image: "/assets/images/testimonial/student-3.png"
-    designation: "Robotics"
+    designation: "2022년 학생회장"
     link: "https://twitter.com/"
-    content: "Robotics is an interdisciplinary branch of engineering and science that includes mechanical engineering, electronic engineering, information engineering, computer science, and others. Robotics deals with the design, construction, operation, and use of robots, as well as computer systems for their control, sensory feedback, and information processing."
+    content: "제주한라대학교 인공지능공학과는 컴퓨터 비전, llm, Text-to-Image 등 다양한 주제에 대한 프로젝트를 진행할 수 있습니다. 최신 기술과 연구를 다루며, 학생들이 이론과 실습을 균형 있게 배울 수 있는 환경을 제공합니다. 또한, 전문 교수진과의 긴밀한 협업을 통해 깊이 있는 지식을 쌓고, 실제 문제 해결 능력을 키울 수 있습니다. 이러한 점에서 인공지능공학과는 인공지능 분야에 관심이 있는 학생들에게 최고의 선택이 될 것입니다."
 
 #-------------------------------
 # Blog Section
