@@ -28,6 +28,6 @@ We welcome contributions from students, faculty, and the AI community. Please se
 
 ## Contact
 
-For any queries, please reach out to the department at [contact email].
+For any queries, please reach out to the department through `Discussions` or `Issues`.
 
 Join us in shaping the future of AI engineering!
