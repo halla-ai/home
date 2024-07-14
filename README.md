@@ -24,7 +24,7 @@ To run the site locally:
 
 ## Contributing
 
-We welcome contributions from students, faculty, and the AI community. Please see our contributing guidelines for more information.
+We welcome contributions from students, faculty, and the AI community. Please see our [contributing guidelines](CONTRIBUTING.md) for more information.
 
 ## Contact
 

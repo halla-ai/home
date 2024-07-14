@@ -38,6 +38,6 @@ If you find a bug or have a suggestion for improvement:
 
 ## Questions?
 
-If you have any questions about contributing, please contact us at `yj.lee@chu.ac.kr`.
+If you have any questions about contributing, please contact us at [yj.lee@chu.ac.kr](mailto:yj.lee@chu.ac.kr).
 
 Thank you for your interest in improving the Cheju Halla University AI Engineering project!
