@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Career
+title: 진로
 permalink: /career/
 image: "/assets/images/career/career.png"
 ---

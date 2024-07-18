@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Curriculum
+title: 교과과정
 permalink: /curriculum/
 image: "/assets/images/curriculum/curriculum.png"
 ---

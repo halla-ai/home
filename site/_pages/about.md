@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: 학과소개
 permalink: /about/
 image: "/assets/images/about/about.png"
 ---

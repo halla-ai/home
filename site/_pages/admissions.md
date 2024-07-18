@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Admissions
+title: 입학
 permalink: /admissions/
 image: "/assets/images/admissions/admissions.png"
 ---
