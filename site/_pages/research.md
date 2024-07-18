@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Research
+title: 연구과제
 permalink: /research/
 image: "/assets/images/research/research.png"
 ---

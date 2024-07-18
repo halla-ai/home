@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 찾아오시는길
+title: 오시는길
 permalink: /location/
 # image: "/assets/images/career/career.png"
 ---
