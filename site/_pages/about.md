@@ -42,6 +42,15 @@ We need experts with the know-how to lead in this new industry. We are providing
   </div>
 </div>
 
+- **용도**: 인공지능 및 딥러닝 연구
+- **특징**: 세계 최고의 성능을 자랑하는 AI 전용 서버로, 초고속 데이터 처리와 병렬 연산에 탁월합니다.
+- **사양**:
+  - GPU: NVIDIA A100 Tensor Core GPUs
+  - 메모리: 320GB
+  - 스토리지: 30TB NVMe SSD
+  - 네트워크: 8x 100Gbps Ethernet
+<!-- - **가격**: 약 5억 원 -->
+
 ### NVIDIA DGX A100 서버
 
 <div class="gallery-box">
@@ -49,6 +58,15 @@ We need experts with the know-how to lead in this new industry. We are providing
     <img src="/assets/images/about/dgx-a100.jpeg" loading="lazy" alt="A100">
   </div>
 </div>
+
+- **용도**: AI 모델 학습 및 데이터 분석
+- **특징**: 멀티태스킹에 최적화된 AI 서버로, 다양한 AI 작업을 동시에 수행할 수 있습니다.
+- **사양**:
+  - GPU: 8x NVIDIA A100 Tensor Core GPUs
+  - 메모리: 320GB
+  - 스토리지: 15TB NVMe SSD
+  - 네트워크: 8x 200Gbps Ethernet
+<!-- - **가격**: 약 3억 원 -->
 
 ### NVIDIA DGX 1 서버
 
@@ -58,6 +76,14 @@ We need experts with the know-how to lead in this new industry. We are providing
   </div>  
 </div>
 
+- **용도**: 딥러닝 모델 개발 및 실험
+- **특징**: 뛰어난 연산 능력을 갖춘 딥러닝 전용 서버입니다.
+- **사양**:
+  - GPU: 8x NVIDIA Tesla V100 GPUs
+  - 메모리: 512GB
+  - 스토리지: 4x 1.92TB SSD
+  - 네트워크: Dual 10Gbps Ethernet
+<!-- - **가격**: 약 1억 원 -->
 
 ### NVIDIA RTX A6000 GPU Cloud Server
 
@@ -67,7 +93,16 @@ We need experts with the know-how to lead in this new industry. We are providing
   </div>
 </div>
 
-### 고성능 노트북
+- **용도**: 클라우드 기반 그래픽 연산 및 AI 연구
+- **특징**: 최신 GPU 기술을 탑재한 클라우드 서버로, 원격에서도 고성능 연산이 가능합니다.
+- **사양**:
+  - GPU: 2x NVIDIA RTX A6000
+  - 메모리: 128GB
+  - 스토리지: 8TB SSD
+  - 네트워크: 1Gbps Ethernet
+<!-- - **가격**: 약 2천만 원 -->
+
+### 고성능 노트북 (HP Victus 16)
 
 <div class="gallery-box">
   <div class="gallery">
@@ -75,10 +110,13 @@ We need experts with the know-how to lead in this new industry. We are providing
   </div>
 </div>
 
-프로세서: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz   2.30 GHz
-
-RAM: 16Gb
-
-GPU: RTX3060 6Gb
+- **용도**: 모든 학생에게 제공되는 고성능 컴퓨팅 작업을 위한 장비
+- **특징**: 강력한 성능을 자랑하는 최신형 노트북으로, 다양한 연구 및 개발 작업에 최적화되어 있습니다.
+- **사양**:
+  - 프로세서: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+  - 메모리: 16GB
+  - GPU: NVIDIA RTX3060 6GB
+  - 스토리지: 1TB SSD
+<!-- - **가격**: 약 200만 원 -->
 
 ---
