@@ -27,7 +27,7 @@ menu_settings:
     #   url: "/admissions/"
     - title: "진로"
       url: "/career/"
-    - title: "리서치"
+    - title: "학생연구"
       url: "/projects/"
     - title: "정보광장"
       url: "/posts/"
