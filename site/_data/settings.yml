@@ -1,10 +1,10 @@
 ---
 #-------------------------------
 # Site Settings
-title: 제주한라대학교 인공지능공학과 (Department of Artificial Intelligence Engineering)
+title: 제주한라대학교 인공지능학과 (Department of Artificial Intelligence)
 logo: "/assets/images/logo/logo-name.png"
 logo_dark: "/assets/images/logo/logo-name-dark.png"
-description: "제주한라대학교 인공지능공학과 (Department of Artificial Intelligence Engineering, Cheju Halla University)"
+description: "제주한라대학교 인공지능학과 (Department of Artificial Intelligence, Cheju Halla University)"
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 #-------------------------------
@@ -103,14 +103,14 @@ section_tags_title: ✌️ Explore Topics
 # Newsletter Settings
 mailchimp_settings:
   enable: false
-  mailchimp_title: 인공지능공학과 뉴스레터 구독
+  mailchimp_title: 인공지능학과 뉴스레터 구독
   mailchimp_identifier: halla.us21.list-manage.com/subscribe/post?u=2bb7450a6c4f2df4098555a00&amp;id=87dede211f&amp
   mailchimp_input_text: 이메일 주소를 입력해 주세요.
   mailchimp_background_image: /assets/images/mailchimp/subscribe-bg.png
 
 #-------------------------------
 # Footer Settings
-footer_description: 38 Halladaehak-ro, Jeju-si, Jeju Special Self-Governing Province, 63092 Republic of Korea <br>Tel. +82-64-741-7575 / Fax. +82-64-747-3989
+footer_description: (63092) 제주특별자치도 제주시 한라대학로 38, Tel. 064-741-7575, Fax. 064-747-3989 <br>38 Halladaehak-ro, Jeju-si, Jeju Special Self-Governing Province, 63092 Republic of Korea <br>Tel. +82-64-741-7575 / Fax. +82-64-747-3989
 
 #-------------------------------
 # Footer Navigation Settings
