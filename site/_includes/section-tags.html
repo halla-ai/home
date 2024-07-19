@@ -22,7 +22,7 @@
             {% for item in (0..site.tags.size) limit:7 %}{% unless forloop.last %}
             {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
             <div class="col col-2 col-w-3 col-d-4 col-t-6 col-m-12">
-              <a href="{{ site.baseurl }}/tags/?tag={{ this_word | downcase | url_encode }}" class="tag-container">
+              <a href="{{ site.baseurl }}/tags/?tag={{ this_word | url_encode }}" class="tag-container">
                 <div class="tag-image">
                   <img class="lazy" {% for post in site.tags[this_word] %}{% if forloop.index==1 and post.image %} data-src="{{site.baseurl}}{{post.image}}" alt="post.title" {% endif %}{% endfor %}>
                 </div>
