@@ -1,5 +1,4 @@
 ---
-
 layout: page
 title: 학과소개
 permalink: /about/
@@ -50,7 +49,7 @@ We need experts with the know-how to lead in this new industry. We are providing
   - 메모리: 320GB
   - 스토리지: 30TB NVMe SSD
   - 네트워크: 8x 100Gbps Ethernet
-- **가격**: 약 5억 원
+<!-- - **가격**: 약 5억 원 -->
 
 ### NVIDIA DGX A100 서버
 
@@ -67,7 +66,7 @@ We need experts with the know-how to lead in this new industry. We are providing
   - 메모리: 320GB
   - 스토리지: 15TB NVMe SSD
   - 네트워크: 8x 200Gbps Ethernet
-- **가격**: 약 3억 원
+<!-- - **가격**: 약 3억 원 -->
 
 ### NVIDIA DGX 1 서버
 
@@ -84,7 +83,7 @@ We need experts with the know-how to lead in this new industry. We are providing
   - 메모리: 512GB
   - 스토리지: 4x 1.92TB SSD
   - 네트워크: Dual 10Gbps Ethernet
-- **가격**: 약 1억 원
+<!-- - **가격**: 약 1억 원 -->
 
 ### NVIDIA RTX A6000 GPU Cloud Server
 
@@ -101,7 +100,7 @@ We need experts with the know-how to lead in this new industry. We are providing
   - 메모리: 128GB
   - 스토리지: 8TB SSD
   - 네트워크: 1Gbps Ethernet
-- **가격**: 약 2천만 원
+<!-- - **가격**: 약 2천만 원 -->
 
 ### 고성능 노트북 (HP Victus 16)
 
@@ -118,6 +117,6 @@ We need experts with the know-how to lead in this new industry. We are providing
   - 메모리: 16GB
   - GPU: NVIDIA RTX3060 6GB
   - 스토리지: 1TB SSD
-- **가격**: 약 200만 원
+<!-- - **가격**: 약 200만 원 -->
 
 ---

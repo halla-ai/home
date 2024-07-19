@@ -56,7 +56,7 @@ social:
 # Hero Settings
 hero:
   enable: true
-  hero_title: <span>인공지능공학과</span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
+  hero_title: <span>인공지능학과</span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
   hero_description: 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!
 
 
