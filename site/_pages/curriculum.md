@@ -70,10 +70,10 @@ image: "/assets/images/curriculum/curriculum.png"
 
 <div class="mermaid">
 graph TD
-    classDef track fill:#8d6798,stroke:#333,stroke-width:2px;
+    classDef track fill:#c7bed7,stroke:#333,stroke-width:2px,font-size:50px;
     classDef semester fill:#fff,stroke:#999,stroke-width:1px;
-    classDef course fill:#e1f5fe,stroke:#4fc3f7,stroke-width:1px,rx:5px,ry:5px;
-    classDef goal fill:#4caf50,color:#fff,stroke:#1b5e20,stroke-width:2px,rx:10px,ry:10px;
+    classDef course fill:#e1f5fe,stroke:#4fc3f7,stroke-width:1px,rx:5px,ry:5px,font-size:30px;
+    classDef goal fill:#4caf50,color:#fff,stroke:#1b5e20,stroke-width:2px,rx:10px,ry:10px,font-size:40px;
 
     A[인공지능핵심] --> A11 --> A12 --> A21 --> A22 --> A31 --> A32 --> A41[4-1] --> A42 --> AG
     B[소프트웨어&시스템] --> B11 --> B12 --> B21 --> B22 --> B31[3-1] --> B32 --> B41 --> B42[4-2] --> BG
