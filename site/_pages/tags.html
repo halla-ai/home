@@ -40,12 +40,14 @@ permalink: /tags/
 <!-- end page-wrapper -->
 
 <script>
-  var tag_name = window.location.search.replace("?tag=", "#");
-  if (tag_name) {
+  document.addEventListener("DOMContentLoaded", function() {
+    var tag_name = window.location.search.replace("?tag=", "#");
+    if (tag_name) {
       var decoded_tag_name = decodeURIComponent(tag_name);
       var el = document.querySelector(decoded_tag_name);
       if (el) {
-          el.classList.remove("is-hidden");
+        el.classList.remove("is-hidden");
       }
-  }
+    }
+  });
 </script>
