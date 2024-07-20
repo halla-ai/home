@@ -36,8 +36,8 @@ menu_settings:
       # submenu:
       # - url: "/contact/"
       #   title: "Contact"
-    - title: "게시판"
-      url: "https://chu-ai.imweb.me/"
+    # - title: "게시판"
+    #   url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
 # Social Settings
@@ -134,8 +134,8 @@ footer_menu_settings:
       url: "/posts/"
     - title: "오시는길"
       url: "/location/"
-    - title: "게시판"
-      url: "https://chu-ai.imweb.me/"
+    # - title: "게시판"
+    #   url: "https://chu-ai.imweb.me/"
 
 #-------------------------------
 # Contact Settings
