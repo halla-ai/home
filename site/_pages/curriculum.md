@@ -70,7 +70,7 @@ image: "/assets/images/curriculum/curriculum.png"
 
 <div class="mermaid">
 graph TD
-    classDef track fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef track fill:#8d6798,stroke:#333,stroke-width:2px;
     classDef semester fill:#fff,stroke:#999,stroke-width:1px;
     classDef course fill:#e1f5fe,stroke:#4fc3f7,stroke-width:1px,rx:5px,ry:5px;
     classDef goal fill:#4caf50,color:#fff,stroke:#1b5e20,stroke-width:2px,rx:10px,ry:10px;
