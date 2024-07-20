@@ -42,7 +42,10 @@ permalink: /tags/
 <script>
   var tag_name = window.location.search.replace("?tag=", "#");
   if (tag_name) {
-      var el = document.querySelector(tag_name);
-      el.classList.remove("is-hidden");
-    }
+      var decoded_tag_name = decodeURIComponent(tag_name);
+      var el = document.querySelector(decoded_tag_name);
+      if (el) {
+          el.classList.remove("is-hidden");
+      }
+  }
 </script>
