@@ -4,10 +4,6 @@ permalink: /privacy/
 title: 개인정보처리방침
 ---
 
-<div class="col-lg-12 text-center">
-	<h2 class="section-heading text-none">개인정보처리방침</h2>
-</div>
-
 본 개인정보처리방침은 제주한라대학교 인공지능학과 웹사이트 (이하 "사이트")를 방문하실 때 귀하의 개인정보가 어떻게 수집, 사용 및 공유되는지에 대해 설명합니다.
 
 **수집하는 개인정보**
@@ -32,8 +28,8 @@ title: 개인정보처리방침
 
 **개인정보 보호책임자**
 
-성명: {{ site.data.settings.privacy.name }}
-연락처: {{ site.data.settings.privacy.phone }}
+- 성명: {{ site.data.settings.privacy.name }}
+- 연락처: {{ site.data.settings.privacy.phone }}
 
 **개인정보의 안전성 확보 조치**
 
