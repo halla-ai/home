@@ -15,6 +15,9 @@
 
         <div class="footer__info">
           <div class="copyright">{{site.time | date: '%Y'}} &copy; <a href="/">{{site.data.settings.title}}</a>, <a href="https://www.chu.ac.kr">Cheju Halla University</a>.</div>
+          <duv class="footer-menu">
+            <a href="{{ site.baseurl }}/privacy/">{{ site.data.settings.privacy.description }}</a>
+          </div>
           <div class="footer__info__right">
             {% if site.data.settings.color_scheme == "auto" %}
             <div class="toggle-theme">

@@ -143,6 +143,14 @@ contact:
   email: yj.lee@chu.ac.kr # Add your form_id
   description: If you have any questions, please feel free to contact us.
 
+#-------------------------------
+# Privacy Policy Settings
+privacy:
+  description: 개인정보처리방침
+  email: yj.lee@chu.ac.kr
+  phone: 064-741-6532
+  name: 이영준
+
 # NOTE
 # Simpler theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
 
