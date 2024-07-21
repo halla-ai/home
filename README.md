@@ -1,4 +1,4 @@
-# Artificial Intelligence at Cheju Halla University
+# Artificial Intelligence | Cheju Halla University
 
 Welcome to the official repository for the Department of Artificial Intelligence at Cheju Halla University.
 
