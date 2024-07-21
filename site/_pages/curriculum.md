@@ -2,7 +2,7 @@
 layout: page
 title: 교과과정
 permalink: /curriculum/
-image: "/assets/images/curriculum/curriculum.png"
+# image: "/assets/images/curriculum/curriculum.png"
 ---
 
 ## 인공지능전공
