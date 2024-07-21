@@ -2,7 +2,7 @@
 layout: page
 title: 학과소개
 permalink: /about/
-image: "/assets/images/about/about.png"
+# image: "/assets/images/about/about.png"
 ---
 
 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능,
