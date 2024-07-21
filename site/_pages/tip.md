@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 학생 TIP
+title: 학생생활안내
 permalink: /tip/
 image: "/assets/images/tip/tips.jpg"
 ---
