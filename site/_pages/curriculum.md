@@ -5,7 +5,7 @@ permalink: /curriculum/
 # image: "/assets/images/curriculum/curriculum.png"
 ---
 
-## 인공지능전공
+---
 
 <div class="mermaid">
 graph TD
@@ -122,6 +122,10 @@ graph TD
     class AG,BG,CG,DG,EG goal;
 
 </div>
+
+---
+
+## 인공지능전공
 
 ### 교육목표
 
