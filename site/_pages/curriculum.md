@@ -172,6 +172,145 @@ graph TD
 
 </div>
 
+<div class="mermaid">
+graph TD
+    classDef track fill:#c7bed7,stroke:#333,stroke-width:5px,rx:20px,ry:20px,font-size:50px,font-family:Hahmlet;
+    classDef semester fill:#fff,stroke:#999,stroke-width:1px,rx:10px,ry:10px,font-size:15px,font-family:Hahmlet;
+    classDef course fill:#e1f5fe,stroke:#81bdbf,stroke-width:1px,rx:10px,ry:10px,font-size:40px,font-family:Hahmlet;
+    classDef goal fill:#022f44,color:#fff,stroke:#005a83,stroke-width:5px,rx:20px,ry:20px,font-size:50px,font-family:Hahmlet;
+
+    A[인공지능핵심] --> A11 --> A12 --> A21 --> A22 --> A31 --> A32 --> A41[4-1] --> A42 --> AG
+    B[소프트웨어&시스템] --> B11 --> B12 --> B21 --> B22 --> B31[3-1] --> B32 --> B41 --> B42[4-2] --> BG
+    C[데이터분석] --> C11 --> C12 --> C21 --> C22[2-2] --> C31[3-1] --> C32 --> C41[4-1] --> C42[4-2] --> CG
+    D[AI응용기술] --> D11[1-1] --> D12[1-2] --> D21[2-1] --> D22 --> D31 --> D32 --> D41 --> D42[4-2] --> DG
+    E[실무역량] --> E11[1-1] --> E12[1-2] --> E21[2-1] --> E22[2-2] --> E31 --> E32 --> E41 --> E42 --> EG
+
+    %% 트랙 간 연결
+    A -.-> B
+    A -.-> C
+    A -.-> D
+    B -.-> C
+    B -.-> D
+    C -.-> D
+
+    subgraph A11[1-1]
+    A111[인공지능과사회]
+    end
+    subgraph A12[1-2]
+    A121[인공지능개론]
+    A122[언어모형과자연어처리]
+    end
+    subgraph A21[2-1]
+    A211[기계학습]
+    A212[컴퓨터비전]
+    A213[신호및시스템]
+    end
+    subgraph A22[2-2]
+    A221[패턴인식]
+    A222[음성인식및합성]
+    A223[객체인식추적]
+    end
+    subgraph A31[3-1]
+    A311[딥러닝]
+    A312[알고리즘]
+    A313[멀티모달생성형인공지능]
+    end
+    subgraph A32[3-2]
+    A321[딥러닝자연어처리]
+    end
+    subgraph A42[4-2]
+    A421[차세대인공지능]
+    end
+    subgraph E31[3-1]
+    E311[캡스톤디자인1]
+    end
+    subgraph E32[3-2]
+    E321[캡스톤디자인2]
+    end
+    subgraph E41[4-1]
+    E411[캡스톤디자인3]
+    end
+    subgraph E42[4-2]
+    E421[캡스톤디자인4]
+    end
+    subgraph D22[2-2]
+    D221[로보틱스기초]
+    end
+    subgraph D31[3-1]
+    D311[협동로봇활용]
+    end
+    subgraph D32[3-2]
+    D321[게임프로그래밍]
+    D322[지능형HCI와UX]
+    end
+    subgraph D41[4-1]
+    D411[3D엔진]
+    D412[개인화AI신호처리]
+    end
+    subgraph C11[1-1]
+    C111[인공지능수학]
+    end
+    subgraph C12[1-2]
+    C121[확률통계의기초]
+    C122[빅데이터기초및실습]
+    end
+    subgraph C21[2-1]
+    C211[R프로그래밍]
+    end
+    subgraph C32[3-2]
+    C321[지능형시스템]
+    end
+    subgraph B11[1-1]
+    B111[정보보안개론]
+    B112[기초파이썬코딩]
+    end
+    subgraph B12[1-2]
+    B121[서버및네트워크보안]
+    end
+    subgraph B21[2-1]
+    B211[계산과학]
+    B212[운영체제]
+    end
+    subgraph B22[2-2]
+    B221[AI보안]
+    B222[데이터구조]
+    end
+    subgraph B32[3-2]
+    B321[클라우드컴퓨팅]
+    B322[컴퓨터구조]
+    end
+    subgraph B41[4-1]
+    B411[머신러닝시스템]
+    end
+
+    %% 트랙 간 공유 과목
+    A211 -.-> C
+    A212 -.-> D
+    A311 -.-> C
+    A311 -.-> D
+    B112 -.-> A
+    B112 -.-> C
+    B112 -.-> D
+    C122 -.-> A
+    C122 -.-> B
+    D311 -.-> A
+    D322 -.-> A
+    D322 -.-> B
+    B411 -.-> A
+    B411 -.-> C
+
+    AG[인공지능엔지니어/개발자]
+    BG[소프트웨어&시스템전문가]
+    CG[데이터분석전문가]
+    DG[AI로봇전문가/AI응용기술개발자]
+    EG[실무역량강화]
+
+    class A,B,C,D,E track;
+    class A11,A12,A21,A22,A31,A32,A41,A42,B11,B12,B21,B22,B31,B32,B41,B42,C11,C12,C21,C22,C31,C32,C41,C42,D11,D12,D21,D22,D31,D32,D41,D42,E11,E12,E21,E22,E31,E32,E41,E42 semester;
+    class A111,A121,A122,A211,A212,A213,A221,A222,A223,A311,A312,A313,A321,A421,B111,B112,B121,B211,B212,B221,B222,B321,B322,B411,C111,C121,C122,C211,C321,D221,D311,D321,D322,D411,D412,E311,E321,E411,E421 course;
+    class AG,BG,CG,DG,EG goal;
+</div>
+
 ---
 
 ### 교과목개요
