@@ -13,7 +13,7 @@ permalink: /location/
 
 ## 인공지능학과 학생회장 연락
 
-오픈 카카오톡 "https://open.kakao.com/o/sgdkXqDg"
+[오픈 카카오톡](https://open.kakao.com/o/sgdkXqDg)
 
 ## 대중교통 이용시
 
