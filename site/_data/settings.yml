@@ -45,10 +45,16 @@ menu_settings:
 # Social Settings
 social:
   - { icon: "fa-solid fa-building-columns", link: "https://www.chu.ac.kr" }
-  - { icon: "fa-brands fa-youtube", link: "https://www.youtube.com/watch?v=8c9910JKf34" }
+  - {
+      icon: "fa-brands fa-youtube",
+      link: "https://www.youtube.com/watch?v=8c9910JKf34",
+    }
   # - { icon: "fa-brands fa-instagram", link: "https://instagram.com" }
   # - { icon: "fa-brands fa-github", link: "https://github.com" }
-  - { icon: "fa-solid fa-comment-medical fa-bounce", link: "https://open.kakao.com/o/sgdkXqDg" }
+  - {
+      icon: "fa-solid fa-comment-medical fa-bounce",
+      link: "https://open.kakao.com/o/sgdkXqDg",
+    }
   # - { icon: "icon-kakao-talk", link: "https://accounts.kakao.com" } # dark mode is not working
 
 # Example of adding a new link to the header and footer - {icon: "fa-brands fa-youtube", link: "https://youtube.com"}
@@ -61,9 +67,8 @@ hero:
   hero_title: <span>인공지능학과</span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
   hero_description: 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!
 
-
   hero_image: "/assets/images/home/bg.png"
-  hero_button_contact: 
+  hero_button_contact:
   hero_button_about: 학과소개
 
 #-------------------------------
@@ -91,7 +96,7 @@ testimonial_items:
     image: "/assets/images/testimonial/student-3.png"
     designation: "2022년 학생회장"
     link: "https://twitter.com/"
-    content: "제주한라대학교 인공지능공학과는 컴퓨터 비전, llm, Text-to-Image 등 다양한 주제에 대한 프로젝트를 진행할 수 있습니다. 최신 기술과 연구를 다루며, 학생들이 이론과 실습을 균형 있게 배울 수 있는 환경을 제공합니다. 또한, 전문 교수진과의 긴밀한 협업을 통해 깊이 있는 지식을 쌓고, 실제 문제 해결 능력을 키울 수 있습니다. 이러한 점에서 인공지능공학과는 인공지능 분야에 관심이 있는 학생들에게 최고의 선택이 될 것입니다."
+    content: "제주한라대학교 인공지능공학과는 컴퓨터 비전, 거대언어모델(LLM), Text-to-Image 생성 등  다양한 주제에 대한 프로젝트를 진행할 수 있습니다. 최신 기술과 연구를 다루며, 학생들이 이론과 실습을 균형 있게 배울 수 있는 환경을 제공합니다. 또한, 전문 교수진과의 긴밀한 협업을 통해 깊이 있는 지식을 쌓고, 실제 문제 해결 능력을 키울 수 있습니다. 이러한 점에서 인공지능공학과는 인공지능 분야에 관심이 있는 학생들에게 최고의 선택이 될 것입니다."
 
 #-------------------------------
 # Blog Section
@@ -161,7 +166,7 @@ privacy:
 #-------------------------------
 # Comment Section (Disqus)
 # Add your shortname for Disqus Comment.
-disqus_identifier: # halla-ai 
+disqus_identifier: # halla-ai
 
 #-------------------------------
 # Google Analytics
