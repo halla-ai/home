@@ -48,6 +48,8 @@ image: "/assets/images/projects/AI-Teacher.jpg"
 메타휴먼 AI강사의 실제 시연 영상을 확인해보세요!
 
 <!-- [시연 영상](/assets/images/projects/AI-teacher.mp4) -->
+<p><iframe src="https://youtu.be/2ttVYWnjhjA?si=rzbRqBsp4oPCDok2" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+
 
 ---
 
