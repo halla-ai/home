@@ -4,7 +4,7 @@ title: "제주한라대학교 인공지능공학과 주관 STAI NLP 워크샵 �
 description: "사회과학 연구를 위한 최첨단 NLP 기술 탐구"
 date: 2024-08-06 19:00:00
 image: "/assets/images/posts/stai-nlp/nlp-0.jpeg"
-tags: [NLP, Social Science, Workshop, AI]
+tags: [NLP, Workshop, AI]
 ---
 
 제주한라대학교 인공지능공학과가 KAIST Impact Lab과 함께 주관한 STAI NLP 워크샵이 IJCAI 2024 STAI 워크샵에 이어 성공적으로 개최되었다. 제주 씨에스 호텔에서 열린 이 반나절 세션에는 사회과학 연구에서 자연어처리의 실질적 응용을 탐구하고자 하는 약 15명의 참가자들이 모였다.
@@ -30,9 +30,9 @@ tags: [NLP, Social Science, Workshop, AI]
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/assets/images/posts/stai/nlp-1.jpeg" loading="lazy">
-    <img src="/assets/images/posts/stai/nlp-2.jpeg" loading="lazy">
-    <img src="/assets/images/posts/stai/nlp-3.jpeg" loading="lazy">
-    <img src="/assets/images/posts/stai/nlp-4.jpeg" loading="lazy">
+    <img src="/assets/images/posts/stai-nlp/nlp-1.jpeg" loading="lazy">
+    <img src="/assets/images/posts/stai-nlp/nlp-2.jpeg" loading="lazy">
+    <img src="/assets/images/posts/stai-nlp/nlp-3.jpeg" loading="lazy">
+    <img src="/assets/images/posts/stai-nlp/nlp-4.jpeg" loading="lazy">
   </div>
 </div>
