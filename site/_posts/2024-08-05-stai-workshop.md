@@ -26,7 +26,7 @@ tags: [AI, Sustainability, Conference, Research]
 3. 패널 토론
 
    - 주제: "지속가능한 발전을 위한 AI 기술의 진보"
-   - 사회: 김상협 (대통령 직속 탄소중립위원회)
+   - 사회: 김상협 위원장 (대통령 직속 탄소중립위원회)
 
 4. 우수 논문상
    - 최우수 논문상: Girmaw Abebe Tadesse
