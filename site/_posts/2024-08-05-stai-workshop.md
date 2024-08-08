@@ -7,7 +7,7 @@ image: "/assets/images/posts/stai/a-1.jpeg"
 tags: [AI, Sustainability, Conference, Research]
 ---
 
-제주한라대학교 인공지능공학과가 주관한 'IJCAI 2024 지속가능한 전환을 위한 인공지능(STAI) 워크샵'이 성황리에 막을 내렸다. 이번 워크샵은 전 세계의 연구자, 실무자, 그리고 전문가들이 모여 AI를 통한 지속가능한 해결책의 미래를 논의하는 뜻깊은 자리였다.
+제주지역혁신플랫폼 지능형서비스사업단이 주최하고 제주한라대학교가 KAIST와 함께 주관한 'IJCAI 2024 지속가능한 전환을 위한 인공지능(STAI) 워크샵'이 성황리에 막을 내렸다. 이번 워크샵은 전 세계의 연구자, 실무자, 그리고 전문가들이 모여 AI를 통한 지속가능한 해결책의 미래를 논의하는 뜻깊은 자리였다.
 
 특히 주목할 만한 점은 우리 학과 이영준 교수의 지도 아래 양필성, 이규범 학생이 발표한 포스터 연구다. "Enhancing Promotional Review Detection in Naver Restaurant Reviews: Integrating Large Language Models with Location-Based Data in Jeju"라는 제목의 이 연구는 제주 지역의 특성을 반영한 AI 기술의 실제 적용 사례로, 참가자들의 관심을 받았다. 이는 우리 학과의 연구가 지역 특성을 고려한 실용적인 AI 솔루션 개발에 주력하고 있음을 잘 보여주는 사례다.
 
