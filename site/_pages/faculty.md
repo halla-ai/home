@@ -106,7 +106,7 @@ permalink: /faculty/
 - 관심분야: 데이터통신, 무선통신, 네트워크 기능 가상화, 소프트웨어 정의 네트워킹, 머신러닝, 인공지능
 - 주요담당분야: 빅데이터 분석 및 모델링, 무선통신, 통신 시스템, 네트워크 알고리즘, 통신AI
 - 연락처: 064)741-7689
-- E-Mail: yongminc@chu.ac.kr
+- E-Mail: [yongminc@chu.ac.kr](mailto:yongminc@chu.ac.kr)
 - 학위 및 경력:
   - 서울대학교 전자공학과 학사/석사
   - University of Southern California 전기공학과 박사
