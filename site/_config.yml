@@ -7,10 +7,9 @@ baseurl: ""
 # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://halla.ai" 
 
-# languages: ["en", "ko"]
-# default_lang: "ko"
-# exclude_from_localizations: ["assets", "_sitemap.xml", "index.html", "404.html"]
-# default_locale_in_subfolder: false
+languages: ["ko", "en"]
+exclude_from_localizations: ["assets", "_sitemap.xml", "index.html", "404.html"]
+default_locale_in_subfolder: false
 
 #-------------------------------
 # Build Settings
@@ -22,7 +21,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   # - jekyll-maps
-  # - jekyll-multiple-languages-plugin
+  - jekyll-multiple-languages-plugin
 
 paginate: 6
 paginate_path: "/page/:num"
