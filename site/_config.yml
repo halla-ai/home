@@ -4,11 +4,12 @@
 
 # the subpath of your site, e.g. /blog
 baseurl: "" 
+baseurl_root: ""
 # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://halla.ai" 
 
 languages: ["ko", "en"]
-exclude_from_localizations: ["assets", "_sitemap.xml", "index.html", "404.html"]
+# exclude_from_localizations: ["assets", "_sitemap.xml", "index.html", "404.html"]
 default_locale_in_subfolder: false
 
 #-------------------------------
