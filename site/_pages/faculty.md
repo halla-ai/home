@@ -95,4 +95,21 @@ permalink: /faculty/
   - 전) 스탠포드대학교 방문연구원
   - 전) KB증권 계량분석팀장
   - 전) 에프앤가이드 R&D팀장
-- 사이트: [entelecheia.me](https://entelecheia.me)
+- 사이트: [🏠 Homepage](https://entelecheia.me) [📖 LinkedIn](https://www.linkedin.com/in/entelecheia) [🐙 GitHub](https://github.com/entelecheia)
+
+<img src="/assets/images/faculty/ymchoi.jpeg" loading="lazy" width="100">
+
+- **최용민 (Yongmin Choi)**
+- 전공: 전기공학(박사), 전자공학(학사/석사)
+- 관심분야: 데이터통신, 무선통신, 네트워크 기능 가상화, 소프트웨어 정의 네트워킹, 머신러닝, 인공지능
+- 주요담당분야: 빅데이터 분석 및 모델링, 무선통신, 통신 시스템, 네트워크 알고리즘, 통신AI
+- 연락처: 064)741-7689
+- E-Mail: yongminc@chu.ac.kr
+- 학위 및 경력:
+  - 서울대학교 전자공학과 학사/석사
+  - University of Southern California 전기공학과 박사
+  - The Honor Society of Phi Kappa Phi, Eta Kappa Nu (Electrical Engineering Honor Society) 회원
+  - 현) 제주한라대학교 인공지능공학과 교수
+  - 전) KT 네트워크부문, 융합기술원 근무
+  - 전) University of Southern California 방문 연구원
+  - 현) IEEE Communications Magazine, Artificial Intelligence and Data Science Series, Lead Editor
