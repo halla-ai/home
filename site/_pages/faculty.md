@@ -86,15 +86,17 @@ permalink: /faculty/
 - 연락처: 064)741-6532
 - E-Mail: [yj.lee@chu.ac.kr](mailto:yj.lee@chu.ac.kr)
 - 학위 및 경력:
-  - 연세대학교 컴퓨터과학 학사
-  - 연세대학교 경제학 석사
-  - 연세대학교 경영학 박사
-  - 현) 제주지역혁신플랫폼(RIS) 지능형서비스사업단 책임교수
-  - 현) 제주한라대학교 혁신추진단장
-  - 현) 자연어연구센터 센터장
-  - 전) 스탠포드대학교 방문연구원
-  - 전) KB증권 계량분석팀장
-  - 전) 에프앤가이드 R&D팀장
+  - 학위:
+    - 연세대학교 경영학 박사
+    - 연세대학교 경제학 석사
+    - 연세대학교 컴퓨터과학 학사
+  - 경력:
+    - 현) 제주지역혁신플랫폼(RIS) 지능형서비스사업단 책임교수
+    - 현) 제주한라대학교 혁신추진단장
+    - 현) 자연어연구센터 센터장
+    - 전) 스탠포드대학교 방문연구원
+    - 전) KB증권 계량분석팀장
+    - 전) 에프앤가이드 R&D팀장
 - 사이트: [🏠 Homepage](https://entelecheia.me) [📖 LinkedIn](https://www.linkedin.com/in/entelecheia) [🐙 GitHub](https://github.com/entelecheia)
 
 <img src="/assets/images/faculty/ymchoi.jpeg" loading="lazy" width="100">
@@ -113,3 +115,23 @@ permalink: /faculty/
   - 전) KT 네트워크부문, 융합기술원 근무
   - 전) University of Southern California 방문 연구원
   - 현) IEEE Communications Magazine, Artificial Intelligence and Data Science Series, Lead Editor
+
+<img src="/assets/images/faculty/hrkim.jpeg" loading="lazy" width="100">
+
+- **김하란 (HA RAN KIM)**
+- 전공: 엔터테인먼트 테크놀로지, 디지털 아트, 판화 (석사) / 판화 (학사)
+- 관심 분야: 가상 및 증강 현실 디자인, 몰입형 경험 디자인, 인공지능 결합 디지털 아트, 게임 디자인
+- 주요 담당 분야: 가상 및 증강 현실 디자인, 융합 예술과 첨단 기술의 접목 분야 연구
+- 연락처: 064-741-7629 / 010-8737-1662
+- 이메일: [harank@chu.ac.kr](mailto:harank@chu.ac.kr)
+- 웹사이트: [www.harankim.com](http://www.harankim.com)
+- 학위 및 경력:
+  - 학위:
+    - Carnegie Mellon University, Entertainment Technology Center (MET), USA
+    - Indiana University Bloomington, MFA in Digital Art, USA
+    - Indiana University Bloomington, MFA in Printmaking, USA
+    - 홍익대학교 미술대학 판화 학과, 미술학사
+  - 경력:
+    - 현) 제주한라대학교 인공지능공학과 조교수
+    - 전) 테크니컬 아티스트 및 웹사이트 개발자, 미국
+    - 전) Project MIMICUS, Google과 함께한 ETC 실리콘밸리 캠퍼스 게임 디자인 프로젝트
