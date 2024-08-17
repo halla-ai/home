@@ -1,0 +1,23 @@
+site:
+  title: "Department of Artificial Intelligence, Cheju Halla University"
+  description: "Department of Artificial Intelligence, Cheju Halla University"
+
+nav:
+  home: "Home"
+  about: "About"
+  faculty: "Faculty"
+  curriculum: "Curriculum"
+  career: "Career"
+  projects: "Student Research"
+  tips: "Campus Life Guide"
+  posts: "Information Plaza"
+  location: "Location"
+
+hero:
+  title: "Department of <span>Artificial Intelligence</span>"
+  description: "Cultivating next-generation core experts in Artificial Intelligence, IoT, Big Data, Cyber Security, and Intelligent Robots required by the evolving future industrial society through the 4th Industrial Revolution!"
+  button_about: "About Us"
+
+about:
+  title: "About Us"
+  description: "We are cultivating next-generation core experts in Artificial Intelligence, IoT, Big Data, Blockchain, Information Security, and Intelligent Robots required by the 4th Industrial Revolution!"
