@@ -143,7 +143,7 @@ permalink: /faculty/
 - **관심분야**: 생산시스템, 헬스케어시스템, 데이터사이언스, 머신러닝, 인공지능
 - **주요담당분야**: 에측모델, 확률모형, NLP, 정책 수립
 - **연락처**: 064)741-6735
-- **E-Mail**: cho@chu.ac.kr
+- **E-Mail**: [cho@chu.ac.kr](mailto:cho@chu.ac.kr)
 - **학위 및 경력**:
   - University of Oklahoma, 산업공학 박사
   - Purdue University, 산업공학 박사수료
