@@ -135,3 +135,20 @@ permalink: /faculty/
     - 현) 제주한라대학교 인공지능공학과 조교수
     - 전) 테크니컬 아티스트 및 웹사이트 개발자, 미국
     - 전) Project MIMICUS, Google과 함께한 ETC 실리콘밸리 캠퍼스 게임 디자인 프로젝트
+
+<img src="/assets/images/faculty/hjcho.jpeg" loading="lazy" width="100">
+
+- **조혜진 (Hyejin Cho)**
+- **전공**: 산업공학(박사, 석사, 학사)
+- **관심분야**: 생산시스템, 헬스케어시스템, 데이터사이언스, 머신러닝, 인공지능
+- **주요담당분야**: 에측모델, 확률모형, NLP, 정책 수립
+- **연락처**: 064)741-6735
+- **E-Mail**: cho@chu.ac.kr
+- **학위 및 경력**:
+  - University of Oklahoma, 산업공학 박사
+  - Purdue University, 산업공학 박사수료
+  - Purdue University, 산업공학 석사
+  - 전) LG CNS 연구원
+  - 전) 미국 중소 제조업체 컨설팅
+  - 전) IEEE 텍스트마이닝 reviewer
+  - 현) 미국 여성 공학도 조직위 회원
