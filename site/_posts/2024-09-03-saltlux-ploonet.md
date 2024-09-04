@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "제주한라대학교, (주)솔트룩스, (주)플루닛과 AI 연구개발 및 사업화 협력 MOU 체결"
+title: "제주한라대학교, (주)솔트룩스, (주)플루닛 인공지능 연구개발 및 사업화 협력 업무협약 체결"
 description: "RISE 사업과 연계한 차세대 멀티모달 AI 교육 시스템 개발 및 제주 지역 AI 산업 발전 도모"
 date: 2024-09-03 11:00:00
 image: "/assets/images/posts/saltlux-ploonet/CHU-Saltlux-Ploonet-4.jpeg"
