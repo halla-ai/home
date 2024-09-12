@@ -178,7 +178,7 @@ google_analytics: G-QP4FVB9F1X
 # the information below.
 giscus:
   enable: true
-  repo: chu-aie/.github # <your-github-user-name>/<your-github-repo-name>
+  repo: halla-ai/.github # <your-github-user-name>/<your-github-repo-name>
   repo_id: R_kgDOKLOxpQ
   category: Comments # name of the category under which discussions will be created
   category_id: DIC_kwDOKLOxpc4CZjrm
