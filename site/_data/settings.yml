@@ -178,10 +178,10 @@ google_analytics: G-QP4FVB9F1X
 # the information below.
 giscus:
   enable: true
-  repo: halla-ai/.github # <your-github-user-name>/<your-github-repo-name>
-  repo_id: R_kgDOKLOxpQ
-  category: Comments # name of the category under which discussions will be created
-  category_id: DIC_kwDOKLOxpc4CZjrm
+  repo: halla-ai/home # <your-github-user-name>/<your-github-repo-name>
+  repo_id: R_kgDOKUKMpg
+  category: General # name of the category under which discussions will be created
+  category_id: DIC_kwDOKUKMps4CZb4G
   mapping: pathname
   strict: 0
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
