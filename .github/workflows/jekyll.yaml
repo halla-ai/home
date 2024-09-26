@@ -44,7 +44,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           cd site
-          bundle exec jekyll build -d ../_site
+          JEKYLL_ENV=production bundle exec jekyll build -d ../_site
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v2
