@@ -97,7 +97,7 @@ permalink: /faculty/
     - 전) 스탠포드대학교 방문연구원
     - 전) KB증권 계량분석팀장
     - 전) 에프앤가이드 R&D팀장
-- **웹사이트**: [🏠 Homepage](https://entelecheia.me) [📖 LinkedIn](https://www.linkedin.com/in/entelecheia) [🐙 GitHub](https://github.com/entelecheia)
+- **웹사이트**: [🏠 Homepage](https://youngjoon-lee.com) [📖 LinkedIn](https://www.linkedin.com/in/entelecheia) [🐙 GitHub](https://github.com/entelecheia)
 
 <img src="/assets/images/faculty/ymchoi.jpeg" loading="lazy" width="100">
 
