@@ -1,14 +1,13 @@
-```yaml
 ---
 layout: post
-title: "다크렌즈 팀, 2024 Jeju Tourism Hackathon 우수상 수상"
+title: "다크렌즈 팀, 2024 제주 스마트관광 빅데이터 해커톤 우수상 수상"
 description: "제주 관광의 다양화와 역사적 의미 조명을 목표로 한 다크 투어리즘 기반 AI 서비스 제안"
 date: 2024-10-19 10:00:00
 image: "/assets/images/posts/Jeju-Tourism-Hackathon/Hackathon3.jpeg"
 tags: [Hackathon, AI, Tourism, Dark Tourism, Award]
 ---
 
-제주한라대학교를 대표하는 다크렌즈 팀(이규범, 김은지, 문재현)이 지난 9월 27일부터 29일까지 열린 2024 Jeju Tourism Hackathon에서 우수상을 수상했다. 이번 대회는 제주 관광의 지속 가능한 발전과 문제 해결을 위한 데이터 기반 솔루션을 제시하는 것을 목적으로 개최되었다.
+제주한라대학교를 대표하는 다크렌즈 팀(이규범, 김은지, 문재현)이 지난 9월 27일부터 29일까지 열린 2024 제주 스마트관광 빅데이터 해커톤에서 우수상을 수상했다. 이번 대회는 제주 관광의 지속 가능한 발전과 문제 해결을 위한 데이터 기반 솔루션을 제시하는 것을 목적으로 개최되었다.
 
 ---
 
@@ -42,4 +41,3 @@ tags: [Hackathon, AI, Tourism, Dark Tourism, Award]
     <img src="/assets/images/posts/Jeju-Tourism-Hackathon/Hackathon2.jpeg" loading="lazy">
   </div>
 </div>
-```
