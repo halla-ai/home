@@ -51,6 +51,8 @@ image: "/assets/images/tips/tips.jpg"
     <img src="/assets/images/tips/Watch_Online_Lectures/2.Watch_Online_Lectures.jpeg" loading="lazy" alt="Watch Online Lectures 2">
     <img src="/assets/images/tips/Watch_Online_Lectures/3.Watch_Online_Lectures.jpeg" loading="lazy" alt="Watch Online Lectures 3">
     <img src="/assets/images/tips/Watch_Online_Lectures/4.Watch_Online_Lectures.jpeg" loading="lazy" alt="Watch Online Lectures 4">
+    <img src="/assets/images/tips/Watch_Online_Lectures/4.Watch_Online_Lectures.jpeg" loading="lazy" alt="Watch Online Lectures 5">
+    <img src="/assets/images/tips/Watch_Online_Lectures/4.Watch_Online_Lectures.jpeg" loading="lazy" alt="Watch Online Lectures 6">
   </div>
 </div>
 
