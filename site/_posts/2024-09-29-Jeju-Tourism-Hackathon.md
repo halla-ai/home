@@ -2,7 +2,7 @@
 layout: post
 title: "다크렌즈 팀, 2024 제주 스마트관광 빅데이터 해커톤 우수상 수상"
 description: "제주 관광의 다양화와 역사적 의미 조명을 목표로 한 다크 투어리즘 기반 AI 서비스 제안"
-date: 2024-10-19 10:00:00
+date: 2024-09-29 10:00:00
 image: "/assets/images/posts/Jeju-Tourism-Hackathon/Hackathon3.jpeg"
 tags: [Hackathon, AI, Tourism, Dark Tourism, Award]
 ---
