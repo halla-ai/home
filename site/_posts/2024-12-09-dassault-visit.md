@@ -4,7 +4,7 @@ title: "제주한라대학교, 프랑스 다쏘시스템즈 본사 방문"
 description: "혁신적 교육협력 방안 논의 및 RISE 프로젝트 소개"
 date: 2024-12-09 09:30:00
 tags: [Education, Innovation, Collaboration, Smart-cities, Aerospace, France]
-image: "/assets/images/posts/20241209/CHU-DASSAULT-EINS-1.jpeg"
+image: "/assets/images/posts/20241209/FRANCE-DASSAULT-1.jpeg"
 ---
 
 제주한라대학교 대표단이 프랑스 벨리지-비야쿠블레(Vélizy-Villacoublay)에 위치한 다쏘시스템즈(Dassault Systèmes) 글로벌 본사를 방문해 교육혁신 및 산학협력 방안을 논의했다.
