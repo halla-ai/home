@@ -5,22 +5,25 @@ permalink: /faculty/
 # image: "/assets/images/faculty/faculty.png"
 ---
 
-<img src="/assets/images/faculty/hjcho.jpeg" loading="lazy" width="100">
+<img src="/assets/images/faculty/hrkim.jpeg" loading="lazy" width="100">
 
-- **조혜진 (Hyejin Cho) 인공지능학과장**
-- **전공**: 산업공학(박사, 석사, 학사)
-- **관심분야**: 생산시스템, 헬스케어시스템, 데이터사이언스, 머신러닝, 인공지능
-- **주요담당분야**: 예측모델, 확률모형, NLP, 정책 수립
-- **연락처**: 064)741-6735
-- **E-Mail**: [cho@chu.ac.kr](mailto:cho@chu.ac.kr)
-- **학위 및 경력**:
-  - University of Oklahoma, 산업공학 박사
-  - Purdue University, 산업공학 박사수료
-  - Purdue University, 산업공학 석사
-  - 전) LG CNS 연구원
-  - 전) 미국 중소 제조업체 컨설팅
-  - 전) IEEE 텍스트마이닝 reviewer
-  - 현) 미국 여성 공학도 조직위 회원
+- **김하란 (HA RAN KIM) 인공지능학과장**
+- **전공:** 엔터테인먼트 테크놀로지, 디지털 아트, 판화 (석사) / 판화 (학사)
+- **관심분야**: 가상 및 증강 현실 디자인, 몰입형 경험 디자인, 인공지능 결합 디지털 아트, 게임 디자인
+- **주요담당분야**: 가상 및 증강 현실 디자인, 융합 예술과 첨단 기술의 접목 분야 연구
+- **연락처:** 064-741-7629 / 010-8737-1662
+- **E-Mail:**: [harank@chu.ac.kr](mailto:harank@chu.ac.kr)
+- **웹사이트**: [www.harankim.com](http://www.harankim.com)
+- **학위 및 경력:**
+  - **학위:**
+    - Carnegie Mellon University, Entertainment Technology Center (MET), USA
+    - Indiana University Bloomington, MFA in Digital Art, USA
+    - Indiana University Bloomington, MFA in Printmaking, USA
+    - 홍익대학교 미술대학 판화 학과, 미술학사
+  - **경력:**
+    - 현) 제주한라대학교 인공지능공학과 조교수
+    - 전) 테크니컬 아티스트 및 웹사이트 개발자, 미국
+    - 전) Project MIMICUS, Google과 함께한 ETC 실리콘밸리 캠퍼스 게임 디자인 프로젝트
 
 <img src="/assets/images/faculty/yjchang.jpg" loading="lazy" width="100">
 
@@ -133,22 +136,3 @@ permalink: /faculty/
   - 전) University of Southern California 방문 연구원
   - 현) IEEE Communications Magazine, Artificial Intelligence and Data Science Series, Lead Editor
 
-<img src="/assets/images/faculty/hrkim.jpeg" loading="lazy" width="100">
-
-- **김하란 (HA RAN KIM)**
-- **전공:** 엔터테인먼트 테크놀로지, 디지털 아트, 판화 (석사) / 판화 (학사)
-- **관심분야**: 가상 및 증강 현실 디자인, 몰입형 경험 디자인, 인공지능 결합 디지털 아트, 게임 디자인
-- **주요담당분야**: 가상 및 증강 현실 디자인, 융합 예술과 첨단 기술의 접목 분야 연구
-- **연락처:** 064-741-7629 / 010-8737-1662
-- **E-Mail:**: [harank@chu.ac.kr](mailto:harank@chu.ac.kr)
-- **웹사이트**: [www.harankim.com](http://www.harankim.com)
-- **학위 및 경력:**
-  - **학위:**
-    - Carnegie Mellon University, Entertainment Technology Center (MET), USA
-    - Indiana University Bloomington, MFA in Digital Art, USA
-    - Indiana University Bloomington, MFA in Printmaking, USA
-    - 홍익대학교 미술대학 판화 학과, 미술학사
-  - **경력:**
-    - 현) 제주한라대학교 인공지능공학과 조교수
-    - 전) 테크니컬 아티스트 및 웹사이트 개발자, 미국
-    - 전) Project MIMICUS, Google과 함께한 ETC 실리콘밸리 캠퍼스 게임 디자인 프로젝트
