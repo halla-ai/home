@@ -169,3 +169,112 @@
   color: var(--text-color);
   transition: none;
 }
+
+/* Mermaid diagrams */
+.mermaid {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  margin: 32px 0;
+  padding: 24px;
+  background: var(--background-color);
+  border-radius: 12px;
+  overflow-x: auto;
+  overflow-y: visible;
+  
+  svg {
+    font-family: $heading-font-family !important;
+    max-width: 100%;
+    height: auto;
+    
+    // Improve text rendering
+    text {
+      font-family: $heading-font-family !important;
+      font-size: 19px !important;
+      font-weight: 500 !important;
+      dominant-baseline: middle !important;
+      text-anchor: middle !important;
+    }
+    
+    // Node labels
+    .nodeLabel,
+    .nodeLabel text {
+      font-family: $heading-font-family !important;
+      font-size: 19px !important;
+      font-weight: 500 !important;
+    }
+    
+    // Edge labels
+    .edgeLabel,
+    .edgeLabel text {
+      font-family: $heading-font-family !important;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+    }
+    
+    // Cluster labels
+    .cluster-label,
+    .cluster-label text {
+      font-family: $heading-font-family !important;
+      font-size: 18px !important;
+      font-weight: 600 !important;
+    }
+    
+    // Improve node shapes
+    .node rect,
+    .node circle,
+    .node ellipse,
+    .node polygon {
+      rx: 8px !important;
+      ry: 8px !important;
+    }
+    
+    // Better spacing for clusters
+    .cluster rect {
+      rx: 12px !important;
+      ry: 12px !important;
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: $tablet) {
+    padding: 16px;
+    margin: 24px 0;
+    
+    svg {
+      text {
+        font-size: 17px !important;
+      }
+      
+      .nodeLabel,
+      .nodeLabel text {
+        font-size: 17px !important;
+      }
+      
+      .edgeLabel,
+      .edgeLabel text {
+        font-size: 15px !important;
+      }
+    }
+  }
+  
+  @media (max-width: $mobile) {
+    padding: 12px;
+    margin: 20px 0;
+    
+    svg {
+      text {
+        font-size: 15px !important;
+      }
+      
+      .nodeLabel,
+      .nodeLabel text {
+        font-size: 15px !important;
+      }
+      
+      .edgeLabel,
+      .edgeLabel text {
+        font-size: 13px !important;
+      }
+    }
+  }
+}

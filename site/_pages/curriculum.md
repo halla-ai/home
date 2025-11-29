@@ -9,10 +9,10 @@ permalink: /curriculum/
 
 <div class="mermaid">
 graph TD
-    classDef track fill:#c7bed7,stroke:#333,stroke-width:5px,rx:20px,ry:20px,font-size:60px,font-family:Hahmlet;
-    classDef semester fill:#fff,stroke:#999,stroke-width:1px,rx:10px,ry:10px,font-size:15px,font-family:Hahmlet;
-    classDef course fill:#e1f5fe,stroke:#81bdbf,stroke-width:1px,rx:10px,ry:10px,font-size:60px,font-family:Hahmlet;
-    classDef goal fill:#022f44,color:#fff,stroke:#005a83,stroke-width:5px,rx:20px,ry:20px,font-size:60px,font-family:Hahmlet;
+    classDef track fill:#c7bed7,stroke:#333,stroke-width:3px,rx:12px,ry:12px,font-size:20px,font-family:Hahmlet,font-weight:700;
+    classDef semester fill:#fff,stroke:#999,stroke-width:2px,rx:8px,ry:8px,font-size:18px,font-family:Hahmlet,font-weight:600;
+    classDef course fill:#e1f5fe,stroke:#81bdbf,stroke-width:2px,rx:8px,ry:8px,font-size:19px,font-family:Hahmlet,font-weight:500;
+    classDef goal fill:#022f44,color:#fff,stroke:#005a83,stroke-width:3px,rx:12px,ry:12px,font-size:20px,font-family:Hahmlet,font-weight:700;
 
     A[인공지능핵심] --> A11 --> A12 --> A21 --> A22 --> A31 --> A32 --> A41[4-1] --> A42 --> AG
     B[소프트웨어&시스템] --> B11 --> B12 --> B21 --> B22 --> B31[3-1] --> B32 --> B41 --> B42[4-2] --> BG
@@ -178,10 +178,10 @@ graph TD
 
 <div class="mermaid">
 graph TD
-    classDef track fill:#c7bed7,stroke:#333,stroke-width:5px,rx:20px,ry:20px,font-size:60px,font-family:Hahmlet;
-    classDef semester fill:#fff,stroke:#999,stroke-width:1px,rx:10px,ry:10px,font-size:30px,font-family:Hahmlet;
-    classDef course fill:#e1f5fe,stroke:#81bdbf,stroke-width:1px,rx:10px,ry:10px,font-size:60px,font-family:Hahmlet;
-    classDef goal fill:#022f44,color:#fff,stroke:#005a83,stroke-width:5px,rx:20px,ry:20px,font-size:60px,font-family:Hahmlet;
+    classDef track fill:#c7bed7,stroke:#333,stroke-width:3px,rx:12px,ry:12px,font-size:20px,font-family:Hahmlet,font-weight:700;
+    classDef semester fill:#fff,stroke:#999,stroke-width:2px,rx:8px,ry:8px,font-size:18px,font-family:Hahmlet,font-weight:600;
+    classDef course fill:#e1f5fe,stroke:#81bdbf,stroke-width:2px,rx:8px,ry:8px,font-size:19px,font-family:Hahmlet,font-weight:500;
+    classDef goal fill:#022f44,color:#fff,stroke:#005a83,stroke-width:3px,rx:12px,ry:12px,font-size:20px,font-family:Hahmlet,font-weight:700;
 
     A[인공지능핵심] --> A11 --> A12 --> A21 --> A22 --> A31 --> A32 --> A41[4-1] --> A42 --> AG
     B[소프트웨어&시스템] --> B11 --> B12 --> B21 --> B22 --> B31[3-1] --> B32 --> B41 --> B42[4-2] --> BG

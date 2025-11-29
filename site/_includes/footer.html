@@ -48,6 +48,16 @@ $(document).ready(function () {
   mermaid.initialize({
     startOnLoad: true,
     theme: "default",
+    fontFamily: "Hahmlet, 'Times New Roman', Georgia, serif",
+    fontSize: 19,
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: "basis",
+      padding: 20,
+      nodeSpacing: 50,
+      rankSpacing: 80,
+    },
   });
   window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 });
