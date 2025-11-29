@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 24px 0;
+  padding: 16px 0;
   margin-bottom: 0;
   @include glassmorphism();
   border-bottom: 1px solid var(--glass-border);
@@ -22,15 +22,15 @@
   }
 
   @media (max-width: $desktop) {
-    padding: 20px 0;
+    padding: 14px 0;
   }
 
   @media (max-width: $tablet) {
-    padding: 16px 0;
+    padding: 12px 0;
   }
 
   @media (max-width: $mobile) {
-    padding: 16px 0;
+    padding: 12px 0;
   }
 }
 

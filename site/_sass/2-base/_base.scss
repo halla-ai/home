@@ -9,27 +9,27 @@ body {
   overflow-x: hidden;
   color: var(--text-color);
   background-color: var(--background-color);
-  // Subtle gradient background to enhance glassmorphism visibility
+  // Subtle monochrome gradient background to enhance glassmorphism visibility
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(182, 107, 229, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(248, 93, 112, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(252, 140, 92, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(44, 44, 44, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(107, 107, 107, 0.02) 0%, transparent 50%);
   background-attachment: fixed;
   // Add padding to account for fixed header
-  padding-top: 96px;
+  padding-top: 80px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: $desktop) {
-    padding-top: 88px;
+    padding-top: 74px;
   }
 
   @media (max-width: $tablet) {
-    padding-top: 80px;
+    padding-top: 68px;
   }
 
   @media (max-width: $mobile) {
-    padding-top: 80px;
+    padding-top: 68px;
   }
 
   &.is-in {
@@ -65,11 +65,19 @@ body {
 
 .dark-mode {
   body {
-    // Dark mode gradient background to enhance glassmorphism visibility
+    // Dark mode monochrome gradient background to enhance glassmorphism visibility
     background-image: 
-      radial-gradient(circle at 20% 50%, rgba(149, 92, 198, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(228, 97, 79, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 40% 20%, rgba(252, 140, 92, 0.08) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(229, 229, 229, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(204, 204, 204, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(176, 176, 176, 0.03) 0%, transparent 50%);
+  }
+}
+
+.content {
+  padding-top: 32px;
+
+  @media (max-width: $mobile) {
+    padding-top: 24px;
   }
 }
 

@@ -1,95 +1,95 @@
-/* Color Scheme */
+/* Color Scheme - Modern Sleek Monochrome */
 
 :root {
-  --primary-color: #f96a6c;
-  --secondary-color: #fa5657;
-  --accent-color: #fbd599;
+  --primary-color: #2C2C2C;
+  --secondary-color: #4A4A4A;
+  --accent-color: #6B6B6B;
   --white: #fff;
-  --light-gray: #e1e4e9;
-  --light-blue: #fbf6f6;
-  --blue-gray: #716f8a;
-  --gray: #60626a;
-  --dark: #161616;
-  --dark-blue: #1e2740;
+  --light-gray: #E5E5E5;
+  --light-blue: #F5F5F5;
+  --blue-gray: #8A8A8A;
+  --gray: #6B6B6B;
+  --dark: #1A1A1A;
+  --dark-blue: #2C2C2C;
   --rgb-image-color: 255, 255, 255;
 
   --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
 
-  --text-gradient: linear-gradient(90deg, rgba(182, 107, 229, 1) -50%, rgba(248, 93, 112, 1) 51%, rgba(252, 140, 92, 1) 103%); // To change the color of the gradient, add an RGB color code. For example - "182, 107, 229", "248, 93, 112" and "252, 140, 92" (You can generate any color here - https://htmlcolorcodes.com).
+  --text-gradient: linear-gradient(90deg, #1A1A1A 0%, #4A4A4A 50%, #6B6B6B 100%);
 
-  --background-color: var(--white);
-  --background-alt-color: var(--light-blue);
+  --background-color: #FAFAFA;
+  --background-alt-color: #F5F5F5;
   
-  --text-color: var(--dark);
-  --text-alt-color: var(--gray);
+  --text-color: #1A1A1A;
+  --text-alt-color: #6B6B6B;
   
-  --heading-font-color: var(--dark);
+  --heading-font-color: #1A1A1A;
 
-  --link-color: var(--dark);
-  --link-color-hover: var(--dark);
+  --link-color: #1A1A1A;
+  --link-color-hover: #2C2C2C;
 
   --button-color: var(--white);
   --button-color-hover: var(--white);
-  --button-background-color: var(--dark);
-  --button-background-hover: var(--primary-color);
+  --button-background-color: #2C2C2C;
+  --button-background-hover: #1A1A1A;
 
-  --border-color: var(--light-gray);
-  --border-color-alt: var(--light-blue);
+  --border-color: #E5E5E5;
+  --border-color-alt: #F0F0F0;
 
-  --th-color: #ededf1;
-  --tr-color: #ededf1;
+  --th-color: #F5F5F5;
+  --tr-color: #FAFAFA;
 
-  --syntax-highlighting-background: #f0f0f0;
+  --syntax-highlighting-background: #F5F5F5;
 
   // Glassmorphism variables
-  --glass-bg: rgba(255, 255, 255, 0.15);
-  --glass-bg-fallback: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-bg-fallback: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.1);
   --glass-blur: 16px;
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 :root[dark] {
-  --primary-color: #955cc6;
-  --secondary-color: #e4614f;
-  --accent-color: #fbd599;
+  --primary-color: #E5E5E5;
+  --secondary-color: #CCCCCC;
+  --accent-color: #B0B0B0;
   --white: #fff;
-  --light-gray: #f0f0f0;
-  --gray: #9e9e9e;
-  --dark: #111016;
-  --rgb-image-color: 17, 16, 22;
+  --light-gray: #E5E5E5;
+  --gray: #B0B0B0;
+  --dark: #0F0F0F;
+  --rgb-image-color: 15, 15, 15;
 
   --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
 
-  --gradient-color: linear-gradient(90deg, rgba(182, 107, 229, 1) 42%, rgba(248, 93, 112, 1) 73%, rgba(252, 140, 92, 1) 103%);
+  --gradient-color: linear-gradient(90deg, #E5E5E5 0%, #CCCCCC 50%, #B0B0B0 100%);
 
-  --background-color: var(--dark);
-  --background-alt-color: #1a1a1f;
+  --background-color: #0F0F0F;
+  --background-alt-color: #1A1A1A;
   
-  --text-color: var(--gray);
-  --text-alt-color: var(--gray);
+  --text-color: #E5E5E5;
+  --text-alt-color: #B0B0B0;
   
-  --heading-font-color: var(--light-gray);
+  --heading-font-color: #E5E5E5;
 
-  --link-color: var(--light-gray);
-  --link-color-hover: var(--light-gray);
+  --link-color: #E5E5E5;
+  --link-color-hover: #CCCCCC;
 
-  --button-color: var(--dark);
-  --button-background-color: var(--light-gray);
-  --button-background-hover: var(--primary-color);
+  --button-color: #0F0F0F;
+  --button-background-color: #E5E5E5;
+  --button-background-hover: #CCCCCC;
 
-  --border-color: #252629;
-  --border-color-alt: #080b12;
+  --border-color: #2A2A2A;
+  --border-color-alt: #1F1F1F;
 
-  --th-color: #18181d;;
-  --tr-color: #080b12;
+  --th-color: #1A1A1A;
+  --tr-color: #0F0F0F;
 
-  --syntax-highlighting-background: #080b12;
+  --syntax-highlighting-background: #1A1A1A;
 
   // Glassmorphism variables (dark mode)
-  --glass-bg: rgba(0, 0, 0, 0.25);
-  --glass-bg-fallback: rgba(26, 26, 31, 0.95);
+  --glass-bg: rgba(0, 0, 0, 0.3);
+  --glass-bg-fallback: rgba(26, 26, 26, 0.95);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-blur: 16px;
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
