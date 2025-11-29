@@ -1,95 +1,101 @@
 /* Article */
 .article {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
+}
+
+.article__content {
+  position: relative;
+  border-radius: 22px;
   will-change: transform;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
 
   &:hover {
-    transform: translateY(-8px);
-  }
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 
-  @media (max-width: $tablet) {
-    margin-bottom: 36px;
+    .article__title a {
+      text-decoration-color: var(--primary-color);
+    }
+    
+    .article__image img {
+      transform: scale(1.05);
+    }
   }
-
-  @media (max-width: $mobile) {
-    margin-bottom: 32px;
+  
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+      .article__image img {
+        transform: none;
+      }
+    }
   }
 }
 
-.article__inner {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border-radius: 22px;
-  overflow: hidden;
-  @include glassmorphism();
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-  }
-
-  &::after {
-    content: "";
-    display: table;
-    padding-top: 100%;
-  }
+.article__head {
+  display: block;
 }
 
 .article__image {
-  position: absolute;
-  transform: translate(0);
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 22px;
-  overflow: hidden;
   user-select: none;
-  // Background handled by glassmorphism on parent
+  transform: translate(0);
+  overflow: hidden;
 
   &::after {
     content: "";
+    display: table;
+    padding-top: 70%;
+  }
+
+  a {
     display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6) 100%);
-    pointer-events: none;
-  }
-
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    img {
+      transition: none;
+    }
   }
 }
 
-.article__content {
-  z-index: 1;
-  width: 100%;
-  margin-top: auto;
-  padding: 28px;
-  font-size: 0;
-  pointer-events: none;
+.article__inner {
+  margin: 24px 24px 0;
+  line-height: 1;
+
+  @media (max-width: $desktop) {
+    margin: 24px 24px 0;
+  }
 
   @media (max-width: $mobile) {
-    padding: 20px;
+    margin: 20px 20px 0;
   }
 }
 
 .article-tags__box {
   display: flex;
-  margin-bottom: -4px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
 
   .article__tag {
-    position: relative;
-    z-index: 1;
     display: inline-block;
     padding: 5px 10px;
     margin: 0 4px 4px 0;
@@ -97,30 +103,54 @@
     line-height: 1.3;
     font-weight: 700;
     text-transform: capitalize;
-    border: 1px solid var(--white);
+    border: 1px solid var(--heading-font-color);
     border-radius: 60px;
-    pointer-events: all;
-    color: var(--white);
+    color: var(--heading-font-color);
 
     &:hover {
-      color: var(--dark);
-      background-color: var(--white);
+      color: var(--white);
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
     }
 
     &:last-child {
-      margin: 0 0 4px 0;
+      margin-right: 0;
     }
   }
 }
 
 .article__title {
-  font-family: $base-font-family;
-  margin-top: 8px;
+  position: relative;
   margin-bottom: 8px;
-  font-size: 22px;
+  font-family: $base-font-family;
+  font-size: 20px;
+  line-height: 1.2;
 
   a {
-    color: var(--white);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    color: var(--heading-font-color);
+
+    &:hover {
+      text-decoration-color: var(--primary-color);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      border-radius: 22px;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 28px;
   }
 
   @media (max-width: $mobile) {
@@ -128,11 +158,14 @@
   }
 }
 
+.article__meta {
+  margin-top: 8px;
+}
+
 .article__date,
 .article__minutes {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
   transition: none;
 }
