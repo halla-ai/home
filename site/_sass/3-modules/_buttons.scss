@@ -7,29 +7,37 @@
   line-height: 1;
   text-decoration: none;
   border-radius: 60px;
-  border: 1px solid transparent;
+  border: 1px solid var(--glass-border);
   outline: none;
   cursor: pointer;
   will-change: transform;
   transition: all .2s;
   color: var(--button-color);
   background: var(--button-background-color);
+  box-shadow: var(--glass-shadow);
+  
+  // Enhanced glassmorphism for supporting browsers
+  @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 
   &:hover {
     transform: scale(1.05);
     color: var(--button-color-hover);
     background: var(--button-background-hover);
+    border-color: var(--button-background-hover);
   }
 
   &--secondary {
-    border: 1px solid var(--button-background-color);
+    border: 1px solid var(--glass-border);
     color: var(--button-background-color);
-    background: transparent;
+    @include glassmorphism();
 
     &:hover {
       border-color: var(--button-background-hover);
       color: var(--button-background-hover);
-      background: transparent;
+      background: rgba(249, 106, 108, 0.15);
     }
   }
 

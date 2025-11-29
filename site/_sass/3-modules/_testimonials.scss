@@ -27,7 +27,7 @@
 .testimonial-content {
   padding: 32px;
   border-radius: 22px;
-  background: var(--background-color);
+  @include glassmorphism();
 
   @media (max-width: $mobile) {
     padding: 20px;
@@ -36,7 +36,7 @@
 
 .dark-mode {
   .testimonial-content {
-    background: var(--background-alt-color);
+    // Glassmorphism already applied via mixin
   }
 }
 
@@ -53,7 +53,7 @@
   border-radius: 50%;
   overflow: hidden;
   transform: translate(0);
-  background: var(--background-alt-color);
+  @include glassmorphism();
 
   &:hover {
     transform: translateY(-2px);

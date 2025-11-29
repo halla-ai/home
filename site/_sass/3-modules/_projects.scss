@@ -22,7 +22,7 @@
   display: block;
   padding: 20px;
   border-radius: 22px;
-  background: var(--background-alt-color);
+  @include glassmorphism();
   transition: transform .3s ease;
 
   @media (max-width: $mobile) {
@@ -39,8 +39,8 @@
   user-select: none;
   transform: translate(0);
   overflow: hidden;
-  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
-  background-color: var(--background-color);
+  // Shadow handled by glassmorphism mixin
+  // Background handled by glassmorphism on project__head
 
   &::after {
     content: "";

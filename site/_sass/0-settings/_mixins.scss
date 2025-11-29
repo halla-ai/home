@@ -24,3 +24,18 @@
   width: 1px;
   word-wrap: normal !important;
 }
+
+// Glassmorphism effect
+@mixin glassmorphism($opacity: 0.15, $blur: 16px, $border-opacity: 0.2) {
+  // Fallback background for browsers without backdrop-filter support
+  background: var(--glass-bg-fallback);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  
+  // Enhanced glassmorphism for supporting browsers
+  @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    background: var(--glass-bg);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+  }
+}

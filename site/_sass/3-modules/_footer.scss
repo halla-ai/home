@@ -1,5 +1,14 @@
 /* Footer */
 .footer {
+  position: relative;
+  margin-top: 80px;
+  padding: 60px 0 0;
+  @include glassmorphism();
+  border-top: 1px solid var(--glass-border);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+
   .footer__inner {
     padding: 60px 0;
   
@@ -97,7 +106,7 @@
   margin-right: 16px;
   border-radius: 12px;
   overflow: hidden;
-  background: var(--background-alt-color);
+  @include glassmorphism();
 
   &:hover {
     transform: translateY(-2px);

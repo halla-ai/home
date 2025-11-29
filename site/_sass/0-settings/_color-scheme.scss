@@ -40,6 +40,13 @@
   --tr-color: #ededf1;
 
   --syntax-highlighting-background: #f0f0f0;
+
+  // Glassmorphism variables
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-bg-fallback: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: 16px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 :root[dark] {
@@ -78,4 +85,11 @@
   --tr-color: #080b12;
 
   --syntax-highlighting-background: #080b12;
+
+  // Glassmorphism variables (dark mode)
+  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-bg-fallback: rgba(26, 26, 31, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 16px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }

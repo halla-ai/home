@@ -9,8 +9,28 @@ body {
   overflow-x: hidden;
   color: var(--text-color);
   background-color: var(--background-color);
+  // Subtle gradient background to enhance glassmorphism visibility
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(182, 107, 229, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(248, 93, 112, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(252, 140, 92, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+  // Add padding to account for fixed header
+  padding-top: 96px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: $desktop) {
+    padding-top: 88px;
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 80px;
+  }
 
   &.is-in {
     &::after {
@@ -40,6 +60,16 @@ body {
 
   @media (max-width: $mobile) {
     font-size: 16px;
+  }
+}
+
+.dark-mode {
+  body {
+    // Dark mode gradient background to enhance glassmorphism visibility
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(149, 92, 198, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(228, 97, 79, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(252, 140, 92, 0.08) 0%, transparent 50%);
   }
 }
 

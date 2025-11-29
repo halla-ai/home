@@ -40,6 +40,15 @@
 .hero__inner {
   position: relative;
   text-align: center;
+  // Add glassmorphism container for hero content
+  // Works well over hero image or gradient background
+  padding: 48px;
+  border-radius: 22px;
+  @include glassmorphism();
+
+  @media (max-width: $mobile) {
+    padding: 32px 24px;
+  }
 
   .hero__title {
     margin-bottom: 32px;

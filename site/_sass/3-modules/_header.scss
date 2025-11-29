@@ -1,7 +1,17 @@
 /* Header */
 .header {
-  padding: 32px 0;
-  margin-bottom: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 0;
+  margin-bottom: 0;
+  @include glassmorphism();
+  border-bottom: 1px solid var(--glass-border);
+  border-top: none;
+  border-left: none;
+  border-right: none;
 
   .header__inner {
     position: relative;
@@ -12,15 +22,15 @@
   }
 
   @media (max-width: $desktop) {
-    margin-bottom: 48px;
+    padding: 20px 0;
   }
 
   @media (max-width: $tablet) {
-    margin-bottom: 28px;
+    padding: 16px 0;
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 16px;
+    padding: 16px 0;
   }
 }
 
@@ -70,8 +80,7 @@
     transform: translate3d(0, -12px, 0);
     opacity: 0;
     visibility: hidden;
-    background-color: var(--background-color);
-    box-shadow: 0 8px 40px -8px rgba(0, 0, 0, .20);
+    @include glassmorphism();
     transition: all .2s ease;
 
     &.is-visible {
@@ -153,7 +162,7 @@
 .dark-mode {
   @media (max-width: $desktop) {
     .main-nav {
-      background-color: var(--background-alt-color);
+      // Glassmorphism already applied via mixin
     }
   }
 }
@@ -260,8 +269,7 @@
     visibility: hidden;
     transition: all .25s ease;
     border-radius: 16px;
-    box-shadow: 0 8px 40px -8px rgba(0, 0, 0, 0.2);
-    background-color: var(--background-color);
+    @include glassmorphism();
 
     .nav__link {
       position: relative;
@@ -297,10 +305,10 @@
 
 .dark-mode {
   .dropdown-menu {
-    background-color: var(--background-alt-color);
+    // Glassmorphism already applied via mixin
 
     @media (max-width: $desktop) {
-      background-color: inherit;
+      // Glassmorphism already applied via mixin
     }
   }
 }
