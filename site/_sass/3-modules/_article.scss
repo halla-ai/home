@@ -1,11 +1,19 @@
 /* Article */
 .article {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   will-change: transform;
-  transition: transform .3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-8px);
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 32px;
   }
 }
 
@@ -17,6 +25,11 @@
   border-radius: 22px;
   overflow: hidden;
   @include glassmorphism();
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
 
   &::after {
     content: "";

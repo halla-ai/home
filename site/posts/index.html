@@ -27,13 +27,19 @@ image: /assets/images/posts/posts.png
   </div>
 
   <div class="container">
-    <div class="row">
-      {% if site.posts.size > 0 %}
+    <div class="row grid">
+      {% if paginator.posts.size > 0 %}
+        {% for post in paginator.posts %}
+          {% include article.html %}
+        {% endfor %}
+      {% elsif site.posts.size > 0 %}
         {% for post in site.posts offset:0 %}
           {% include article.html %}
         {% endfor %}
       {% endif %}
     </div>
   </div>
+
+  {% include pagination.html %}
 </div>
 <!-- end page-wrapper -->

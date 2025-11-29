@@ -3,9 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  margin-top: 48px;
+  margin-bottom: 32px;
+
+  @media (max-width: $tablet) {
+    margin-top: 40px;
+    margin-bottom: 28px;
+  }
 
   @media (max-width: $mobile) {
-    margin-top: 0;
+    margin-top: 32px;
+    margin-bottom: 24px;
   }
 }
