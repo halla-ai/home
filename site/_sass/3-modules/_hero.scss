@@ -57,6 +57,20 @@
   border-radius: 22px;
   @include glassmorphism();
   
+  // Make background more transparent
+  background: rgba(255, 255, 255, 0.05) !important;
+  @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    background: rgba(255, 255, 255, 0.02) !important;
+  }
+  
+  // Dark mode support
+  .dark-mode & {
+    background: rgba(0, 0, 0, 0.08) !important;
+    @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+      background: rgba(0, 0, 0, 0.05) !important;
+    }
+  }
+  
   // Initial animation state
   opacity: 0;
   transform: translateY(20px);
@@ -82,7 +96,7 @@
 
   .hero__title {
     margin-bottom: 32px;
-    font-size: 93px;
+    font-size: 60px;
     line-height: 1;
     font-weight: 400;
     color: var(--heading-font-color);
@@ -97,7 +111,7 @@
 
   .hero__description {
     margin-bottom: 0;
-    font-size: 32px;
+    font-size: 22px;
     line-height: 1.4;
   }
 
@@ -137,24 +151,24 @@
 
   @media (max-width: $wide) {
     .hero__title {
-      font-size: 88px;
+      font-size: 56px;
     }
   }
 
   @media (max-width: $desktop) {
     .hero__title {
       margin-bottom: 20px;
-      font-size: 62px;
+      font-size: 42px;
     }
 
     .hero__description {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 
   @media (max-width: $tablet) {
     .hero__title {
-      font-size: 50px;
+      font-size: 36px;
     }
 
     .hero__description {
@@ -174,7 +188,7 @@
     text-align: left;
 
     .hero__title {
-      font-size: 40px;
+      font-size: 32px;
     }
 
     .hero__buttons {

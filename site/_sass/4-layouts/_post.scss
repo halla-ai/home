@@ -21,8 +21,9 @@
   border-bottom: 1px solid var(--border-color);
 
   .page-info__title {
-    font-size: 62px;
-    margin-bottom: 16px;
+    font-family: $base-font-family;
+    font-size: 28px;
+    margin-bottom: 12px;
     line-height: 1.2;
   }
 
@@ -42,7 +43,7 @@
     }
 
     .page-info__title {
-      font-size: 50px;
+      font-size: 28px;
       margin-bottom: 12px;
     }
 
@@ -57,7 +58,7 @@
     text-align: left;
 
     .page-info__title {
-      font-size: 40px;
+      font-size: 24px;
       margin-bottom: 12px;
     }
 
