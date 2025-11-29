@@ -11,7 +11,7 @@
   outline: none;
   cursor: pointer;
   will-change: transform;
-  transition: all .2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--button-color);
   background: var(--button-background-color);
   box-shadow: var(--glass-shadow);
@@ -23,10 +23,18 @@
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
     color: var(--button-color-hover);
     background: var(--button-background-hover);
     border-color: var(--button-background-hover);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
   }
 
   &--secondary {
@@ -35,9 +43,17 @@
     @include glassmorphism();
 
     &:hover {
+      transform: scale(1.08);
       border-color: var(--button-background-hover);
       color: var(--button-background-hover);
-      background: rgba(249, 106, 108, 0.15);
+      background: rgba(var(--rgb-image-color), 0.25);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      &:hover {
+        transform: none;
+      }
     }
   }
 

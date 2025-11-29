@@ -121,11 +121,12 @@
 
 .post-title,
 .page-title {
-  font-size: 40px;
+  font-family: $base-font-family;
+  font-size: 28px;
   margin-bottom: 12px;
 
   @media (max-width: $mobile) {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 

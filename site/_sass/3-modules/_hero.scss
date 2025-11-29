@@ -37,14 +37,44 @@
   }
 }
 
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero__inner {
   position: relative;
   text-align: center;
   // Add glassmorphism container for hero content
   // Works well over hero image or gradient background
-  padding: 48px;
+  padding: 64px;
   border-radius: 22px;
   @include glassmorphism();
+  
+  // Initial animation state
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeInUp 0.8s ease-out 0.2s forwards;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: $desktop) {
+    padding: 56px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 48px;
+  }
 
   @media (max-width: $mobile) {
     padding: 32px 24px;
@@ -56,6 +86,7 @@
     line-height: 1;
     font-weight: 400;
     color: var(--heading-font-color);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   
     span {
       background: var(--text-gradient);
@@ -67,6 +98,7 @@
   .hero__description {
     margin-bottom: 0;
     font-size: 32px;
+    line-height: 1.4;
   }
 
   .hero__buttons {
@@ -83,13 +115,22 @@
         transform: rotate(-36deg);
         margin-left: 4px;
         font-size: 14px;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover .hero__button__arrow {
+        transform: rotate(-36deg) translateX(4px);
       }
     }
     
     .hero__button__right {
-
       .hero__button__arrow {
         font-size: 14px;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover .hero__button__arrow {
+        transform: translateX(4px);
       }
     }
   }

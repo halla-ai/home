@@ -1,16 +1,55 @@
 /* Animate */
 .animate {
+  opacity: 0;
   animation: animateElement cubic-bezier(.300,.450,.450,.950) .75s;
-  animation-duration: 0.5s;
+  animation-duration: 0.6s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   transition: transform .15s;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+  }
 
   @keyframes animateElement {
     0% {
+      opacity: 0;
       transform:  translate(0px,50px);
     }
     100% {
+      opacity: 1;
       transform:  translate(0px,0px);
     }
+  }
+}
+
+/* Staggered animations for sections */
+.animate-stagger {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

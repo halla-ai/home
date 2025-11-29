@@ -101,16 +101,17 @@
 }
 
 .article__title {
+  font-family: $base-font-family;
   margin-top: 8px;
   margin-bottom: 8px;
-  font-size: 26px;
+  font-size: 22px;
 
   a {
     color: var(--white);
   }
 
   @media (max-width: $mobile) {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
