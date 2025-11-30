@@ -2,7 +2,7 @@
 layout: page
 title: 학교생활안내
 permalink: /tips/
-image: "/assets/images/tips/tips.jpg"
+# image: "/assets/images/tips/tips.jpg"
 ---
 
 학교생활에 학생들에게 유용한 다양한 팁과 정보를 알려드립니다.
