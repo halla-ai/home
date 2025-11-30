@@ -12,6 +12,7 @@ tags:
     Innovation,
     RISE,
     Launch Party,
+    Stanford d.school,
   ]
 categories: Education
 giscus_comments: true
@@ -22,7 +23,7 @@ image: "/assets/images/posts/20251128/IMG_9674.jpeg"
 
 제주한라대학교 RISE사업단(단장 고석용)은 지난 28일(금), 아일랜드 워크랩 함덕에서 우주·AI 융합 프로그램 '런치파티: Crafting Jeju's Platinum Record'를 성황리에 마쳤다고 밝혔다. 제주특별자치도와 공동 주최한 '글로벌 스페이스 커넥트 데이'의 일환으로 열린 이번 행사는 단순한 실습을 넘어선 '축제 같은 교육'으로 눈길을 끌었다.
 
-이번 프로그램의 핵심은 '몰입'과 '연결'이다. 스탠포드 디스쿨(Stanford d.school)의 디자인 씽킹 방법론을 적용하여, 학생들은 수동적인 학습자가 아닌 능동적인 '우주 크리에이터'로 변신했다.
+이번 프로그램의 핵심은 '몰입'과 '연결'이다. 스탠포드 디스쿨(Stanford d.school) 교수진이 직접 교육을 실시하며 디자인 씽킹 방법론을 적용하여, 학생들은 수동적인 학습자가 아닌 능동적인 '우주 크리에이터'로 변신했다.
 
 <div class="gallery-box">
   <div class="gallery">
