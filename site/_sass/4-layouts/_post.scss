@@ -171,8 +171,8 @@
 .page-image {
   position: relative;
   transform: translate(0);
-  padding-top: 70%;
-  min-height: 240px;
+  padding-top: 45%;
+  min-height: 180px;
   border-radius: 22px;
   overflow: hidden;
   background: var(--background-alt-color);
@@ -188,7 +188,8 @@
   }
 
   @media (max-width: $desktop) {
-    padding-top: 65%;
+    padding-top: 40%;
+    min-height: 160px;
   }
 }
 
