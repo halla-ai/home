@@ -12,7 +12,7 @@ permalink: /tags/
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
   {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 
-    <div class="tags__inner is-hidden" id="{{ this_word | cgi_escape }}">
+    <div class="tags__inner is-hidden" id="{{ this_word | uri_escape }}" data-tag="{{ this_word }}">
 
       <div class="container">
         <div class="page-wrapper__info">
@@ -41,10 +41,21 @@ permalink: /tags/
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    var tag_name = window.location.search.replace("?tag=", "#");
-    if (tag_name) {
-      var decoded_tag_name = decodeURIComponent(tag_name);
-      var el = document.querySelector(decoded_tag_name);
+    var urlParams = new URLSearchParams(window.location.search);
+    var tagParam = urlParams.get('tag');
+    if (tagParam) {
+      // URLSearchParams.get() already decodes the parameter
+      var decoded_tag = tagParam;
+      
+      // Find element by data-tag attribute (most reliable)
+      var el = document.querySelector('[data-tag="' + decoded_tag.replace(/"/g, '\\"') + '"]');
+      
+      // Fallback: try by ID with uri_escaped version
+      if (!el) {
+        var uri_escaped = encodeURIComponent(decoded_tag);
+        el = document.getElementById(uri_escaped);
+      }
+      
       if (el) {
         el.classList.remove("is-hidden");
       }
