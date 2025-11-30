@@ -18,7 +18,7 @@ permalink: /faculty/
   - University of Wisconsin-Madison 산업공학 석사
   - 서울대학교 산업공학과 공학사
 - **경력:**
-  - 현) 제주한라대학교 인공지능학과 부교수; 학과장 및 AI융합학부장
+  - 현) 제주한라대학교 인공지능학과 부교수; AI융합학부장
   - 전) 스웨덴 RISE (Research Institutes of Sweden) 시니어 연구원
   - 전) KTH (스웨덴왕립공과대학교) 초청연구원
   - 전) 한국과학기술원 연구조교수
