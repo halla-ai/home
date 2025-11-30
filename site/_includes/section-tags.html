@@ -22,8 +22,8 @@
             {% for item in (0..site.tags.size) limit:7 %}{% unless forloop.last %}
             {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
             <div class="col col-2 col-w-3 col-d-4 col-t-6 col-m-12">
-              {% assign encoded_tag = this_word | cgi_escape %}
-              <a href="{{ '/tags/?tag=' | append: encoded_tag | relative_url }}" class="tag-container">
+              {% assign encoded_tag = this_word | uri_escape %}
+              <a href="{{ '/tags/' | relative_url }}?tag={{ encoded_tag }}" class="tag-container">
                 <div class="tag-image">
                   <img class="lazy" {% for post in site.tags[this_word] %}{% if forloop.index==1 and post.image %} data-src="{{post.image | relative_url}}" alt="{{ post.title | default: this_word }}" {% endif %}{% endfor %}>
                 </div>
