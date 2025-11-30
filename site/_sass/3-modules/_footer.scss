@@ -178,6 +178,15 @@
 .widget-nav {
   text-align: right;
 
+  .widget-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
+  }
+
   .footer__nav-list {
     line-height: 1;
   }
@@ -192,7 +201,7 @@
 
   .footer__nav-link {
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     font-weight: 700;
 
@@ -224,6 +233,10 @@
       border-radius: 50%;
       background-color: var(--text-alt-color);
     }
+
+    @media (max-width: $mobile) {
+      font-size: 10px;
+    }
   }
 
   @media (max-width: $desktop) {
@@ -248,6 +261,10 @@
 .footer__info__right {
   display: flex;
   align-items: center;
+}
+
+.language-switcher--footer {
+  margin-right: 24px;
 }
 
 .copyright {
