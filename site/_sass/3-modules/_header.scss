@@ -102,6 +102,10 @@
       transform: translate3d(0, 0, 0);
     }
 
+    .language-switcher--mobile {
+      display: flex;
+    }
+
     .nav__list {
       flex-direction: column;
       width: 100%;
@@ -378,7 +382,7 @@
 }
 
 /* Language Switcher */
-.language-switcher {
+.language-switcher--desktop {
   grid-column: 3;
   display: flex;
   align-items: center;
@@ -386,8 +390,21 @@
   margin-left: 16px;
 
   @media (max-width: $desktop) {
-    margin-left: 12px;
-    order: 2;
+    display: none;
+  }
+}
+
+.language-switcher--mobile {
+  display: none;
+
+  @media (max-width: $desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
   }
 }
 

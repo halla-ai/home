@@ -38,9 +38,44 @@
 
             </ul>
           </div>
+          
+          {% assign current_url = page.url | replace:'index.html','' %}
+          {% assign ko_url = current_url | replace:'/en','' %}
+          {% if ko_url == '' %}
+            {% assign ko_url = '/' %}
+          {% endif %}
+          {% assign en_url = current_url | replace:'/en','' %}
+          {% if en_url == '/' %}
+            {% assign en_url = '/en/' %}
+          {% else %}
+            {% assign en_url = en_url | prepend: '/en' %}
+          {% endif %}
+          
+          <div class="language-switcher language-switcher--mobile">
+            <a href="{% if site.lang == 'ko' %}{{ en_url | relative_url }}{% else %}{{ ko_url | relative_url }}{% endif %}" 
+               class="language-switcher__button" 
+               aria-label="Switch language">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="language-switcher__icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+              <span class="language-switcher__labels">
+                {% if site.lang == 'ko' %}
+                  <span class="language-switcher__current">KO</span>
+                  <span class="language-switcher__separator">|</span>
+                  <span class="language-switcher__other">EN</span>
+                {% else %}
+                  <span class="language-switcher__current">EN</span>
+                  <span class="language-switcher__separator">|</span>
+                  <span class="language-switcher__other">KO</span>
+                {% endif %}
+              </span>
+            </a>
+          </div>
         </nav>
 
-        <div class="language-switcher">
+        <div class="language-switcher language-switcher--desktop">
           {% assign current_url = page.url | replace:'index.html','' %}
           {% assign ko_url = current_url | replace:'/en','' %}
           {% if ko_url == '' %}
