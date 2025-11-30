@@ -177,19 +177,6 @@
   overflow: hidden;
   background: var(--background-alt-color);
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    z-index: 1;
-    transition: background 0.3s ease;
-    pointer-events: none;
-  }
-
   img {
     position: absolute;
     top: 0;
@@ -198,25 +185,10 @@
     height: 100%;
     object-fit: cover;
     user-select: none;
-    transition: filter 0.3s ease;
-  }
-
-  &:hover::before,
-  &:focus-within::before {
-    background: transparent;
   }
 
   @media (max-width: $desktop) {
     padding-top: 65%;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    &::before {
-      transition: none;
-    }
-    img {
-      transition: none;
-    }
   }
 }
 
@@ -267,26 +239,11 @@
   }
 
   img, .js-reframe {
-    position: relative;
     border-radius: 12px;
     overflow: hidden;
-    filter: brightness(1.2) contrast(0.8);
-    transition: filter 0.3s ease;
-
-    &:hover,
-    &:focus {
-      filter: brightness(1) contrast(1);
-    }
 
     &.lightense-open {
       border-radius: 0;
-      filter: brightness(1) contrast(1);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    img {
-      transition: none;
     }
   }
 
