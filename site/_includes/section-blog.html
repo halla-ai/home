@@ -15,7 +15,7 @@
   
         <div class="row grid">
           {% if site.posts.size > 0 %}
-            {% for post in paginator.posts %}
+            {% for post in site.posts limit:4 %}
               {% include article.html %}
             {% endfor %}
           {% endif %}
@@ -24,7 +24,5 @@
       </div>
     </div>
   </div>
-
-  {% include pagination.html %}
 </section>
 <!-- end blog -->

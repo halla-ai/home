@@ -1,4 +1,4 @@
-<div class="article col {% if include.col %}{{ include.col }}{% else %}col-4 col-d-6{% endif %} col-t-12 animate grid__post">
+<div class="article col {% if include.col %}{{ include.col }}{% else %}col-3 col-d-6{% endif %} col-t-12 animate grid__post">
 
   <div class="article__content">
     {% if post.image %}
@@ -15,7 +15,8 @@
       {% if post.tags.size >= 1 %}
       <div class="article-tags__box">
         {% for tag in post.tags %}
-          <a href="{{ '/tags/?tag=' | append: tag | url_encode | relative_url }}" class="article__tag">{{ tag }}</a>
+          {% assign encoded_tag = tag | cgi_escape %}
+          <a href="{{ '/tags/?tag=' | append: encoded_tag | relative_url }}" class="article__tag">{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}
