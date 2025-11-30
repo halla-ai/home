@@ -15,10 +15,15 @@
 
   .header__inner {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 20px;
+    
+    @media (max-width: $desktop) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   @media (max-width: $desktop) {
@@ -35,6 +40,10 @@
 }
 
 /* Logo */
+.logo {
+  grid-column: 1;
+}
+
 .logo__link {
   font-family: $heading-font-family;
   font-size: 32px;
@@ -67,6 +76,8 @@
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  grid-column: 2;
 
   @media (max-width: $desktop) {
     position: absolute;
@@ -324,6 +335,8 @@
   @media (max-width: $desktop) {
     display: flex;
     align-items: center;
+    grid-column: 3;
+    justify-self: end;
   }
 }
 

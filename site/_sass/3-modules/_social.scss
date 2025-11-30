@@ -2,7 +2,8 @@
 .social-nav {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  grid-column: 3;
+  justify-self: end;
   
   @media (max-width: $desktop) {
     display: none;
