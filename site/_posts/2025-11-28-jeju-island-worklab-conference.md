@@ -2,7 +2,7 @@
 layout: post
 title: "제주, 관광 넘어 '우주 데이터 도시'로 도약… 제주한라대, 산학협력 컨퍼런스 성료"
 description: "'제주 아일랜드 워크랩 함덕' 개소 기념 첫 행사… AWS·나라스페이스·STEPI 등 우주산업 리더 집결"
-date: 2025-11-28 17:00:00
+date: 2025-11-28 17:00:00 +0900
 tags:
   [Space Industry, Data Innovation, Industry-Academia Cooperation, Jeju, RISE]
 categories: Conference

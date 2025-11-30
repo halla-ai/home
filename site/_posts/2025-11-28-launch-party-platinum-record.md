@@ -2,7 +2,7 @@
 layout: post
 title: '"제주의 이야기를 화성으로 보낸다면?" 제주한라대, 우주·AI 융합 런치파티로 교육의 틀 깨다'
 description: "강의실 대신 함덕 해변으로… Stanford d.school 방식 도입한 몰입형 프로젝트"
-date: 2025-11-28 19:00:00
+date: 2025-11-28 19:00:00 +0900
 tags:
   [
     Space Industry,
