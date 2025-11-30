@@ -13,7 +13,7 @@
     <!-- begin hero image -->
     <div class="hero__image">
       <div class="hero__image__inner">
-        <img class="lazy" data-src="{{site.data.settings.hero.hero_image}}" alt="{{site.translations[site.lang].site.title}}">
+        <img class="lazy" data-src="{{site.data.settings.hero.hero_image | relative_url}}" alt="{{site.translations[site.lang].site.title}}">
       </div>
     </div>
     <!-- end hero image -->
@@ -31,8 +31,8 @@
 
   {% include footer.html %}
 
-  <script src="{{ site.baseurl }}/assets/js/scripts.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/common.js"></script>
+  <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
 </body>
 
 </html>

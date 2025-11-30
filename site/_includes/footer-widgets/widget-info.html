@@ -2,10 +2,10 @@
   <div class="widget-footer widget-info">
 
     <div class="logo-footer">
-      <a class="logo-footer__link" href="{{ site.baseurl }}/">
+      <a class="logo-footer__link" href="{{ '/' | relative_url }}">
         {% if site.data.settings.logo or site.data.settings.logo_dark %}
-        <img class="logo-footer__image" src="{{ site.baseurl }}{{ site.data.settings.logo }}" alt="{{ site.translations[site.lang].site.title }}">
-        <img class="logo-footer__image__dark" src="{{ site.baseurl }}{{ site.data.settings.logo_dark }}" alt="{{ site.translations[site.lang].site.title }}">
+        <img class="logo-footer__image" src="{{ site.data.settings.logo | relative_url }}" alt="{{ site.translations[site.lang].site.title }}">
+        <img class="logo-footer__image__dark" src="{{ site.data.settings.logo_dark | relative_url }}" alt="{{ site.translations[site.lang].site.title }}">
         {% else %}
           {{ site.translations[site.lang].site.title }}
         {% endif %}

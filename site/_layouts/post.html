@@ -7,16 +7,16 @@ layout: default
 
     <div class="post-info">
 
-      <div class="post-meta">
+        <div class="post-meta">
         {% if page.tags.size >= 1 %}
         <div class="post-tags">
           {% for tag in page.tags %}
-            <a href="{{ site.baseurl }}/tags/?tag={{ tag | url_encode }}" class="post__tag">{{ tag }}</a>
+            <a href="{{ '/tags/?tag=' | append: tag | url_encode | relative_url }}" class="post__tag">{{ tag }}</a>
           {% endfor %}
         </div>
         {% endif %}
         <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-B, %Y" %}{{ page.date | date: date_format }}</time> /
-        <a href="{{site.baseurl}}/about/" class="post-author">{{site.data.settings.author_name}}</a> /
+        <a href="{{ '/about/' | relative_url }}" class="post-author">{{site.data.settings.author_name}}</a> /
         <span class="post-minutes">
           {% assign words = page.content | number_of_words %}
           {% if words < 360 %}1 {{ site.translations[site.lang].common.min_read }}{% else %}{{ words | divided_by:180 }} {{ site.translations[site.lang].common.min_read }}{% endif %}
@@ -33,7 +33,7 @@ layout: default
 
     {% if page.image %}
     <div class="post-image">
-      <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+      <img class="lazy" data-src="{{page.image | relative_url}}" alt="{{page.title}}">
     </div>
     {% if page.image_caption %}
     <div class="post-image-caption">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>

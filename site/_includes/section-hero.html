@@ -9,10 +9,10 @@
           <p class="hero__description">{{ site.translations[site.lang].hero.description }}</p>
           <div class="hero__buttons">
             {% if site.data.settings.hero.hero_button_contact %}
-            <a href="{{site.baseurl}}/contact/" class="button hero__button__left">{{ site.data.settings.hero.hero_button_contact }} <i class="hero__button__arrow fa-solid fa-arrow-right"></i></a>
+            <a href="{{ '/contact/' | relative_url }}" class="button hero__button__left">{{ site.data.settings.hero.hero_button_contact }} <i class="hero__button__arrow fa-solid fa-arrow-right"></i></a>
             {% endif %}
             {% if site.translations[site.lang].hero.button_about %}
-            <a href="{{site.baseurl}}/about/" class="button button--secondary hero__button__right">{{ site.translations[site.lang].hero.button_about }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
+            <a href="{{ '/about/' | relative_url }}" class="button button--secondary hero__button__right">{{ site.translations[site.lang].hero.button_about }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
             {% endif %}
           </div>
         </div>
