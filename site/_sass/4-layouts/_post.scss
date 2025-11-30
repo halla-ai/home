@@ -221,6 +221,12 @@
 .post__content,
 .page__content {
   color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.7;
+
+  @media (max-width: $mobile) {
+    font-size: 15px;
+  }
 
   a {
     font-weight: 700;
