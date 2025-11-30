@@ -12,6 +12,7 @@ nav:
   tips: "학교생활안내"
   posts: "정보광장"
   location: "오시는길"
+  navigation: "네비게이션"
 
 hero:
   title: "<span>인공지능학과</span>"
@@ -21,3 +22,28 @@ hero:
 about:
   title: "학과소개"
   description: "4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!"
+
+sections:
+  projects_title: "👨🏻‍💻 Selected Projects"
+  blog_title: "📚 Read Latest Posts"
+  tags_title: "✌️ Explore Topics"
+  testimonials_title: "🙂 What Students Say"
+  view_all: "전체보기"
+
+footer:
+  privacy: "개인정보처리방침"
+  back_to_top: "맨 위로"
+  dark_mode: "다크 모드"
+  light_mode: "라이트 모드"
+
+common:
+  post: "게시물"
+  posts: "게시물"
+  min_read: "분 읽기"
+  contact_description: "궁금한 사항이 있으시면 언제든지 문의해 주세요."
+
+contact:
+  description: "궁금한 사항이 있으시면 언제든지 문의해 주세요."
+
+privacy:
+  description: "개인정보처리방침"

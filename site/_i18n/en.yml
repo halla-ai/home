@@ -12,6 +12,7 @@ nav:
   tips: "Campus Life Guide"
   posts: "Information Plaza"
   location: "Location"
+  navigation: "Navigation"
 
 hero:
   title: "Department of <span>Artificial Intelligence</span>"
@@ -21,3 +22,28 @@ hero:
 about:
   title: "About Us"
   description: "We are cultivating next-generation core experts in Artificial Intelligence, IoT, Big Data, Blockchain, Information Security, and Intelligent Robots required by the 4th Industrial Revolution!"
+
+sections:
+  projects_title: "👨🏻‍💻 Selected Projects"
+  blog_title: "📚 Read Latest Posts"
+  tags_title: "✌️ Explore Topics"
+  testimonials_title: "🙂 What Students Say"
+  view_all: "View all"
+
+footer:
+  privacy: "Privacy Policy"
+  back_to_top: "Back to top"
+  dark_mode: "Dark mode"
+  light_mode: "Light mode"
+
+common:
+  post: "Post"
+  posts: "Posts"
+  min_read: "min read"
+  contact_description: "If you have any questions, please feel free to contact us."
+
+contact:
+  description: "If you have any questions, please feel free to contact us."
+
+privacy:
+  description: "Privacy Policy"

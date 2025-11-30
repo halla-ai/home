@@ -1,45 +1,32 @@
 ---
 #-------------------------------
 # Site Settings
-title: 제주한라대학교 인공지능학과 (Department of Artificial Intelligence)
+# Note: Language-specific content (title, description) is now in _i18n/*.yml files
+# This file contains only non-language-specific settings
 logo: "/assets/images/logo/logo-name.png"
 logo_dark: "/assets/images/logo/logo-name-dark.png"
-description: "제주한라대학교 인공지능학과 (Department of Artificial Intelligence, Cheju Halla University)"
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 #-------------------------------
 # Author Settings
-author_name: 제주한라대학교 (Cheju Halla University)
+author_name: 제주한라대학교 (Cheju Halla University) # Can be kept as bilingual or moved to translations if needed
 
 #-------------------------------
 # Navigation Settings
+# Note: Menu titles are now in _i18n/*.yml files (nav section)
+# URLs are kept here as they are structural/non-language-specific
 menu_settings:
   menu_items:
-    - title: "Home"
-      url: "/"
-    - title: "학과소개"
-      url: "/about/"
-    - title: "교수소개"
-      url: "/faculty/"
-    - title: "교과과정"
-      url: "/curriculum/"
-    # - title: "입학"
-    #   url: "/admissions/"
-    - title: "진로"
-      url: "/career/"
-    - title: "연구과제"
-      url: "/projects/"
-    - title: "학교생활안내"
-      url: "/tips/"
-    - title: "정보광장"
-      url: "/posts/"
-    - title: "오시는길"
-      url: "/location/"
-      # submenu:
-      # - url: "/contact/"
-      #   title: "Contact"
-    # - title: "게시판"
-    #   url: "https://chu-ai.imweb.me/"
+    - url: "/"
+    - url: "/about/"
+    - url: "/faculty/"
+    - url: "/curriculum/"
+    # - url: "/admissions/"
+    - url: "/career/"
+    - url: "/projects/"
+    - url: "/tips/"
+    - url: "/posts/"
+    - url: "/location/"
 
 #-------------------------------
 # Social Settings
@@ -62,22 +49,19 @@ social:
 
 #-------------------------------
 # Hero Settings
+# Note: Language-specific content (title, description, button text) is now in _i18n/*.yml files
 hero:
   enable: true
-  hero_title: <span>인공지능학과</span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
-  hero_description: 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!
-
   hero_image: "/assets/images/home/bg.png"
-  hero_button_contact:
-  hero_button_about: 학과소개
+  hero_button_contact: # Optional contact button text - can be added to translations if needed
 
 #-------------------------------
 # Projects Settings
-section_projects_title: 👨🏻‍💻 Selected Projects
+# Note: Section titles are now in _i18n/*.yml files (sections section)
 
 #-------------------------------
 # Testimonials Section
-section_testimonial_title: 🙂 What Students Say
+# Note: Section titles are now in _i18n/*.yml files (sections section)
 
 testimonial_items:
   - name: "이규범"
@@ -121,41 +105,31 @@ footer_description: (63092) 제주특별자치도 제주시 한라대학로 38 <
 
 #-------------------------------
 # Footer Navigation Settings
+# Note: Menu titles are now in _i18n/*.yml files (nav section)
+# URLs are kept here as they are structural/non-language-specific
 footer_menu_settings:
   menu_items:
-    - title: "Home"
-      url: "/"
-    - title: "학과소개"
-      url: "/about/"
-    - title: "교수소개"
-      url: "/faculty/"
-    - title: "교과과정"
-      url: "/curriculum/"
-    # - title: "입학"
-    #   url: "/admissions/"
-    - title: "진로"
-      url: "/career/"
-    - title: "연구과제"
-      url: "/projects/"
-    - title: "학교생활안내"
-      url: "/tips/"
-    - title: "정보광장"
-      url: "/posts/"
-    - title: "오시는길"
-      url: "/location/"
-    # - title: "게시판"
-    #   url: "https://chu-ai.imweb.me/"
+    - url: "/"
+    - url: "/about/"
+    - url: "/faculty/"
+    - url: "/curriculum/"
+    # - url: "/admissions/"
+    - url: "/career/"
+    - url: "/projects/"
+    - url: "/tips/"
+    - url: "/posts/"
+    - url: "/location/"
 
 #-------------------------------
 # Contact Settings
+# Note: Language-specific description is now in _i18n/*.yml files (contact section)
 contact:
   email: yj.lee@chu.ac.kr # Add your form_id
-  description: If you have any questions, please feel free to contact us.
 
 #-------------------------------
 # Privacy Policy Settings
+# Note: Language-specific description is now in _i18n/*.yml files (privacy section)
 privacy:
-  description: 개인정보처리방침
   email: yj.lee@chu.ac.kr
   phone: 064-741-6532
   name: 이영준

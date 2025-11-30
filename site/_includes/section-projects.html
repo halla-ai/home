@@ -5,11 +5,11 @@
       <div class="col col-12">
         <div class="container__inner">
 
-          {% if site.data.settings.section_projects_title %}
+          {% if site.translations[site.lang].sections.projects_title %}
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">{{ site.data.settings.section_projects_title }}</h2>
-              <a class="section__link" href="{{ '/projects' | relative_url }}">View all</a>
+              <h2 class="section__title">{{ site.translations[site.lang].sections.projects_title }}</h2>
+              <a class="section__link" href="{{ '/projects' | relative_url }}">{{ site.translations[site.lang].sections.view_all }}</a>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>

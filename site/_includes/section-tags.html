@@ -6,10 +6,10 @@
       <div class="col col-12">
         <div class="container__inner">
 
-          {% if site.data.settings.section_tags_title %}
+          {% if site.translations[site.lang].sections.tags_title %}
           <div class="section__info">
             <div class="section__head">
-              <h3 class="section__title">{{ site.data.settings.section_tags_title }}</h3>
+              <h3 class="section__title">{{ site.translations[site.lang].sections.tags_title }}</h3>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="tag-meta">
                   <span class="tag-name">{{ this_word }}</span>
-                  <span class="tag-count">{{ site.tags[this_word].size }} {% if site.tags[this_word].size < 2 %}Post{% else %}Posts{% endif %}</span>
+                  <span class="tag-count">{{ site.tags[this_word].size }} {% if site.tags[this_word].size < 2 %}{{ site.translations[site.lang].common.post }}{% else %}{{ site.translations[site.lang].common.posts }}{% endif %}</span>
                 </div>
               </a>
             </div>
