@@ -45,6 +45,8 @@ image: "/assets/images/posts/20251128/IMG_9681.jpeg"
   </div>
 </div>
 
+이상훈 제주한라대학교 RISE사업단 런케이션본부장은 “이번 컨퍼런스는 제주 아일랜드 워크랩 함덕의 개소를 알리는 첫 신호탄으로서 큰 의미가 있다”라며 “이 공간은 단순한 업무 공간을 넘어 전 세계 우주항공 인재와 기업이 제주에 머물며 일하고 배우는 ‘런케이션(Learncation)’의 성지가 될 것이며, 이곳에서 기술과 인문이 융합된 혁신적인 아이디어가 끊임없이 솟아나길 기대한다”고 밝혔다.
+
 한편, 제주한라대학교 RISE사업단은 이번 컨퍼런스에서 도출된 전략을 바탕으로 지자체와 협력하여 공공 주도의 데이터 수요를 창출하고, 대학을 중심으로 한 우주·데이터 전문 인재 양성에 박차를 가할 계획이다.
 
 #SpaceIndustry #DataInnovation #Jeju #RISE #IndustryAcademiaCooperation #WorklabHamdeok
