@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://halla.ai/sitemap.xml
+
+# Disallow admin and private directories if any
+Disallow: /_site/
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_sass/
+Disallow: /_data/
+Disallow: /_i18n/
+Disallow: /_pages/
+Disallow: /_posts/
+Disallow: /_projects/
+Disallow: /_sitemap.xml
+Disallow: /Gemfile
+Disallow: /Gemfile.lock
+Disallow: /Makefile
+Disallow: /README.md
+Disallow: /CONTRIBUTING.md
+
