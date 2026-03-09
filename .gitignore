@@ -1,11 +1,93 @@
+# === OS & Editor ===
+.DS_Store
+Icon?
+~$*
+.vscode/
+**/.claude/settings.local.json
+
+# === OMC / Claude Code State ===
+.omc/
+.omx/
+
+# === Obsidian ===
+.obsidian/workspace.json
+.obsidian/cache
+.brain
+
+# === Jekyll ===
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-.DS_Store
 site/cache
 site/bin
 site/gems
 site/wrappers
 site/specifications
 site/environment
+
+# === Archives & Temp ===
+_Archived Items
+TEMP/
+*.backup/
+node_modules/
+
+# === Binary & Media (text-only policy) ===
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.zst
+*.ogg
+*.mp3
+*.mp4
+*.wav
+*.avi
+*.mov
+*.mkv
+*.flac
+*.srt
+*.png
+*.jpg
+*.jpeg
+*.heic
+*.ai
+*.key
+*.pdf
+*.hwp*
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls*
+*.xlsx
+*.xlsm
+*.tsv
+*.gdoc
+*.gsheet
+*.gslides
+*.gform
+*.html
+
+# === Data & ML Artifacts ===
+*.parquet
+*.pkl
+*.pth
+*.pt
+
+# === Python ===
+*.py[cod]
+__pycache__/
+.tox/
+*.egg-info/
+*.egg
+pytest_cache/
+pytest.xml
+.mypy_cache/
+.venv/
+
+# === External Shared Folders (Google Drive) ===
+**/shared/
+**/_shared/
+**/_external/
