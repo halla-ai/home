@@ -2,7 +2,7 @@
 layout: post
 title: "STAI-AWS 2025 런케이션, 기후행동을 위한 AI로 제주에 모이다"
 description: "제주 RISE 사업 기반 STAI-AWS 2025 런케이션 프로그램… KAIST·연세대·제주한라대 학생 30여 명, AWS와 함께 기후 AI 해커톤 및 런케이션 수행"
-date: 2025-07-17 18:00:00 +0900
+date: 2025-07-10 18:00:00 +0900
 tags:
   [
     STAI,
