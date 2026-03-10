@@ -7,29 +7,53 @@
   line-height: 1;
   text-decoration: none;
   border-radius: 60px;
-  border: 1px solid transparent;
+  border: 1px solid var(--glass-border);
   outline: none;
   cursor: pointer;
   will-change: transform;
-  transition: all .2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--button-color);
   background: var(--button-background-color);
+  box-shadow: var(--glass-shadow);
+  
+  // Enhanced glassmorphism for supporting browsers
+  @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
     color: var(--button-color-hover);
     background: var(--button-background-hover);
+    border-color: var(--button-background-hover);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
   }
 
   &--secondary {
-    border: 1px solid var(--button-background-color);
+    border: 1px solid var(--glass-border);
     color: var(--button-background-color);
-    background: transparent;
+    @include glassmorphism();
 
     &:hover {
+      transform: scale(1.08);
       border-color: var(--button-background-hover);
       color: var(--button-background-hover);
-      background: transparent;
+      background: rgba(var(--rgb-image-color), 0.25);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      &:hover {
+        transform: none;
+      }
     }
   }
 

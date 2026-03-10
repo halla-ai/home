@@ -2,32 +2,88 @@
 layout:
 ---
 
-{% comment %}<!-- I am using hreflang attributes on a page-by-page basis so no need to include them per url here -->{% endcomment %}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{% for lang in site.languages %}
-
-    {% comment %}<!-- It would be better to use the where_exp filter in the first loop but I dont think the unless expression is supported -->{% endcomment %}
-    {% for node in site.pages %}
-        {% comment %}<!-- very lazy check to see if page is in the exclude list - this means excluded pages are not gonna be in the sitemap at all, write exceptions as necessary -->{% endcomment %}
-        {% unless site.exclude_from_localization contains node.path %}
-            {% comment %}<!-- I am assuming if there's not layout assigned, then not include the page in the sitemap, you may want to change this -->{% endcomment %}
-            {% if node.layout %}
-                <url>
-                    <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
-                </url>
+{% comment %}<!-- Process pages -->{% endcomment %}
+{% for node in site.pages %}
+    {% unless site.exclude_from_localization contains node.path %}
+        {% if node.layout %}
+            {% assign page_url = node.url | replace:'index.html','' %}
+            {% if page_url == '' %}{% assign page_url = '/' %}{% endif %}
+            
+            {% if node.last_modified_at %}
+                {% assign lastmod_date = node.last_modified_at %}
+            {% elsif node.date %}
+                {% assign lastmod_date = node.date %}
+            {% else %}
+                {% assign lastmod_date = site.time %}
             {% endif %}
-        {% endunless %}
-    {% endfor %}
-
-    {% comment %}<!-- This loops through all site collections including posts -->{% endcomment %}
-    {% for collection in site.collections %}
-        {% for node in site[collection.label] %}
+            
+            {% if page_url == '/' %}
+                {% assign priority = '1.0' %}
+                {% assign changefreq = 'daily' %}
+            {% else %}
+                {% assign priority = '0.8' %}
+                {% assign changefreq = 'monthly' %}
+            {% endif %}
+            
             <url>
-                <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
+                <loc>{{ page_url | absolute_url }}</loc>
+                <lastmod>{{ lastmod_date | date_to_xmlschema }}</lastmod>
+                <changefreq>{{ changefreq }}</changefreq>
+                <priority>{{ priority }}</priority>
+                {% assign default_lang = site.languages[0] %}
+                {% for lang in site.languages %}
+                    {% if lang == default_lang %}
+                        <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ page_url | absolute_url }}" />
+                    {% else %}
+                        <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ page_url | prepend: lang | prepend: '/' | absolute_url }}" />
+                    {% endif %}
+                {% endfor %}
+                <xhtml:link rel="alternate" hreflang="x-default" href="{{ page_url | absolute_url }}" />
             </url>
-        {% endfor %}
-    {% endfor %}
+        {% endif %}
+    {% endunless %}
+{% endfor %}
 
+{% comment %}<!-- Process collections -->{% endcomment %}
+{% for collection in site.collections %}
+    {% for node in site[collection.label] %}
+        {% assign page_url = node.url %}
+        
+        {% if node.last_modified_at %}
+            {% assign lastmod_date = node.last_modified_at %}
+        {% elsif node.date %}
+            {% assign lastmod_date = node.date %}
+        {% else %}
+            {% assign lastmod_date = site.time %}
+        {% endif %}
+        
+        {% if collection.label == 'posts' %}
+            {% assign priority = '0.7' %}
+            {% assign changefreq = 'weekly' %}
+        {% elsif collection.label == 'projects' %}
+            {% assign priority = '0.8' %}
+            {% assign changefreq = 'monthly' %}
+        {% else %}
+            {% assign priority = '0.6' %}
+            {% assign changefreq = 'monthly' %}
+        {% endif %}
+        
+        <url>
+            <loc>{{ page_url | absolute_url }}</loc>
+            <lastmod>{{ lastmod_date | date_to_xmlschema }}</lastmod>
+            <changefreq>{{ changefreq }}</changefreq>
+            <priority>{{ priority }}</priority>
+            {% for lang in site.languages %}
+                {% if lang == site.default_lang %}
+                    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ page_url | absolute_url }}" />
+                {% else %}
+                    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ page_url | prepend: lang | prepend: '/' | absolute_url }}" />
+                {% endif %}
+            {% endfor %}
+            <xhtml:link rel="alternate" hreflang="x-default" href="{{ page_url | absolute_url }}" />
+        </url>
+    {% endfor %}
 {% endfor %}
 </urlset>

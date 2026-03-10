@@ -5,8 +5,8 @@
     <div class="recent-posts">
 
       {% if post.image %}
-      <a href="{{ post.url | prepend: site.baseurl }}" class="recent-posts__image">
-        <img class="lazy" data-src="{{site.baseurl}}{{post.image}}" alt="{{post.title}}">
+      <a href="{{ post.url | relative_url }}" class="recent-posts__image">
+        <img class="lazy" data-src="{{post.image | relative_url}}" alt="{{post.title}}">
       </a>
       {% endif %}
 

@@ -8,30 +8,64 @@
         <div class="footer__inner">
           <div class="row">
             {% include footer-widgets/widget-info.html %}
-            {% include footer-widgets/widget-recent-posts.html %}
             {% include footer-widgets/widget-navigation.html %}
           </div>
         </div>
 
         <div class="footer__info">
           <div class="copyright">
-            {{site.time | date: '%Y'}} &copy; <a href="/">{{site.data.settings.title}}</a>, 
-            <a href="{{ site.baseurl }}/privacy/">{{ site.data.settings.privacy.description }}</a>
+            {{site.time | date: '%Y'}} &copy; <a href="/">{{site.translations[site.lang].site.title}}</a>, 
+            <a href="{{ '/privacy/' | relative_url }}">{{ site.translations[site.lang].privacy.description }}</a>
           </div>
           <div class="footer__info__right">
+            {% assign current_url = page.url | replace:'index.html','' %}
+            {% assign ko_url = current_url | replace:'/en','' %}
+            {% if ko_url == '' %}
+              {% assign ko_url = '/' %}
+            {% endif %}
+            {% assign en_url = current_url | replace:'/en','' %}
+            {% if en_url == '/' %}
+              {% assign en_url = '/en/' %}
+            {% else %}
+              {% assign en_url = en_url | prepend: '/en' %}
+            {% endif %}
+            
+            <div class="language-switcher language-switcher--footer">
+              <a href="{% if site.lang == 'ko' %}{{ en_url | relative_url }}{% else %}{{ ko_url | relative_url }}{% endif %}" 
+                 class="language-switcher__button" 
+                 aria-label="Switch language">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="language-switcher__icon">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+                <span class="language-switcher__labels">
+                  {% if site.lang == 'ko' %}
+                    <span class="language-switcher__current">KO</span>
+                    <span class="language-switcher__separator">|</span>
+                    <span class="language-switcher__other">EN</span>
+                  {% else %}
+                    <span class="language-switcher__current">EN</span>
+                    <span class="language-switcher__separator">|</span>
+                    <span class="language-switcher__other">KO</span>
+                  {% endif %}
+                </span>
+              </a>
+            </div>
+            
             {% if site.data.settings.color_scheme == "auto" %}
             <div class="toggle-theme">
-              <div class="toggle-moon" title="Enable dark mode" aria-hidden="true"><i class="fa-solid fa-moon"></i> <span class="toggle-text">Dark</span></div>
-              <div class="toggle-sun" title="Enable light mode" aria-hidden="true"><i class="fa-regular fa-sun"></i> <span class="toggle-text">Light</span></div>
+              <div class="toggle-moon" title="{{ site.translations[site.lang].footer.dark_mode }}" aria-hidden="true"><i class="fa-solid fa-moon"></i> <span class="toggle-text">{{ site.translations[site.lang].footer.dark_mode }}</span></div>
+              <div class="toggle-sun" title="{{ site.translations[site.lang].footer.light_mode }}" aria-hidden="true"><i class="fa-regular fa-sun"></i> <span class="toggle-text">{{ site.translations[site.lang].footer.light_mode }}</span></div>
             </div>
             {% elsif site.data.settings.color_scheme == "light" or site.data.settings.color_scheme == "dark" %}
             {% else %}
             <div class="toggle-theme">
-              <div class="toggle-moon" title="Enable dark mode" aria-hidden="true"><i class="fa-solid fa-moon"></i></div>
-              <div class="toggle-sun" title="Enable light mode" aria-hidden="true"><i class="fa-regular fa-sun"></i></div>
+              <div class="toggle-moon" title="{{ site.translations[site.lang].footer.dark_mode }}" aria-hidden="true"><i class="fa-solid fa-moon"></i></div>
+              <div class="toggle-sun" title="{{ site.translations[site.lang].footer.light_mode }}" aria-hidden="true"><i class="fa-regular fa-sun"></i></div>
             </div>
             {% endif %}
-            <div class="top" title="Top"><i class="fa-solid fa-arrow-up"></i> <span class="top__text">Back to top</span></div>
+            <div class="top" title="{{ site.translations[site.lang].footer.back_to_top }}"><i class="fa-solid fa-arrow-up"></i> <span class="top__text">{{ site.translations[site.lang].footer.back_to_top }}</span></div>
           </div>
         </div>
 
@@ -48,6 +82,16 @@ $(document).ready(function () {
   mermaid.initialize({
     startOnLoad: true,
     theme: "default",
+    fontFamily: "Hahmlet, 'Times New Roman', Georgia, serif",
+    fontSize: 19,
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: "basis",
+      padding: 20,
+      nodeSpacing: 50,
+      rankSpacing: 80,
+    },
   });
   window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 });

@@ -2,7 +2,7 @@
 layout: page
 title: 진로
 permalink: /career/
-image: "/assets/images/career/career.png"
+# image: "/assets/images/career/career.png"
 ---
 
 ## 취업 분야

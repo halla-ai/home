@@ -57,7 +57,7 @@
     width: 100%;
     max-width: 480px;
     border-radius: 60px;
-    background: var(--background-color);
+    @include glassmorphism();
 
     .subscribe-email {
       flex: 1;

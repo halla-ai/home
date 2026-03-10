@@ -7,13 +7,28 @@
   position: relative;
   border-radius: 22px;
   will-change: transform;
-  transition: transform .3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 
     .project__title a {
       text-decoration-color: var(--primary-color);
+    }
+    
+    .project__image img {
+      transform: scale(1.05);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+      .project__image img {
+        transform: none;
+      }
     }
   }
 }
@@ -22,8 +37,8 @@
   display: block;
   padding: 20px;
   border-radius: 22px;
-  background: var(--background-alt-color);
-  transition: transform .3s ease;
+  @include glassmorphism();
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.4s ease;
 
   @media (max-width: $mobile) {
     padding: 16px;
@@ -39,8 +54,9 @@
   user-select: none;
   transform: translate(0);
   overflow: hidden;
-  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
-  background-color: var(--background-color);
+  transition: border-radius 0.4s ease;
+  // Shadow handled by glassmorphism mixin
+  // Background handled by glassmorphism on project__head
 
   &::after {
     content: "";
@@ -56,11 +72,18 @@
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    img {
+      transition: none;
+    }
   }
 }
 
 .project__inner {
-  margin: 20px 20px 0;
+  margin: 24px 24px 0;
   line-height: 1;
 
   .project__subtitle {
@@ -76,7 +99,7 @@
 
   .project__title {
     margin-bottom: 8px;
-    font-size: 32px;
+    font-size: 26px;
     line-height: 1.2;
 
     a {
@@ -113,18 +136,18 @@
   }
 
   @media (max-width: $desktop) {
-    margin: 20px 20px 0;
+    margin: 24px 24px 0;
 
     .project__title {
-      font-size: 30px;
+      font-size: 24px;
     }
   }
 
   @media (max-width: $mobile) {
-    margin: 16px 16px 0;
+    margin: 20px 20px 0;
 
     .project__title {
-      font-size: 26px;
+      font-size: 22px;
     }
   }
 }

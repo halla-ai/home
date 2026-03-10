@@ -1,30 +1,50 @@
 /* Header */
 .header {
-  padding: 32px 0;
-  margin-bottom: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  margin-bottom: 0;
+  @include glassmorphism();
+  border-bottom: 1px solid var(--glass-border);
+  border-top: none;
+  border-left: none;
+  border-right: none;
 
   .header__inner {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 20px;
+    
+    @media (max-width: $desktop) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
   }
 
   @media (max-width: $desktop) {
-    margin-bottom: 48px;
+    padding: 14px 0;
   }
 
   @media (max-width: $tablet) {
-    margin-bottom: 28px;
+    padding: 12px 0;
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 16px;
+    padding: 12px 0;
   }
 }
 
 /* Logo */
+.logo {
+  grid-column: 1;
+}
+
 .logo__link {
   font-family: $heading-font-family;
   font-size: 32px;
@@ -57,6 +77,8 @@
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  grid-column: 2;
 
   @media (max-width: $desktop) {
     position: absolute;
@@ -70,8 +92,7 @@
     transform: translate3d(0, -12px, 0);
     opacity: 0;
     visibility: hidden;
-    background-color: var(--background-color);
-    box-shadow: 0 8px 40px -8px rgba(0, 0, 0, .20);
+    @include glassmorphism();
     transition: all .2s ease;
 
     &.is-visible {
@@ -79,6 +100,10 @@
       opacity: 1;
       visibility: visible;
       transform: translate3d(0, 0, 0);
+    }
+
+    .language-switcher--mobile {
+      display: flex;
     }
 
     .nav__list {
@@ -153,7 +178,7 @@
 .dark-mode {
   @media (max-width: $desktop) {
     .main-nav {
-      background-color: var(--background-alt-color);
+      // Glassmorphism already applied via mixin
     }
   }
 }
@@ -260,8 +285,7 @@
     visibility: hidden;
     transition: all .25s ease;
     border-radius: 16px;
-    box-shadow: 0 8px 40px -8px rgba(0, 0, 0, 0.2);
-    background-color: var(--background-color);
+    @include glassmorphism();
 
     .nav__link {
       position: relative;
@@ -297,19 +321,14 @@
 
 .dark-mode {
   .dropdown-menu {
-    background-color: var(--background-alt-color);
+    // Glassmorphism already applied via mixin
 
     @media (max-width: $desktop) {
-      background-color: inherit;
+      // Glassmorphism already applied via mixin
     }
   }
 }
 
-.social-nav {
-  @media (max-width: $desktop) {
-    display: none;
-  }
-}
 
 /* Humburger Menu */
 .hamburger {
@@ -321,6 +340,8 @@
   @media (max-width: $desktop) {
     display: flex;
     align-items: center;
+    grid-column: 3;
+    justify-self: end;
   }
 }
 
@@ -358,4 +379,96 @@
 
 .hamburger.is-open div:after {
   transform: rotate(-45deg);
+}
+
+/* Language Switcher */
+.language-switcher--desktop {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  margin-left: 16px;
+
+  @media (max-width: $desktop) {
+    display: none;
+  }
+}
+
+.language-switcher--mobile {
+  display: none;
+
+  @media (max-width: $desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+  }
+}
+
+.language-switcher__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-alt-color);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-color);
+    background-color: var(--background-alt-color);
+  }
+
+  @media (max-width: $desktop) {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+.language-switcher__icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.language-switcher__labels {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-switcher__current {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.language-switcher__separator {
+  color: var(--border-color);
+  font-weight: 300;
+}
+
+.language-switcher__other {
+  color: var(--text-alt-color);
+}
+
+.dark-mode {
+  .language-switcher__button {
+    &:hover {
+      background-color: var(--background-alt-color);
+    }
+  }
+
+  .language-switcher__separator {
+    color: var(--border-color);
+  }
 }

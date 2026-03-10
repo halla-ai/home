@@ -24,13 +24,13 @@
   padding: 20px;
   font-size: 16px;
   font-weight: 400;
-  border: 2px solid transparent;
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
   outline: 0;
   transition: .2s ease-in-out;
   resize: vertical;
   color: var(--heading-font-color);
-  background-color: var(--background-alt-color);
+  @include glassmorphism();
 
   &::placeholder {
     color: var(--heading-font-color);
@@ -38,6 +38,12 @@
 
   &:focus {
     border-color: var(--primary-color);
-    background-color: transparent;
+    background: rgba(255, 255, 255, 0.2);
+    
+    // Enhanced glassmorphism for supporting browsers
+    @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
   }
 }

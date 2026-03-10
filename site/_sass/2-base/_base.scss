@@ -9,8 +9,29 @@ body {
   overflow-x: hidden;
   color: var(--text-color);
   background-color: var(--background-color);
+  // Subtle monochrome gradient background to enhance glassmorphism visibility
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.03) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(44, 44, 44, 0.025) 0%, transparent 60%),
+    radial-gradient(circle at 40% 20%, rgba(107, 107, 107, 0.02) 0%, transparent 60%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  // Add padding to account for fixed header
+  padding-top: 80px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: $desktop) {
+    padding-top: 74px;
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 68px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 68px;
+  }
 
   &.is-in {
     &::after {
@@ -43,13 +64,36 @@ body {
   }
 }
 
+.dark-mode {
+  body {
+    // Dark mode monochrome gradient background to enhance glassmorphism visibility
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(229, 229, 229, 0.04) 0%, transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(204, 204, 204, 0.035) 0%, transparent 60%),
+      radial-gradient(circle at 40% 20%, rgba(176, 176, 176, 0.03) 0%, transparent 60%);
+    background-size: 100% 100%;
+  }
+}
+
+.content {
+  padding-top: 40px;
+
+  @media (max-width: $desktop) {
+    padding-top: 36px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 28px;
+  }
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
+  font-family: $base-font-family;
   font-weight: $heading-font-weight;
   line-height: $heading-line-height;
   letter-spacing: $heading-letter-spacing;

@@ -21,12 +21,13 @@
   }
 
   .project-info__title {
-    font-size: 62px;
+    font-family: $heading-font-family;
+    font-size: 48px;
   }
 
   @media (max-width: $tablet) {
     .project-info__title {
-      font-size: 50px;
+      font-size: 40px;
     }
   }
 
@@ -35,7 +36,7 @@
 
     .project-info__title {
       margin-bottom: 20px;
-      font-size: 36px;
+      font-size: 28px;
     }
   }
 }

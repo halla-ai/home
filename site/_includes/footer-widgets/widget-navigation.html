@@ -1,11 +1,18 @@
 <div class="col col-3 col-d-12">
   <div class="widget-footer widget-nav">
-    <h3 class="widget-title">Navigation</h3>
+    <h3 class="widget-title">{{ site.translations[site.lang].nav.navigation }}</h3>
     <ul class="footer__nav-list list-reset">
-      {% for item in site.data.settings.footer_menu_settings.menu_items %}
-      <li class="footer__nav-item">
-        <a href="{{ item.url | relative_url }}" class="footer__nav-link{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
-      </li>
+      {% assign nav_items = "home,about,faculty,curriculum,career,projects,tips,posts,location" | split: "," %}
+      {% assign nav_urls = "/,/about/,/faculty/,/curriculum/,/career/,/projects/,/tips/,/posts/,/location/" | split: "," %}
+      {% for nav_key in nav_items %}
+        {% assign nav_index = forloop.index0 %}
+        {% assign nav_url = nav_urls[nav_index] %}
+        {% assign nav_title = site.translations[site.lang].nav[nav_key] %}
+        {% if nav_title %}
+        <li class="footer__nav-item">
+          <a href="{{ nav_url | relative_url }}" class="footer__nav-link{% if page.url == nav_url %} active-link{% endif %}">{{ nav_title }}</a>
+        </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>

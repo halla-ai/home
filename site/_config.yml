@@ -9,8 +9,9 @@ baseurl_root: ""
 url: "https://halla.ai" 
 
 languages: ["ko", "en"]
-# exclude_from_localizations: ["assets", "_sitemap.xml", "index.html", "404.html"]
+exclude_from_localizations: ["assets", "_sitemap.xml", "404.html", "robots.txt", "feed.xml", "redirect.html", "favicon.ico"]
 default_locale_in_subfolder: false
+lang: ko
 
 #-------------------------------
 # Build Settings

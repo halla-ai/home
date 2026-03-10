@@ -13,7 +13,7 @@ layout: default
 
   {% if page.image %}
   <div class="project-info-image">
-    <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+    <img class="lazy" data-src="{{page.image | relative_url}}" alt="{{page.title}}">
   </div>
   {% endif %}
 
@@ -32,7 +32,7 @@ layout: default
             </div>
           </div>
           <a class="project__nav-image" href="{{page.previous.url}}">
-            <img class="lazy" data-src="{{page.previous.image}}" alt="{{page.previous.title}}">
+            <img class="lazy" data-src="{{page.previous.image | relative_url}}" alt="{{page.previous.title}}">
           </a>
         </div>
         {% endif %}

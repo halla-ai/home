@@ -1,45 +1,32 @@
 ---
 #-------------------------------
 # Site Settings
-title: 제주한라대학교 인공지능학과 (Department of Artificial Intelligence)
+# Note: Language-specific content (title, description) is now in _i18n/*.yml files
+# This file contains only non-language-specific settings
 logo: "/assets/images/logo/logo-name.png"
 logo_dark: "/assets/images/logo/logo-name-dark.png"
-description: "제주한라대학교 인공지능학과 (Department of Artificial Intelligence, Cheju Halla University)"
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 #-------------------------------
 # Author Settings
-author_name: 제주한라대학교 (Cheju Halla University)
+author_name: 제주한라대학교 (Cheju Halla University) # Can be kept as bilingual or moved to translations if needed
 
 #-------------------------------
 # Navigation Settings
+# Note: Menu titles are now in _i18n/*.yml files (nav section)
+# URLs are kept here as they are structural/non-language-specific
 menu_settings:
   menu_items:
-    - title: "Home"
-      url: "/"
-    - title: "학과소개"
-      url: "/about/"
-    - title: "교수소개"
-      url: "/faculty/"
-    - title: "교과과정"
-      url: "/curriculum/"
-    # - title: "입학"
-    #   url: "/admissions/"
-    - title: "진로"
-      url: "/career/"
-    - title: "학생연구"
-      url: "/projects/"
-    - title: "학교생활안내"
-      url: "/tips/"
-    - title: "정보광장"
-      url: "/posts/"
-    - title: "오시는길"
-      url: "/location/"
-      # submenu:
-      # - url: "/contact/"
-      #   title: "Contact"
-    # - title: "게시판"
-    #   url: "https://chu-ai.imweb.me/"
+    - url: "/"
+    - url: "/about/"
+    - url: "/faculty/"
+    - url: "/curriculum/"
+    # - url: "/admissions/"
+    - url: "/career/"
+    - url: "/projects/"
+    - url: "/tips/"
+    - url: "/posts/"
+    - url: "/location/"
 
 #-------------------------------
 # Social Settings
@@ -62,41 +49,38 @@ social:
 
 #-------------------------------
 # Hero Settings
+# Note: Language-specific content (title, description, button text) is now in _i18n/*.yml files
 hero:
   enable: true
-  hero_title: <span>인공지능학과</span> # Department of <span><i>Artificial Intelligence Engineering</i></span>, Cheju Halla University
-  hero_description: 4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능, 빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대 핵심 전문기술인력 양성학과!!
-
   hero_image: "/assets/images/home/bg.png"
-  hero_button_contact:
-  hero_button_about: 학과소개
+  hero_button_contact: # Optional contact button text - can be added to translations if needed
 
 #-------------------------------
 # Projects Settings
-section_projects_title: 👨🏻‍💻 Selected Projects
+# Note: Section titles are now in _i18n/*.yml files (sections section)
 
 #-------------------------------
 # Testimonials Section
-section_testimonial_title: 🙂 What Students Say
+# Note: Section titles are now in _i18n/*.yml files (sections section)
 
 testimonial_items:
   - name: "이규범"
     image: "/assets/images/testimonial/student-1.png"
     designation: "2024년 학생회장"
     link: "https://twitter.com/"
-    content: "인공지능공학과는 현대 기술의 중심에 있는 분야로, 기초적인 컴퓨터 과학, 수학, 통계학, 머신러닝, 딥러닝 등의 이론을 토대로 혁신적인 인공지능 시스템을 설계, 개발, 최적화하는 학문을 탐구합니다. 이 과정에서 학생들은 데이터 분석, 패턴 인식, 자연어 처리, 컴퓨터 비전 등 다양한 분야에서의 문제 해결을 위한 알고리즘을 학습할 수 있습니다."
+    content: "인공지능학과는 현대 기술의 중심에 있는 분야로, 기초적인 컴퓨터 과학, 수학, 통계학, 머신러닝, 딥러닝 등의 이론을 토대로 혁신적인 인공지능 시스템을 설계, 개발, 최적화하는 학문을 탐구합니다. 이 과정에서 학생들은 데이터 분석, 패턴 인식, 자연어 처리, 컴퓨터 비전 등 다양한 분야에서의 문제 해결을 위한 알고리즘을 학습할 수 있습니다."
 
   - name: "양필성"
     image: "/assets/images/testimonial/student-2.png"
     designation: "21학번"
     link: "https://facebook.com/"
-    content: "제주한라대학교 인공지능공학과는 최신 기술을 반영한 교육과정을 통해 학생들이 AI 분야에서 앞서 나갈 수 있도록 돕습니다. Chat GPT와 같은 대규모 언어 모델(LLM)을 다루는 실습을 통해 자연어 처리 능력을 키울 수 있으며, 컴퓨터 비전 분야에서의 다양한 프로젝트를 통해 시각 인공지능 기술을 심도 있게 배울 수 있습니다. 딥러닝과 데이터 처리 능력도 체계적으로 향상시킬 수 있어, 실무에 바로 적용 가능한 스킬을 습득할 수 있습니다. 인공지능에 대한 열정이 있다면, 제주한라대학교 인공지능공학과는 후회 없는 선택이 될 것입니다."
+    content: "제주한라대학교 인공지능학과는 최신 기술을 반영한 교육과정을 통해 학생들이 AI 분야에서 앞서 나갈 수 있도록 돕습니다. Chat GPT와 같은 대규모 언어 모델(LLM)을 다루는 실습을 통해 자연어 처리 능력을 키울 수 있으며, 컴퓨터 비전 분야에서의 다양한 프로젝트를 통해 시각 인공지능 기술을 심도 있게 배울 수 있습니다. 딥러닝과 데이터 처리 능력도 체계적으로 향상시킬 수 있어, 실무에 바로 적용 가능한 스킬을 습득할 수 있습니다. 인공지능에 대한 열정이 있다면, 제주한라대학교 인공지능학과는 후회 없는 선택이 될 것입니다."
 
   - name: "김은지"
     image: "/assets/images/testimonial/student-3.png"
     designation: "2022년 학생회장"
     link: "https://twitter.com/"
-    content: "제주한라대학교 인공지능공학과는 컴퓨터 비전, 거대언어모델(LLM), Text-to-Image 생성 등  다양한 주제에 대한 프로젝트를 진행할 수 있습니다. 최신 기술과 연구를 다루며, 학생들이 이론과 실습을 균형 있게 배울 수 있는 환경을 제공합니다. 또한, 전문 교수진과의 긴밀한 협업을 통해 깊이 있는 지식을 쌓고, 실제 문제 해결 능력을 키울 수 있습니다. 이러한 점에서 인공지능공학과는 인공지능 분야에 관심이 있는 학생들에게 최고의 선택이 될 것입니다."
+    content: "제주한라대학교 인공지능학과는 컴퓨터 비전, 거대언어모델(LLM), Text-to-Image 생성 등  다양한 주제에 대한 프로젝트를 진행할 수 있습니다. 최신 기술과 연구를 다루며, 학생들이 이론과 실습을 균형 있게 배울 수 있는 환경을 제공합니다. 또한, 전문 교수진과의 긴밀한 협업을 통해 깊이 있는 지식을 쌓고, 실제 문제 해결 능력을 키울 수 있습니다. 이러한 점에서 인공지능학과는 인공지능 분야에 관심이 있는 학생들에게 최고의 선택이 될 것입니다."
 
 #-------------------------------
 # Blog Section
@@ -121,41 +105,31 @@ footer_description: (63092) 제주특별자치도 제주시 한라대학로 38 <
 
 #-------------------------------
 # Footer Navigation Settings
+# Note: Menu titles are now in _i18n/*.yml files (nav section)
+# URLs are kept here as they are structural/non-language-specific
 footer_menu_settings:
   menu_items:
-    - title: "Home"
-      url: "/"
-    - title: "학과소개"
-      url: "/about/"
-    - title: "교수소개"
-      url: "/faculty/"
-    - title: "교과과정"
-      url: "/curriculum/"
-    # - title: "입학"
-    #   url: "/admissions/"
-    - title: "진로"
-      url: "/career/"
-    - title: "학생연구"
-      url: "/projects/"
-    - title: "학교생활안내"
-      url: "/tips/"
-    - title: "정보광장"
-      url: "/posts/"
-    - title: "오시는길"
-      url: "/location/"
-    # - title: "게시판"
-    #   url: "https://chu-ai.imweb.me/"
+    - url: "/"
+    - url: "/about/"
+    - url: "/faculty/"
+    - url: "/curriculum/"
+    # - url: "/admissions/"
+    - url: "/career/"
+    - url: "/projects/"
+    - url: "/tips/"
+    - url: "/posts/"
+    - url: "/location/"
 
 #-------------------------------
 # Contact Settings
+# Note: Language-specific description is now in _i18n/*.yml files (contact section)
 contact:
   email: yj.lee@chu.ac.kr # Add your form_id
-  description: If you have any questions, please feel free to contact us.
 
 #-------------------------------
 # Privacy Policy Settings
+# Note: Language-specific description is now in _i18n/*.yml files (privacy section)
 privacy:
-  description: 개인정보처리방침
   email: yj.lee@chu.ac.kr
   phone: 064-741-6532
   name: 이영준

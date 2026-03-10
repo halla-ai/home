@@ -24,3 +24,42 @@
   width: 1px;
   word-wrap: normal !important;
 }
+
+// Glassmorphism effect
+@mixin glassmorphism($opacity: 0.15, $blur: 16px, $border-opacity: 0.2) {
+  // Fallback background for browsers without backdrop-filter support
+  background: var(--glass-bg-fallback);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  
+  // Enhanced glassmorphism for supporting browsers
+  @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    background: var(--glass-bg);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+  }
+}
+
+// Fade-in-up animation mixin
+@mixin fade-in-up($duration: 0.6s, $delay: 0s, $distance: 30px) {
+  opacity: 0;
+  transform: translateY($distance);
+  animation: fadeInUp $duration ease-out $delay forwards;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY($distance);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
