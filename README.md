@@ -9,7 +9,7 @@ This repository hosts the source code for our department's website, showcasing o
 ## Features
 
 - Responsive design using Jekyll
-- Blog section for latest news and events
+- Blog section for latestadfews and events
 - Curriculum overview
 - Faculty profiles
 - Research highlights
