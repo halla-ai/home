@@ -2,10 +2,10 @@
 layout: post
 title: "인공지능공학과, In-JEJU Challenge 금상 수상"
 description: "인공지능공학과 학생들이 수상 받았다. "
-date: 2025-02-12 15:10:49
+date: 2025-04-04 15:10:49
 tags:
   [
-    competition, idea, award, AI, IoT, education, collaboration
+    competition, idea, award, AI, IoT, Education, Collaboration
   ]
 categories: Education
 giscus_comments: true

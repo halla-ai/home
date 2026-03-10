@@ -2,7 +2,7 @@
 layout: post
 title: "COSS GlobalConnectIoT, 호주에서 IoT의 미래를 만나다"
 description: "첨단분야 혁신융합대학(COSS) IoT 분야 글로벌 현장학습 프로그램… 호주 브리즈번대학 및 협장 프로젝트 수행"
-date: 2026-01-31 18:00:00 +0900
+date: 2026-01-17 18:00:00 +0900
 tags:
   [
     COSS,
