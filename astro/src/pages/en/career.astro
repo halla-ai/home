@@ -1,21 +1,179 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import { getCollection, render } from 'astro:content';
 import { t } from '../../i18n/ui';
 
 const locale = 'en';
-const pages = await getCollection('pages');
-const page = pages.find((p) => p.id === `${locale}/career`) || pages.find((p) => p.id === 'ko/career');
-if (!page) throw new Error('Career page not found');
-const { Content } = await render(page);
+
+const partners = [
+  {
+    name: 'Saltlux',
+    field: 'AI Professor, Agentic RAG, LUXIA LLM',
+    date: '2024.09',
+    period: '5 yrs',
+    desc: 'Joint R&D on AI professor systems and intelligent education platforms, RISE industry-academia collaborative project',
+    logo: '/images/career/partners/saltlux.png',
+    initial: 'SL',
+    color: 'from-blue-600 to-cyan-500',
+  },
+  {
+    name: 'Dassault Systèmes / AINS S&C',
+    field: 'Digital Twin, RISE Innovation Education',
+    date: '2024.11',
+    period: '1 yr',
+    desc: 'Development of industry-linked curriculum in digital transformation, AI, and aerospace; digital twin-based research',
+    logo: '/images/career/partners/dassault.png',
+    initial: '3DS',
+    color: 'from-indigo-600 to-blue-500',
+  },
+  {
+    name: 'Pulse9',
+    field: 'AI VFX, Eternity Content',
+    date: '2024.11',
+    period: '2 yrs',
+    desc: 'AI-based immersive content education, museum Eternity concert hall construction and operation',
+    logo: '/images/career/partners/pulse9.png',
+    initial: 'P9',
+    color: 'from-violet-600 to-purple-500',
+  },
+  {
+    name: 'Amazon Web Services',
+    field: 'Aerospace, AI Education, Cloud',
+    date: '2025.07',
+    period: '5 yrs',
+    desc: 'Jeju regional innovation AI education project support, joint Letter of Support with KAIST and Saltlux',
+    logo: '/images/career/partners/aws.png',
+    initial: 'AWS',
+    color: 'from-amber-500 to-orange-500',
+  },
+  {
+    name: 'Diquest',
+    field: 'Search/NLP, AI Education Platform',
+    date: '2025.04',
+    period: '3 yrs',
+    desc: 'Building a hybrid cloud-based global AI education platform, developing education data management systems',
+    logo: '/images/career/partners/diquest.png',
+    initial: 'DQ',
+    color: 'from-sky-600 to-blue-500',
+  },
+  {
+    name: 'Hanwha Systems',
+    field: 'Space Industry, Satellite Communications',
+    date: '2025.09',
+    period: '5 yrs',
+    desc: 'Jeju space industry talent development, satellite communication technology education, RISE project collaboration',
+    logo: '/images/career/partners/hanwha.png',
+    initial: 'HW',
+    color: 'from-orange-600 to-red-500',
+  },
+  {
+    name: 'Pix4D',
+    field: 'Photogrammetry, Digital Twin',
+    date: '2025.10',
+    period: '-',
+    desc: 'Digital twin education center establishment, photogrammetry-based education program operation',
+    logo: '/images/career/partners/pix4d.png',
+    initial: 'P4D',
+    color: 'from-emerald-600 to-teal-500',
+  },
+];
+
+const employmentCompanies = [
+  { name: 'Samsung', logo: '/images/career/company-samsung.png' },
+  { name: 'LG', logo: '/images/career/company-lg.png' },
+  { name: 'Kakao', logo: '/images/career/company-kakao.png' },
+  { name: 'SKT', logo: '/images/career/company-skt.png' },
+  { name: 'NHN', logo: '/images/career/company-nhn.png' },
+  { name: 'HMC', logo: '/images/career/company-hmc.png' },
+];
 ---
 
 <PageLayout
-  title={t(locale, 'nav.career')}
-  description={page.data.description || ''}
+  title="Industry-Academia Partnerships"
+  description="Developing industry-ready AI professionals through partnerships with leading companies and organizations"
   locale={locale}
 >
-  <article class="prose prose-lg max-w-none">
-    <Content />
-  </article>
+  <!-- Partnership Stats -->
+  <section class="mb-10">
+    <div class="grid grid-cols-3 gap-4">
+      {[
+        { num: '14+', label: 'Industry Partners' },
+        { num: '5+', label: 'Partner Countries' },
+        { num: '₩1.7B+', label: 'RISE Research Funding' },
+      ].map((stat) => (
+        <div class="text-center p-4 rounded-xl bg-stone dark:bg-abyss">
+          <p class="text-2xl md:text-3xl font-extrabold text-accent">{stat.num}</p>
+          <p class="text-xs text-muted dark:text-slate-500 mt-1">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="section-divider mb-10" aria-hidden="true"></div>
+
+  <!-- Key Partnerships — 2-column tiles -->
+  <section class="mb-10">
+    <h2 class="text-xl font-bold text-deep dark:text-white mb-6">Key Industry Partners</h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      {partners.map((p) => (
+        <div class="card-flat overflow-hidden group">
+          <div class="flex items-start gap-4 p-5">
+            {/* Company logo */}
+            <div class="w-14 h-10 flex items-center justify-center shrink-0">
+              <img src={p.logo} alt={p.name} class="max-w-full max-h-full object-contain dark:brightness-0 dark:invert dark:opacity-80" loading="lazy" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="text-sm font-bold text-deep dark:text-white group-hover:text-accent transition-colors truncate">{p.name}</h3>
+                  <p class="text-[11px] text-accent font-medium mt-0.5">{p.field}</p>
+                </div>
+                <span class="text-[10px] text-muted dark:text-slate-500 shrink-0 tabular-nums">{p.date} · {p.period}</span>
+              </div>
+              <p class="text-xs text-muted dark:text-slate-400 mt-2 leading-relaxed line-clamp-2">{p.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="section-divider mb-10" aria-hidden="true"></div>
+
+  <!-- Cooperation Areas -->
+  <section class="mb-10">
+    <h2 class="text-xl font-bold text-deep dark:text-white mb-6">Areas of Cooperation</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {[
+        { title: 'AI Education Platform', desc: 'Joint development of intelligent education platforms with Saltlux and Diquest; 24/7 AI tutoring powered by Agentic RAG', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />` },
+        { title: 'Digital Twin & VFX', desc: 'Digital twin, AI VFX, and immersive content education with Dassault Systèmes, Pulse9, and Pix4D', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />` },
+        { title: 'Aerospace & Drones', desc: 'Space industry talent development and drone education programs with AWS, Hanwha Systems, and EHang', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />` },
+        { title: 'Internships & Field Training', desc: 'Field training and employment-linked programs at major IT companies including Samsung, LG, and Kakao', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />` },
+        { title: 'International Collaboration', desc: 'AI education and research exchange with TIU, ITIC, UIC and other overseas universities; KOICA ODA projects', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />` },
+        { title: 'Design Thinking', desc: 'RISE innovation education with Stanford d.school, creative problem-solving education', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />` },
+      ].map((area) => (
+        <div class="card-flat p-5">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 dark:bg-accent/15 flex items-center justify-center mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={area.icon} />
+          </div>
+          <h3 class="text-sm font-bold text-deep dark:text-white mb-1.5">{area.title}</h3>
+          <p class="text-xs text-muted dark:text-slate-400 leading-relaxed">{area.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="section-divider mb-10" aria-hidden="true"></div>
+
+  <!-- Employment Companies -->
+  <section>
+    <h2 class="text-xl font-bold text-deep dark:text-white mb-6">Major Employers</h2>
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+      {employmentCompanies.map((c) => (
+        <div class="flex items-center justify-center p-4 rounded-xl bg-stone/50 dark:bg-white/[0.04] border border-border dark:border-white/[0.08]">
+          <img src={c.logo} alt={c.name} class="h-8 w-auto object-contain dark:brightness-150" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </section>
 </PageLayout>
