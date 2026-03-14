@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/home/Hero.astro';
+import Pillars from '../../components/home/Pillars.astro';
+import LatestPosts from '../../components/home/LatestPosts.astro';
+import Testimonials from '../../components/home/Testimonials.astro';
+import TagCloud from '../../components/home/TagCloud.astro';
+import { t } from '../../i18n/ui';
+
+const locale = 'en';
+---
+
+<BaseLayout
+  title={t(locale, 'site.title')}
+  description={t(locale, 'site.description')}
+  locale={locale}
+  heroPage={true}
+>
+  <Hero locale={locale} />
+  <Pillars locale={locale} />
+  <div class="section-divider" aria-hidden="true"></div>
+  <LatestPosts locale={locale} />
+  <div class="section-divider" aria-hidden="true"></div>
+  <Testimonials locale={locale} />
+  <div class="section-divider" aria-hidden="true"></div>
+  <TagCloud locale={locale} />
+</BaseLayout>

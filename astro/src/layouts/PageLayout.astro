@@ -1,0 +1,53 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/common/Breadcrumb.astro';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  locale?: Locale;
+  heroClass?: string;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
+}
+
+const {
+  title,
+  description,
+  image,
+  locale = 'ko',
+  heroClass = '',
+  breadcrumbs,
+} = Astro.props;
+
+const homeCrumb = { label: t(locale, 'common.breadcrumb_home'), href: locale === 'en' ? '/en/' : '/' };
+const crumbs = breadcrumbs
+  ? [homeCrumb, ...breadcrumbs]
+  : [homeCrumb, { label: title }];
+---
+
+<BaseLayout title={title} description={description} image={image} locale={locale}>
+  <!-- Page hero (dark navy) -->
+  <section class={`page-hero py-20 lg:py-28 ${heroClass}`}>
+    <div class="container relative z-10">
+      <Breadcrumb items={crumbs} />
+      <h1 class="text-3xl lg:text-[2.75rem] font-bold mt-4 leading-tight">
+        {title}
+      </h1>
+      {
+        description && (
+          <p class="mt-5 max-w-2xl text-base lg:text-lg leading-relaxed">
+            {description}
+          </p>
+        )
+      }
+      <div class="mt-7 w-14 h-[3px] rounded-full bg-gradient-to-r from-accent to-cyan-400" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Page content -->
+  <div class="container py-20 lg:py-32">
+    <slot />
+  </div>
+</BaseLayout>

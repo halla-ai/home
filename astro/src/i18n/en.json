@@ -1,0 +1,82 @@
+{
+  "site": {
+    "title": "Department of Artificial Intelligence, Cheju Halla University",
+    "description": "Nurturing AI innovators who shape the future with technology"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "faculty": "Faculty",
+    "curriculum": "Curriculum",
+    "research": "Research",
+    "posts": "News",
+    "career": "Partnerships",
+    "admissions": "Admissions",
+    "tips": "Campus Life",
+    "contact": "Contact",
+    "location": "Location"
+  },
+  "hero": {
+    "label": "Cheju Halla University",
+    "title": "Artificial Intelligence",
+    "subtitle": "인공지능학과",
+    "description": "Nurturing tomorrow's AI innovators",
+    "cta_about": "About Us",
+    "cta_admissions": "Admissions"
+  },
+  "stats": {
+    "faculty": "Faculty",
+    "faculty_unit": "",
+    "partners": "Industry Partners",
+    "partners_unit": "+",
+    "international": "Global Partners",
+    "international_unit": " countries",
+    "employment": "Employment"
+  },
+  "pillars": {
+    "education_title": "Education",
+    "education_desc": "From AI fundamentals to hands-on projects, our curriculum prepares the next generation of AI professionals.",
+    "research_title": "Research",
+    "research_desc": "Advancing the frontiers of NLP, computer vision, generative AI, and more.",
+    "industry_title": "Industry",
+    "industry_desc": "Partnerships with Samsung, LG, Kakao, and other leading companies bridge academia and practice."
+  },
+  "sections": {
+    "projects_title": "Featured Research",
+    "blog_title": "Latest News",
+    "tags_title": "Explore Topics",
+    "testimonials_title": "Student Stories",
+    "view_all": "View All"
+  },
+  "footer": {
+    "address": "38 Halladaehak-ro, Jeju-si, Jeju Special Self-Governing Province, 63092",
+    "tel": "Tel. +82-64-741-7575",
+    "copyright": "Dept. of AI, Cheju Halla University",
+    "privacy": "Privacy Policy",
+    "back_to_top": "Back to top",
+    "dark_mode": "Dark Mode",
+    "light_mode": "Light Mode"
+  },
+  "common": {
+    "post": "post",
+    "posts": "posts",
+    "min_read": "min read",
+    "share": "Share",
+    "prev": "Previous",
+    "next": "Next",
+    "tags": "Tags",
+    "all": "All",
+    "more": "More",
+    "read_more": "Read More",
+    "breadcrumb_home": "Home"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Get in touch with the Department of AI",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send"
+  }
+}

@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+import SectionHeader from '../common/SectionHeader.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const allPosts = await getCollection('posts');
+const localePosts = allPosts.filter((p) => p.id.startsWith(`${locale}/`));
+
+const tagCounts = new Map<string, number>();
+localePosts.forEach((post) => {
+  post.data.tags.forEach((tag: string) => {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  });
+});
+
+const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+const basePath = locale === 'ko' ? '/tags' : '/en/tags';
+const allTagsHref = locale === 'ko' ? '/tags/' : '/en/tags/';
+---
+
+<section class="py-8 md:py-10 bg-stone dark:bg-abyss">
+  <div class="container">
+    <SectionHeader
+      title={t(locale, 'sections.tags_title')}
+      viewAllHref={allTagsHref}
+      viewAllLabel={t(locale, 'sections.view_all')}
+    />
+
+    <div class="mt-2 flex flex-wrap justify-center gap-2.5 fade-up">
+      {sortedTags.map(([tag, count]) => (
+        <a
+          href={`${basePath}/${tag}/`}
+          class="inline-flex items-center gap-1.5 rounded-full border border-border dark:border-white/10 bg-white dark:bg-white/[0.04] px-4 py-2 text-sm font-medium text-text-navy dark:text-slate-300 transition-all duration-200 hover:border-accent hover:text-accent hover:shadow-sm"
+        >
+          {tag}
+          <span class="text-[11px] text-muted dark:text-slate-500">({count})</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { t } from '../i18n/ui';
+
+const locale = 'ko';
+const pages = await getCollection('pages');
+const page = pages.find((p) => p.id === `${locale}/location`);
+if (!page) throw new Error('Location page not found');
+const { Content } = await render(page);
+---
+
+<PageLayout
+  title={t(locale, 'nav.location')}
+  description="제주한라대학교 캠퍼스 안내"
+  locale={locale}
+>
+  <article class="prose prose-lg max-w-none">
+    <Content />
+  </article>
+</PageLayout>
+
+<style>
+  iframe {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+</style>

@@ -3,11 +3,13 @@
 Icon?
 ~$*
 .vscode/
+.idea/
 **/.claude/settings.local.json
 
 # === OMC / Claude Code State ===
 .omc/
 .omx/
+.claude
 
 # === Obsidian ===
 .obsidian/workspace.json
@@ -26,11 +28,25 @@ site/wrappers
 site/specifications
 site/environment
 
+# === Astro ===
+dist/
+.astro/
+
+# === Dependencies & Logs ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === Environment ===
+.env
+.env.production
+
 # === Archives & Temp ===
 _Archived Items
 TEMP/
 *.backup/
-node_modules/
 
 # === Binary & Media (text-only policy) ===
 *.zip
@@ -71,6 +87,7 @@ node_modules/
 *.gslides
 *.gform
 *.html
+*.ico
 
 # === Data & ML Artifacts ===
 *.parquet
@@ -93,3 +110,12 @@ pytest.xml
 **/shared/
 **/_shared/
 **/_external/
+
+# ============================================
+# Exceptions: Astro site assets (must be tracked)
+# ============================================
+!astro/public/**/*.png
+!astro/public/**/*.jpg
+!astro/public/**/*.jpeg
+!astro/public/**/*.ico
+!astro/public/**/*.html

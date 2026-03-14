@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const allPosts = await getCollection('posts');
+const posts = allPosts
+  .filter((p) => p.id.startsWith(`${locale}/`) && !p.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 6);
+
+const prefix = locale === 'en' ? '/en' : '';
+
+function formatDate(date: Date, loc: string): string {
+  return date.toLocaleDateString(loc === 'ko' ? 'ko-KR' : 'en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+---
+
+<section class="bg-stone dark:bg-abyss py-8 md:py-10">
+  <div class="container">
+    <div class="flex items-end justify-between mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-deep dark:text-white"><span class="text-gradient">
+        {t(locale, 'sections.blog_title')}
+      </span></h2>
+      <a
+        href={`${prefix}/posts/`}
+        class="text-sm font-medium text-accent hover:text-accent-hover flex items-center gap-1.5 transition-colors duration-200 group"
+      >
+        {t(locale, 'sections.view_all')}
+        <svg
+          class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => {
+        const slug = post.id.replace(`${locale}/`, '');
+        const href = `${prefix}/posts/${slug}/`;
+        return (
+          <a href={href} class="group block">
+            {post.data.image && (
+              <div class="aspect-[16/10] overflow-hidden rounded-xl bg-border dark:bg-void mb-4">
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <time class="text-xs text-muted dark:text-slate-500" datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date, locale)}
+            </time>
+            <h3 class="mt-2 text-base font-semibold leading-snug text-deep dark:text-white group-hover:text-accent transition-colors duration-200">
+              {post.data.title}
+            </h3>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

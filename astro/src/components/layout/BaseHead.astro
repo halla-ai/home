@@ -1,0 +1,86 @@
+---
+import '../../assets/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  locale?: string;
+}
+
+const {
+  title,
+  description,
+  image = '/images/og-default.jpg',
+  locale = 'ko',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
+const alternateLocale = locale === 'ko' ? 'en' : 'ko';
+const alternatePath =
+  locale === 'ko'
+    ? `/en${Astro.url.pathname}`
+    : Astro.url.pathname.replace(/^\/en/, '') || '/';
+const alternateURL = new URL(alternatePath, Astro.site);
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Google Fonts: Outfit (display) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Pretendard Variable Font (Korean body) -->
+<link
+  rel="stylesheet"
+  as="style"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+/>
+
+<!-- Primary Meta -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale:alternate" content={alternateLocale === 'ko' ? 'ko_KR' : 'en_US'} />
+<meta property="og:site_name" content={locale === 'en' ? 'Cheju Halla University - Artificial Intelligence' : '제주한라대학교 인공지능학과'} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+<!-- Hreflang alternates -->
+<link rel="alternate" hreflang="ko" href={locale === 'ko' ? canonicalURL : new URL(alternatePath, Astro.site)} />
+<link rel="alternate" hreflang="en" href={locale === 'en' ? canonicalURL : alternateURL} />
+<link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace(/^\/en/, '') || '/', Astro.site)} />
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QP4FVB9F1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args: unknown[]) { window.dataLayer.push(args); }
+  gtag('js', new Date());
+  gtag('config', 'G-QP4FVB9F1X');
+</script>

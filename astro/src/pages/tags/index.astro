@@ -1,0 +1,36 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/ui';
+
+const locale = 'ko';
+const allPosts = await getCollection('posts');
+const localePosts = allPosts.filter((p) => p.id.startsWith(`${locale}/`));
+
+const tagCounts = new Map<string, number>();
+localePosts.forEach((post) => {
+  post.data.tags.forEach((tag: string) => {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  });
+});
+
+const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
+---
+
+<PageLayout
+  title={t(locale, 'common.tags')}
+  description="주제별 포스트 탐색"
+  locale={locale}
+>
+  <div class="flex flex-wrap gap-3">
+    {sortedTags.map(([tag, count]) => (
+      <a
+        href={`/tags/${tag}/`}
+        class="inline-flex items-center gap-2 rounded-lg border border-border dark:border-white/[0.08] bg-white dark:bg-abyss px-5 py-3 text-sm font-medium text-deep dark:text-white transition hover:border-accent hover:bg-accent-light"
+      >
+        {tag}
+        <span class="rounded-full bg-surface dark:bg-void/50 px-2 py-0.5 text-xs text-muted">{count}</span>
+      </a>
+    ))}
+  </div>
+</PageLayout>

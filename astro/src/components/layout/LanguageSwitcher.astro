@@ -1,0 +1,39 @@
+---
+import { getAlternateLocalePath, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const alternateLocale: Locale = locale === 'ko' ? 'en' : 'ko';
+const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
+---
+
+<div class="lang-switch flex items-center text-sm font-medium" role="navigation" aria-label="Language switcher">
+  <a
+    href={locale === 'ko' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'ko')}
+    class={`px-2.5 py-1 rounded-l-md border transition-colors duration-150 ${
+      locale === 'ko'
+        ? 'bg-accent text-white border-accent'
+        : 'bg-white dark:bg-white/[0.06] text-muted border-border dark:border-white/15 hover:text-accent'
+    }`}
+    aria-label="한국어"
+    lang="ko"
+  >
+    KO
+  </a>
+  <a
+    href={locale === 'en' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'en')}
+    class={`px-2.5 py-1 rounded-r-md border-t border-b border-r transition-colors duration-150 ${
+      locale === 'en'
+        ? 'bg-accent text-white border-accent'
+        : 'bg-white dark:bg-white/[0.06] text-muted border-border dark:border-white/15 hover:text-accent'
+    }`}
+    aria-label="English"
+    lang="en"
+  >
+    EN
+  </a>
+</div>

@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { t } from '../../i18n/ui';
+
+const locale = 'en';
+const pages = await getCollection('pages');
+const page = pages.find((p) => p.id === `${locale}/privacy`) || pages.find((p) => p.id === 'ko/privacy');
+if (!page) throw new Error('Privacy page not found');
+const { Content } = await render(page);
+---
+
+<PageLayout
+  title={t(locale, 'footer.privacy')}
+  description="Jeju Halla University Department of AI Privacy Policy"
+  locale={locale}
+>
+  <article class="prose max-w-none">
+    <Content />
+  </article>
+</PageLayout>

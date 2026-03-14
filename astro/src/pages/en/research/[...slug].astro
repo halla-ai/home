@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from 'astro:content';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+export async function getStaticPaths() {
+  const locale = 'en';
+  const projects = await getCollection('projects');
+  let filtered = projects
+    .filter((p) => p.id.startsWith(`${locale}/`))
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+  if (filtered.length === 0) {
+    filtered = projects
+      .filter((p) => p.id.startsWith('ko/'))
+      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  }
+
+  return filtered.map((project, i) => {
+    const slug = project.id.replace(/^(en|ko)\//, '');
+    const prev = filtered[i + 1]
+      ? { title: filtered[i + 1].data.title, slug: filtered[i + 1].id.replace(/^(en|ko)\//, '') }
+      : null;
+    const next = filtered[i - 1]
+      ? { title: filtered[i - 1].data.title, slug: filtered[i - 1].id.replace(/^(en|ko)\//, '') }
+      : null;
+
+    return {
+      params: { slug },
+      props: { project, locale, prev, next },
+    };
+  });
+}
+
+const { project, locale, prev, next } = Astro.props;
+const { Content } = await render(project);
+
+const toolsList = project.data.tools
+  ? project.data.tools.split(',').map((t: string) => t.trim()).filter(Boolean)
+  : [];
+---
+
+<ProjectLayout
+  title={project.data.title}
+  description={project.data.summary}
+  subtitle={project.data.subtitle}
+  tools={toolsList}
+  image={project.data.image}
+  locale={locale}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</ProjectLayout>

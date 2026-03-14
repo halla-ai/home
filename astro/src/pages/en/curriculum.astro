@@ -1,0 +1,186 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { t } from '../../i18n/ui';
+
+const locale = 'en';
+
+const tracks = [
+  {
+    id: 'ai-core',
+    name: 'AI Core',
+    color: 'accent',
+    goal: 'AI Engineer / Developer',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />`,
+    semesters: [
+      { sem: '1-1', courses: ['AI & Society'] },
+      { sem: '1-2', courses: ['Intro to AI', 'Language Models & NLP'] },
+      { sem: '2-1', courses: ['Machine Learning', 'Computer Vision', 'Signals & Systems'] },
+      { sem: '2-2', courses: ['Pattern Recognition', 'Speech Recognition', 'Object Tracking'] },
+      { sem: '3-1', courses: ['Deep Learning', 'Algorithms', 'Multimodal Generative AI'] },
+      { sem: '3-2', courses: ['DL for NLP'] },
+      { sem: '4-2', courses: ['Next-Gen AI'] },
+    ],
+  },
+  {
+    id: 'sw-system',
+    name: 'SW & Systems',
+    color: 'emerald',
+    goal: 'Software & Systems Specialist',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />`,
+    semesters: [
+      { sem: '1-1', courses: ['Info Security', 'Python Coding'] },
+      { sem: '1-2', courses: ['Server & Network Security'] },
+      { sem: '2-1', courses: ['Computational Science', 'OS'] },
+      { sem: '2-2', courses: ['AI Security', 'Data Structures'] },
+      { sem: '3-2', courses: ['Cloud Computing', 'Computer Architecture'] },
+      { sem: '4-1', courses: ['ML Systems'] },
+    ],
+  },
+  {
+    id: 'data',
+    name: 'Data Analysis',
+    color: 'ember',
+    goal: 'Data Analysis Specialist',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />`,
+    semesters: [
+      { sem: '1-1', courses: ['AI Mathematics'] },
+      { sem: '1-2', courses: ['Probability & Statistics', 'Big Data Fundamentals'] },
+      { sem: '2-1', courses: ['R Programming'] },
+      { sem: '3-2', courses: ['Intelligent Systems'] },
+    ],
+  },
+  {
+    id: 'ai-app',
+    name: 'AI Applications',
+    color: 'cyan',
+    goal: 'AI Robotics / Applied Tech Developer',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />`,
+    semesters: [
+      { sem: '2-2', courses: ['Robotics Fundamentals'] },
+      { sem: '3-1', courses: ['Collaborative Robots'] },
+      { sem: '3-2', courses: ['Game Programming', 'Intelligent HCI & UX'] },
+      { sem: '4-1', courses: ['3D Engine', 'Personalized AI Signal Processing'] },
+    ],
+  },
+  {
+    id: 'capstone',
+    name: 'Capstone',
+    color: 'deep',
+    goal: 'Practical Skills',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384-3.08A1.5 1.5 0 005.25 13.5V18l6.17-2.83zM11.42 15.17L18 12m-6.58 3.17L18 18m0-6l5.25-3m-5.25 3v5.25M18 12l-6.58-3.17m0 0L5.25 6m6.17 2.83L18 6" />`,
+    semesters: [
+      { sem: '3-1', courses: ['Capstone Design 1'] },
+      { sem: '3-2', courses: ['Capstone Design 2'] },
+      { sem: '4-1', courses: ['Capstone Design 3'] },
+      { sem: '4-2', courses: ['Capstone Design 4'] },
+    ],
+  },
+];
+
+/* Refined monochrome — muted, sophisticated tones */
+const colorMap: Record<string, { bg: string; header: string; border: string; text: string; badge: string; iconBg: string }> = {
+  accent:  { bg: 'bg-slate-100/70 dark:bg-blue-950/40', header: 'bg-gradient-to-r from-slate-200/50 to-slate-100/30 dark:from-blue-900/30 dark:to-blue-950/20', border: 'border-slate-300/50 dark:border-blue-700/30', text: 'text-blue-800 dark:text-blue-300', badge: 'bg-blue-900/8 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 ring-1 ring-blue-800/10 dark:ring-blue-700/20', iconBg: 'bg-blue-800 dark:bg-blue-500' },
+  emerald: { bg: 'bg-stone-100/70 dark:bg-slate-800/30', header: 'bg-gradient-to-r from-stone-200/50 to-stone-100/30 dark:from-slate-800/30 dark:to-slate-900/20', border: 'border-stone-300/50 dark:border-slate-600/30', text: 'text-slate-700 dark:text-slate-300', badge: 'bg-slate-700/8 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 ring-1 ring-slate-700/10 dark:ring-slate-600/20', iconBg: 'bg-slate-700 dark:bg-slate-400' },
+  ember:   { bg: 'bg-gray-100/70 dark:bg-sky-950/30', header: 'bg-gradient-to-r from-gray-200/50 to-gray-100/30 dark:from-sky-900/25 dark:to-sky-950/15', border: 'border-gray-300/50 dark:border-sky-700/25', text: 'text-sky-800 dark:text-sky-300', badge: 'bg-sky-900/8 dark:bg-sky-900/35 text-sky-800 dark:text-sky-300 ring-1 ring-sky-800/10 dark:ring-sky-700/20', iconBg: 'bg-sky-700 dark:bg-sky-400' },
+  cyan:    { bg: 'bg-zinc-100/70 dark:bg-cyan-950/30', header: 'bg-gradient-to-r from-zinc-200/50 to-zinc-100/30 dark:from-cyan-900/25 dark:to-cyan-950/15', border: 'border-zinc-300/50 dark:border-cyan-700/25', text: 'text-cyan-800 dark:text-cyan-300', badge: 'bg-cyan-900/8 dark:bg-cyan-900/35 text-cyan-800 dark:text-cyan-300 ring-1 ring-cyan-800/10 dark:ring-cyan-700/20', iconBg: 'bg-cyan-700 dark:bg-cyan-400' },
+  deep:    { bg: 'bg-neutral-100/70 dark:bg-indigo-950/30', header: 'bg-gradient-to-r from-neutral-200/50 to-neutral-100/30 dark:from-indigo-900/25 dark:to-indigo-950/15', border: 'border-neutral-300/50 dark:border-indigo-700/25', text: 'text-indigo-800 dark:text-indigo-300', badge: 'bg-indigo-900/8 dark:bg-indigo-900/35 text-indigo-800 dark:text-indigo-300 ring-1 ring-indigo-800/10 dark:ring-indigo-700/20', iconBg: 'bg-indigo-700 dark:bg-indigo-400' },
+};
+---
+
+<PageLayout
+  title={t(locale, 'nav.curriculum')}
+  description="Systematic curriculum for AI professional development"
+  locale={locale}
+>
+  <section class="mb-14">
+    <h2 class="text-xl font-bold text-deep dark:text-white mb-2">Education Objectives</h2>
+    <p class="text-muted dark:text-slate-400 leading-relaxed mb-8">
+      Our department trains comprehensive AI professionals through 5 specialized tracks, covering core AI technology, applications, systems, and data analysis.
+    </p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {tracks.map((track) => {
+        const c = colorMap[track.color];
+        return (
+          <div class={`rounded-xl ${c.bg} border ${c.border} p-5 text-center transition-all duration-300 hover:shadow-md`}>
+            <div class={`w-11 h-11 mx-auto rounded-xl ${c.iconBg} flex items-center justify-center mb-4 shadow-sm`}>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={track.icon} />
+            </div>
+            <h3 class={`text-sm font-bold ${c.text}`}>{track.name}</h3>
+            <p class="text-[11px] text-muted dark:text-slate-500 mt-1.5 leading-snug">{track.goal}</p>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <div class="section-divider mb-14" aria-hidden="true"></div>
+
+  <section class="space-y-6">
+    <h2 class="text-xl font-bold text-deep dark:text-white mb-4">Curriculum Roadmap</h2>
+
+    {tracks.map((track) => {
+      const c = colorMap[track.color];
+      return (
+        <div class="rounded-xl border border-border dark:border-white/[0.08] overflow-hidden bg-white dark:bg-abyss shadow-sm">
+          <div class={`flex items-center gap-3 px-5 py-3.5 ${c.header} border-b ${c.border}`}>
+            <div class={`w-9 h-9 rounded-lg ${c.iconBg} flex items-center justify-center shadow-sm`}>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={track.icon} />
+            </div>
+            <div>
+              <h3 class={`text-sm font-bold ${c.text}`}>{track.name}</h3>
+              <p class="text-[11px] text-muted dark:text-slate-500">{track.goal}</p>
+            </div>
+          </div>
+          <div class="px-5 py-4 flex flex-wrap gap-3 items-start">
+            {track.semesters.map((sem, i) => (
+              <>
+                {i > 0 && (
+                  <div class="flex items-center self-center hidden sm:flex">
+                    <div class={`w-6 h-px ${c.border}`}></div>
+                    <svg class={`w-3 h-3 -ml-0.5 ${c.text} opacity-40`} fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                )}
+                <div class="flex flex-col gap-1.5">
+                  <span class={`text-[10px] font-bold ${c.text} uppercase tracking-wider`}>{sem.sem}</span>
+                  <div class="flex flex-wrap gap-1.5">
+                    {sem.courses.map((course) => (
+                      <span class={`inline-block rounded-lg px-2.5 py-1 text-xs font-semibold ${c.badge}`}>
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  <div class="section-divider my-14" aria-hidden="true"></div>
+
+  <section>
+    <h2 class="text-xl font-bold text-deep dark:text-white mb-6">Curriculum Highlights</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {[
+        { title: 'Progressive Learning', desc: 'Foundation courses in years 1-2, advanced and applied courses in years 3-4', num: '01' },
+        { title: '5 Specialized Tracks', desc: 'Tailored professional development through specialized learning paths', num: '02' },
+        { title: 'Hands-on Projects', desc: '4 semesters of Capstone Design + industry partnership projects', num: '03' },
+        { title: 'Cutting-edge Tech', desc: 'Multimodal Generative AI, Next-Gen AI, and latest industry trends', num: '04' },
+      ].map((item) => (
+        <div class="card-flat p-5 group">
+          <div class="flex items-start gap-4">
+            <span class="text-2xl font-black text-accent/15 dark:text-accent/20 select-none">{item.num}</span>
+            <div>
+              <h3 class="text-sm font-bold text-deep dark:text-white mb-1.5 group-hover:text-accent transition-colors">{item.title}</h3>
+              <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</PageLayout>

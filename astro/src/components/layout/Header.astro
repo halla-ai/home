@@ -1,0 +1,133 @@
+---
+import { t, type Locale } from '../../i18n/ui';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import MobileMenu from './MobileMenu.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const prefix = locale === 'en' ? '/en' : '';
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { key: 'about', href: `${prefix}/about/` },
+  { key: 'faculty', href: `${prefix}/faculty/` },
+  { key: 'curriculum', href: `${prefix}/curriculum/` },
+  { key: 'research', href: `${prefix}/research/` },
+  { key: 'posts', href: `${prefix}/posts/` },
+  { key: 'career', href: `${prefix}/career/` },
+  { key: 'admissions', href: `${prefix}/admissions/` },
+];
+
+function isActive(href: string): boolean {
+  if (href === `${prefix}/` || href === '/') {
+    return currentPath === href;
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site-header header-solid">
+  <div class="container">
+    <div class="flex items-center justify-between h-16 gap-4">
+      <!-- Logo -->
+      <a
+        href={locale === 'ko' ? '/' : '/en/'}
+        class="flex items-center gap-2.5 shrink-0 group"
+        aria-label={t(locale, 'site.title')}
+      >
+        <img
+          src="/images/logo/logo-icon.svg"
+          alt={locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}
+          class="logo-color h-10 w-auto"
+        />
+        <img
+          src="/images/logo/logo-icon-white.svg"
+          alt={locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}
+          class="logo-white h-10 w-auto"
+        />
+        <div class="hidden sm:block leading-tight pl-2.5">
+          <p class="nav-brand-text text-sm font-bold transition-colors duration-300">
+            {locale === 'en' ? 'Artificial Intelligence' : '인공지능학과'}
+          </p>
+          <p class="nav-brand-sub text-[10px] font-medium tracking-wide transition-colors duration-300">
+            {locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}
+          </p>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav
+        class="hidden lg:flex items-center gap-1 flex-1 justify-center"
+        aria-label="Primary navigation"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`nav-link px-3 py-2 text-[13px] font-medium transition-colors duration-200`}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {t(locale, `nav.${item.key}`)}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- Right: language switcher + mobile hamburger -->
+      <div class="flex items-center gap-2 shrink-0">
+        <div class="hidden sm:block">
+          <LanguageSwitcher locale={locale} />
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          id="mobile-open"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="hamburger-btn lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg transition-colors duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<MobileMenu locale={locale} />
+
+<script is:inline>
+  (function () {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+
+    var isHeroPage = document.body.classList.contains('has-hero');
+
+    function updateHeader() {
+      if (isHeroPage && window.scrollY < 80) {
+        header.classList.remove('header-solid');
+        header.classList.add('header-transparent');
+      } else {
+        header.classList.remove('header-transparent');
+        header.classList.add('header-solid');
+      }
+    }
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  })();
+</script>
