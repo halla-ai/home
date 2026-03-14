@@ -1,0 +1,85 @@
+---
+import { t } from '../i18n/ui';
+
+interface Props {
+  page: {
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string | undefined;
+      next: string | undefined;
+      current: string;
+    };
+  };
+  locale: 'ko' | 'en';
+}
+
+const { page, locale } = Astro.props;
+const showPagination = page.lastPage > 1;
+const pages = Array.from({ length: page.lastPage }, (_, i) => i + 1);
+const basePath = locale === 'en' ? '/en/posts' : '/posts';
+---
+
+{showPagination && (
+  <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+    {page.url.prev ? (
+      <a
+        href={page.url.prev}
+        class="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-muted hover:text-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-colors"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        {t(locale, 'common.prev')}
+      </a>
+    ) : (
+      <span class="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-border dark:text-white/20 cursor-not-allowed">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        {t(locale, 'common.prev')}
+      </span>
+    )}
+
+    <div class="flex items-center gap-1">
+      {pages.map((num) => {
+        const href = num === 1 ? `${basePath}/` : `${basePath}/${num}/`;
+        const isCurrent = num === page.currentPage;
+        return isCurrent ? (
+          <span
+            class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white"
+            aria-current="page"
+          >
+            {num}
+          </span>
+        ) : (
+          <a
+            href={href}
+            class="flex h-9 w-9 items-center justify-center rounded-lg text-sm font-medium text-muted hover:text-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-colors"
+          >
+            {num}
+          </a>
+        );
+      })}
+    </div>
+
+    {page.url.next ? (
+      <a
+        href={page.url.next}
+        class="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-muted hover:text-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-colors"
+      >
+        {t(locale, 'common.next')}
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    ) : (
+      <span class="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-border dark:text-white/20 cursor-not-allowed">
+        {t(locale, 'common.next')}
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </span>
+    )}
+  </nav>
+)}

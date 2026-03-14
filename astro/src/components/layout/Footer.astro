@@ -1,0 +1,177 @@
+---
+import { t, getAlternateLocalePath, type Locale } from '../../i18n/ui';
+import ThemeToggle from '../ui/ThemeToggle.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = locale === 'en' ? '/en' : '';
+const currentYear = new Date().getFullYear();
+
+const navLinks = [
+  { key: 'about', href: `${prefix}/about/` },
+  { key: 'faculty', href: `${prefix}/faculty/` },
+  { key: 'curriculum', href: `${prefix}/curriculum/` },
+  { key: 'research', href: `${prefix}/research/` },
+  { key: 'posts', href: `${prefix}/posts/` },
+  { key: 'career', href: `${prefix}/career/` },
+  { key: 'admissions', href: `${prefix}/admissions/` },
+  { key: 'tips', href: `${prefix}/tips/` },
+  { key: 'contact', href: `${prefix}/contact/` },
+  { key: 'location', href: `${prefix}/location/` },
+];
+
+const alternateLocale: Locale = locale === 'ko' ? 'en' : 'ko';
+const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
+---
+
+<footer class="bg-abyss text-slate-400">
+  <!-- Gradient divider -->
+  <div class="section-divider" aria-hidden="true"></div>
+  <div class="container py-6 lg:py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+      <!-- Left: logo + contact info + social -->
+      <div class="space-y-6">
+        <a
+          href={locale === 'ko' ? '/' : '/en/'}
+          class="inline-flex items-center gap-3 group"
+          aria-label={t(locale, 'site.title')}
+        >
+          <img
+            src="/images/logo/logo-icon-white.svg"
+            alt={locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}
+            class="h-11 w-auto"
+          />
+          <div class="leading-tight pl-3">
+            <p class="text-white font-bold text-sm">{locale === 'en' ? 'Artificial Intelligence' : '인공지능학과'}</p>
+            <p class="text-slate-500 text-[10px] font-medium tracking-wide">{locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}</p>
+          </div>
+        </a>
+
+        <address class="not-italic text-sm text-slate-500 space-y-1.5 leading-relaxed">
+          <p>{t(locale, 'footer.address')}</p>
+          <p>{t(locale, 'footer.tel')}</p>
+        </address>
+
+        <!-- Social links -->
+        <div class="flex items-center gap-2.5" aria-label="Social links">
+          <!-- University website -->
+          <a
+            href="https://www.chu.ac.kr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-accent hover:text-white transition-all duration-200"
+            aria-label={locale === 'en' ? 'Cheju Halla University website' : '제주한라대학교 홈페이지'}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a
+            href="https://www.youtube.com/@hallauniv"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-red-600 hover:text-white transition-all duration-200"
+            aria-label="YouTube"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z" />
+            </svg>
+          </a>
+
+          <!-- KakaoTalk -->
+          <a
+            href="https://open.kakao.com/o/hallauniv-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-yellow-400 hover:text-yellow-900 transition-all duration-200"
+            aria-label="KakaoTalk"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 5.804 2 10.5c0 3.044 1.94 5.71 4.87 7.23l-.99 3.63a.3.3 0 0 0 .44.33L10.7 19.2A11.6 11.6 0 0 0 12 19c5.523 0 10-3.804 10-8.5S17.523 2 12 2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: nav grid -->
+      <nav aria-label="Footer navigation">
+        <ul class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
+          {
+            navLinks.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-slate-500 hover:text-white transition-colors duration-200"
+                >
+                  {t(locale, `nav.${item.key}`)}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Copyright bar -->
+  <div class="bg-void border-t border-white/[0.06] mt-8 lg:mt-10">
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-between gap-3 py-5 text-xs text-slate-600">
+        <p>
+          &copy; {currentYear}
+          {' '}
+          {t(locale, 'footer.copyright')}. All rights reserved.
+        </p>
+
+        <div class="flex items-center gap-3">
+          <button
+            id="back-to-top"
+            aria-label={t(locale, 'footer.back_to_top')}
+            class="text-slate-600 hover:text-white transition-colors duration-200 flex items-center gap-1"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+            {t(locale, 'footer.back_to_top')}
+          </button>
+
+          <span class="text-white/10" aria-hidden="true">|</span>
+
+          <a
+            href={`${prefix}/privacy/`}
+            class="hover:text-white transition-colors duration-200"
+          >
+            {t(locale, 'footer.privacy')}
+          </a>
+
+          <span class="text-white/10" aria-hidden="true">|</span>
+
+          <a
+            href={alternatePath}
+            class="hover:text-white transition-colors duration-200"
+            lang={alternateLocale}
+          >
+            {alternateLocale === 'en' ? 'EN' : 'KO'}
+          </a>
+
+          <span class="text-white/10" aria-hidden="true">|</span>
+
+          <ThemeToggle class="text-slate-600 hover:text-white! w-7 h-7" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('back-to-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

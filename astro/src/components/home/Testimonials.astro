@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+import SectionHeader from '../common/SectionHeader.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const allTestimonials = await getCollection('testimonials');
+const testimonials = allTestimonials
+  .filter((t) => t.id.startsWith(`${locale}/`))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="relative bg-white dark:bg-void py-8 md:py-10 overflow-hidden">
+  <!-- Subtle background decoration (dark only) -->
+  <div class="absolute inset-0 pointer-events-none hidden dark:block" aria-hidden="true">
+    <div
+      class="absolute top-[10%] right-[-5%] w-[400px] h-[400px] rounded-full opacity-20"
+      style="background: radial-gradient(circle, rgba(14, 165, 233, 0.2), transparent 70%);"
+    ></div>
+  </div>
+
+  <div class="container relative z-10">
+    <div class="mb-10 fade-up">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-deep dark:text-white">
+        {t(locale, 'sections.testimonials_title')}
+      </h2>
+      <div class="mt-3 w-10 h-[3px] rounded-full bg-accent" aria-hidden="true"></div>
+    </div>
+
+    <div class="mt-2 grid gap-5 md:grid-cols-3">
+      {testimonials.map((item, i) => (
+        <div class={`relative card-flat p-7 fade-up fade-up-d${i + 1}`}>
+          {/* Decorative quote mark */}
+          <svg
+            class="absolute top-5 right-6 w-10 h-10 text-accent/8 dark:text-accent/10"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
+          </svg>
+
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-accent/15 dark:ring-accent/20 shrink-0">
+              <img
+                src={item.data.photo}
+                alt={item.data.name}
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-deep dark:text-white">{item.data.name}</h3>
+              <p class="text-sm text-accent">{item.data.designation}</p>
+            </div>
+          </div>
+
+          <p class="text-sm leading-relaxed text-muted dark:text-slate-400">
+            "{item.data.content}"
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { t } from '../../i18n/ui';
+
+const locale = 'en';
+const pages = await getCollection('pages');
+const page = pages.find((p) => p.id === `${locale}/tips`) || pages.find((p) => p.id === 'ko/tips');
+if (!page) throw new Error('Tips page not found');
+const { Content } = await render(page);
+---
+
+<PageLayout
+  title={t(locale, 'nav.tips')}
+  description={page.data.description || ''}
+  locale={locale}
+>
+  <article class="prose prose-lg max-w-none">
+    <Content />
+  </article>
+</PageLayout>

@@ -1,0 +1,54 @@
+---
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = locale === 'en' ? '/en' : '';
+---
+
+<section class="relative min-h-[70vh] flex items-center bg-void overflow-hidden pb-32 md:pb-40">
+  <!-- Animated gradient mesh background -->
+  <div class="hero-gradient-mesh" aria-hidden="true"></div>
+
+  <!-- Grid overlay -->
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="container relative z-10 py-24 md:py-32 lg:py-36">
+    <div class="max-w-2xl">
+      <p class="text-accent text-xs md:text-sm font-medium tracking-[0.25em] uppercase hero-reveal">
+        {t(locale, 'hero.label')}
+      </p>
+      <h1 class="mt-6 md:mt-8 text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[1.05] tracking-tight text-white hero-reveal hero-reveal-1">
+        {t(locale, 'hero.title')}
+      </h1>
+      <p class="mt-8 md:mt-10 text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed hero-reveal hero-reveal-2">
+        {t(locale, 'hero.description')}
+      </p>
+      <div class="mt-12 md:mt-14 flex flex-wrap gap-4 hero-reveal hero-reveal-3">
+        <a
+          href={`${prefix}/about/`}
+          class="btn-solid-gradient inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-semibold text-white"
+        >
+          {t(locale, 'hero.cta_about')}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a
+          href={`${prefix}/admissions/`}
+          class="btn-glow inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-semibold text-white/90"
+        >
+          {t(locale, 'hero.cta_admissions')}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

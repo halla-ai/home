@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const locale = 'en';
+  const posts = await getCollection('posts');
+  let filtered = posts
+    .filter((p) => p.id.startsWith(`${locale}/`) && !p.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+  if (filtered.length === 0) {
+    filtered = posts
+      .filter((p) => p.id.startsWith('ko/') && !p.data.draft)
+      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  }
+
+  return filtered.map((post, i) => {
+    const slug = post.id.replace(/^(en|ko)\//, '');
+    const prev = filtered[i + 1]
+      ? { title: filtered[i + 1].data.title, slug: filtered[i + 1].id.replace(/^(en|ko)\//, '') }
+      : null;
+    const next = filtered[i - 1]
+      ? { title: filtered[i - 1].data.title, slug: filtered[i - 1].id.replace(/^(en|ko)\//, '') }
+      : null;
+
+    return {
+      params: { slug },
+      props: { post, locale, prev, next },
+    };
+  });
+}
+
+const { post, locale, prev, next } = Astro.props;
+const { Content } = await render(post);
+
+const readingTime = Math.max(1, Math.ceil((post.body?.split(/\s+/).length || 0) / 200));
+---
+
+<PostLayout
+  title={post.data.title}
+  description={post.data.description || ''}
+  date={post.data.date}
+  tags={post.data.tags}
+  image={post.data.image}
+  readingTime={readingTime}
+  locale={locale}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</PostLayout>

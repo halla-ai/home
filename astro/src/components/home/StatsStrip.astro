@@ -1,0 +1,40 @@
+---
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const stats = [
+  { value: '8', unit: t(locale, 'stats.faculty_unit'), label: t(locale, 'stats.faculty') },
+  { value: '14', unit: t(locale, 'stats.partners_unit'), label: t(locale, 'stats.partners') },
+  { value: '5', unit: t(locale, 'stats.international_unit'), label: t(locale, 'stats.international') },
+  { value: '90%', unit: locale === 'ko' ? '+' : '+', label: t(locale, 'stats.employment') },
+];
+---
+
+<!-- Light: accent-lighter bg with navy text / Dark: deep navy bg with white text -->
+<section class="relative bg-accent-lighter dark:bg-deep border-y border-accent/10 dark:border-white/5">
+  <div class="container py-10 md:py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      {stats.map((stat) => (
+        <div class="stat-item text-center md:text-left">
+          <div class="flex items-baseline justify-center md:justify-start gap-0.5">
+            <span class="text-3xl md:text-4xl font-extrabold text-deep dark:text-white tracking-tight font-[Outfit,system-ui]">
+              {stat.value}
+            </span>
+            <span class="text-lg md:text-xl font-semibold text-accent">
+              {stat.unit}
+            </span>
+          </div>
+          <p class="mt-1.5 text-sm text-muted dark:text-slate-400 font-medium">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,11 +1,121 @@
+# === OS & Editor ===
+.DS_Store
+Icon?
+~$*
+.vscode/
+.idea/
+**/.claude/settings.local.json
+
+# === OMC / Claude Code State ===
+.omc/
+.omx/
+.claude
+
+# === Obsidian ===
+.obsidian/workspace.json
+.obsidian/cache
+.brain
+
+# === Jekyll ===
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-.DS_Store
 site/cache
 site/bin
 site/gems
 site/wrappers
 site/specifications
 site/environment
+
+# === Astro ===
+dist/
+.astro/
+
+# === Dependencies & Logs ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === Environment ===
+.env
+.env.production
+
+# === Archives & Temp ===
+_Archived Items
+TEMP/
+*.backup/
+
+# === Binary & Media (text-only policy) ===
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.zst
+*.ogg
+*.mp3
+*.mp4
+*.wav
+*.avi
+*.mov
+*.mkv
+*.flac
+*.srt
+*.png
+*.jpg
+*.jpeg
+*.heic
+*.ai
+*.key
+*.pdf
+*.hwp*
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.ppsx
+*.pps
+*.xls*
+*.xlsx
+*.xlsm
+*.tsv
+*.gdoc
+*.gsheet
+*.gslides
+*.gform
+*.html
+*.ico
+
+# === Data & ML Artifacts ===
+*.parquet
+*.pkl
+*.pth
+*.pt
+
+# === Python ===
+*.py[cod]
+__pycache__/
+.tox/
+*.egg-info/
+*.egg
+pytest_cache/
+pytest.xml
+.mypy_cache/
+.venv/
+
+# === External Shared Folders (Google Drive) ===
+**/shared/
+**/_shared/
+**/_external/
+
+# ============================================
+# Exceptions: Astro site assets (must be tracked)
+# ============================================
+!astro/public/**/*.png
+!astro/public/**/*.jpg
+!astro/public/**/*.jpeg
+!astro/public/**/*.ico
+!astro/public/**/*.html

@@ -1,0 +1,80 @@
+---
+import BaseHead from '../components/layout/BaseHead.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import { type Locale } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  locale?: Locale;
+  heroPage?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  locale = 'ko',
+  heroPage = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale} class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} image={image} locale={locale} />
+  </head>
+  <body class={`min-h-screen flex flex-col bg-white dark:bg-void transition-colors duration-200 ${heroPage ? 'has-hero' : ''}`}>
+    <!-- Dark mode init: runs before paint to avoid flash -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <Header locale={locale} />
+
+    {/* Spacer for fixed header on non-hero pages */}
+    {!heroPage && <div class="h-16" aria-hidden="true"></div>}
+
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <Footer locale={locale} />
+
+    <!-- Film grain texture -->
+    <div class="film-grain" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain)" />
+      </svg>
+    </div>
+
+    <!-- Scroll reveal observer -->
+    <script is:inline>
+      (function () {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+        document.querySelectorAll('.fade-up, .stat-item').forEach(function (el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

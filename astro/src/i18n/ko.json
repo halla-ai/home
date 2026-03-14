@@ -1,0 +1,82 @@
+{
+  "site": {
+    "title": "제주한라대학교 인공지능학과",
+    "description": "AI 기술로 미래를 설계하는 인재를 양성하는 인공지능학과"
+  },
+  "nav": {
+    "home": "홈",
+    "about": "학과소개",
+    "faculty": "교수진",
+    "curriculum": "교과과정",
+    "research": "연구",
+    "posts": "소식",
+    "career": "산학협력",
+    "admissions": "입학안내",
+    "tips": "학교생활안내",
+    "contact": "문의",
+    "location": "오시는길"
+  },
+  "hero": {
+    "label": "제주한라대학교",
+    "title": "인공지능학과",
+    "subtitle": "Department of Artificial Intelligence",
+    "description": "AI 기술로 미래를 설계하는 인재를 양성합니다",
+    "cta_about": "학과 소개",
+    "cta_admissions": "입학 안내"
+  },
+  "stats": {
+    "faculty": "교수진",
+    "faculty_unit": "명",
+    "partners": "산학협력",
+    "partners_unit": "개사",
+    "international": "해외 협력",
+    "international_unit": "개국",
+    "employment": "취업률"
+  },
+  "pillars": {
+    "education_title": "교육",
+    "education_desc": "AI 핵심 역량부터 실무 프로젝트까지, 체계적인 교육과정으로 미래 AI 전문 인재를 양성합니다.",
+    "research_title": "연구",
+    "research_desc": "자연어처리, 컴퓨터비전, 생성형 AI 등 최신 AI 분야의 연구를 수행합니다.",
+    "industry_title": "산학협력",
+    "industry_desc": "삼성, LG, 카카오 등 주요 기업과의 협력을 통해 현장 중심의 실무 역량을 키웁니다."
+  },
+  "sections": {
+    "projects_title": "주요 연구",
+    "blog_title": "최근 소식",
+    "tags_title": "주제 탐색",
+    "testimonials_title": "학생 이야기",
+    "view_all": "전체보기"
+  },
+  "footer": {
+    "address": "(63092) 제주특별자치도 제주시 한라대학로 38",
+    "tel": "Tel. 064-741-7575",
+    "copyright": "제주한라대학교 인공지능학과",
+    "privacy": "개인정보처리방침",
+    "back_to_top": "맨 위로",
+    "dark_mode": "다크 모드",
+    "light_mode": "라이트 모드"
+  },
+  "common": {
+    "post": "글",
+    "posts": "글",
+    "min_read": "분 소요",
+    "share": "공유",
+    "prev": "이전",
+    "next": "다음",
+    "tags": "태그",
+    "all": "전체",
+    "more": "더보기",
+    "read_more": "자세히 보기",
+    "breadcrumb_home": "홈"
+  },
+  "contact": {
+    "title": "문의",
+    "description": "인공지능학과에 문의해 주세요",
+    "name": "이름",
+    "email": "이메일",
+    "subject": "제목",
+    "message": "메시지",
+    "send": "보내기"
+  }
+}

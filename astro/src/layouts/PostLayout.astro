@@ -1,0 +1,271 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/common/Breadcrumb.astro';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date | string;
+  tags?: string[];
+  image?: string;
+  readingTime?: number;
+  locale?: Locale;
+  prev?: { title: string; slug: string } | null;
+  next?: { title: string; slug: string } | null;
+}
+
+const {
+  title,
+  description,
+  date,
+  tags = [],
+  image,
+  readingTime,
+  locale = 'ko',
+  prev = null,
+  next = null,
+} = Astro.props;
+
+const prefix = locale === 'en' ? '/en' : '';
+const postsHref = `${prefix}/posts/`;
+
+const formattedDate = new Date(date).toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const crumbs = [
+  { label: t(locale, 'common.breadcrumb_home'), href: locale === 'en' ? '/en/' : '/' },
+  { label: t(locale, 'nav.posts'), href: postsHref },
+  { label: title },
+];
+
+const pageTitle = `${title} | ${t(locale, 'site.title')}`;
+---
+
+<BaseLayout title={pageTitle} description={description} image={image} locale={locale}>
+  <article class="pb-24 lg:pb-32">
+    <!-- Post header -->
+    <header class="page-hero py-20 lg:py-28">
+      <div class="container relative z-10">
+        <Breadcrumb items={crumbs} />
+
+        <!-- Tags -->
+        {
+          tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-5">
+              {tags.map((tag) => (
+                <a
+                  href={`${prefix}/tags/${tag}/`}
+                  class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white/90 hover:bg-accent hover:text-white transition-all duration-200"
+                >
+                  #{tag}
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        <h1 class="mt-5 text-3xl lg:text-[2.75rem] font-bold leading-tight">
+          {title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 mt-5 text-sm text-slate-400">
+          <time datetime={new Date(date).toISOString()} class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+            {formattedDate}
+          </time>
+          {
+            readingTime && (
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {readingTime} {t(locale, 'common.min_read')}
+              </span>
+            )
+          }
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero image -->
+    {
+      image && (
+        <div class="container -mt-6 relative z-10">
+          <img
+            src={image}
+            alt={title}
+            class="w-full max-h-[480px] object-cover rounded-2xl shadow-lg ring-1 ring-black/5 dark:ring-white/5"
+            loading="eager"
+          />
+        </div>
+      )
+    }
+
+    <!-- Post body -->
+    <div class="container mt-16 lg:mt-24">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <slot />
+        </div>
+
+        <!-- Image Gallery (populated by script from prose images) -->
+        <div id="post-gallery" class="mt-14 pt-8 border-t border-border dark:border-white/[0.08] hidden">
+          <h2 class="text-lg font-bold text-deep dark:text-white mb-4">{locale === 'ko' ? '사진' : 'Gallery'}</h2>
+          <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2"></div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden items-center justify-center cursor-zoom-out" aria-hidden="true">
+          <button id="lightbox-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10" aria-label="Close">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+          <img id="lightbox-img" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" alt="" />
+        </div>
+
+        <!-- Share -->
+        <div class="mt-14 pt-8 border-t border-border dark:border-white/[0.08] flex items-center justify-between flex-wrap gap-4">
+          <p class="text-sm font-medium text-muted dark:text-slate-400">{t(locale, 'common.share')}</p>
+          <div class="flex gap-2">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(Astro.url.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-4 py-2 text-xs font-medium rounded-lg bg-surface dark:bg-white/[0.06] border border-border dark:border-white/10 text-muted hover:text-accent hover:border-accent transition-all duration-200"
+            >
+              Twitter / X
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-4 py-2 text-xs font-medium rounded-lg bg-surface dark:bg-white/[0.06] border border-border dark:border-white/10 text-muted hover:text-accent hover:border-accent transition-all duration-200"
+            >
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <!-- Post navigation -->
+        {
+          (prev || next) && (
+            <nav
+              class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4"
+              aria-label="Post navigation"
+            >
+              {prev && (
+                <a
+                  href={`${postsHref}${prev.slug}/`}
+                  class="group flex flex-col gap-1.5 p-5 rounded-xl border border-border dark:border-white/10 hover:border-accent hover:shadow-sm transition-all duration-200"
+                >
+                  <span class="text-xs text-muted flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    {t(locale, 'common.prev')}
+                  </span>
+                  <span class="text-sm font-medium text-deep dark:text-white group-hover:text-accent transition-colors line-clamp-2">
+                    {prev.title}
+                  </span>
+                </a>
+              )}
+              {next && (
+                <a
+                  href={`${postsHref}${next.slug}/`}
+                  class="group flex flex-col gap-1.5 p-5 rounded-xl border border-border dark:border-white/10 hover:border-accent hover:shadow-sm transition-all duration-200 sm:text-right sm:col-start-2"
+                >
+                  <span class="text-xs text-muted flex items-center gap-1 sm:justify-end">
+                    {t(locale, 'common.next')}
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </span>
+                  <span class="text-sm font-medium text-deep dark:text-white group-hover:text-accent transition-colors line-clamp-2">
+                    {next.title}
+                  </span>
+                </a>
+              )}
+            </nav>
+          )
+        }
+      </div>
+    </div>
+  </article>
+
+  <!-- Gallery + Lightbox script -->
+  <script is:inline>
+    (function () {
+      var prose = document.querySelector('.prose');
+      var gallery = document.getElementById('post-gallery');
+      var grid = document.getElementById('gallery-grid');
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      if (!prose || !gallery || !grid || !lightbox || !lightboxImg) return;
+
+      // Collect all images from prose (skip gallery-box images already in galleries)
+      var imgs = prose.querySelectorAll('img');
+      var collected = [];
+
+      imgs.forEach(function (img) {
+        // Skip tiny images (icons, badges)
+        if (img.naturalWidth > 0 && img.naturalWidth < 50) return;
+        var src = img.getAttribute('src') || '';
+        var alt = img.getAttribute('alt') || '';
+        collected.push({ src: src, alt: alt, el: img });
+      });
+
+      if (collected.length < 2) return; // Don't create gallery for 0-1 images
+
+      // Move images to gallery grid
+      collected.forEach(function (item) {
+        // Remove from prose (keep first image inline if it's part of content flow)
+        var parent = item.el.parentElement;
+        if (parent && parent.tagName === 'P' && parent.children.length === 1) {
+          parent.style.display = 'none';
+        } else {
+          item.el.style.display = 'none';
+        }
+
+        // Create gallery tile
+        var tile = document.createElement('div');
+        tile.className = 'aspect-square overflow-hidden rounded-lg cursor-zoom-in group';
+        var tileImg = document.createElement('img');
+        tileImg.src = item.src;
+        tileImg.alt = item.alt;
+        tileImg.loading = 'lazy';
+        tileImg.className = 'w-full h-full object-cover transition-transform duration-300 group-hover:scale-105';
+        tile.appendChild(tileImg);
+        grid.appendChild(tile);
+
+        // Click to open lightbox
+        tile.addEventListener('click', function () {
+          lightboxImg.src = item.src;
+          lightboxImg.alt = item.alt;
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Show gallery section
+      gallery.classList.remove('hidden');
+
+      // Close lightbox
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      lightbox.addEventListener('click', closeLightbox);
+      document.getElementById('lightbox-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+</BaseLayout>

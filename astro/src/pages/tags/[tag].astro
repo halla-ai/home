@@ -1,0 +1,60 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const locale = 'ko';
+  const posts = await getCollection('posts');
+  const localePosts = posts.filter((p) => p.id.startsWith(`${locale}/`));
+
+  const tags = new Set<string>();
+  localePosts.forEach((post) => post.data.tags.forEach((tag: string) => tags.add(tag)));
+
+  return [...tags].map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      locale,
+      posts: localePosts
+        .filter((p) => p.data.tags.includes(tag))
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+}
+
+const { tag, locale, posts } = Astro.props;
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<PageLayout
+  title={tag}
+  description={`"${tag}" 태그가 포함된 포스트`}
+  locale={locale}
+  breadcrumbs={[{ label: t(locale, 'common.tags'), href: '/tags/' }, { label: tag }]}
+>
+  <div class="grid gap-6 sm:grid-cols-2">
+    {posts.map((post: any) => {
+      const slug = post.id.replace(`${locale}/`, '');
+      return (
+        <a
+          href={`/posts/${slug}/`}
+          class="group card overflow-hidden"
+        >
+          {post.data.image && (
+            <div class="aspect-video overflow-hidden">
+              <img src={post.data.image} alt={post.data.title} class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+            </div>
+          )}
+          <div class="p-5">
+            <time class="text-xs text-muted" datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+            <h3 class="mt-2 text-lg font-bold text-deep dark:text-white group-hover:text-accent">{post.data.title}</h3>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</PageLayout>
