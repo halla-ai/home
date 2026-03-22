@@ -4,6 +4,7 @@ import Card from '../components/ui/Card.astro';
 import { t } from '../i18n/ui';
 
 const locale = 'ko';
+const FORM_ACTION = 'https://formsubmit.co/ajax/info@jeju.ai';
 ---
 
 <PageLayout
@@ -24,7 +25,7 @@ const locale = 'ko';
           </div>
           <div>
             <p class="text-sm font-semibold text-deep dark:text-slate-200">Email</p>
-            <a href="mailto:yj.lee@chu.ac.kr" class="text-sm text-accent hover:text-accent-hover transition-colors">yj.lee@chu.ac.kr</a>
+            <a href="mailto:info@jeju.ai" class="text-sm text-accent hover:text-accent-hover transition-colors">info@jeju.ai</a>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -56,7 +57,16 @@ const locale = 'ko';
     <!-- Contact Form -->
     <Card class="p-8 lg:p-10">
       <h2 class="text-xl font-bold text-deep dark:text-white">{t(locale, 'contact.title')}</h2>
-      <form class="mt-8 space-y-5" action="https://formspree.io/f/yj.lee@chu.ac.kr" method="POST">
+
+      <!-- Status messages -->
+      <div id="form-success" class="hidden mt-6 p-4 rounded-xl bg-emerald/10 border border-emerald/20 text-sm text-emerald font-medium">
+        문의가 성공적으로 전송되었습니다. 빠른 시일 내에 답변드리겠습니다.
+      </div>
+      <div id="form-error" class="hidden mt-6 p-4 rounded-xl bg-ember/10 border border-ember/20 text-sm text-ember font-medium">
+        전송에 실패했습니다. <a href="mailto:info@jeju.ai" class="underline">info@jeju.ai</a>로 직접 이메일을 보내주세요.
+      </div>
+
+      <form id="contact-form" class="mt-8 space-y-5">
         <div>
           <label for="name" class="block text-sm font-semibold text-deep dark:text-slate-200 mb-2">{t(locale, 'contact.name')}</label>
           <input type="text" id="name" name="name" required
@@ -64,17 +74,18 @@ const locale = 'ko';
         </div>
         <div>
           <label for="email" class="block text-sm font-semibold text-deep dark:text-slate-200 mb-2">{t(locale, 'contact.email')}</label>
-          <input type="email" id="email" name="_replyto" required
+          <input type="email" id="email" name="email" required
             class="form-input" />
         </div>
         <div>
           <label for="message" class="block text-sm font-semibold text-deep dark:text-slate-200 mb-2">{t(locale, 'contact.message')}</label>
-          <textarea id="message" name="text" rows={6} required
+          <textarea id="message" name="message" rows={6} required
             class="form-input resize-y"></textarea>
         </div>
-        <button type="submit"
+        <button type="submit" id="submit-btn"
           class="btn-solid-gradient inline-flex items-center rounded-lg px-7 py-3.5 text-sm font-semibold text-white">
-          {t(locale, 'contact.send')}
+          <span id="btn-text">{t(locale, 'contact.send')}</span>
+          <span id="btn-loading" class="hidden">{t(locale, 'contact.send')}...</span>
           <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
@@ -83,3 +94,46 @@ const locale = 'ko';
     </Card>
   </div>
 </PageLayout>
+
+<script define:vars={{ FORM_ACTION }}>
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnLoading = document.getElementById('btn-loading');
+  const successEl = document.getElementById('form-success');
+  const errorEl = document.getElementById('form-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    successEl.classList.add('hidden');
+    errorEl.classList.add('hidden');
+    submitBtn.disabled = true;
+    btnText.classList.add('hidden');
+    btnLoading.classList.remove('hidden');
+
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim(),
+      locale: 'ko',
+    };
+
+    try {
+      const res = await fetch(FORM_ACTION, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      if (!result.success) throw new Error(result.message || 'Send failed');
+      successEl.classList.remove('hidden');
+      form.reset();
+    } catch {
+      errorEl.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      btnText.classList.remove('hidden');
+      btnLoading.classList.add('hidden');
+    }
+  });
+</script>
