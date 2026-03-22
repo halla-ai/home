@@ -28,7 +28,7 @@
   box-shadow: none;
 }
 
-/* Transparent state: white text */
+/* Transparent state: white text over hero — identical in light and dark mode */
 .site-header.header-transparent .nav-link {
   color: rgba(255, 255, 255, 0.8);
 }
