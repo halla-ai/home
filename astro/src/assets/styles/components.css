@@ -313,6 +313,7 @@
 .btn-glow {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   border: 1.5px solid rgba(255, 255, 255, 0.15);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -321,6 +322,7 @@
   content: '';
   position: absolute;
   inset: 0;
+  z-index: -1;
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(34, 211, 238, 0.08));
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -345,6 +347,7 @@
 .btn-solid-gradient {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   background: linear-gradient(135deg, var(--color-accent), var(--color-cyan));
   border: none;
   box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
@@ -355,6 +358,7 @@
   content: '';
   position: absolute;
   inset: 0;
+  z-index: -1;
   background: linear-gradient(135deg, var(--color-cyan), var(--color-accent));
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -374,10 +378,6 @@
   transition-duration: 0.1s;
 }
 
-.btn-solid-gradient > * {
-  position: relative;
-  z-index: 1;
-}
 
 /* ── Section divider (gradient line) ──────────── */
 
