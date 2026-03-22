@@ -1,0 +1,33 @@
+---
+interface Props {
+  variant?: 'default' | 'flat' | 'bento';
+  href?: string;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  variant = 'default',
+  href,
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const variantClass = {
+  default: 'card',
+  flat: 'card-flat',
+  bento: 'card-bento',
+}[variant];
+
+const classes = [variantClass, className].filter(Boolean).join(' ');
+---
+
+{href ? (
+  <a href={href} class={classes} {...rest}>
+    <slot />
+  </a>
+) : (
+  <div class={classes} {...rest}>
+    <slot />
+  </div>
+)}

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Card from '../../components/ui/Card.astro';
 import { t } from '../../i18n/ui';
 
 const locale = 'en';
@@ -171,7 +172,7 @@ const colorMap: Record<string, { bg: string; header: string; border: string; tex
         { title: 'Hands-on Projects', desc: '4 semesters of Capstone Design + industry partnership projects', num: '03' },
         { title: 'Cutting-edge Tech', desc: 'Multimodal Generative AI, Next-Gen AI, and latest industry trends', num: '04' },
       ].map((item) => (
-        <div class="card-flat p-5 group">
+        <Card variant="flat" class="p-5 group">
           <div class="flex items-start gap-4">
             <span class="text-2xl font-black text-accent/15 dark:text-accent/20 select-none">{item.num}</span>
             <div>
@@ -179,7 +180,7 @@ const colorMap: Record<string, { bg: string; header: string; border: string; tex
               <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">{item.desc}</p>
             </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   </section>

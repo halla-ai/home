@@ -26,7 +26,7 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} locale={locale} />
   </head>
-  <body class={`min-h-screen flex flex-col bg-white dark:bg-void transition-colors duration-200 ${heroPage ? 'has-hero' : ''}`}>
+  <body class={`min-h-screen flex flex-col bg-white dark:bg-void dark:text-slate-200 transition-colors duration-200 ${heroPage ? 'has-hero' : ''}`}>
     <!-- Dark mode init: runs before paint to avoid flash -->
     <script is:inline>
       (function () {
@@ -37,6 +37,10 @@ const {
         }
       })();
     </script>
+
+    <a href="#main-content" class="skip-link">
+      {locale === 'ko' ? '본문으로 건너뛰기' : 'Skip to main content'}
+    </a>
 
     <Header locale={locale} />
 

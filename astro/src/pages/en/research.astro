@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Card from '../../components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
 
@@ -21,9 +22,10 @@ projects = projects.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()
     {projects.map((project) => {
       const slug = project.id.replace(/^(en|ko)\//, '');
       return (
-        <a
+        <Card
           href={`/en/research/${slug}/`}
-          class="group card-bento"
+          variant="bento"
+          class="group"
         >
           {project.data.image && (
             <div class="aspect-video overflow-hidden">
@@ -55,7 +57,7 @@ projects = projects.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()
               </div>
             )}
           </div>
-        </a>
+        </Card>
       );
     })}
   </div>

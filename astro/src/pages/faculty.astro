@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import Card from '../components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../i18n/ui';
 
@@ -17,7 +18,7 @@ const faculty = allFaculty
 >
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
     {faculty.map((member) => (
-      <div class="group card-bento">
+      <Card variant="bento" class="group">
         <!-- Top accent bar -->
         <div class="h-1 bg-gradient-to-r from-accent to-cyan-400" aria-hidden="true"></div>
 
@@ -101,7 +102,7 @@ const faculty = allFaculty
             )}
           </div>
         </div>
-      </div>
+      </Card>
     ))}
   </div>
 </PageLayout>

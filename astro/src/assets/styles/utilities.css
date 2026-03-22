@@ -1,0 +1,169 @@
+/* ── Hero gradient mesh (from STAIxBWLB) ──────── */
+
+@keyframes hero-mesh-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hero-mesh-shift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(5%, -3%) scale(1.05); }
+  66% { transform: translate(-3%, 5%) scale(0.97); }
+}
+
+.hero-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-gradient-mesh::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+  animation: hero-mesh-rotate 20s linear infinite;
+}
+
+.hero-gradient-mesh::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(34, 211, 238, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 30% 70%, rgba(14, 165, 233, 0.1) 0%, transparent 45%);
+  animation: hero-mesh-shift 16s ease-in-out infinite;
+}
+
+/* Hero grid overlay */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+}
+
+/* ── Hero reveal animation ────────────────────── */
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: hero-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-reveal-1 { animation-delay: 0.15s; }
+.hero-reveal-2 { animation-delay: 0.3s; }
+.hero-reveal-3 { animation-delay: 0.45s; }
+.hero-reveal-4 { animation-delay: 0.6s; }
+
+/* ── Scroll reveal ────────────────────────────── */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up-d1 { transition-delay: 0.1s; }
+.fade-up-d2 { transition-delay: 0.2s; }
+.fade-up-d3 { transition-delay: 0.3s; }
+.fade-up-d4 { transition-delay: 0.4s; }
+
+/* ── Gradient text (blue → cyan) ──────────────── */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent), #22d3ee, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Neon text glow ───────────────────────────── */
+
+.neon-glow {
+  text-shadow:
+    0 0 10px rgba(14, 165, 233, 0.3),
+    0 0 40px rgba(14, 165, 233, 0.1);
+}
+
+/* ── Film grain overlay (from STAIxBWLB) ──────── */
+
+.film-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.025;
+}
+
+.film-grain svg {
+  width: 200%;
+  height: 200%;
+}
+
+/* ── Reduced motion ───────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient-mesh::before,
+  .hero-gradient-mesh::after {
+    animation: none;
+  }
+  .hero-reveal {
+    animation: none;
+    opacity: 1;
+  }
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .stat-item {
+    opacity: 1;
+    animation: none;
+  }
+  .card::before,
+  .card-bento::before,
+  .card-bento::after {
+    animation: none;
+    transition: none;
+  }
+  .film-grain {
+    display: none;
+  }
+  img {
+    transition: none;
+  }
+}
+
+/* ── Scrollbar (dark themed) ──────────────────── */
+
+.dark {
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--color-void); }
+  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+}

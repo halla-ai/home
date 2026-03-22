@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import PageLayout from '../../layouts/PageLayout.astro';
+import Card from '../../components/ui/Card.astro';
 import Pagination from '../../components/Pagination.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
@@ -35,9 +36,10 @@ function estimateReadTime(body: string): number {
     {page.data.map((post) => {
       const slug = post.id.replace(`${locale}/`, '');
       return (
-        <a
+        <Card
           href={`/posts/${slug}/`}
-          class="group card-bento"
+          variant="bento"
+          class="group"
         >
           {post.data.image && (
             <div class="aspect-video overflow-hidden">
@@ -71,7 +73,7 @@ function estimateReadTime(body: string): number {
               </div>
             )}
           </div>
-        </a>
+        </Card>
       );
     })}
   </div>

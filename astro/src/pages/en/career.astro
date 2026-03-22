@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Card from '../../components/ui/Card.astro';
 import { t } from '../../i18n/ui';
 
 const locale = 'en';
@@ -116,7 +117,7 @@ const employmentCompanies = [
 
     <div class="grid md:grid-cols-2 gap-4">
       {partners.map((p) => (
-        <div class="card-flat overflow-hidden group">
+        <Card variant="flat" class="overflow-hidden group">
           <div class="flex items-start gap-4 p-5">
             {/* Company logo */}
             <div class="w-14 h-10 flex items-center justify-center shrink-0">
@@ -133,7 +134,7 @@ const employmentCompanies = [
               <p class="text-xs text-muted dark:text-slate-400 mt-2 leading-relaxed line-clamp-2">{p.desc}</p>
             </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   </section>
@@ -152,13 +153,13 @@ const employmentCompanies = [
         { title: 'International Collaboration', desc: 'AI education and research exchange with TIU, ITIC, UIC and other overseas universities; KOICA ODA projects', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />` },
         { title: 'Design Thinking', desc: 'RISE innovation education with Stanford d.school, creative problem-solving education', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />` },
       ].map((area) => (
-        <div class="card-flat p-5">
+        <Card variant="flat" class="p-5">
           <div class="w-10 h-10 rounded-xl bg-accent/10 dark:bg-accent/15 flex items-center justify-center mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={area.icon} />
           </div>
           <h3 class="text-sm font-bold text-deep dark:text-white mb-1.5">{area.title}</h3>
           <p class="text-xs text-muted dark:text-slate-400 leading-relaxed">{area.desc}</p>
-        </div>
+        </Card>
       ))}
     </div>
   </section>

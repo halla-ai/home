@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import Card from '../components/ui/Card.astro';
 import { t } from '../i18n/ui';
 
 const locale = 'ko';
@@ -53,7 +54,7 @@ const locale = 'ko';
     </div>
 
     <!-- Contact Form -->
-    <div class="card p-8 lg:p-10">
+    <Card class="p-8 lg:p-10">
       <h2 class="text-xl font-bold text-deep dark:text-white">{t(locale, 'contact.title')}</h2>
       <form class="mt-8 space-y-5" action="https://formspree.io/f/yj.lee@chu.ac.kr" method="POST">
         <div>
@@ -79,6 +80,6 @@ const locale = 'ko';
           </svg>
         </button>
       </form>
-    </div>
+    </Card>
   </div>
 </PageLayout>

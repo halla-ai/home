@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
 import type { Locale } from '../../i18n/ui';
 import SectionHeader from '../common/SectionHeader.astro';
+import Card from '../ui/Card.astro';
 
 interface Props {
   locale: Locale;
@@ -35,7 +36,7 @@ const testimonials = allTestimonials
 
     <div class="mt-2 grid gap-5 md:grid-cols-3">
       {testimonials.map((item, i) => (
-        <div class={`relative card-flat p-7 fade-up fade-up-d${i + 1}`}>
+        <Card variant="flat" class={`relative p-7 fade-up fade-up-d${i + 1}`}>
           {/* Decorative quote mark */}
           <svg
             class="absolute top-5 right-6 w-10 h-10 text-accent/8 dark:text-accent/10"
@@ -64,7 +65,7 @@ const testimonials = allTestimonials
           <p class="text-sm leading-relaxed text-muted dark:text-slate-400">
             "{item.data.content}"
           </p>
-        </div>
+        </Card>
       ))}
     </div>
   </div>

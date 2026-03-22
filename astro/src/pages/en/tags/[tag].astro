@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
+import Card from '../../../components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../../i18n/ui';
 
@@ -43,9 +44,9 @@ function formatDate(date: Date): string {
     {posts.map((post: any) => {
       const slug = post.id.replace(/^(en|ko)\//, '');
       return (
-        <a
+        <Card
           href={`/en/posts/${slug}/`}
-          class="group card overflow-hidden"
+          class="group overflow-hidden"
         >
           {post.data.image && (
             <div class="aspect-video overflow-hidden">
@@ -56,7 +57,7 @@ function formatDate(date: Date): string {
             <time class="text-xs text-muted" datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
             <h3 class="mt-2 text-lg font-bold text-deep dark:text-white group-hover:text-accent">{post.data.title}</h3>
           </div>
-        </a>
+        </Card>
       );
     })}
   </div>

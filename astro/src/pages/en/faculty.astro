@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Card from '../../components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
 
@@ -19,7 +20,7 @@ faculty = faculty.sort((a, b) => a.data.order - b.data.order);
 >
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
     {faculty.map((member) => (
-      <div class="group card-bento">
+      <Card variant="bento" class="group">
         <div class="h-1 bg-gradient-to-r from-accent to-cyan-400" aria-hidden="true"></div>
         <div class="p-7">
           <div class="flex items-start gap-5">
@@ -99,7 +100,7 @@ faculty = faculty.sort((a, b) => a.data.order - b.data.order);
             )}
           </div>
         </div>
-      </div>
+      </Card>
     ))}
   </div>
 </PageLayout>
