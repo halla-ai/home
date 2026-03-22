@@ -95,15 +95,32 @@ const pillars = [
     background: linear-gradient(
       to bottom,
       var(--color-void) 0%,
-      var(--color-void) 45%,
-      var(--color-abyss) 65%,
-      var(--color-deep) 85%,
-      var(--color-deep) 100%
+      var(--color-void) 40%,
+      var(--color-abyss) 60%,
+      var(--color-deep) 80%,
+      var(--color-navy) 100%
     );
+  }
+
+  /* Bottom fade bridge to next light section */
+  .pillar-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--color-stone));
+    pointer-events: none;
+    z-index: 5;
   }
 
   :global(.dark) .pillar-section {
     background: var(--color-void);
+  }
+
+  :global(.dark) .pillar-section::after {
+    background: linear-gradient(to bottom, transparent, var(--color-abyss));
   }
 
   /* Card */

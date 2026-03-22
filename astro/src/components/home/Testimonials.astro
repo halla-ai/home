@@ -17,7 +17,7 @@ const testimonials = allTestimonials
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<section class="relative bg-white dark:bg-void py-8 md:py-10 overflow-hidden">
+<section class="relative bg-white dark:bg-void py-12 md:py-16 overflow-hidden">
   <!-- Subtle background decoration (dark only) -->
   <div class="absolute inset-0 pointer-events-none hidden dark:block" aria-hidden="true">
     <div
@@ -34,12 +34,12 @@ const testimonials = allTestimonials
       <div class="mt-3 w-10 h-[3px] rounded-full bg-accent" aria-hidden="true"></div>
     </div>
 
-    <div class="mt-2 grid gap-5 md:grid-cols-3">
+    <div class="mt-2 grid gap-5 md:grid-cols-3 md:items-start">
       {testimonials.map((item, i) => (
-        <Card variant="flat" class={`relative p-7 fade-up fade-up-d${i + 1}`}>
+        <Card variant="flat" class={`relative p-7 fade-up fade-up-d${i + 1}${i === 1 ? ' md:translate-y-6' : ''}`}>
           {/* Decorative quote mark */}
           <svg
-            class="absolute top-5 right-6 w-10 h-10 text-accent/8 dark:text-accent/10"
+            class={`absolute top-5 right-6 w-10 h-10 ${i === 0 ? 'text-accent/15 dark:text-accent/20' : 'text-accent/8 dark:text-accent/10'}`}
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -48,7 +48,7 @@ const testimonials = allTestimonials
           </svg>
 
           <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-accent/15 dark:ring-accent/20 shrink-0">
+            <div class={`overflow-hidden shrink-0 ${i === 0 ? 'w-16 h-16 rounded-2xl ring-2 ring-accent/20 dark:ring-accent/25' : 'w-14 h-14 rounded-full ring-2 ring-accent/15 dark:ring-accent/20'}`}>
               <img
                 src={item.data.photo}
                 alt={item.data.name}
@@ -57,12 +57,12 @@ const testimonials = allTestimonials
               />
             </div>
             <div>
-              <h3 class="text-base font-bold text-deep dark:text-white">{item.data.name}</h3>
+              <h3 class={`font-bold text-deep dark:text-white ${i === 0 ? 'text-lg' : 'text-base'}`}>{item.data.name}</h3>
               <p class="text-sm text-accent">{item.data.designation}</p>
             </div>
           </div>
 
-          <p class="text-sm leading-relaxed text-muted dark:text-slate-400">
+          <p class={`leading-relaxed text-muted dark:text-slate-400 ${i === 0 ? 'text-[0.9375rem]' : 'text-sm'}`}>
             "{item.data.content}"
           </p>
         </Card>

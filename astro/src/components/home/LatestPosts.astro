@@ -13,7 +13,7 @@ const allPosts = await getCollection('posts');
 const posts = allPosts
   .filter((p) => p.id.startsWith(`${locale}/`) && !p.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 6);
+  .slice(0, 5);
 
 const prefix = locale === 'en' ? '/en' : '';
 
@@ -26,7 +26,7 @@ function formatDate(date: Date, loc: string): string {
 }
 ---
 
-<section class="bg-stone dark:bg-abyss py-8 md:py-10">
+<section class="bg-stone dark:bg-abyss py-16 md:py-20 bg-dots">
   <div class="container">
     <div class="flex items-end justify-between mb-10">
       <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-deep dark:text-white"><span class="text-gradient">
@@ -46,31 +46,77 @@ function formatDate(date: Date, loc: string): string {
       </a>
     </div>
 
-    <div class="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post) => {
+    <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+      {/* Featured post — large */}
+      {posts.length > 0 && (() => {
+        const post = posts[0];
         const slug = post.id.replace(`${locale}/`, '');
         const href = `${prefix}/posts/${slug}/`;
         return (
-          <a href={href} class="group block">
+          <a href={href} class="group block lg:row-span-2">
             {post.data.image && (
-              <div class="aspect-[16/10] overflow-hidden rounded-xl bg-border dark:bg-void mb-4">
+              <div class="aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden rounded-xl bg-border dark:bg-void relative">
                 <img
                   src={post.data.image}
                   alt={post.data.title}
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="lazy"
                 />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                  <time class="text-xs text-white/60" datetime={post.data.date.toISOString()}>
+                    {formatDate(post.data.date, locale)}
+                  </time>
+                  <h3 class="mt-2 text-xl lg:text-2xl font-bold leading-snug text-white group-hover:text-accent-light transition-colors duration-200">
+                    {post.data.title}
+                  </h3>
+                  {post.data.description && (
+                    <p class="mt-2 text-sm text-white/70 line-clamp-2 hidden lg:block">{post.data.description}</p>
+                  )}
+                </div>
               </div>
             )}
-            <time class="text-xs text-muted dark:text-slate-500" datetime={post.data.date.toISOString()}>
-              {formatDate(post.data.date, locale)}
-            </time>
-            <h3 class="mt-2 text-base font-semibold leading-snug text-deep dark:text-white group-hover:text-accent transition-colors duration-200">
-              {post.data.title}
-            </h3>
+            {!post.data.image && (
+              <div class="p-6">
+                <time class="text-xs text-muted dark:text-slate-500" datetime={post.data.date.toISOString()}>
+                  {formatDate(post.data.date, locale)}
+                </time>
+                <h3 class="mt-2 text-xl font-bold leading-snug text-deep dark:text-white group-hover:text-accent transition-colors duration-200">
+                  {post.data.title}
+                </h3>
+              </div>
+            )}
           </a>
         );
-      })}
+      })()}
+
+      {/* Remaining posts — 2×2 compact grid */}
+      <div class="grid grid-cols-2 gap-5">
+        {posts.slice(1).map((post) => {
+          const slug = post.id.replace(`${locale}/`, '');
+          const href = `${prefix}/posts/${slug}/`;
+          return (
+            <a href={href} class="group block">
+              {post.data.image && (
+                <div class="aspect-[4/3] overflow-hidden rounded-lg bg-border dark:bg-void mb-3">
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <time class="text-[11px] text-muted dark:text-slate-500" datetime={post.data.date.toISOString()}>
+                {formatDate(post.data.date, locale)}
+              </time>
+              <h3 class="mt-1.5 text-sm font-semibold leading-snug text-deep dark:text-white group-hover:text-accent transition-colors duration-200 line-clamp-2">
+                {post.data.title}
+              </h3>
+            </a>
+          );
+        })}
+      </div>
     </div>
   </div>
 </section>

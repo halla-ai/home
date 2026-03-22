@@ -25,7 +25,7 @@ const basePath = locale === 'ko' ? '/tags' : '/en/tags';
 const allTagsHref = locale === 'ko' ? '/tags/' : '/en/tags/';
 ---
 
-<section class="py-8 md:py-10 bg-stone dark:bg-abyss">
+<section class="py-10 md:py-12 bg-stone dark:bg-abyss bg-dots">
   <div class="container">
     <SectionHeader
       title={t(locale, 'sections.tags_title')}
@@ -37,7 +37,7 @@ const allTagsHref = locale === 'ko' ? '/tags/' : '/en/tags/';
       {sortedTags.map(([tag, count]) => (
         <a
           href={`${basePath}/${tag}/`}
-          class="inline-flex items-center gap-1.5 rounded-full border border-border dark:border-white/10 bg-white dark:bg-white/[0.04] px-4 py-2 text-sm font-medium text-text-navy dark:text-slate-300 transition-all duration-200 hover:border-accent hover:text-accent hover:shadow-sm"
+          class="inline-flex items-center gap-1.5 rounded-full border border-border dark:border-white/10 bg-white dark:bg-white/[0.04] px-4 py-2 text-sm font-medium text-text-navy dark:text-slate-300 transition-all duration-200 hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/10 active:translate-y-0 active:scale-[0.98]"
         >
           {tag}
           <span class="text-[11px] text-muted dark:text-slate-500">({count})</span>

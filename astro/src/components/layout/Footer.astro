@@ -10,17 +10,32 @@ const { locale } = Astro.props;
 const prefix = locale === 'en' ? '/en' : '';
 const currentYear = new Date().getFullYear();
 
-const navLinks = [
-  { key: 'about', href: `${prefix}/about/` },
-  { key: 'faculty', href: `${prefix}/faculty/` },
-  { key: 'curriculum', href: `${prefix}/curriculum/` },
-  { key: 'research', href: `${prefix}/research/` },
-  { key: 'posts', href: `${prefix}/posts/` },
-  { key: 'career', href: `${prefix}/career/` },
-  { key: 'admissions', href: `${prefix}/admissions/` },
-  { key: 'tips', href: `${prefix}/tips/` },
-  { key: 'contact', href: `${prefix}/contact/` },
-  { key: 'location', href: `${prefix}/location/` },
+const navGroups = [
+  {
+    label: locale === 'ko' ? '학과' : 'Department',
+    links: [
+      { key: 'about', href: `${prefix}/about/` },
+      { key: 'faculty', href: `${prefix}/faculty/` },
+      { key: 'posts', href: `${prefix}/posts/` },
+    ],
+  },
+  {
+    label: locale === 'ko' ? '교육' : 'Academics',
+    links: [
+      { key: 'curriculum', href: `${prefix}/curriculum/` },
+      { key: 'research', href: `${prefix}/research/` },
+      { key: 'career', href: `${prefix}/career/` },
+    ],
+  },
+  {
+    label: locale === 'ko' ? '정보' : 'Info',
+    links: [
+      { key: 'admissions', href: `${prefix}/admissions/` },
+      { key: 'tips', href: `${prefix}/tips/` },
+      { key: 'contact', href: `${prefix}/contact/` },
+      { key: 'location', href: `${prefix}/location/` },
+    ],
+  },
 ];
 
 const alternateLocale: Locale = locale === 'ko' ? 'en' : 'ko';
@@ -100,22 +115,27 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
         </div>
       </div>
 
-      <!-- Right: nav grid -->
-      <nav aria-label="Footer navigation">
-        <ul class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
-          {
-            navLinks.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  class="text-slate-500 hover:text-white transition-colors duration-200"
-                >
-                  {t(locale, `nav.${item.key}`)}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+      <!-- Right: grouped nav -->
+      <nav aria-label="Footer navigation" class="grid grid-cols-3 gap-6 lg:gap-8">
+        {navGroups.map((group) => (
+          <div>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600 mb-3">
+              {group.label}
+            </p>
+            <ul class="space-y-2.5 text-sm">
+              {group.links.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-slate-500 hover:text-white transition-colors duration-200"
+                  >
+                    {t(locale, `nav.${item.key}`)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </nav>
     </div>
   </div>

@@ -337,6 +337,11 @@
   opacity: 1;
 }
 
+.btn-glow:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
 .btn-solid-gradient {
   position: relative;
   overflow: hidden;
@@ -362,6 +367,11 @@
 
 .btn-solid-gradient:hover::before {
   opacity: 1;
+}
+
+.btn-solid-gradient:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
 }
 
 .btn-solid-gradient > * {
