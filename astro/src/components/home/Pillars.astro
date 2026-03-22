@@ -67,7 +67,7 @@ const pillars = [
                 set:html={pillar.icon}
               />
             </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-[var(--pillar-accent)] transition-colors duration-200">
+            <h3 class="pillar-title text-lg font-bold text-white transition-colors duration-200">
               {pillar.title}
             </h3>
             <p class="mt-2.5 text-sm text-slate-400 leading-relaxed">
@@ -160,5 +160,9 @@ const pillars = [
 
   .pillar-card:hover .pillar-card-glow {
     opacity: 1;
+  }
+
+  .pillar-card:hover .pillar-title {
+    color: var(--pillar-accent);
   }
 </style>
