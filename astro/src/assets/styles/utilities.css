@@ -96,7 +96,7 @@
 /* ── Gradient text (blue → cyan) ──────────────── */
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-accent), #22d3ee, #38bdf8);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-cyan), var(--color-sky));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

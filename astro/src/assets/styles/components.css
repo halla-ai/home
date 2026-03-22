@@ -76,13 +76,13 @@
 }
 
 .dark .site-header.header-solid {
-  .nav-link { color: #cbd5e1; }
+  .nav-link { color: var(--color-text-soft); }
   .nav-link:hover,
   .nav-link[aria-current="page"] { color: var(--color-accent); }
-  .nav-brand-text { color: #f1f5f9; }
-  .nav-brand-sub { color: #64748b; }
-  .hamburger-btn { color: #94a3b8; }
-  .hamburger-btn:hover { color: #f1f5f9; background-color: rgba(255, 255, 255, 0.08); }
+  .nav-brand-text { color: var(--color-text-bright); }
+  .nav-brand-sub { color: var(--color-muted); }
+  .hamburger-btn { color: var(--color-text-dim); }
+  .hamburger-btn:hover { color: var(--color-text-bright); background-color: rgba(255, 255, 255, 0.08); }
   .logo-color { display: none; }
   .logo-white { display: block; }
 }
@@ -105,7 +105,7 @@
   transform: translateX(-50%) scaleX(1);
   width: 20px;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-accent), #22d3ee);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-cyan));
   border-radius: 1px;
   transition: transform 0.2s ease;
 }
@@ -243,7 +243,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), #22d3ee, var(--color-accent));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-cyan), var(--color-accent));
   background-size: 200% 100%;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -294,9 +294,6 @@
   }
 }
 
-/* Legacy alias */
-.glow-card-light { /* alias for card */ }
-
 /* ── Card hover ───────────────────────────────── */
 
 .card-lift {
@@ -343,7 +340,7 @@
 .btn-solid-gradient {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-accent), #22d3ee);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-cyan));
   border: none;
   box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -353,7 +350,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #22d3ee, var(--color-accent));
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-accent));
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -390,9 +387,7 @@
   font-size: 1.0625rem;
   line-height: 1.8;
   color: var(--color-text);
-}
 
-.prose {
   > * + * { margin-top: 1.5em; }
 
   h2 {
@@ -475,16 +470,16 @@
 
 /* Prose dark overrides */
 .dark .prose {
-  color: #cbd5e1;
+  color: var(--color-text-soft);
 
   h2 { border-bottom-color: rgba(255, 255, 255, 0.08); }
-  strong { color: #f1f5f9; }
+  strong { color: var(--color-text-bright); }
   li::marker { color: rgba(14, 165, 233, 0.6); }
-  blockquote { color: #94a3b8; border-left-color: rgba(14, 165, 233, 0.5); }
-  code { background-color: rgba(255, 255, 255, 0.08); color: #e2e8f0; }
+  blockquote { color: var(--color-text-dim); border-left-color: rgba(14, 165, 233, 0.5); }
+  code { background-color: rgba(255, 255, 255, 0.08); color: var(--color-text-light); }
   pre { border-color: rgba(255, 255, 255, 0.06); }
   hr { background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent); }
-  th { background-color: rgba(255, 255, 255, 0.04); border-bottom-color: rgba(255, 255, 255, 0.1); color: #f1f5f9; }
+  th { background-color: rgba(255, 255, 255, 0.04); border-bottom-color: rgba(255, 255, 255, 0.1); color: var(--color-text-bright); }
   td { border-bottom-color: rgba(255, 255, 255, 0.06); }
   tbody tr:hover { background-color: rgba(14, 165, 233, 0.05); }
 }
@@ -565,7 +560,7 @@
 .dark .form-input {
   background-color: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
+  color: var(--color-text-light);
 
   &:focus {
     border-color: var(--color-accent);
@@ -578,12 +573,12 @@
 .page-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0f2344 0%, #132d54 40%, #1a3a6b 100%);
+  background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-navy-mid) 40%, var(--color-navy) 100%);
   color: white;
 }
 
 .dark .page-hero {
-  background: linear-gradient(135deg, var(--color-void) 0%, var(--color-abyss) 40%, #0c1d3a 100%);
+  background: linear-gradient(135deg, var(--color-void) 0%, var(--color-abyss) 40%, var(--color-navy-dark) 100%);
 
   &::after {
     background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 60%);

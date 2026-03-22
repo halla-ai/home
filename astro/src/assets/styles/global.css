@@ -31,11 +31,22 @@
   --color-emerald: #10b981;
   --color-emerald-light: #ecfdf5;
 
+  /* Gradient accents */
+  --color-cyan: #22d3ee;
+  --color-sky: #38bdf8;
+
+  /* Dark mode text (slate scale) */
+  --color-text-bright: #f1f5f9;
+  --color-text-light: #e2e8f0;
+  --color-text-soft: #cbd5e1;
+  --color-text-dim: #94a3b8;
+
   /* Neutrals */
   --color-text: #0f172a;
   --color-text-navy: #1e3a5f;
   --color-muted: #64748b;
   --color-border: #dce2eb;
+  --color-navy-mid: #132d54;
 
   /* Typography */
   --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
