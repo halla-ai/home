@@ -18,6 +18,26 @@ faculty = faculty.sort((a, b) => a.data.order - b.data.order);
   description="Meet the faculty of the Department of AI"
   locale={locale}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faculty.map((m) => ({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": m.data.name_en || m.data.name,
+    ...(m.data.name_en ? { "alternateName": m.data.name } : {}),
+    "jobTitle": m.data.title,
+    "email": m.data.email,
+    ...(m.data.phone ? { "telephone": m.data.phone } : {}),
+    ...(m.data.photo ? { "image": new URL(m.data.photo, 'https://halla.ai').href } : {}),
+    "knowsAbout": m.data.research_areas,
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "Department of Artificial Intelligence, Cheju Halla University",
+      "url": "https://halla.ai"
+    },
+    ...(m.data.website ? { "url": m.data.website } : {}),
+    ...(m.data.scholar || m.data.github || m.data.linkedin ? {
+      "sameAs": [m.data.scholar, m.data.github, m.data.linkedin].filter(Boolean)
+    } : {})
+  })))} />
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
     {faculty.map((member) => (
       <Card variant="bento" class="group">

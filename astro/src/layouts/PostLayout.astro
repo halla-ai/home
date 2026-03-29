@@ -46,6 +46,24 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
 ---
 
 <BaseLayout title={pageTitle} description={description} image={image} locale={locale}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "datePublished": new Date(date).toISOString(),
+    "url": Astro.url.href,
+    ...(image ? { "image": new URL(image, Astro.site).href } : {}),
+    ...(tags.length > 0 ? { "keywords": tags.join(', ') } : {}),
+    "inLanguage": locale === 'en' ? 'en' : 'ko',
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": locale === 'en' ? "Department of Artificial Intelligence, Cheju Halla University" : "제주한라대학교 인공지능학과",
+      "url": "https://halla.ai",
+      "logo": { "@type": "ImageObject", "url": "https://halla.ai/images/logo-icon.svg" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": Astro.url.href }
+  })} />
   <article class="pb-24 lg:pb-32">
     <!-- Post header -->
     <header class="page-hero py-20 lg:py-28">

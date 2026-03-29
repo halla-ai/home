@@ -16,6 +16,26 @@ const faculty = allFaculty
   description="제주한라대학교 인공지능학과 교수진을 소개합니다"
   locale={locale}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faculty.map((m) => ({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": m.data.name,
+    ...(m.data.name_en ? { "alternateName": m.data.name_en } : {}),
+    "jobTitle": m.data.title,
+    "email": m.data.email,
+    ...(m.data.phone ? { "telephone": m.data.phone } : {}),
+    ...(m.data.photo ? { "image": new URL(m.data.photo, 'https://halla.ai').href } : {}),
+    "knowsAbout": m.data.research_areas,
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "제주한라대학교 인공지능학과",
+      "url": "https://halla.ai"
+    },
+    ...(m.data.website ? { "url": m.data.website } : {}),
+    ...(m.data.scholar || m.data.github || m.data.linkedin ? {
+      "sameAs": [m.data.scholar, m.data.github, m.data.linkedin].filter(Boolean)
+    } : {})
+  })))} />
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
     {faculty.map((member) => (
       <Card variant="bento" class="group">
