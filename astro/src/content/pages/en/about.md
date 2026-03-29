@@ -1,23 +1,45 @@
 ---
 title: "About the Department"
-description: "Training the talent required by the future industrial society evolving through the Fourth Industrial Revolution"
+description: "The Department of Artificial Intelligence at Cheju Halla University is the only ICT-specialized department in Jeju Province, with 8 full-time professors in AI, NLP, computer vision, robotics, and cybersecurity."
 ---
 
-Training the next generation of core specialists in Artificial Intelligence,
-Big Data, Cybersecurity, Internet of Things, and Intelligent Robots
-required by the Fourth Industrial Revolution!!
+## What is the Department of Artificial Intelligence?
 
-To train professional technical personnel capable of responding to the hyper-intelligent future society and technological advances brought by the Fourth Industrial Revolution, we have redesigned the basic engineering curriculum into an innovative engineering technology education program. In the 3rd and 4th year courses, students focus on advanced education in the latest technologies through group project-based learning in collaboration with the Future Culture Technology Research Institute and research centers. We cultivate creative and convergent talents in 4th Industrial Revolution technologies who will, after graduation, lead new technology fields such as Artificial Intelligence, IoT, Robotics, Big Data, and Cybersecurity both domestically and internationally.
+The Department of Artificial Intelligence at Cheju Halla University is the only ICT-specialized department in Jeju Special Self-Governing Province, South Korea. With 8 full-time professors covering artificial intelligence, natural language processing, computer vision, robotics, and cybersecurity, the department provides hands-on education backed by industry-grade AI infrastructure including NVIDIA DGX H100/A100 servers. Partnerships with Saltlux, ESTsoft, Pix4D, AWS, and other companies ensure practical, career-ready training.
 
----
+### Key Facts
 
-<p><iframe src="https://www.youtube.com/embed/8c9910JKf34" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+| Item | Details |
+|------|---------|
+| University | Cheju Halla University |
+| Location | 38 Halladaehak-ro, Jeju City, Jeju Province, South Korea |
+| Faculty | 8 full-time professors (AI, NLP, security, VR/AR, robotics) |
+| Program | 4-year undergraduate, 5 specialized tracks |
+| Infrastructure | NVIDIA DGX H100 (x2), DGX A100, DGX-1 |
+| Industry Partners | Saltlux, Diquest, ESTsoft, Pix4D, AWS |
+| Career Fields | Samsung Electronics, LG Electronics, Hyundai Motor, Kakao, Naver, SKT, KT, etc. |
 
----
+### Educational Goals
 
-We need experts with the know-how to lead in this new industry. We are providing a cutting edge engineering education to help students to develop their knowledge. This will be ready for the next generation of technology. Third and fourth year students will participate in project based lessons with support from onsite researchers in local industries. Our students will be ready to enter industries that rely on artificial intelligence, the internet of things, big data, block chain, robotics in Jeju Island
+In the 3rd and 4th year, students focus on advanced project-based learning in collaboration with research centers and industry partners. Graduates are prepared to lead in AI, IoT, robotics, big data, and cybersecurity fields both domestically and internationally.
 
-> We Are Cultivating Next-Generation Core Experts in Artificial Intelligence, the 'Internet of Things', Big Data, Blockchain, Information Security, and Intelligent Robots Required by the 4th Industrial Revolution!
+## Frequently Asked Questions
+
+### What do students learn in the AI Department?
+
+Students study machine learning, deep learning, natural language processing, computer vision, robotics, and cybersecurity. The first two years build foundations in programming and mathematics, while the third and fourth years focus on industry-collaborative project-based learning.
+
+### What career paths are available after graduation?
+
+Graduates pursue careers as AI engineers, data scientists, cybersecurity specialists, robotics engineers, and software developers at companies such as Samsung Electronics, LG Electronics, Hyundai Motor, Kakao, Naver, SKT, and KT. Industry partnership projects provide hands-on experience and career placement opportunities.
+
+### What equipment and infrastructure does the department have?
+
+The department operates NVIDIA DGX H100 (2 units), DGX A100, DGX-1, and RTX A6000 GPU cloud servers. All students receive an HP Victus 16 high-performance laptop for their studies.
+
+### What industry partnerships does the department have?
+
+The department partners with Saltlux and Diquest for next-generation multimodal AI education systems, ESTsoft for AI technology education, and Pix4D for drone and 3D mapping technology education. AWS collaborates through RISE program bootcamps and hackathons. Graduates enter major companies including Samsung Electronics, LG Electronics, Hyundai Motor, Kakao, Naver, SKT, and KT.
 
 ---
 
@@ -27,10 +49,10 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/dgx-h100.jpeg" loading="lazy" alt="H100">
+    <img src="/images/about/dgx-h100.jpeg" loading="lazy" alt="NVIDIA DGX H100 AI server at Cheju Halla University AI Department">
   </div>
   <div class="gallery">
-    <img src="/images/about/dgx-h100-2.jpeg" loading="lazy" alt="H100-2">
+    <img src="/images/about/dgx-h100-2.jpeg" loading="lazy" alt="Second NVIDIA DGX H100 server unit in the AI computing lab">
   </div>
 </div>
 
@@ -46,7 +68,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/dgx-a100.jpeg" loading="lazy" alt="A100">
+    <img src="/images/about/dgx-a100.jpeg" loading="lazy" alt="NVIDIA DGX A100 server for AI model training">
   </div>
 </div>
 
@@ -62,7 +84,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/dgx-1.jpeg" loading="lazy" alt="DGX1">
+    <img src="/images/about/dgx-1.jpeg" loading="lazy" alt="NVIDIA DGX-1 server for deep learning development">
   </div>
 </div>
 
@@ -78,7 +100,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/Server_image.jpg" loading="lazy" alt="A6000">
+    <img src="/images/about/Server_image.jpg" loading="lazy" alt="NVIDIA RTX A6000 GPU cloud server for remote AI research">
   </div>
 </div>
 
@@ -94,7 +116,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/victus.jpg" loading="lazy" alt="Victus">
+    <img src="/images/about/victus.jpg" loading="lazy" alt="HP Victus 16 laptop provided to AI department students">
   </div>
 </div>
 

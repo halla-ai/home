@@ -44,6 +44,7 @@ const readingTime = Math.max(1, Math.ceil((post.body?.split(/\s+/).length || 0) 
   tags={post.data.tags}
   image={post.data.image}
   readingTime={readingTime}
+  author={post.data.author}
   locale={locale}
   prev={prev}
   next={next}

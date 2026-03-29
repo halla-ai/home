@@ -1,23 +1,45 @@
 ---
 title: "학과소개"
-description: "4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인재를 양성하는 인공지능학과"
+description: "제주한라대학교 인공지능학과는 제주 유일의 ICT 특성화 학과로, 8명의 전임교수진이 AI, NLP, 컴퓨터비전, 로봇공학, 사이버보안 교육과 연구를 수행합니다."
 ---
 
-4차산업혁명으로 진화하는 미래산업사회에서 요구하는 인공지능,
-빅데이터, 사이버보안, 사물인터넷 및 지능형 로봇 관련 차세대
-핵심 전문기술인력 양성학과!!
+## 제주한라대학교 인공지능학과란?
 
-4차산업혁명을 통해 다가오는 초지능형 미래사회와 기술발전에 대응할 수 있는 전문기술인력 양성을 위해, 기본 공학교육과정을 혁신적인 공학기술교육으로 디자인하여 학생들에게 제공하고, 3, 4학년 과정에서는 미래문화기술연구단 및 연구센터들과 협력을 통한 그룹프로젝트 중심의 최신기술 심화교육에 집중하여, 졸업 후 국내외로 진출하여 인공지능, 사물인터넷, 로봇, 빅데이터, 사이버보안 등의 신기술분야를 주도할 4차산업 혁명 기술 창의·융복합 인재를 양성한다.
+제주한라대학교 인공지능학과는 제주특별자치도 유일의 ICT 특성화 학과입니다. 8명의 전임교수진이 인공지능, 자연어처리, 컴퓨터비전, 로봇공학, 사이버보안 분야의 교육과 연구를 수행하며, NVIDIA DGX H100/A100 등 산업 수준의 AI 인프라를 갖추고 있습니다. 솔트룩스, 이스트소프트, Pix4D, AWS 등과 산학협력을 통해 실무 중심 교육을 제공합니다.
 
----
+### 핵심 정보
 
-<p><iframe src="https://www.youtube.com/embed/8c9910JKf34" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+| 항목 | 내용 |
+|------|------|
+| 소속 | 제주한라대학교 (Cheju Halla University) |
+| 위치 | 제주특별자치도 제주시 한라대학로 38 |
+| 전임교수 | 8명 (AI, NLP, 보안, VR/AR, 로봇공학) |
+| 교육과정 | 4년제, 5개 전공 트랙 |
+| 주요 인프라 | NVIDIA DGX H100 (x2), DGX A100, DGX-1 |
+| 산학협력 기업 | 솔트룩스, 다이퀘스트, 이스트소프트, Pix4D, AWS |
+| 주요 취업 분야 | 삼성전자, LG전자, 현대자동차, 카카오, 네이버, SKT, KT 등 |
 
----
+### 교육 목표
 
-We need experts with the know-how to lead in this new industry. We are providing a cutting edge engineering education to help students to develop their knowledge. This will be ready for the next generation of technology. Third and fourth year students will participate in project based lessons with support from onsite researchers in local industries. Our students will be ready to enter industries that rely on artificial intelligence, the internet of things, big data, block chain, robotics in Jeju Island
+3, 4학년 과정에서 미래문화기술연구단 및 연구센터들과 협력을 통한 그룹프로젝트 중심의 최신기술 심화교육에 집중합니다. 졸업 후 국내외에서 인공지능, 사물인터넷, 로봇, 빅데이터, 사이버보안 등 신기술분야를 주도할 창의·융복합 인재를 양성합니다.
 
-> We Are Cultivating Next-Generation Core Experts in Artificial Intelligence, the 'Internet of Things', Big Data, Blockchain, Information Security, and Intelligent Robots Required by the 4th Industrial Revolution!
+## 자주 묻는 질문 (FAQ)
+
+### 인공지능학과에서는 무엇을 배우나요?
+
+머신러닝, 딥러닝, 자연어처리, 컴퓨터비전, 로봇공학, 사이버보안 등 AI 핵심 기술을 배웁니다. 1-2학년에서 프로그래밍과 수학 기초를 다지고, 3-4학년에서 산학협력 프로젝트 중심의 심화교육을 받습니다.
+
+### 졸업 후 어떤 분야로 진출할 수 있나요?
+
+AI 엔지니어, 데이터 사이언티스트, 보안 전문가, 로봇공학 엔지니어, SW 개발자 등으로 진출합니다. 삼성전자, LG전자, 현대자동차, 카카오, 네이버, SKT, KT 등 주요 기업이 취업 대상이며, 산학협력 기업과의 프로젝트를 통해 실무 경험과 취업 연계 기회를 제공합니다.
+
+### 어떤 장비와 인프라를 갖추고 있나요?
+
+NVIDIA DGX H100 (2대), DGX A100, DGX-1, RTX A6000 GPU 클라우드 서버를 보유하고 있으며, 전체 학생에게 HP Victus 16 고성능 노트북을 제공합니다.
+
+### 어떤 기업과 산학협력을 하고 있나요?
+
+AI 전문 기업 솔트룩스 및 다이퀘스트와 차세대 멀티모달 AI 교육 시스템 개발 협력, 이스트소프트와 AI 기술 교육 협력, Pix4D와 드론·3D 매핑 기술 교육 협력을 진행하고 있습니다. AWS와는 RISE 사업 연계 부트캠프 및 해커톤을 운영하며, 졸업생은 삼성전자, LG전자, 현대자동차, 카카오, 네이버, SKT, KT 등 주요 기업으로 진출합니다.
 
 ---
 
@@ -27,10 +49,10 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/dgx-h100.jpeg" loading="lazy" alt="H100">
+    <img src="/images/about/dgx-h100.jpeg" loading="lazy" alt="제주한라대학교 인공지능학과 NVIDIA DGX H100 AI 서버">
   </div>
   <div class="gallery">
-    <img src="/images/about/dgx-h100-2.jpeg" loading="lazy" alt="H100-2">
+    <img src="/images/about/dgx-h100-2.jpeg" loading="lazy" alt="AI 컴퓨팅 실습실의 두 번째 NVIDIA DGX H100 서버">
   </div>
 </div>
 
@@ -46,7 +68,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/dgx-a100.jpeg" loading="lazy" alt="A100">
+    <img src="/images/about/dgx-a100.jpeg" loading="lazy" alt="AI 모델 훈련용 NVIDIA DGX A100 서버">
   </div>
 </div>
 
@@ -62,7 +84,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/dgx-1.jpeg" loading="lazy" alt="DGX1">
+    <img src="/images/about/dgx-1.jpeg" loading="lazy" alt="딥러닝 개발용 NVIDIA DGX-1 서버">
   </div>
 </div>
 
@@ -78,7 +100,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/Server_image.jpg" loading="lazy" alt="A6000">
+    <img src="/images/about/Server_image.jpg" loading="lazy" alt="원격 AI 연구를 위한 NVIDIA RTX A6000 GPU 클라우드 서버">
   </div>
 </div>
 
@@ -94,7 +116,7 @@ We need experts with the know-how to lead in this new industry. We are providing
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/victus.jpg" loading="lazy" alt="Victus">
+    <img src="/images/about/victus.jpg" loading="lazy" alt="인공지능학과 학생들에게 제공되는 HP Victus 16 노트북">
   </div>
 </div>
 

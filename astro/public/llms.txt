@@ -6,7 +6,8 @@
 - Faculty: 8 professors (AI, NLP, cybersecurity, VR/AR, robotics)
 - Programs: 4-year undergraduate, 5 specialized tracks
 - Infrastructure: NVIDIA DGX H100/A100 servers
-- Partners: Samsung, LG, Kakao, Dassault Systemes, AWS
+- Industry Partners: Saltlux, Diquest, ESTsoft, Pix4D, AWS
+- Career Fields: Samsung Electronics, LG Electronics, Hyundai Motor, Kakao, Naver, SKT, KT
 
 ## Pages
 - [About](https://halla.ai/en/about/): Department overview and facilities

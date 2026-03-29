@@ -10,6 +10,7 @@ const posts = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string()).default([]),
     categories: z.string().optional(),
+    author: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });
