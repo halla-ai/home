@@ -1,0 +1,18 @@
+# Cheju Halla University - Department of Artificial Intelligence
+> The Department of Artificial Intelligence at Cheju Halla University (Jeju, South Korea) trains next-generation AI specialists through hands-on education in machine learning, NLP, computer vision, robotics, and cybersecurity. The only ICT-specialized department in Jeju Province.
+
+## Key Facts
+- Location: Jeju, South Korea
+- Faculty: 8 professors (AI, NLP, cybersecurity, VR/AR, robotics)
+- Programs: 4-year undergraduate, 5 specialized tracks
+- Infrastructure: NVIDIA DGX H100/A100 servers
+- Partners: Samsung, LG, Kakao, Dassault Systemes, AWS
+
+## Pages
+- [About](https://halla.ai/en/about/): Department overview and facilities
+- [Faculty](https://halla.ai/en/faculty/): Professor profiles and research areas
+- [Curriculum](https://halla.ai/en/curriculum/): Course catalog and tracks
+- [Research](https://halla.ai/en/research/): Student and faculty research projects
+- [News](https://halla.ai/en/posts/): Latest department news and events
+- [Admissions](https://halla.ai/en/admissions/): How to apply
+- [Contact](https://halla.ai/en/contact/): Contact information
