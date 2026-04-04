@@ -72,3 +72,13 @@ export function getAlternateLocalePath(url: URL, targetLocale: Locale): string {
 export function getContentPrefix(locale: Locale): string {
   return `${locale}/`;
 }
+
+/**
+ * Build a tag URL for the given locale.
+ * e.g. tagUrl('ko', 'AI') => '/tags/AI/'
+ *      tagUrl('en', 'Hallasan Soju') => '/en/tags/Hallasan%20Soju/'
+ */
+export function tagUrl(locale: Locale, tag: string): string {
+  const prefix = locale === 'ko' ? '' : '/en';
+  return `${prefix}/tags/${encodeURIComponent(tag)}/`;
+}
