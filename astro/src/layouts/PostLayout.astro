@@ -84,7 +84,7 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
             <div class="flex flex-wrap gap-2 mt-5">
               {tags.map((tag) => (
                 <a
-                  href={`${prefix}/tags/${tag}/`}
+                  href={`${prefix}/tags/${encodeURIComponent(tag)}/`}
                   class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white/90 hover:bg-accent hover:text-white transition-all duration-200"
                 >
                   #{tag}
