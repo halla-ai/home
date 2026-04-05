@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumb from '../components/common/Breadcrumb.astro';
-import { t, type Locale } from '../i18n/ui';
+import { t, tagUrl, type Locale } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -84,7 +84,7 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
             <div class="flex flex-wrap gap-2 mt-5">
               {tags.map((tag) => (
                 <a
-                  href={`${prefix}/tags/${tag}/`}
+                  href={tagUrl(locale, tag)}
                   class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white/90 hover:bg-accent hover:text-white transition-all duration-200"
                 >
                   #{tag}
