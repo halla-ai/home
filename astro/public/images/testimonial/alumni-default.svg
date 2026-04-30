@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 376 376" role="img" aria-labelledby="title desc">
+  <title id="title">Alumni profile placeholder</title>
+  <desc id="desc">Neutral profile image for alumni testimonials.</desc>
+  <defs>
+    <linearGradient id="bg" x1="58" y1="48" x2="318" y2="328" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(118 96) rotate(47) scale(245)">
+      <stop stop-color="#E0F2FE" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#E0F2FE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="376" height="376" rx="64" fill="url(#bg)"/>
+  <rect width="376" height="376" rx="64" fill="url(#glow)"/>
+  <circle cx="188" cy="142" r="58" fill="#F8FAFC" opacity="0.92"/>
+  <path d="M84 306c13.5-58.5 53.2-89 104-89s90.5 30.5 104 89" fill="#F8FAFC" opacity="0.92"/>
+  <path d="M74 76h228" stroke="#F8FAFC" stroke-opacity="0.22" stroke-width="2"/>
+  <path d="M74 300h228" stroke="#F8FAFC" stroke-opacity="0.22" stroke-width="2"/>
+</svg>

@@ -12,9 +12,15 @@ interface Props {
 const { locale } = Astro.props;
 
 const allTestimonials = await getCollection('testimonials');
+const splitContent = (content: string) =>
+  content
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 const testimonials = allTestimonials
   .filter((t) => t.id.startsWith(`${locale}/`))
-  .sort((a, b) => a.data.order - b.data.order);
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((item) => ({ ...item, paragraphs: splitContent(item.data.content) }));
 ---
 
 <section class="relative bg-white dark:bg-void py-12 md:py-16 overflow-hidden">
@@ -62,9 +68,13 @@ const testimonials = allTestimonials
             </div>
           </div>
 
-          <p class={`leading-relaxed text-muted dark:text-slate-400 ${i === 0 ? 'text-[0.9375rem]' : 'text-sm'}`}>
-            "{item.data.content}"
-          </p>
+          <div class={`space-y-3 leading-relaxed text-muted dark:text-slate-400 ${i === 0 ? 'text-[0.9375rem]' : 'text-sm'}`}>
+            {item.paragraphs.map((paragraph, paragraphIndex) => (
+              <p>
+                {`${paragraphIndex === 0 ? '"' : ''}${paragraph}${paragraphIndex === item.paragraphs.length - 1 ? '"' : ''}`}
+              </p>
+            ))}
+          </div>
         </Card>
       ))}
     </div>
