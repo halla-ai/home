@@ -27,7 +27,7 @@ categories: Achievement
 
 ### 학생 우수성과 발표 — Physical AI Data Augmentation Platform
 
-제주한라대학교 인공지능학과 팀(김재은, 문재현, 홍성관, 김용빈)이 학생 우수성과 발표 세션에서 "Physical AI Data Augmentation Platform — Transforming Robot Learning"을 발표했다. 이 연구는 RISE 사업 산학공동 기술개발과제인 "도로파손 무인복구 기술 개발과 실증을 위한 연구 협력" 프로젝트의 일환으로 진행됐으며, 서울대학교·KAIST와의 공동 연구 성과를 담고 있다.
+제주한라대학교 인공지능학과 팀(김재은, 문재현, 홍성관, 김웅빈)이 학생 우수성과 발표 세션에서 "Physical AI Data Augmentation Platform — Transforming Robot Learning"을 발표했다. 이 연구는 RISE 사업 산학공동 기술개발과제인 "도로파손 무인복구 기술 개발과 실증을 위한 연구 협력" 프로젝트의 일환으로 진행됐으며, 서울대학교·KAIST와의 공동 연구 성과를 담고 있다.
 
 ![우수성과 발표](/images/posts/20260223/KakaoTalk_Photo_2026-03-14-20-06-53.jpeg)
 

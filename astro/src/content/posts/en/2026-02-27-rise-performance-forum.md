@@ -27,7 +27,7 @@ Lee Myung-hyun, Chairperson of the 5-Hub 3-Special Zone Special Committee under 
 
 ### Outstanding Student Achievement — Physical AI Data Augmentation Platform
 
-The Cheju Halla University AI Department team (Kim Jae-eun, Moon Jae-hyun, Hong Seong-gwan, Kim Yong-bin) presented "Physical AI Data Augmentation Platform — Transforming Robot Learning" during the outstanding student achievement session. This research was conducted as part of the RISE industry-academia joint technology development project on "Research Collaboration for Development and Demonstration of Unmanned Road Damage Repair Technology," incorporating joint research outcomes with Seoul National University and KAIST.
+The Cheju Halla University AI Department team (Kim Jae-eun, Moon Jae-hyun, Hong Seong-gwan, Kim Woong-bin) presented "Physical AI Data Augmentation Platform — Transforming Robot Learning" during the outstanding student achievement session. This research was conducted as part of the RISE industry-academia joint technology development project on "Research Collaboration for Development and Demonstration of Unmanned Road Damage Repair Technology," incorporating joint research outcomes with Seoul National University and KAIST.
 
 ![Outstanding achievement presentation](/images/posts/20260223/KakaoTalk_Photo_2026-03-14-20-06-53.jpeg)
 
