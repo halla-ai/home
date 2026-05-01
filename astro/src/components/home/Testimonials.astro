@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
 import type { Locale } from '../../i18n/ui';
-import SectionHeader from '../common/SectionHeader.astro';
 import Card from '../ui/Card.astro';
 
 interface Props {
@@ -40,43 +39,342 @@ const testimonials = allTestimonials
       <div class="mt-3 w-10 h-[3px] rounded-full bg-accent" aria-hidden="true"></div>
     </div>
 
-    <div class="mt-2 grid gap-5 md:grid-cols-3 md:items-start">
-      {testimonials.map((item, i) => (
-        <Card variant="flat" class={`relative p-7 fade-up fade-up-d${i + 1}${i === 1 ? ' md:translate-y-6' : ''}`}>
-          {/* Decorative quote mark */}
-          <svg
-            class={`absolute top-5 right-6 w-10 h-10 ${i === 0 ? 'text-accent/15 dark:text-accent/20' : 'text-accent/8 dark:text-accent/10'}`}
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
-          </svg>
+    <div class="testimonials-carousel relative mt-2 fade-up" data-testimonials>
+      <div class="testimonials-stage" data-stage>
+        <div class="testimonials-track" data-track>
+          {testimonials.map((item) => (
+            <Card variant="flat" class="testimonials-card relative p-7">
+              {/* Decorative quote mark */}
+              <svg
+                class="absolute top-5 right-6 w-10 h-10 text-accent/10 dark:text-accent/15"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
+              </svg>
 
-          <div class="flex items-center gap-4 mb-5">
-            <div class={`overflow-hidden shrink-0 ${i === 0 ? 'w-16 h-16 rounded-2xl ring-2 ring-accent/20 dark:ring-accent/25' : 'w-14 h-14 rounded-full ring-2 ring-accent/15 dark:ring-accent/20'}`}>
-              <img
-                src={item.data.photo}
-                alt={item.data.name}
-                class="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <h3 class={`font-bold text-deep dark:text-white ${i === 0 ? 'text-lg' : 'text-base'}`}>{item.data.name}</h3>
-              <p class="text-sm text-accent">{item.data.designation}</p>
-            </div>
-          </div>
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 ring-2 ring-accent/15 dark:ring-accent/20">
+                  <img
+                    src={item.data.photo}
+                    alt={item.data.name}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-deep dark:text-white">{item.data.name}</h3>
+                  <p class="text-sm text-accent">{item.data.designation}</p>
+                </div>
+              </div>
 
-          <div class={`space-y-3 leading-relaxed text-muted dark:text-slate-400 ${i === 0 ? 'text-[0.9375rem]' : 'text-sm'}`}>
-            {item.paragraphs.map((paragraph, paragraphIndex) => (
-              <p>
-                {`${paragraphIndex === 0 ? '"' : ''}${paragraph}${paragraphIndex === item.paragraphs.length - 1 ? '"' : ''}`}
-              </p>
-            ))}
-          </div>
-        </Card>
-      ))}
+              <div class="space-y-3 text-sm leading-relaxed text-muted dark:text-slate-400">
+                {item.paragraphs.map((paragraph, paragraphIndex) => (
+                  <p>
+                    {`${paragraphIndex === 0 ? '"' : ''}${paragraph}${paragraphIndex === item.paragraphs.length - 1 ? '"' : ''}`}
+                  </p>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="testimonials-arrow absolute top-1/2 -translate-y-1/2 left-2 z-20 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-white/95 dark:bg-deep/90 ring-1 ring-stone-200 dark:ring-white/10 shadow-lg text-deep dark:text-white hover:bg-accent hover:text-white dark:hover:bg-accent transition disabled:opacity-0 disabled:pointer-events-none"
+        data-prev
+        aria-label="이전 후기"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="testimonials-arrow absolute top-1/2 -translate-y-1/2 right-2 z-20 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-white/95 dark:bg-deep/90 ring-1 ring-stone-200 dark:ring-white/10 shadow-lg text-deep dark:text-white hover:bg-accent hover:text-white dark:hover:bg-accent transition disabled:opacity-0 disabled:pointer-events-none"
+        data-next
+        aria-label="다음 후기"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
   </div>
 </section>
+
+<style>
+  .testimonials-stage {
+    perspective: 1600px;
+    perspective-origin: 50% 50%;
+    /* allow rotated cards to overflow vertically without clipping */
+    padding-block: 1.5rem;
+    margin-inline: -1rem;
+  }
+
+  .testimonials-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-inline: 12.5%;
+    padding-bottom: 1rem;
+    transform-style: preserve-3d;
+    scrollbar-width: none;
+  }
+
+  .testimonials-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-track {
+      gap: 1.75rem;
+      padding-inline: 22%;
+    }
+  }
+
+  .testimonials-card {
+    flex: 0 0 auto;
+    width: 78%;
+    scroll-snap-align: center;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 220ms ease-out,
+      box-shadow 220ms ease-out;
+    will-change: transform, opacity;
+  }
+
+  @media (min-width: 640px) {
+    .testimonials-card {
+      width: 60%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-card {
+      width: 56%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonials-card {
+      width: 44%;
+    }
+  }
+
+  /* JS-driven coverflow transform via CSS variables */
+  .testimonials-card {
+    transform: rotateY(var(--rot, 0deg)) translateZ(var(--tz, 0px)) scale(var(--scale, 1));
+    opacity: var(--op, 1);
+  }
+
+  .testimonials-card[data-active='true'] {
+    box-shadow:
+      0 24px 48px -16px rgba(2, 6, 23, 0.18),
+      0 8px 20px -8px rgba(14, 165, 233, 0.18);
+  }
+
+  :global(.dark) .testimonials-card[data-active='true'] {
+    box-shadow:
+      0 24px 60px -20px rgba(0, 0, 0, 0.55),
+      0 8px 24px -8px rgba(14, 165, 233, 0.22);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonials-card {
+      transform: none !important;
+      opacity: 1 !important;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  type Carousel = {
+    root: HTMLElement;
+    track: HTMLElement;
+    prev: HTMLButtonElement | null;
+    next: HTMLButtonElement | null;
+  };
+
+  const setup = ({ root, track, prev, next }: Carousel) => {
+    const originals = Array.from(track.querySelectorAll<HTMLElement>('.testimonials-card'));
+    if (!originals.length) return;
+
+    // Duplicate the slide set once so we can perform a seamless wrap-around
+    originals.forEach((card) => {
+      const clone = card.cloneNode(true) as HTMLElement;
+      clone.dataset.clone = 'true';
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+    const cards = Array.from(track.querySelectorAll<HTMLElement>('.testimonials-card'));
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf = 0;
+    let suppressLoop = false;
+    let halfWidth = () => track.scrollWidth / 2;
+
+    const apply = () => {
+      raf = 0;
+      const trackRect = track.getBoundingClientRect();
+      const center = trackRect.left + trackRect.width / 2;
+      const half = trackRect.width / 2;
+      let activeIdx = 0;
+      let activeDist = Infinity;
+
+      cards.forEach((card, idx) => {
+        const r = card.getBoundingClientRect();
+        const cardCenter = r.left + r.width / 2;
+        const distance = cardCenter - center;
+        const dist = Math.abs(distance);
+        if (dist < activeDist) {
+          activeDist = dist;
+          activeIdx = idx;
+        }
+        if (reduced) return;
+        const ratio = Math.max(-1.5, Math.min(1.5, distance / half));
+        const abs = Math.abs(ratio);
+        const rot = -ratio * 38; // degrees
+        const tz = -abs * 90; // px (push back)
+        const scale = 1 - abs * 0.1;
+        const op = 1 - Math.min(0.55, abs * 0.55);
+        card.style.setProperty('--rot', `${rot}deg`);
+        card.style.setProperty('--tz', `${tz}px`);
+        card.style.setProperty('--scale', `${scale}`);
+        card.style.setProperty('--op', `${op}`);
+        card.style.zIndex = String(100 - Math.round(abs * 100));
+      });
+
+      cards.forEach((card, idx) => {
+        card.dataset.active = idx === activeIdx ? 'true' : 'false';
+      });
+
+    };
+
+    const schedule = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(apply);
+    };
+
+    const step = () => {
+      const card = cards[0];
+      const gap = parseFloat(getComputedStyle(track).columnGap || '20');
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    const silentJump = (delta: number) => {
+      suppressLoop = true;
+      const prevBehavior = track.style.scrollBehavior;
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft += delta;
+      requestAnimationFrame(() => {
+        track.style.scrollBehavior = prevBehavior;
+        suppressLoop = false;
+      });
+    };
+
+    const advance = (dir: 1 | -1 = 1) => {
+      // Going backward from the start — silently jump to the cloned set first
+      if (dir < 0 && track.scrollLeft <= 1) {
+        silentJump(halfWidth());
+        // wait one frame so the silent jump lands before smooth scrollBy
+        requestAnimationFrame(() =>
+          track.scrollBy({ left: -step(), behavior: 'smooth' })
+        );
+        return;
+      }
+      track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    };
+
+    // Detect when the smooth scroll has settled, then loop silently.
+    let scrollEndTimer: number | null = null;
+    const checkLoop = () => {
+      if (suppressLoop) return;
+      const half = halfWidth();
+      if (half <= 0) return;
+      if (track.scrollLeft >= half) {
+        silentJump(-half);
+      } else if (track.scrollLeft < 0) {
+        silentJump(half);
+      }
+    };
+
+    // auto-scroll with pause on hover/focus/touch
+    const INTERVAL_MS = 5000;
+    let timer: number | null = null;
+    let paused = false;
+
+    const start = () => {
+      if (reduced || paused || timer !== null) return;
+      timer = window.setInterval(() => advance(1), INTERVAL_MS);
+    };
+    const stop = () => {
+      if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+    const pause = () => {
+      paused = true;
+      stop();
+    };
+    const resume = () => {
+      paused = false;
+      start();
+    };
+
+    root.addEventListener('mouseenter', pause);
+    root.addEventListener('mouseleave', resume);
+    root.addEventListener('focusin', pause);
+    root.addEventListener('focusout', resume);
+    root.addEventListener('touchstart', pause, { passive: true });
+    root.addEventListener('touchend', resume, { passive: true });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    prev?.addEventListener('click', () => advance(-1));
+    next?.addEventListener('click', () => advance(1));
+    track.addEventListener(
+      'scroll',
+      () => {
+        schedule();
+        if (scrollEndTimer !== null) clearTimeout(scrollEndTimer);
+        scrollEndTimer = window.setTimeout(checkLoop, 140);
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', schedule);
+
+    // initial layout — align to first card center
+    requestAnimationFrame(() => {
+      const first = cards[0];
+      if (first) {
+        const offset =
+          first.offsetLeft + first.offsetWidth / 2 - track.clientWidth / 2;
+        track.scrollLeft = Math.max(0, offset);
+      }
+      schedule();
+      start();
+    });
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-testimonials]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('[data-track]');
+    if (!track) return;
+    setup({
+      root,
+      track,
+      prev: root.querySelector<HTMLButtonElement>('[data-prev]'),
+      next: root.querySelector<HTMLButtonElement>('[data-next]'),
+    });
+  });
+</script>
