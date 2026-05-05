@@ -54,6 +54,7 @@ TEMP/
 *.tar.gz
 *.tgz
 *.gz
+*.rar
 *.zst
 *.ogg
 *.mp3
