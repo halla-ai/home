@@ -69,6 +69,7 @@ TEMP/
 *.jpg
 *.jpeg
 *.heic
+*.wmf
 *.ai
 *.key
 *.pdf
@@ -82,12 +83,10 @@ TEMP/
 *.xls*
 *.xlsx
 *.xlsm
-*.tsv
 *.gdoc
 *.gsheet
 *.gslides
 *.gform
-*.html
 *.ico
 
 # === Data & ML Artifacts ===
@@ -119,4 +118,3 @@ pytest.xml
 !astro/public/**/*.jpg
 !astro/public/**/*.jpeg
 !astro/public/**/*.ico
-!astro/public/**/*.html
