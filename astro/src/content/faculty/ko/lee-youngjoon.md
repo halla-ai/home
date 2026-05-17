@@ -3,7 +3,7 @@ order: 3
 name: 이영준
 name_en: Young Joon Lee
 title: 부교수
-role: 혁신추진단장, 국제개발협력센터장
+role: AX추진 부총장보, AI혁신처장, 국제개발협력센터장
 photo: /images/faculty/yjlee.jpeg
 specialization: 경영학(박사), 경제학(석사), 정보산업공학(학사)
 research_areas:

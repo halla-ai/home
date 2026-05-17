@@ -3,7 +3,7 @@ order: 3
 name: 이영준
 name_en: Young Joon Lee
 title: Associate Professor
-role: Director of Innovation, Director of International Development Cooperation Center
+role: Assistant Vice President for AX, CAIO, Director of International Development Cooperation Center
 photo: /images/faculty/yjlee.jpeg
 specialization: Business Administration (Ph.D.), Economics (M.S.), Information Industrial Engineering (B.S.)
 research_areas:
