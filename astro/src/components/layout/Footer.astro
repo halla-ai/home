@@ -192,6 +192,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 
 <script>
   document.getElementById('back-to-top')?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });
 </script>

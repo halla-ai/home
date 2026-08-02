@@ -141,6 +141,23 @@
     animation: none;
     transition: none;
   }
+  /* Hover lifts and header cross-fade go quiet — feedback stays, motion goes */
+  .card,
+  .card-flat,
+  .card-bento,
+  .site-header,
+  #mobile-menu {
+    transition: none;
+  }
+  .card:hover,
+  .card-bento:hover,
+  .card-lift:hover {
+    transform: none;
+  }
+  .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:scale-\[1\.03\] {
+    transform: none;
+  }
   .film-grain {
     display: none;
   }

@@ -85,7 +85,7 @@ const testimonials = allTestimonials
         type="button"
         class="testimonials-arrow absolute top-1/2 -translate-y-1/2 left-2 z-20 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-white/95 dark:bg-deep/90 ring-1 ring-stone-200 dark:ring-white/10 shadow-lg text-deep dark:text-white hover:bg-accent hover:text-white dark:hover:bg-accent transition disabled:opacity-0 disabled:pointer-events-none"
         data-prev
-        aria-label="이전 후기"
+        aria-label={locale === 'ko' ? '이전 후기' : 'Previous testimonial'}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -95,7 +95,7 @@ const testimonials = allTestimonials
         type="button"
         class="testimonials-arrow absolute top-1/2 -translate-y-1/2 right-2 z-20 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-white/95 dark:bg-deep/90 ring-1 ring-stone-200 dark:ring-white/10 shadow-lg text-deep dark:text-white hover:bg-accent hover:text-white dark:hover:bg-accent transition disabled:opacity-0 disabled:pointer-events-none"
         data-next
-        aria-label="다음 후기"
+        aria-label={locale === 'ko' ? '다음 후기' : 'Next testimonial'}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -286,11 +286,11 @@ const testimonials = allTestimonials
         silentJump(halfWidth());
         // wait one frame so the silent jump lands before smooth scrollBy
         requestAnimationFrame(() =>
-          track.scrollBy({ left: -step(), behavior: 'smooth' })
+          track.scrollBy({ left: -step(), behavior: reduced ? 'auto' : 'smooth' })
         );
         return;
       }
-      track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      track.scrollBy({ left: dir * step(), behavior: reduced ? 'auto' : 'smooth' });
     };
 
     // Detect when the smooth scroll has settled, then loop silently.
