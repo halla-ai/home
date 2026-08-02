@@ -95,7 +95,7 @@ const employmentCompanies = [
 >
   <!-- Partnership Stats -->
   <section class="mb-10">
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       {[
         { num: '14+', label: 'Industry Partners' },
         { num: '5+', label: 'Partner Countries' },
@@ -169,7 +169,7 @@ const employmentCompanies = [
   <!-- Employment Companies -->
   <section>
     <h2 class="text-xl font-bold text-deep dark:text-white mb-6">Major Employers</h2>
-    <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
       {employmentCompanies.map((c) => (
         <div class="flex items-center justify-center p-4 rounded-xl bg-stone/50 dark:bg-white/[0.04] border border-border dark:border-white/[0.08]">
           <img src={c.logo} alt={c.name} class="h-8 w-auto object-contain dark:brightness-150" loading="lazy" />

@@ -22,22 +22,11 @@ const {
 ---
 
 <!doctype html>
-<html lang={locale} class="scroll-smooth">
+<html lang={locale}>
   <head>
     <BaseHead title={title} description={description} image={image} locale={locale} />
   </head>
   <body class={`min-h-screen flex flex-col bg-white dark:bg-void dark:text-slate-200 transition-colors duration-200 ${heroPage ? 'has-hero' : ''}`}>
-    <!-- Dark mode init: runs before paint to avoid flash -->
-    <script is:inline>
-      (function () {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
-
     <a href="#main-content" class="skip-link">
       {locale === 'ko' ? '본문으로 건너뛰기' : 'Skip to main content'}
     </a>
@@ -63,22 +52,43 @@ const {
       </svg>
     </div>
 
-    <!-- Scroll reveal observer -->
-    <script is:inline>
-      (function () {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    <!-- Scroll reveal: Motion inView, staggered per sibling group -->
+    <script>
+      import { inView, animate } from 'motion';
+      import { reduced } from '../scripts/motion';
 
-        document.querySelectorAll('.fade-up, .stat-item').forEach(function (el) {
-          observer.observe(el);
+      const revealEls = document.querySelectorAll<HTMLElement>('.fade-up');
+
+      if (reduced()) {
+        revealEls.forEach((el) => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
         });
-      })();
+      } else {
+        revealEls.forEach((el) => {
+          const siblings = Array.from(el.parentElement?.children ?? []).filter(
+            (c): c is HTMLElement =>
+              c instanceof HTMLElement && c.classList.contains('fade-up'),
+          );
+          const i = Math.max(0, siblings.indexOf(el));
+          const stop = inView(
+            el,
+            () => {
+              animate(
+                el,
+                { opacity: 1, transform: 'translateY(0px)' },
+                {
+                  duration: 0.6,
+                  easing: [0.16, 1, 0.3, 1],
+                  delay: Math.min(i * 0.06, 0.3),
+                },
+              );
+              stop();
+            },
+            { margin: '0px 0px -10% 0px' },
+          );
+        });
+      }
     </script>
   </body>
 </html>

@@ -85,7 +85,7 @@ const testimonials = allTestimonials
         type="button"
         class="testimonials-arrow absolute top-1/2 -translate-y-1/2 left-2 z-20 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-white/95 dark:bg-deep/90 ring-1 ring-stone-200 dark:ring-white/10 shadow-lg text-deep dark:text-white hover:bg-accent hover:text-white dark:hover:bg-accent transition disabled:opacity-0 disabled:pointer-events-none"
         data-prev
-        aria-label="이전 후기"
+        aria-label={locale === 'ko' ? '이전 후기' : 'Previous testimonial'}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -95,12 +95,24 @@ const testimonials = allTestimonials
         type="button"
         class="testimonials-arrow absolute top-1/2 -translate-y-1/2 right-2 z-20 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-white/95 dark:bg-deep/90 ring-1 ring-stone-200 dark:ring-white/10 shadow-lg text-deep dark:text-white hover:bg-accent hover:text-white dark:hover:bg-accent transition disabled:opacity-0 disabled:pointer-events-none"
         data-next
-        aria-label="다음 후기"
+        aria-label={locale === 'ko' ? '다음 후기' : 'Next testimonial'}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </button>
+
+      <!-- Dot indicators (mobile) -->
+      <div class="flex justify-center gap-2 mt-4 md:hidden" data-dots>
+        {testimonials.map((item, i) => (
+          <button
+            type="button"
+            class="testimonials-dot w-2 h-2 rounded-full transition-colors duration-200"
+            data-dot={i}
+            aria-label={locale === 'ko' ? `${item.data.name} 후기로 이동` : `Go to testimonial by ${item.data.name}`}
+          />
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -128,6 +140,17 @@ const testimonials = allTestimonials
 
   .testimonials-track::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Dot indicators (mobile) */
+  .testimonials-dot {
+    background: var(--color-border);
+  }
+  :global(.dark) .testimonials-dot {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .testimonials-dot[data-active='true'] {
+    background: var(--color-accent);
   }
 
   @media (min-width: 768px) {
@@ -215,8 +238,22 @@ const testimonials = allTestimonials
       track.appendChild(clone);
     });
     const cards = Array.from(track.querySelectorAll<HTMLElement>('.testimonials-card'));
+    const dots = Array.from(root.querySelectorAll<HTMLElement>('[data-dot]'));
+
+    dots.forEach((d, i) => {
+      d.addEventListener('click', () => {
+        const card = cards[i];
+        if (!card) return;
+        const offset = card.offsetLeft + card.offsetWidth / 2 - track.clientWidth / 2;
+        track.scrollTo({ left: offset, behavior: reduced ? 'auto' : 'smooth' });
+      });
+    });
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // On touch-sized viewports the 3D coverflow lags the finger (transforms
+    // trail the scroll by the 220ms transition), which reads as unnatural.
+    // Mobile gets a flat swipe carousel with dot indicators instead.
+    const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
     let raf = 0;
     let suppressLoop = false;
     let halfWidth = () => track.scrollWidth / 2;
@@ -238,7 +275,14 @@ const testimonials = allTestimonials
           activeDist = dist;
           activeIdx = idx;
         }
-        if (reduced) return;
+        if (reduced || isMobile()) {
+          card.style.removeProperty('--rot');
+          card.style.removeProperty('--tz');
+          card.style.removeProperty('--scale');
+          card.style.removeProperty('--op');
+          card.style.zIndex = '';
+          return;
+        }
         const ratio = Math.max(-1.5, Math.min(1.5, distance / half));
         const abs = Math.abs(ratio);
         const rot = -ratio * 38; // degrees
@@ -254,6 +298,11 @@ const testimonials = allTestimonials
 
       cards.forEach((card, idx) => {
         card.dataset.active = idx === activeIdx ? 'true' : 'false';
+      });
+
+      const origIdx = activeIdx % originals.length;
+      dots.forEach((d, i) => {
+        d.dataset.active = i === origIdx ? 'true' : 'false';
       });
 
     };
@@ -286,11 +335,11 @@ const testimonials = allTestimonials
         silentJump(halfWidth());
         // wait one frame so the silent jump lands before smooth scrollBy
         requestAnimationFrame(() =>
-          track.scrollBy({ left: -step(), behavior: 'smooth' })
+          track.scrollBy({ left: -step(), behavior: reduced ? 'auto' : 'smooth' })
         );
         return;
       }
-      track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      track.scrollBy({ left: dir * step(), behavior: reduced ? 'auto' : 'smooth' });
     };
 
     // Detect when the smooth scroll has settled, then loop silently.

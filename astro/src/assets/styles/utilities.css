@@ -15,6 +15,12 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  contain: paint;
+}
+
+.hero-gradient-mesh::before,
+.hero-gradient-mesh::after {
+  will-change: transform;
 }
 
 .hero-gradient-mesh::before {
@@ -68,7 +74,7 @@
 
 .hero-reveal {
   opacity: 0;
-  animation: hero-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: hero-reveal 0.8s var(--ease-out-expo) forwards;
 }
 .hero-reveal-1 { animation-delay: 0.15s; }
 .hero-reveal-2 { animation-delay: 0.3s; }
@@ -76,22 +82,12 @@
 .hero-reveal-4 { animation-delay: 0.6s; }
 
 /* ── Scroll reveal ────────────────────────────── */
+/* Initial hidden state only — Motion (BaseLayout) drives the animation. */
 
 .fade-up {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-up-d1 { transition-delay: 0.1s; }
-.fade-up-d2 { transition-delay: 0.2s; }
-.fade-up-d3 { transition-delay: 0.3s; }
-.fade-up-d4 { transition-delay: 0.4s; }
 
 /* ── Gradient text (blue → cyan) ──────────────── */
 
@@ -102,20 +98,12 @@
   background-clip: text;
 }
 
-/* ── Neon text glow ───────────────────────────── */
-
-.neon-glow {
-  text-shadow:
-    0 0 10px rgba(14, 165, 233, 0.3),
-    0 0 40px rgba(14, 165, 233, 0.1);
-}
-
 /* ── Film grain overlay (from STAIxBWLB) ──────── */
 
 .film-grain {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 30;
   pointer-events: none;
   opacity: 0.025;
 }
@@ -141,15 +129,27 @@
     transform: none;
     transition: none;
   }
-  .stat-item {
-    opacity: 1;
-    animation: none;
-  }
   .card::before,
   .card-bento::before,
   .card-bento::after {
     animation: none;
     transition: none;
+  }
+  /* Hover lifts and header cross-fade go quiet — feedback stays, motion goes */
+  .card,
+  .card-flat,
+  .card-bento,
+  .site-header,
+  #mobile-menu {
+    transition: none;
+  }
+  .card:hover,
+  .card-bento:hover {
+    transform: none;
+  }
+  .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:scale-\[1\.03\] {
+    transform: none;
   }
   .film-grain {
     display: none;

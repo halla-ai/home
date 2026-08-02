@@ -52,19 +52,6 @@ const faculty = defineCollection({
   }),
 });
 
-const courses = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/courses' }),
-  schema: z.object({
-    title: z.string(),
-    track: z.enum(['ai-core', 'sw-system', 'data-analysis', 'ai-application', 'capstone', 'general']),
-    semester: z.string(),
-    credits: z.number().default(3),
-    type: z.enum(['required', 'elective']).default('elective'),
-    description: z.string(),
-    order: z.number().default(0),
-  }),
-});
-
 const testimonials = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/testimonials' }),
   schema: z.object({
@@ -89,7 +76,6 @@ export const collections = {
   posts,
   projects,
   faculty,
-  courses,
   testimonials,
   pages,
 };

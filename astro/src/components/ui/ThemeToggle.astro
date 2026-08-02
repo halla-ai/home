@@ -1,18 +1,24 @@
 ---
+import type { Locale } from '../../i18n/ui';
+
 interface Props {
   class?: string;
+  locale?: Locale;
 }
-const { class: className = '' } = Astro.props;
+const { class: className = '', locale = 'ko' } = Astro.props;
+const label = locale === 'ko' ? '다크 모드 전환' : 'Toggle dark mode';
 ---
 
 <button
-  id="theme-toggle"
-  aria-label="Toggle dark mode"
-  class={`inline-flex items-center justify-center w-9 h-9 rounded-lg text-muted hover:text-deep dark:hover:text-white hover:bg-stone dark:hover:bg-white/10 transition-colors duration-200 ${className}`}
+  type="button"
+  data-theme-toggle
+  aria-label={label}
+  aria-pressed="false"
+  class={`theme-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg text-muted hover:text-deep dark:hover:text-white hover:bg-stone dark:hover:bg-white/10 transition-all duration-200 active:scale-95 ${className}`}
 >
   <!-- Sun icon (shown in dark mode) -->
   <svg
-    id="icon-sun"
+    data-icon="sun"
     xmlns="http://www.w3.org/2000/svg"
     class="hidden w-5 h-5"
     fill="none"
@@ -33,7 +39,7 @@ const { class: className = '' } = Astro.props;
   </svg>
   <!-- Moon icon (shown in light mode) -->
   <svg
-    id="icon-moon"
+    data-icon="moon"
     xmlns="http://www.w3.org/2000/svg"
     class="w-5 h-5"
     fill="none"
@@ -47,31 +53,28 @@ const { class: className = '' } = Astro.props;
 </button>
 
 <script>
-  const toggle = document.getElementById('theme-toggle');
-  const iconSun = document.getElementById('icon-sun');
-  const iconMoon = document.getElementById('icon-moon');
-  const html = document.documentElement;
+  // Multi-instance: wires every [data-theme-toggle] on the page.
+  // Theme itself is initialized in BaseHead (before paint); here we only
+  // reflect and mutate the .dark class on <html>.
+  const toggles = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
 
-  function applyTheme(dark: boolean) {
-    if (dark) {
-      html.classList.add('dark');
-      iconSun?.classList.remove('hidden');
-      iconMoon?.classList.add('hidden');
-    } else {
-      html.classList.remove('dark');
-      iconSun?.classList.add('hidden');
-      iconMoon?.classList.remove('hidden');
-    }
+  function syncAll() {
+    const dark = document.documentElement.classList.contains('dark');
+    toggles.forEach((toggle) => {
+      toggle.setAttribute('aria-pressed', String(dark));
+      toggle.querySelector('[data-icon="sun"]')?.classList.toggle('hidden', !dark);
+      toggle.querySelector('[data-icon="moon"]')?.classList.toggle('hidden', dark);
+    });
   }
 
-  // Init from localStorage or system preference
-  const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(stored === 'dark' || (!stored && prefersDark));
+  toggles.forEach((toggle) =>
+    toggle.addEventListener('click', () => {
+      const dark = !document.documentElement.classList.contains('dark');
+      document.documentElement.classList.toggle('dark', dark);
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      syncAll();
+    }),
+  );
 
-  toggle?.addEventListener('click', () => {
-    const isDark = html.classList.contains('dark');
-    applyTheme(!isDark);
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-  });
+  syncAll();
 </script>

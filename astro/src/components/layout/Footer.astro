@@ -77,7 +77,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
             href="https://www.chu.ac.kr"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-accent hover:text-white transition-all duration-200"
+            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-accent hover:text-white transition-all duration-200 active:scale-95"
             aria-label={locale === 'en' ? 'Cheju Halla University website' : '제주한라대학교 홈페이지'}
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -92,7 +92,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
             href="https://www.youtube.com/@hallauniv"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-red-600 hover:text-white transition-all duration-200"
+            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-red-600 hover:text-white transition-all duration-200 active:scale-95"
             aria-label="YouTube"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -105,7 +105,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
             href="https://open.kakao.com/o/hallauniv-ai"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-yellow-400 hover:text-yellow-900 transition-all duration-200"
+            class="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-500 hover:bg-yellow-400 hover:text-yellow-900 transition-all duration-200 active:scale-95"
             aria-label="KakaoTalk"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -116,7 +116,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
       </div>
 
       <!-- Right: grouped nav -->
-      <nav aria-label="Footer navigation" class="grid grid-cols-3 gap-6 lg:gap-8">
+      <nav aria-label="Footer navigation" class="grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8">
         {navGroups.map((group) => (
           <div>
             <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600 mb-3">
@@ -183,7 +183,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 
           <span class="text-white/10" aria-hidden="true">|</span>
 
-          <ThemeToggle class="text-slate-600 hover:text-white! w-7 h-7" />
+          <ThemeToggle locale={locale} class="text-slate-600 hover:text-white! w-7 h-7" />
         </div>
       </div>
     </div>
@@ -192,6 +192,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 
 <script>
   document.getElementById('back-to-top')?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });
 </script>

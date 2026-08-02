@@ -2,6 +2,7 @@
 import { t, type Locale } from '../../i18n/ui';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import MobileMenu from './MobileMenu.astro';
+import ThemeToggle from '../ui/ThemeToggle.astro';
 
 interface Props {
   locale: Locale;
@@ -59,16 +60,16 @@ function isActive(href: string): boolean {
         </div>
       </a>
 
-      <!-- Desktop nav -->
+      <!-- Desktop nav (condensed on tablet) -->
       <nav
-        class="hidden lg:flex items-center gap-1 flex-1 justify-center"
+        class="hidden md:flex items-center gap-0 lg:gap-1 flex-1 justify-center"
         aria-label="Primary navigation"
       >
         {
           navItems.map((item) => (
             <a
               href={item.href}
-              class={`nav-link px-3 py-2 text-[13px] font-medium transition-colors duration-200`}
+              class={`nav-link px-2 lg:px-3 py-2 text-xs lg:text-[13px] font-medium transition-colors duration-200`}
               aria-current={isActive(item.href) ? 'page' : undefined}
             >
               {t(locale, `nav.${item.key}`)}
@@ -77,11 +78,12 @@ function isActive(href: string): boolean {
         }
       </nav>
 
-      <!-- Right: language switcher + mobile hamburger -->
+      <!-- Right: language switcher + theme toggle + mobile hamburger -->
       <div class="flex items-center gap-2 shrink-0">
         <div class="hidden sm:block">
           <LanguageSwitcher locale={locale} />
         </div>
+        <ThemeToggle locale={locale} />
 
         <!-- Hamburger (mobile) -->
         <button
@@ -89,7 +91,7 @@ function isActive(href: string): boolean {
           aria-label="Open menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
-          class="hamburger-btn lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg transition-colors duration-200"
+          class="hamburger-btn md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg transition-colors duration-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -116,18 +118,32 @@ function isActive(href: string): boolean {
     if (!header) return;
 
     var isHeroPage = document.body.classList.contains('has-hero');
+    var solid = true;
+    var ticking = false;
 
-    function updateHeader() {
-      if (isHeroPage && window.scrollY < 80) {
-        header.classList.remove('header-solid');
-        header.classList.add('header-transparent');
+    function apply() {
+      ticking = false;
+      var y = window.scrollY;
+      if (isHeroPage) {
+        // Hysteresis: two thresholds so hovering near the boundary
+        // doesn't thrash the class list.
+        if (!solid && y > 80) solid = true;
+        else if (solid && y < 56) solid = false;
       } else {
-        header.classList.remove('header-transparent');
-        header.classList.add('header-solid');
+        solid = true;
+      }
+      header.classList.toggle('header-solid', solid);
+      header.classList.toggle('header-transparent', !solid);
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(apply);
       }
     }
 
-    updateHeader();
-    window.addEventListener('scroll', updateHeader, { passive: true });
+    apply();
+    window.addEventListener('scroll', onScroll, { passive: true });
   })();
 </script>

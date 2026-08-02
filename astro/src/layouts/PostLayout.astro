@@ -153,11 +153,24 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
         </div>
 
         <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden items-center justify-center cursor-zoom-out" aria-hidden="true">
-          <button id="lightbox-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10" aria-label="Close">
+        <div
+          id="lightbox"
+          class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden items-center justify-center cursor-zoom-out"
+          role="dialog"
+          aria-modal="true"
+          aria-label={locale === 'ko' ? '이미지 확대 보기' : 'Image viewer'}
+          aria-hidden="true"
+        >
+          <button id="lightbox-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10" aria-label={locale === 'ko' ? '닫기' : 'Close'}>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
-          <img id="lightbox-img" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" alt="" />
+          <button id="lightbox-prev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10" aria-label={locale === 'ko' ? '이전 이미지' : 'Previous image'}>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          </button>
+          <button id="lightbox-next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10" aria-label={locale === 'ko' ? '다음 이미지' : 'Next image'}>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </button>
+          <img id="lightbox-img" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default" alt="" />
         </div>
 
         <!-- Share -->
@@ -226,78 +239,173 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
   </article>
 
   <!-- Gallery + Lightbox script -->
-  <script is:inline>
-    (function () {
-      var prose = document.querySelector('.prose');
-      var gallery = document.getElementById('post-gallery');
-      var grid = document.getElementById('gallery-grid');
-      var lightbox = document.getElementById('lightbox');
-      var lightboxImg = document.getElementById('lightbox-img');
-      if (!prose || !gallery || !grid || !lightbox || !lightboxImg) return;
+  <script>
+    import { animate } from 'motion';
+    import { SPRING, reduced } from '../scripts/motion';
 
-      // Collect all images from prose (skip gallery-box images already in galleries)
-      var imgs = prose.querySelectorAll('img');
-      var collected = [];
+    const prose = document.querySelector('.prose');
+    const gallery = document.getElementById('post-gallery');
+    const grid = document.getElementById('gallery-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+    const btnClose = document.getElementById('lightbox-close');
+    const btnPrev = document.getElementById('lightbox-prev');
+    const btnNext = document.getElementById('lightbox-next');
 
-      imgs.forEach(function (img) {
-        // Skip tiny images (icons, badges)
-        if (img.naturalWidth > 0 && img.naturalWidth < 50) return;
-        var src = img.getAttribute('src') || '';
-        var alt = img.getAttribute('alt') || '';
-        collected.push({ src: src, alt: alt, el: img });
-      });
+    if (prose && gallery && grid && lightbox && lightboxImg && btnClose && btnPrev && btnNext) {
+      const isKo = document.documentElement.lang === 'ko';
 
-      if (collected.length < 2) return; // Don't create gallery for 0-1 images
+      type Item = { src: string; alt: string; el: HTMLImageElement };
 
-      // Move images to gallery grid
-      collected.forEach(function (item) {
-        // Remove from prose (keep first image inline if it's part of content flow)
-        var parent = item.el.parentElement;
-        if (parent && parent.tagName === 'P' && parent.children.length === 1) {
-          parent.style.display = 'none';
-        } else {
-          item.el.style.display = 'none';
-        }
+      // Collect prose images, waiting for lazy decodes so the tiny-image
+      // filter (icons, badges) reads a real naturalWidth.
+      const collect = async (): Promise<Item[]> => {
+        const imgs = Array.from(prose.querySelectorAll('img'));
+        const items: Array<Item | null> = await Promise.all(
+          imgs.map(async (img) => {
+            try {
+              if (!img.complete) await img.decode();
+            } catch {
+              /* decode failed — fall through with whatever state we have */
+            }
+            if (img.naturalWidth > 0 && img.naturalWidth < 50) return null;
+            return {
+              src: img.getAttribute('src') || '',
+              alt: img.getAttribute('alt') || '',
+              el: img,
+            };
+          }),
+        );
+        return items.filter((i): i is Item => i !== null);
+      };
 
-        // Create gallery tile
-        var tile = document.createElement('div');
-        tile.className = 'aspect-square overflow-hidden rounded-lg cursor-zoom-in group';
-        var tileImg = document.createElement('img');
-        tileImg.src = item.src;
-        tileImg.alt = item.alt;
-        tileImg.loading = 'lazy';
-        tileImg.className = 'w-full h-full object-cover transition-transform duration-300 group-hover:scale-105';
-        tile.appendChild(tileImg);
-        grid.appendChild(tile);
+      collect().then((collected) => {
+        if (collected.length < 2) return; // No gallery for 0-1 images
 
-        // Click to open lightbox
-        tile.addEventListener('click', function () {
-          lightboxImg.src = item.src;
-          lightboxImg.alt = item.alt;
+        let current = 0;
+        let isOpen = false;
+        let originTile: HTMLElement | null = null;
+
+        const show = (index: number) => {
+          current = (index + collected.length) % collected.length;
+          lightboxImg.src = collected[current].src;
+          lightboxImg.alt = collected[current].alt;
+        };
+
+        const openLightbox = (index: number, tile: HTMLElement) => {
+          isOpen = true;
+          originTile = tile;
+          show(index);
           lightbox.classList.remove('hidden');
           lightbox.classList.add('flex');
+          lightbox.setAttribute('aria-hidden', 'false');
           document.body.style.overflow = 'hidden';
+
+          // Grow from where the user clicked (spatial consistency)
+          const tr = tile.getBoundingClientRect();
+          const ir = lightboxImg.getBoundingClientRect();
+          lightboxImg.style.transformOrigin = `${tr.left + tr.width / 2 - ir.left}px ${tr.top + tr.height / 2 - ir.top}px`;
+
+          if (reduced()) {
+            animate(lightbox, { opacity: [0, 1] }, { duration: 0.2 });
+          } else {
+            // Materialize: blur + scale arrive together, not a plain fade
+            animate(lightbox, { opacity: [0, 1], backdropFilter: ['blur(0px)', 'blur(4px)'] }, { duration: 0.3 });
+            animate(lightboxImg, { scale: [0.96, 1], opacity: [0.4, 1] }, SPRING.ui);
+          }
+          btnClose.focus();
+        };
+
+        const closeLightbox = () => {
+          if (!isOpen) return;
+          isOpen = false;
+          const done = () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            lightbox.setAttribute('aria-hidden', 'true');
+          };
+          if (reduced()) {
+            animate(lightbox, { opacity: [1, 0] }, { duration: 0.2 }).then(done);
+          } else {
+            animate(lightbox, { opacity: [1, 0], backdropFilter: ['blur(4px)', 'blur(0px)'] }, { duration: 0.25 }).then(done);
+            animate(lightboxImg, { scale: 0.96, opacity: 0 }, { duration: 0.2 });
+          }
+          document.body.style.overflow = '';
+          originTile?.focus();
+          originTile = null;
+        };
+
+        const step = (dir: 1 | -1) => {
+          show(current + dir);
+          if (!reduced()) {
+            animate(lightboxImg, { opacity: [0.4, 1], scale: [0.98, 1] }, { duration: 0.25 });
+          }
+        };
+
+        // Build tiles as real buttons — keyboard reachable
+        collected.forEach((item, index) => {
+          const parent = item.el.parentElement;
+          if (parent && parent.tagName === 'P' && parent.children.length === 1) {
+            parent.style.display = 'none';
+          } else {
+            item.el.style.display = 'none';
+          }
+
+          const tile = document.createElement('button');
+          tile.type = 'button';
+          tile.className = 'aspect-square overflow-hidden rounded-lg cursor-zoom-in group';
+          tile.setAttribute(
+            'aria-label',
+            isKo ? `이미지 크게 보기: ${item.alt}` : `View image: ${item.alt}`,
+          );
+          const tileImg = document.createElement('img');
+          tileImg.src = item.src;
+          tileImg.alt = item.alt;
+          tileImg.loading = 'lazy';
+          tileImg.className = 'w-full h-full object-cover transition-transform duration-300 group-hover:scale-105';
+          tile.appendChild(tileImg);
+          grid.appendChild(tile);
+
+          tile.addEventListener('click', () => openLightbox(index, tile));
+        });
+
+        gallery.classList.remove('hidden');
+
+        lightbox.addEventListener('click', closeLightbox);
+        lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+        btnClose.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeLightbox();
+        });
+        btnPrev.addEventListener('click', (e) => {
+          e.stopPropagation();
+          step(-1);
+        });
+        btnNext.addEventListener('click', (e) => {
+          e.stopPropagation();
+          step(1);
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (!isOpen) return;
+          if (e.key === 'Escape') closeLightbox();
+          else if (e.key === 'ArrowLeft') step(-1);
+          else if (e.key === 'ArrowRight') step(1);
+          else if (e.key === 'Tab') {
+            // Trap focus across the three lightbox controls
+            const controls = [btnClose, btnPrev, btnNext];
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
         });
       });
-
-      // Show gallery section
-      gallery.classList.remove('hidden');
-
-      // Close lightbox
-      function closeLightbox() {
-        lightbox.classList.add('hidden');
-        lightbox.classList.remove('flex');
-        document.body.style.overflow = '';
-      }
-
-      lightbox.addEventListener('click', closeLightbox);
-      document.getElementById('lightbox-close').addEventListener('click', function (e) {
-        e.stopPropagation();
-        closeLightbox();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeLightbox();
-      });
-    })();
+    }
   </script>
 </BaseLayout>

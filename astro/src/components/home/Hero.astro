@@ -10,7 +10,7 @@ const { locale } = Astro.props;
 const prefix = locale === 'en' ? '/en' : '';
 ---
 
-<section class="relative min-h-[70vh] flex items-center bg-void overflow-hidden pb-32 md:pb-40">
+<section class="relative min-h-[min(70vh,640px)] flex items-center bg-void overflow-hidden pb-32 md:pb-40">
   <!-- Animated gradient mesh background -->
   <div class="hero-gradient-mesh" aria-hidden="true"></div>
 
@@ -23,7 +23,7 @@ const prefix = locale === 'en' ? '/en' : '';
       <p class="text-accent text-xs md:text-sm font-medium tracking-[0.25em] uppercase hero-reveal">
         {t(locale, 'hero.label')}
       </p>
-      <h1 class="mt-6 md:mt-8 text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[1.05] tracking-tight text-white hero-reveal hero-reveal-1">
+      <h1 class="mt-6 md:mt-8 text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[1.03] tracking-[-0.035em] text-white hero-reveal hero-reveal-1">
         {t(locale, 'hero.title')}
       </h1>
       <p class="mt-8 md:mt-10 text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed hero-reveal hero-reveal-2">

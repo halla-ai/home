@@ -3,7 +3,6 @@ order: 3
 name: 이영준
 name_en: Young Joon Lee
 title: 부교수
-role: AX추진 부총장보, AI혁신처장, 국제개발협력센터장
 photo: /images/faculty/yjlee.jpeg
 specialization: 경영학(박사), 경제학(석사), 정보산업공학(학사)
 research_areas:
@@ -27,7 +26,6 @@ education:
 experience:
   - 현) 제주한라대학교 인공지능학과 부교수
   - 현) 제주한라대학교 혁신추진단장
-  - 현) 제주한라대학교 국제개발협력센터장
   - 현) 제주한라대학교 자연어연구센터 센터장
   - 현) 지역혁신중심대학지원체계(RISE) 부단장
   - 현) KOICA 우즈베키스탄 인공지능 교육사업 단장
