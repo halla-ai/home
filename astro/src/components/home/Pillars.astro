@@ -144,6 +144,11 @@ const pillars = [
       0 0 0 1px color-mix(in srgb, var(--pillar-accent) 20%, transparent);
   }
 
+  .pillar-card:active {
+    transform: translateY(-1px) scale(0.995);
+    transition-duration: 100ms;
+  }
+
   /* Radial glow that follows card's accent */
   .pillar-card-glow {
     position: absolute;

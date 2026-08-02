@@ -111,6 +111,47 @@
 /* Active nav indicator */
 .nav-link {
   position: relative;
+  transition: color var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+/* ── Press feedback (pointer-down response) ───── */
+
+.card:active,
+.card-bento:active {
+  transform: translateY(-1px) scale(0.995);
+  transition-duration: 100ms;
+}
+
+.card-flat:active {
+  transform: scale(0.995);
+  transition-duration: 100ms;
+}
+
+.nav-link:active,
+.hamburger-btn:active {
+  transform: scale(0.96);
+  transition-duration: 100ms;
+}
+
+.hamburger-btn {
+  position: relative;
+  transition-property: color, background-color, transform;
+}
+
+/* ~10px hit padding around the tap target */
+.hamburger-btn::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+}
+
+.lang-switch a:active {
+  transform: scale(0.94);
+  transition-duration: 100ms;
+}
+
+.lang-switch a {
+  transition-property: color, background-color, border-color, transform;
 }
 .nav-link[aria-current="page"]::after {
   content: '';
