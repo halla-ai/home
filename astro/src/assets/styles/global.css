@@ -60,6 +60,9 @@
   --dur-fast: 150ms;
   --dur-base: 250ms;
   --dur-slow: 400ms;
+
+  /* Rhythm */
+  --spacing-section: clamp(4rem, 8vw, 8rem);
 }
 
 @import "./base.css";

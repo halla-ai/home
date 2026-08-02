@@ -396,6 +396,8 @@
   max-width: 72ch;
   font-size: 1.0625rem;
   line-height: 1.8;
+  line-break: loose;
+  overflow-wrap: break-word;
   color: var(--color-text);
 
   > * + * { margin-top: 1.5em; }
