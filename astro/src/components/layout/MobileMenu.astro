@@ -40,7 +40,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 <!-- Slide-out panel (translucent material; Motion drives its transform) -->
 <div
   id="mobile-menu"
-  class="fixed top-0 right-0 h-full w-72 max-w-full z-50 shadow-2xl translate-x-full flex flex-col bg-white/85 dark:bg-abyss/85 backdrop-blur-xl backdrop-saturate-[1.8]"
+  class="fixed top-0 right-0 h-full w-72 max-w-full z-50 shadow-2xl flex flex-col bg-white/85 dark:bg-abyss/85 backdrop-blur-xl backdrop-saturate-[1.8]"
   role="dialog"
   aria-modal="true"
   aria-label="Mobile navigation"
@@ -140,8 +140,11 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 </div>
 
 <style>
-  /* Bright left edge: light catching the material */
+  /* Initial off-screen position uses `transform` (NOT Tailwind's translate-x-full,
+     which in v4 sets the standalone `translate` property that Motion's
+     transform animation cannot override). */
   #mobile-menu {
+    transform: translateX(100%);
     box-shadow:
       -24px 0 48px rgba(0, 0, 0, 0.12),
       inset 1px 0 0 rgba(255, 255, 255, 0.4);
@@ -266,7 +269,9 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
     startX = e.clientX;
     currentOffset = 0;
     history = [{ x: e.clientX, t: performance.now() }];
-    menu.setPointerCapture(e.pointerId);
+    // NOTE: no setPointerCapture here — capturing on pointerdown retargets
+    // the click away from buttons/links inside the panel (the X button
+    // and nav links would never fire). Capture only once the drag begins.
   });
 
   menu.addEventListener('pointermove', (e) => {
@@ -277,6 +282,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
     if (!dragStarted) {
       if (Math.abs(dx) < 10) return;
       dragStarted = true;
+      menu.setPointerCapture(e.pointerId);
     }
 
     history.push({ x: e.clientX, t: performance.now() });

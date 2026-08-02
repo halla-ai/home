@@ -250,6 +250,10 @@ const testimonials = allTestimonials
     });
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // On touch-sized viewports the 3D coverflow lags the finger (transforms
+    // trail the scroll by the 220ms transition), which reads as unnatural.
+    // Mobile gets a flat swipe carousel with dot indicators instead.
+    const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
     let raf = 0;
     let suppressLoop = false;
     let halfWidth = () => track.scrollWidth / 2;
@@ -271,7 +275,14 @@ const testimonials = allTestimonials
           activeDist = dist;
           activeIdx = idx;
         }
-        if (reduced) return;
+        if (reduced || isMobile()) {
+          card.style.removeProperty('--rot');
+          card.style.removeProperty('--tz');
+          card.style.removeProperty('--scale');
+          card.style.removeProperty('--op');
+          card.style.zIndex = '';
+          return;
+        }
         const ratio = Math.max(-1.5, Math.min(1.5, distance / half));
         const abs = Math.abs(ratio);
         const rot = -ratio * 38; // degrees
