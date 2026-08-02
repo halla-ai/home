@@ -1,5 +1,6 @@
 ---
 import { t, getAlternateLocalePath, type Locale } from '../../i18n/ui';
+import ThemeToggle from '../ui/ThemeToggle.astro';
 
 interface Props {
   locale: Locale;
@@ -32,17 +33,18 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 <!-- Overlay -->
 <div
   id="mobile-overlay"
-  class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0"
   aria-hidden="true"
 ></div>
 
-<!-- Slide-out panel -->
+<!-- Slide-out panel (translucent material; Motion drives its transform) -->
 <div
   id="mobile-menu"
-  class="fixed top-0 right-0 h-full w-72 max-w-full bg-white dark:bg-abyss z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+  class="fixed top-0 right-0 h-full w-72 max-w-full z-50 shadow-2xl translate-x-full flex flex-col bg-white/85 dark:bg-abyss/85 backdrop-blur-xl backdrop-saturate-[1.8]"
   role="dialog"
   aria-modal="true"
   aria-label="Mobile navigation"
+  inert
 >
   <!-- Header -->
   <div class="flex items-center justify-between px-5 py-4 border-b border-border dark:border-white/[0.06]">
@@ -65,7 +67,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
     <button
       id="mobile-close"
       aria-label="Close menu"
-      class="w-9 h-9 flex items-center justify-center rounded-lg text-muted hover:text-deep dark:hover:text-white hover:bg-surface dark:hover:bg-white/[0.05] transition-colors"
+      class="w-9 h-9 flex items-center justify-center rounded-lg text-muted hover:text-deep dark:hover:text-white hover:bg-surface dark:hover:bg-white/[0.05] transition-all active:scale-95"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +91,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
           <li>
             <a
               href={item.href}
-              class="flex items-center px-3 py-2.5 rounded-lg text-text-navy dark:text-slate-300 font-medium hover:bg-accent-light dark:hover:bg-accent/10 hover:text-accent transition-colors duration-150"
+              class="flex items-center px-3 py-2.5 rounded-lg text-text-navy dark:text-slate-300 font-medium hover:bg-accent-light dark:hover:bg-accent/10 hover:text-accent active:bg-accent-light/70 dark:active:bg-accent/15 transition-colors duration-150"
             >
               {t(locale, `nav.${item.key}`)}
             </a>
@@ -108,7 +110,7 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
             <li>
               <a
                 href={item.href}
-                class="flex items-center px-3 py-2 rounded-lg text-sm text-muted hover:text-accent hover:bg-accent-light dark:hover:bg-accent/10 transition-colors duration-150"
+                class="flex items-center px-3 py-2 rounded-lg text-sm text-muted hover:text-accent hover:bg-accent-light dark:hover:bg-accent/10 active:bg-accent-light/70 dark:active:bg-accent/15 transition-colors duration-150"
               >
                 {t(locale, `nav.${item.key}`)}
               </a>
@@ -119,56 +121,210 @@ const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
     </div>
   </nav>
 
-  <!-- Footer: language toggle -->
+  <!-- Footer: theme + language -->
   <div class="border-t border-border dark:border-white/[0.06] px-5 py-4 flex items-center justify-between">
-    <a
-      href={alternatePath}
-      class="text-sm font-medium text-muted hover:text-accent transition-colors"
-      lang={alternateLocale}
-    >
-      {alternateLocale === 'en' ? '영어로 보기 (EN)' : '한국어로 보기 (KO)'}
-    </a>
+    <ThemeToggle locale={locale} />
     <div class="flex items-center gap-1 text-sm font-medium">
       <a
         href={locale === 'ko' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'ko')}
-        class={`px-2 py-1 rounded-l border transition-colors ${locale === 'ko' ? 'bg-accent text-white border-accent' : 'border-border dark:border-white/10 text-muted hover:text-deep dark:hover:text-white'}`}
+        class={`px-2 py-1 rounded-l border transition-all active:scale-95 ${locale === 'ko' ? 'bg-accent text-white border-accent' : 'border-border dark:border-white/10 text-muted hover:text-deep dark:hover:text-white'}`}
         lang="ko"
       >KO</a>
       <a
         href={locale === 'en' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'en')}
-        class={`px-2 py-1 rounded-r border-t border-b border-r transition-colors ${locale === 'en' ? 'bg-accent text-white border-accent' : 'border-border dark:border-white/10 text-muted hover:text-deep dark:hover:text-white'}`}
+        class={`px-2 py-1 rounded-r border-t border-b border-r transition-all active:scale-95 ${locale === 'en' ? 'bg-accent text-white border-accent' : 'border-border dark:border-white/10 text-muted hover:text-deep dark:hover:text-white'}`}
         lang="en"
       >EN</a>
     </div>
   </div>
 </div>
 
+<style>
+  /* Bright left edge: light catching the material */
+  #mobile-menu {
+    box-shadow:
+      -24px 0 48px rgba(0, 0, 0, 0.12),
+      inset 1px 0 0 rgba(255, 255, 255, 0.4);
+  }
+  :global(.dark) #mobile-menu {
+    box-shadow:
+      -24px 0 48px rgba(0, 0, 0, 0.5),
+      inset 1px 0 0 rgba(255, 255, 255, 0.08);
+  }
+</style>
+
 <script>
-  const menu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('mobile-overlay');
-  const openBtn = document.getElementById('mobile-open');
-  const closeBtn = document.getElementById('mobile-close');
+  import { animate } from 'motion';
+  import { SPRING, reduced, project, rubberband } from '../../scripts/motion';
+
+  const menu = document.getElementById('mobile-menu') as HTMLElement | null;
+  const overlay = document.getElementById('mobile-overlay') as HTMLElement | null;
+  const openBtn = document.getElementById('mobile-open') as HTMLButtonElement | null;
+  const closeBtn = document.getElementById('mobile-close') as HTMLButtonElement | null;
+  if (!menu || !overlay || !openBtn || !closeBtn) throw new Error('mobile menu: missing elements');
+
+  let isOpen = false;
+
+  const panelWidth = () => menu.offsetWidth || window.innerWidth;
+
+  function showOverlay() {
+    overlay.classList.remove('hidden');
+    animate(overlay, { opacity: 1 }, { duration: reduced() ? 0.2 : 0.3 });
+  }
+
+  function hideOverlay() {
+    animate(overlay, { opacity: 0 }, { duration: reduced() ? 0.2 : 0.3 }).then(() => {
+      if (!isOpen) overlay.classList.add('hidden');
+    });
+  }
 
   function openMenu() {
-    menu?.classList.remove('translate-x-full');
-    overlay?.classList.remove('hidden', 'opacity-0');
-    requestAnimationFrame(() => overlay?.classList.add('opacity-100'));
+    if (isOpen) return;
+    isOpen = true;
+    openBtn.setAttribute('aria-expanded', 'true');
+    menu.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
+    showOverlay();
+    if (reduced()) {
+      // Cross-fade only — no slide under reduced motion
+      animate(menu, { x: '0%' }, { duration: 0 });
+      animate(menu, { opacity: [0, 1] }, { duration: 0.2 });
+    } else {
+      animate(menu, { x: ['100%', '0%'] }, SPRING.drawer);
+    }
+    closeBtn.focus();
   }
 
-  function closeMenu() {
-    menu?.classList.add('translate-x-full');
-    overlay?.classList.remove('opacity-100');
-    overlay?.classList.add('opacity-0');
-    setTimeout(() => overlay?.classList.add('hidden'), 300);
+  function closeMenu(velocity = 0) {
+    if (!isOpen) return;
+    isOpen = false;
+    openBtn.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('inert', '');
     document.body.style.overflow = '';
+    hideOverlay();
+    if (reduced()) {
+      animate(menu, { opacity: [1, 0] }, { duration: 0.2 }).then(() => {
+        if (!isOpen) animate(menu, { x: '100%' }, { duration: 0 });
+      });
+    } else {
+      animate(menu, { x: '100%' }, { ...SPRING.drawer, velocity });
+    }
+    openBtn.focus();
   }
 
-  openBtn?.addEventListener('click', openMenu);
-  closeBtn?.addEventListener('click', closeMenu);
-  overlay?.addEventListener('click', closeMenu);
+  openBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', () => closeMenu());
+  overlay.addEventListener('click', () => closeMenu());
 
+  // Escape + focus trap, active only while the menu is open
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
+    if (!isOpen) return;
+    if (e.key === 'Escape') {
+      closeMenu();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const focusables = menu.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])',
+      );
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
+
+  /* ── Drag-to-close (1:1 tracking + velocity handoff) ── */
+
+  let dragging = false;
+  let dragStarted = false; // past the 10px hysteresis threshold
+  let startX = 0;
+  let currentOffset = 0;
+  let history: Array<{ x: number; t: number }> = [];
+
+  function releaseVelocity(): number {
+    const now = performance.now();
+    const recent = history.filter((p) => now - p.t < 100);
+    if (recent.length < 2) return 0;
+    const first = recent[0];
+    const last = recent[recent.length - 1];
+    const dt = last.t - first.t;
+    if (dt <= 0) return 0;
+    return ((last.x - first.x) / dt) * 1000; // px/s
+  }
+
+  menu.addEventListener('pointerdown', (e) => {
+    if (!isOpen || reduced()) return;
+    dragging = true;
+    dragStarted = false;
+    startX = e.clientX;
+    currentOffset = 0;
+    history = [{ x: e.clientX, t: performance.now() }];
+    menu.setPointerCapture(e.pointerId);
+  });
+
+  menu.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+
+    // Hysteresis: commit to the gesture only past 10px so taps still work
+    if (!dragStarted) {
+      if (Math.abs(dx) < 10) return;
+      dragStarted = true;
+    }
+
+    history.push({ x: e.clientX, t: performance.now() });
+    if (history.length > 8) history.shift();
+
+    // 1:1 tracking rightward; rubber-band resistance leftward (nothing more there)
+    currentOffset = dx > 0 ? dx : rubberband(dx, panelWidth());
+    menu.style.transform = `translateX(${currentOffset}px)`;
+    overlay.style.opacity = String(Math.max(0, 1 - currentOffset / panelWidth()));
+  });
+
+  function endDrag(e: PointerEvent) {
+    if (!dragging) return;
+    dragging = false;
+    if (!dragStarted) return;
+
+    // NOTE: inline transform/opacity are intentionally left in place —
+    // Motion reads the live presentation value and continues from it
+    // (no jump at the drag → animation seam).
+
+    const v = releaseVelocity();
+    const width = panelWidth();
+    const projected = currentOffset + project(v);
+
+    // Decide by velocity sign first, then by projected resting position
+    const dismiss = v > 250 || (v >= 0 && projected > width * 0.4);
+
+    if (dismiss) {
+      closeMenu(v);
+    } else {
+      animate(menu, { x: 0 }, { ...SPRING.drawer, velocity: v });
+      animate(overlay, { opacity: 1 }, { duration: 0.2 });
+    }
+  }
+
+  menu.addEventListener('pointerup', endDrag);
+  menu.addEventListener('pointercancel', endDrag);
+
+  // Suppress accidental link activation right after a drag
+  menu.addEventListener(
+    'click',
+    (e) => {
+      if (dragStarted) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragStarted = false;
+      }
+    },
+    true,
+  );
 </script>
