@@ -37,7 +37,7 @@ make clean       # Remove build artifacts
 
 ### Content Collections (Astro Content Layer)
 - `src/content/{collection}/{locale}/*.md` — locale-separated
-- Collections: `posts`, `projects`, `faculty`, `courses`, `testimonials`, `pages`
+- Collections: `posts`, `projects`, `faculty`, `testimonials`, `pages`
 - Filter by locale: `.filter(p => p.id.startsWith(\`${locale}/\`))`
 - Schemas defined in `src/content.config.ts` with Zod
 
@@ -52,6 +52,8 @@ make clean       # Remove build artifacts
 - Card classes: `.card`, `.card-flat`, `.card-bento` — each with light/dark mode + hover effects
 - Button classes: `.btn-solid-gradient`, `.btn-glow`
 - Animations: `.hero-reveal`, `.fade-up`, hero gradient mesh, card shimmer
+- Motion: `motion` (motion.dev) is the animation runtime. Shared spring presets (`SPRING.ui/momentum/drawer`), `reduced()`, `project()`, `rubberband()` live in `astro/src/scripts/motion.ts` — use them for anything gesture-driven or interruptible. CSS motion tokens in `@theme`: `--ease-out-expo`, `--ease-in-out-soft`, `--dur-fast/base/slow`. Hover/color transitions stay as CSS.
+- Scroll reveal: Motion `inView` in BaseLayout drives `.fade-up` (the class is the initial-hidden-state hook only)
 - Logo: `logo-icon.svg` (color) / `logo-icon-white.svg` (white) — CSS swaps based on header state
 
 ### Header States
