@@ -10,16 +10,31 @@
 }
 
 .site-header.header-solid {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Scroll edge effect: soft gradient where content passes under the bar */
+.site-header.header-solid::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(to bottom, rgba(15, 35, 68, 0.05), transparent);
+  pointer-events: none;
 }
 
 .dark .site-header.header-solid {
-  background-color: rgba(5, 10, 24, 0.92);
-  border-bottom-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(5, 10, 24, 0.72);
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+.dark .site-header.header-solid::after {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent);
 }
 
 .site-header.header-transparent {
@@ -662,4 +677,69 @@
 
 .dark .bg-dots {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* ── Reduced transparency: frosted surfaces go solid ── */
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header.header-solid {
+    background-color: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .dark .site-header.header-solid {
+    background-color: var(--color-void);
+  }
+  #mobile-menu {
+    background-color: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .dark #mobile-menu {
+    background-color: var(--color-abyss);
+  }
+  #mobile-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #lightbox {
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .dark .card-flat {
+    background: var(--color-abyss);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .pillar-card {
+    background: var(--color-abyss);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* ── Increased contrast: defined borders, near-solid surfaces ── */
+
+@media (prefers-contrast: more) {
+  .card,
+  .card-flat,
+  .card-bento {
+    border-color: var(--color-muted);
+  }
+  .dark .card,
+  .dark .card-flat,
+  .dark .card-bento {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+  .form-input {
+    border-color: var(--color-muted);
+  }
+  .dark .form-input {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .nav-link[aria-current="page"]::after {
+    height: 3px;
+  }
 }
