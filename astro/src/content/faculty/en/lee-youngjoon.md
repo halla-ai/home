@@ -3,7 +3,6 @@ order: 3
 name: 이영준
 name_en: Young Joon Lee
 title: Associate Professor
-role: Assistant Vice President for AX, CAIO, Director of International Development Cooperation Center
 photo: /images/faculty/yjlee.jpeg
 specialization: Business Administration (Ph.D.), Economics (M.S.), Information Industrial Engineering (B.S.)
 research_areas:
@@ -27,7 +26,6 @@ education:
 experience:
   - "Current) Associate Professor, Dept. of AI, Cheju Halla University"
   - "Current) Director of Innovation, Cheju Halla University"
-  - "Current) Director of International Development Cooperation Center, Cheju Halla University"
   - "Current) Director, Natural Language Research Center, Cheju Halla University"
   - "Current) Vice Director, RISE (Regional Innovation System & Education)"
   - "Current) Director, KOICA AI Education Project in Uzbekistan"
