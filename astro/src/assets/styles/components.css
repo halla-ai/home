@@ -181,11 +181,6 @@
   100% { background-position: -200% 0; }
 }
 
-@keyframes card-glow-pulse {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
 /* ── Base card ── */
 .card {
   position: relative;
@@ -355,20 +350,6 @@
       0 0 2px rgba(14, 165, 233, 0.6),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
-}
-
-/* ── Card hover ───────────────────────────────── */
-
-.card-lift {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
-}
-.card-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-}
-
-.dark .card-lift:hover {
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
 }
 
 /* ── Button system (sophisticated) ─────────────── */
@@ -584,28 +565,6 @@
   color: var(--color-muted);
   margin-top: 0.5rem;
 }
-
-/* ── Stat counter ─────────────────────────────── */
-
-@keyframes stat-enter {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.stat-item.visible {
-  animation: stat-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.stat-item { opacity: 0; }
-.stat-item:nth-child(1) { animation-delay: 0s; }
-.stat-item:nth-child(2) { animation-delay: 0.1s; }
-.stat-item:nth-child(3) { animation-delay: 0.2s; }
-.stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 /* ── Form inputs ─────────────────────────────── */
 

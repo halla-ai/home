@@ -8,7 +8,6 @@ interface Props {
   description: string;
   image?: string;
   locale?: Locale;
-  heroClass?: string;
   breadcrumbs?: Array<{ label: string; href?: string }>;
 }
 
@@ -17,7 +16,6 @@ const {
   description,
   image,
   locale = 'ko',
-  heroClass = '',
   breadcrumbs,
 } = Astro.props;
 
@@ -29,7 +27,7 @@ const crumbs = breadcrumbs
 
 <BaseLayout title={title} description={description} image={image} locale={locale}>
   <!-- Page hero (dark navy) -->
-  <section class={`page-hero py-20 lg:py-28 ${heroClass}`}>
+  <section class="page-hero py-20 lg:py-28">
     <div class="container relative z-10">
       <Breadcrumb items={crumbs} />
       <h1 class="text-3xl lg:text-[2.75rem] font-bold mt-4 leading-tight">

@@ -98,14 +98,6 @@
   background-clip: text;
 }
 
-/* ── Neon text glow ───────────────────────────── */
-
-.neon-glow {
-  text-shadow:
-    0 0 10px rgba(14, 165, 233, 0.3),
-    0 0 40px rgba(14, 165, 233, 0.1);
-}
-
 /* ── Film grain overlay (from STAIxBWLB) ──────── */
 
 .film-grain {
@@ -137,10 +129,6 @@
     transform: none;
     transition: none;
   }
-  .stat-item {
-    opacity: 1;
-    animation: none;
-  }
   .card::before,
   .card-bento::before,
   .card-bento::after {
@@ -156,8 +144,7 @@
     transition: none;
   }
   .card:hover,
-  .card-bento:hover,
-  .card-lift:hover {
+  .card-bento:hover {
     transform: none;
   }
   .group:hover .group-hover\:scale-105,
