@@ -68,7 +68,7 @@
 
 .hero-reveal {
   opacity: 0;
-  animation: hero-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: hero-reveal 0.8s var(--ease-out-expo) forwards;
 }
 .hero-reveal-1 { animation-delay: 0.15s; }
 .hero-reveal-2 { animation-delay: 0.3s; }
@@ -76,22 +76,12 @@
 .hero-reveal-4 { animation-delay: 0.6s; }
 
 /* ── Scroll reveal ────────────────────────────── */
+/* Initial hidden state only — Motion (BaseLayout) drives the animation. */
 
 .fade-up {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-up-d1 { transition-delay: 0.1s; }
-.fade-up-d2 { transition-delay: 0.2s; }
-.fade-up-d3 { transition-delay: 0.3s; }
-.fade-up-d4 { transition-delay: 0.4s; }
 
 /* ── Gradient text (blue → cyan) ──────────────── */
 
