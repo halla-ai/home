@@ -64,6 +64,13 @@
   color: white;
   background-color: rgba(255, 255, 255, 0.1);
 }
+.site-header.header-transparent .theme-toggle {
+  color: rgba(255, 255, 255, 0.8);
+}
+.site-header.header-transparent .theme-toggle:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .site-header.header-transparent .lang-switch a {
   border-color: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.6);

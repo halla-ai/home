@@ -11,7 +11,7 @@ const alternateLocale: Locale = locale === 'ko' ? 'en' : 'ko';
 const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 ---
 
-<div class="lang-switch flex items-center text-sm font-medium" role="navigation" aria-label="Language switcher">
+<div class="lang-switch flex items-center text-sm font-medium">
   <a
     href={locale === 'ko' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'ko')}
     class={`px-2.5 py-1 rounded-l-md border transition-colors duration-150 ${
