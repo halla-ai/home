@@ -10,7 +10,7 @@ const { locale } = Astro.props;
 const prefix = locale === 'en' ? '/en' : '';
 ---
 
-<section class="relative min-h-[70vh] flex items-center bg-void overflow-hidden pb-32 md:pb-40">
+<section class="relative min-h-[min(70vh,640px)] flex items-center bg-void overflow-hidden pb-32 md:pb-40">
   <!-- Animated gradient mesh background -->
   <div class="hero-gradient-mesh" aria-hidden="true"></div>
 

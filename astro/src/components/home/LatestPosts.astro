@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
 import type { Locale } from '../../i18n/ui';
+import SectionHeader from '../common/SectionHeader.astro';
 
 interface Props {
   locale: Locale;
@@ -28,23 +29,11 @@ function formatDate(date: Date, loc: string): string {
 
 <section class="bg-stone dark:bg-abyss py-16 md:py-20 bg-dots">
   <div class="container">
-    <div class="flex items-end justify-between mb-10">
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-deep dark:text-white"><span class="text-gradient">
-        {t(locale, 'sections.blog_title')}
-      </span></h2>
-      <a
-        href={`${prefix}/posts/`}
-        class="text-sm font-medium text-accent hover:text-accent-hover flex items-center gap-1.5 transition-colors duration-200 group"
-      >
-        {t(locale, 'sections.view_all')}
-        <svg
-          class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
-          fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
+    <SectionHeader
+      title={t(locale, 'sections.blog_title')}
+      viewAllHref={`${prefix}/posts/`}
+      viewAllLabel={t(locale, 'sections.view_all')}
+    />
 
     <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
       {/* Featured post — large */}
@@ -53,7 +42,7 @@ function formatDate(date: Date, loc: string): string {
         const slug = post.id.replace(`${locale}/`, '');
         const href = `${prefix}/posts/${slug}/`;
         return (
-          <a href={href} class="group block lg:row-span-2">
+          <a href={href} class="group block lg:row-span-2 transition-opacity active:opacity-80">
             {post.data.image && (
               <div class="aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden rounded-xl bg-border dark:bg-void relative">
                 <img
@@ -91,12 +80,12 @@ function formatDate(date: Date, loc: string): string {
       })()}
 
       {/* Remaining posts — 2×2 compact grid */}
-      <div class="grid grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {posts.slice(1).map((post) => {
           const slug = post.id.replace(`${locale}/`, '');
           const href = `${prefix}/posts/${slug}/`;
           return (
-            <a href={href} class="group block">
+            <a href={href} class="group block transition-opacity active:opacity-80">
               {post.data.image && (
                 <div class="aspect-[4/3] overflow-hidden rounded-lg bg-border dark:bg-void mb-3">
                   <img

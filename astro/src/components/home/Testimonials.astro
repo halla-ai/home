@@ -101,6 +101,18 @@ const testimonials = allTestimonials
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </button>
+
+      <!-- Dot indicators (mobile) -->
+      <div class="flex justify-center gap-2 mt-4 md:hidden" data-dots>
+        {testimonials.map((item, i) => (
+          <button
+            type="button"
+            class="testimonials-dot w-2 h-2 rounded-full transition-colors duration-200"
+            data-dot={i}
+            aria-label={locale === 'ko' ? `${item.data.name} 후기로 이동` : `Go to testimonial by ${item.data.name}`}
+          />
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -128,6 +140,17 @@ const testimonials = allTestimonials
 
   .testimonials-track::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Dot indicators (mobile) */
+  .testimonials-dot {
+    background: var(--color-border);
+  }
+  :global(.dark) .testimonials-dot {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .testimonials-dot[data-active='true'] {
+    background: var(--color-accent);
   }
 
   @media (min-width: 768px) {
@@ -215,6 +238,16 @@ const testimonials = allTestimonials
       track.appendChild(clone);
     });
     const cards = Array.from(track.querySelectorAll<HTMLElement>('.testimonials-card'));
+    const dots = Array.from(root.querySelectorAll<HTMLElement>('[data-dot]'));
+
+    dots.forEach((d, i) => {
+      d.addEventListener('click', () => {
+        const card = cards[i];
+        if (!card) return;
+        const offset = card.offsetLeft + card.offsetWidth / 2 - track.clientWidth / 2;
+        track.scrollTo({ left: offset, behavior: reduced ? 'auto' : 'smooth' });
+      });
+    });
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let raf = 0;
@@ -254,6 +287,11 @@ const testimonials = allTestimonials
 
       cards.forEach((card, idx) => {
         card.dataset.active = idx === activeIdx ? 'true' : 'false';
+      });
+
+      const origIdx = activeIdx % originals.length;
+      dots.forEach((d, i) => {
+        d.dataset.active = i === origIdx ? 'true' : 'false';
       });
 
     };

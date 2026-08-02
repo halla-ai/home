@@ -16,7 +16,23 @@ interface Props {
 
 const { page, locale } = Astro.props;
 const showPagination = page.lastPage > 1;
-const pages = Array.from({ length: page.lastPage }, (_, i) => i + 1);
+// Truncate to first/last/±1 with ellipses beyond 7 pages
+const pages: Array<number | 'ellipsis'> = (() => {
+  const last = page.lastPage;
+  const cur = page.currentPage;
+  if (last <= 7) return Array.from({ length: last }, (_, i) => i + 1);
+  const nums = [...new Set([1, last, cur - 1, cur, cur + 1])]
+    .filter((n) => n >= 1 && n <= last)
+    .sort((a, b) => a - b);
+  const out: Array<number | 'ellipsis'> = [];
+  let prev = 0;
+  for (const n of nums) {
+    if (n - prev > 1) out.push('ellipsis');
+    out.push(n);
+    prev = n;
+  }
+  return out;
+})();
 const basePath = locale === 'en' ? '/en/posts' : '/posts';
 ---
 
@@ -43,6 +59,13 @@ const basePath = locale === 'en' ? '/en/posts' : '/posts';
 
     <div class="flex items-center gap-1">
       {pages.map((num) => {
+        if (num === 'ellipsis') {
+          return (
+            <span class="flex h-9 w-9 items-center justify-center text-sm text-muted" aria-hidden="true">
+              &hellip;
+            </span>
+          );
+        }
         const href = num === 1 ? `${basePath}/` : `${basePath}/${num}/`;
         const isCurrent = num === page.currentPage;
         return isCurrent ? (

@@ -15,6 +15,12 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  contain: paint;
+}
+
+.hero-gradient-mesh::before,
+.hero-gradient-mesh::after {
+  will-change: transform;
 }
 
 .hero-gradient-mesh::before {
