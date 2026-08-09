@@ -3,7 +3,7 @@ order: 3
 name: 이영준
 name_en: Young Joon Lee
 title: 부교수
-photo: /images/faculty/yjlee.jpeg
+photo: /images/faculty/yjlee-2019.jpeg
 specialization: 경영학(박사), 경제학(석사), 정보산업공학(학사)
 research_areas:
   - 인공지능

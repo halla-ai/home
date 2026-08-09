@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import PageLayout from '../../../layouts/PageLayout.astro';
+import { pageHero } from '../../../config/pageHeroes';
 import Card from '../../../components/ui/Card.astro';
 import Pagination from '../../../components/Pagination.astro';
 import { getCollection } from 'astro:content';
@@ -32,6 +33,7 @@ function estimateReadTime(body: string): number {
 <PageLayout
   title={t(locale, 'nav.posts')}
   description="Latest news and activities from the Department of AI"
+  heroMedia={pageHero('posts', locale)}
   locale={locale}
 >
   <div class="grid gap-8 sm:grid-cols-2">

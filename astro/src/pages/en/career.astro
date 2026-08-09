@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { pageHero } from '../../config/pageHeroes';
 
 const locale = 'en';
 
@@ -84,7 +85,7 @@ const employmentCompanies = [
 <PageLayout
   title="Industry-Academia Partnerships"
   description="Developing industry-ready AI professionals through partnerships with leading companies and organizations"
-  heroMedia={{ src: '/images/career/career.png', alt: 'Industry-academia collaboration in the Department of Artificial Intelligence', position: 'center 42%' }}
+  heroMedia={pageHero('career', locale)}
   locale={locale}
 >
   <section class="mb-16 border-y border-border py-6 dark:border-white/[0.1]" aria-label="Partnership overview">

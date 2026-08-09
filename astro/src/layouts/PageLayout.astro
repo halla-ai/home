@@ -1,22 +1,14 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumb from '../components/common/Breadcrumb.astro';
+import type { PageHeroMedia } from '../config/pageHeroes';
 import { t, type Locale } from '../i18n/ui';
 
 interface Props {
   title: string;
   description: string;
   image?: string;
-  heroMedia?: {
-    src: string;
-    alt: string;
-    avif?: string;
-    webp?: string;
-    sizes?: string;
-    width?: number;
-    height?: number;
-    position?: string;
-  };
+  heroMedia?: PageHeroMedia;
   locale?: Locale;
   breadcrumbs?: Array<{ label: string; href?: string }>;
 }
@@ -36,8 +28,9 @@ const crumbs = breadcrumbs
   : [homeCrumb, { label: title }];
 
 const heroWidth = heroMedia?.width ?? 1920;
-const heroHeight = heroMedia?.height ?? 900;
+const heroHeight = heroMedia?.height ?? 1080;
 const heroSizes = heroMedia?.sizes ?? '100vw';
+const heroOverlay = heroMedia?.overlay ?? 'balanced';
 ---
 
 <BaseLayout
@@ -47,7 +40,7 @@ const heroSizes = heroMedia?.sizes ?? '100vw';
   locale={locale}
   heroPage
 >
-  <section class="page-hero isolate min-h-[26rem] md:min-h-[31rem]">
+  <section class={`page-hero page-hero--${heroOverlay} isolate min-h-[26rem] md:min-h-[31rem]`}>
     {heroMedia && (
       <div class="absolute inset-0 -z-10" aria-hidden="true">
         <picture class="block h-full w-full">
@@ -59,13 +52,12 @@ const heroSizes = heroMedia?.sizes ?? '100vw';
             width={heroWidth}
             height={heroHeight}
             sizes={heroSizes}
-            class="h-full w-full object-cover opacity-80 dark:opacity-75"
+            class="h-full w-full object-cover opacity-95 dark:opacity-90"
             style={`object-position: ${heroMedia.position ?? 'center'}`}
             loading="eager"
+            fetchpriority="high"
           />
         </picture>
-        <div class="absolute inset-0 bg-gradient-to-r from-void/95 via-void/62 to-transparent dark:from-void/95 dark:via-void/65 dark:to-void/5"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-void/90 via-transparent to-void/10"></div>
       </div>
     )}
     <div class="container relative z-10 flex min-h-[26rem] items-end py-12 md:min-h-[31rem] md:py-16">
@@ -93,3 +85,39 @@ const heroSizes = heroMedia?.sizes ?? '100vw';
     <slot />
   </div>
 </BaseLayout>
+
+<style>
+  /* The shared page-hero pseudo-element is overridden per media variant so
+   * the title remains readable without hiding the hero image. */
+  .page-hero--balanced::after {
+    background:
+      linear-gradient(104deg, rgb(5 10 18 / 0.84) 0%, rgb(5 10 18 / 0.56) 38%, rgb(5 10 18 / 0.14) 74%, transparent 100%),
+      linear-gradient(0deg, rgb(5 10 18 / 0.62) 0%, transparent 48%, rgb(5 10 18 / 0.12) 100%);
+  }
+
+  .page-hero--strong::after {
+    background:
+      linear-gradient(104deg, rgb(5 10 18 / 0.94) 0%, rgb(5 10 18 / 0.7) 44%, rgb(5 10 18 / 0.2) 78%, transparent 100%),
+      linear-gradient(0deg, rgb(5 10 18 / 0.7) 0%, transparent 48%, rgb(5 10 18 / 0.14) 100%);
+  }
+
+  .page-hero--quiet::after {
+    background:
+      linear-gradient(104deg, rgb(5 10 18 / 0.68) 0%, rgb(5 10 18 / 0.38) 38%, rgb(5 10 18 / 0.06) 74%, transparent 100%),
+      linear-gradient(0deg, rgb(5 10 18 / 0.5) 0%, transparent 48%, rgb(5 10 18 / 0.08) 100%);
+  }
+
+  @media (max-width: 767px) {
+    .page-hero--balanced::after {
+      background: linear-gradient(180deg, rgb(5 10 18 / 0.14) 0%, rgb(5 10 18 / 0.34) 44%, rgb(5 10 18 / 0.82) 100%);
+    }
+
+    .page-hero--strong::after {
+      background: linear-gradient(180deg, rgb(5 10 18 / 0.24) 0%, rgb(5 10 18 / 0.48) 44%, rgb(5 10 18 / 0.9) 100%);
+    }
+
+    .page-hero--quiet::after {
+      background: linear-gradient(180deg, rgb(5 10 18 / 0.08) 0%, rgb(5 10 18 / 0.24) 44%, rgb(5 10 18 / 0.72) 100%);
+    }
+  }
+</style>

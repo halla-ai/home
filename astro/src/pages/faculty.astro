@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
+import { pageHero } from '../config/pageHeroes';
 import { t } from '../i18n/ui';
 
 const locale = 'ko';
@@ -8,11 +9,15 @@ const allFaculty = await getCollection('faculty');
 const faculty = allFaculty
   .filter((f) => f.id.startsWith(`${locale}/`))
   .sort((a, b) => a.data.order - b.data.order);
+const leadership = faculty.filter((member) => Boolean(member.data.role));
+const directory = faculty.filter((member) => !member.data.role);
+const phoneHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, '')}`;
 ---
 
 <PageLayout
   title={t(locale, 'nav.faculty')}
   description="제주한라대학교 인공지능학과 교수진을 소개합니다"
+  heroMedia={pageHero('faculty', locale)}
   locale={locale}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faculty.map((m) => ({
@@ -36,49 +41,208 @@ const faculty = allFaculty
     } : {})
   })))} />
 
-  <div class="grid gap-x-10 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
-    {faculty.map((member, index) => (
-      <article class="group border-t border-border pt-6 dark:border-white/[0.1]">
-        <div class="flex items-start gap-5">
-          <div class="h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-stone dark:bg-white/[0.05]">
-            <img src={member.data.photo} alt={member.data.name} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" loading="lazy" />
-          </div>
-          <div class="min-w-0 pt-1">
-            <p class="font-mono text-xs tabular-nums text-accent/70">{String(index + 1).padStart(2, '0')}</p>
-            <h2 class="mt-2 text-xl font-bold tracking-tight text-deep dark:text-white">{member.data.name}</h2>
-            {member.data.name_en && <p class="mt-0.5 text-sm text-muted dark:text-slate-400">{member.data.name_en}</p>}
-            {member.data.role && <p class="mt-2 text-sm font-semibold text-accent">{member.data.role}</p>}
-            <p class="mt-0.5 text-sm text-muted dark:text-slate-400">{member.data.title}</p>
-          </div>
-        </div>
+  <div class="space-y-20 md:space-y-28">
+    <section aria-labelledby="leadership-heading">
+      <div class="max-w-2xl">
+        <h2 id="leadership-heading" class="text-3xl font-bold tracking-tight text-deep dark:text-white md:text-4xl">학부와 학과를 이끄는 교수진</h2>
+        <p class="mt-4 text-base leading-relaxed text-muted dark:text-text-soft md:text-lg">인공지능 교육과 연구를 함께 이끌어 가는 학부장과 학과장입니다.</p>
+      </div>
 
-        <div class="mt-7 space-y-6">
-          <div>
-            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">전공분야</p>
-            <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1.5">
-              {member.data.research_areas.map((area: string) => (
-                <li class="text-sm leading-relaxed text-deep dark:text-slate-200">{area}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">학력</p>
-            <ul class="mt-3 space-y-1">
-              {member.data.education.slice(0, 2).map((education: string) => (
-                <li class="text-sm leading-relaxed text-muted dark:text-slate-400">{education}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {leadership.map((member) => (
+          <article class="card-flat group rounded-2xl p-5 md:p-7">
+            <div class="grid gap-6 sm:grid-cols-[11rem_1fr] sm:items-start">
+              <div class="overflow-hidden rounded-2xl bg-stone dark:bg-white/[0.05]">
+                <img
+                  src={member.data.photo}
+                  alt={`${member.data.name} 교수 사진`}
+                  width="240"
+                  height="240"
+                  class="aspect-square h-auto w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-2xl font-bold tracking-tight text-deep dark:text-white">{member.data.name}</h3>
+                {member.data.name_en && <p class="mt-1 text-sm text-muted dark:text-text-soft">{member.data.name_en}</p>}
+                {member.data.role && <p class="mt-4 text-base font-semibold text-accent dark:text-blue-400">{member.data.role}</p>}
+                <p class="mt-1 text-sm font-medium text-muted dark:text-text-soft">{member.data.title}</p>
+              </div>
+            </div>
 
-        <nav class="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-4 text-xs font-medium dark:border-white/[0.1]" aria-label={`${member.data.name} links`}>
-          <a href={`mailto:${member.data.email}`} class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-slate-400">Email</a>
-          {member.data.website && <a href={member.data.website} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-slate-400">Website</a>}
-          {member.data.github && <a href={member.data.github} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-slate-400">GitHub</a>}
-          {member.data.scholar && <a href={member.data.scholar} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-slate-400">Scholar</a>}
-          {member.data.linkedin && <a href={member.data.linkedin} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-slate-400">LinkedIn</a>}
-        </nav>
-      </article>
-    ))}
+            <div class="mt-7 grid gap-6 border-t border-border pt-6 dark:border-white/[0.1]">
+              <div>
+                <h4 class="text-sm font-semibold text-deep dark:text-white">전문 분야</h4>
+                <p class="mt-2 text-sm leading-relaxed text-muted dark:text-text-soft">{member.data.specialization}</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-deep dark:text-white">연구 분야</h4>
+                <ul class="mt-3 flex flex-wrap gap-2">
+                  {member.data.research_areas.map((area: string) => (
+                    <li class="rounded-2xl border border-border bg-surface px-3 py-1.5 text-sm leading-relaxed text-deep dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-slate-200">{area}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <nav class="mt-7 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5 text-sm font-semibold dark:border-white/[0.1]" aria-label={`${member.data.name} 연락처와 외부 링크`}>
+              <a href={`mailto:${member.data.email}`} class="break-all text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-deep hover:decoration-accent dark:text-blue-400 dark:hover:text-white">{member.data.email}</a>
+              {member.data.website && <a href={member.data.website} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">웹사이트</a>}
+              {member.data.scholar && <a href={member.data.scholar} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">Google Scholar</a>}
+              {member.data.github && <a href={member.data.github} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">GitHub</a>}
+              {member.data.linkedin && <a href={member.data.linkedin} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">LinkedIn</a>}
+            </nav>
+
+            <details class="faculty-details mt-6 border-t border-border pt-4 dark:border-white/[0.1]">
+              <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 rounded-xl text-sm font-semibold text-deep transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent dark:text-white">
+                <span>상세 정보</span>
+                <i class="faculty-details-icon ph ph-caret-right text-base transition-transform duration-200" aria-hidden="true"></i>
+              </summary>
+              <div class="mt-5 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">강의 분야</h4>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-accent dark:text-text-soft">
+                    {member.data.teaching_areas.map((area: string) => <li>{area}</li>)}
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">학력</h4>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-accent dark:text-text-soft">
+                    {member.data.education.map((education: string) => <li>{education}</li>)}
+                  </ul>
+                </div>
+                <div class="sm:col-span-2">
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">경력</h4>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-accent dark:text-text-soft">
+                    {member.data.experience.map((experience: string) => <li>{experience}</li>)}
+                  </ul>
+                </div>
+                <div class="sm:col-span-2">
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">연락처</h4>
+                  <dl class="mt-3 grid gap-3 text-sm sm:grid-cols-2">
+                    {member.data.phone && (
+                      <div>
+                        <dt class="text-muted dark:text-text-soft">전화</dt>
+                        <dd class="mt-1 font-medium text-deep dark:text-slate-100"><a href={phoneHref(member.data.phone)} class="underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent">{member.data.phone}</a></dd>
+                      </div>
+                    )}
+                    {member.data.office && (
+                      <div>
+                        <dt class="text-muted dark:text-text-soft">연구실</dt>
+                        <dd class="mt-1 font-medium text-deep dark:text-slate-100">{member.data.office}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+              </div>
+            </details>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section aria-labelledby="directory-heading">
+      <div class="max-w-2xl">
+        <h2 id="directory-heading" class="text-3xl font-bold tracking-tight text-deep dark:text-white md:text-4xl">교수진 디렉터리</h2>
+        <p class="mt-4 text-base leading-relaxed text-muted dark:text-text-soft md:text-lg">각 교수의 전공과 연구 분야를 살펴보고 상세 이력과 연락처를 확인할 수 있습니다.</p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {directory.map((member) => (
+          <article class="card-flat group rounded-2xl p-5 md:p-6">
+            <div class="flex items-start gap-5">
+              <div class="h-28 w-28 shrink-0 overflow-hidden rounded-2xl bg-stone dark:bg-white/[0.05]">
+                <img
+                  src={member.data.photo}
+                  alt={`${member.data.name} 교수 사진`}
+                  width="224"
+                  height="224"
+                  class="aspect-square h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="min-w-0 pt-1">
+                <h3 class="text-xl font-bold tracking-tight text-deep dark:text-white">{member.data.name}</h3>
+                {member.data.name_en && <p class="mt-1 text-sm text-muted dark:text-text-soft">{member.data.name_en}</p>}
+                <p class="mt-3 text-sm font-semibold text-deep dark:text-slate-100">{member.data.title}</p>
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-5 border-t border-border pt-6 dark:border-white/[0.1]">
+              <div>
+                <h4 class="text-sm font-semibold text-deep dark:text-white">전문 분야</h4>
+                <p class="mt-2 text-sm leading-relaxed text-muted dark:text-text-soft">{member.data.specialization}</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-deep dark:text-white">연구 분야</h4>
+                <ul class="mt-3 flex flex-wrap gap-2">
+                  {member.data.research_areas.map((area: string) => (
+                    <li class="rounded-2xl border border-border bg-surface px-3 py-1.5 text-sm leading-relaxed text-deep dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-slate-200">{area}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <nav class="mt-6 flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-5 text-sm font-semibold dark:border-white/[0.1]" aria-label={`${member.data.name} 연락처와 외부 링크`}>
+              <a href={`mailto:${member.data.email}`} class="break-all text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-deep hover:decoration-accent dark:text-blue-400 dark:hover:text-white">{member.data.email}</a>
+              {member.data.website && <a href={member.data.website} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">웹사이트</a>}
+              {member.data.scholar && <a href={member.data.scholar} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">Google Scholar</a>}
+              {member.data.github && <a href={member.data.github} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">GitHub</a>}
+              {member.data.linkedin && <a href={member.data.linkedin} target="_blank" rel="noopener" class="text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:text-text-soft">LinkedIn</a>}
+            </nav>
+
+            <details class="faculty-details mt-6 border-t border-border pt-4 dark:border-white/[0.1]">
+              <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 rounded-xl text-sm font-semibold text-deep transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent dark:text-white">
+                <span>상세 정보</span>
+                <i class="faculty-details-icon ph ph-caret-right text-base transition-transform duration-200" aria-hidden="true"></i>
+              </summary>
+              <div class="mt-5 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">강의 분야</h4>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-accent dark:text-text-soft">
+                    {member.data.teaching_areas.map((area: string) => <li>{area}</li>)}
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">학력</h4>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-accent dark:text-text-soft">
+                    {member.data.education.map((education: string) => <li>{education}</li>)}
+                  </ul>
+                </div>
+                <div class="sm:col-span-2">
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">경력</h4>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-accent dark:text-text-soft">
+                    {member.data.experience.map((experience: string) => <li>{experience}</li>)}
+                  </ul>
+                </div>
+                <div class="sm:col-span-2">
+                  <h4 class="text-sm font-semibold text-deep dark:text-white">연락처</h4>
+                  <dl class="mt-3 grid gap-3 text-sm sm:grid-cols-2">
+                    {member.data.phone && (
+                      <div>
+                        <dt class="text-muted dark:text-text-soft">전화</dt>
+                        <dd class="mt-1 font-medium text-deep dark:text-slate-100"><a href={phoneHref(member.data.phone)} class="underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent">{member.data.phone}</a></dd>
+                      </div>
+                    )}
+                    {member.data.office && (
+                      <div>
+                        <dt class="text-muted dark:text-text-soft">연구실</dt>
+                        <dd class="mt-1 font-medium text-deep dark:text-slate-100">{member.data.office}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+              </div>
+            </details>
+          </article>
+        ))}
+      </div>
+    </section>
   </div>
 </PageLayout>
+
+<style>
+  .faculty-details[open] .faculty-details-icon {
+    transform: rotate(90deg);
+  }
+</style>

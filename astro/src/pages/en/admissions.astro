@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { pageHero } from '../../config/pageHeroes';
 import { getCollection, render } from 'astro:content';
 import { t } from '../../i18n/ui';
 
@@ -13,7 +14,7 @@ const { Content } = await render(page);
 <PageLayout
   title={t(locale, 'nav.admissions')}
   description={page.data.description || ''}
-  heroMedia={{ src: '/images/admissions/admissions.png', alt: 'Classes and project work in the Department of Artificial Intelligence' }}
+  heroMedia={pageHero('admissions', locale)}
   locale={locale}
 >
   <div class="mx-auto max-w-4xl rounded-[1.5rem] border border-border bg-white/80 px-5 py-8 shadow-sm dark:border-white/[0.08] dark:bg-white/[0.025] sm:px-8 md:px-12 md:py-12">
