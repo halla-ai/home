@@ -1,37 +1,39 @@
 ---
-import { getAlternateLocalePath, type Locale } from '../../i18n/ui';
+import { getAlternateLocalePath, tagUrl, type Locale } from '../../i18n/ui';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const tagMatch = Astro.url.pathname.match(/^\/(?:en\/)?tags\/([^/]+)\/?$/);
+const currentPath = tagMatch
+  ? tagUrl(locale, decodeURIComponent(tagMatch[1]))
+  : Astro.url.pathname;
 
-const alternateLocale: Locale = locale === 'ko' ? 'en' : 'ko';
-const alternatePath = getAlternateLocalePath(Astro.url, alternateLocale);
 ---
 
-<div class="lang-switch flex items-center text-sm font-medium">
+<div class="lang-switch flex items-center gap-1 text-xs font-semibold" aria-label={locale === 'ko' ? '언어 선택' : 'Language selector'}>
   <a
-    href={locale === 'ko' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'ko')}
-    class={`px-2.5 py-1 rounded-l-md border transition-colors duration-150 ${
+    href={locale === 'ko' ? currentPath : getAlternateLocalePath(Astro.url, 'ko')}
+    class={`rounded-md px-2.5 py-2 transition-colors duration-150 ${
       locale === 'ko'
-        ? 'bg-accent text-white border-accent'
-        : 'bg-white dark:bg-white/[0.06] text-muted border-border dark:border-white/15 hover:text-accent'
+        ? 'bg-accent-hover text-white'
+        : 'text-muted hover:text-accent'
     }`}
-    aria-label="한국어"
+    aria-label="KO, 한국어"
     lang="ko"
   >
     KO
   </a>
   <a
-    href={locale === 'en' ? Astro.url.pathname : getAlternateLocalePath(Astro.url, 'en')}
-    class={`px-2.5 py-1 rounded-r-md border-t border-b border-r transition-colors duration-150 ${
+    href={locale === 'en' ? currentPath : getAlternateLocalePath(Astro.url, 'en')}
+    class={`rounded-md px-2.5 py-2 transition-colors duration-150 ${
       locale === 'en'
-        ? 'bg-accent text-white border-accent'
-        : 'bg-white dark:bg-white/[0.06] text-muted border-border dark:border-white/15 hover:text-accent'
+        ? 'bg-accent-hover text-white'
+        : 'text-muted hover:text-accent'
     }`}
-    aria-label="English"
+    aria-label="EN, English"
     lang="en"
   >
     EN

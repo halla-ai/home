@@ -24,6 +24,62 @@
     "cta_about": "학과 소개",
     "cta_admissions": "입학 안내"
   },
+  "home": {
+    "hero": {
+      "eyebrow": "CHEJU HALLA UNIVERSITY / AI",
+      "title": "사람과 현장을 잇는 AI",
+      "body": "제주에서 배우고, 세계와 협업하며, 실제 문제를 AI로 풀어갑니다.",
+      "primary": "입학 안내",
+      "secondary": "학과 둘러보기",
+      "visual_alt": "제주한라대학교 인공지능학과 학생들이 프로젝트를 논의하는 모습",
+      "meta": "AI DEPARTMENT / 2026"
+    },
+    "routes": {
+      "title": "배움은 강의실 밖에서 계속됩니다",
+      "body": "기초를 단단히 익히고, 연구로 깊이를 더하며, 산업의 문제를 프로젝트로 해결합니다.",
+      "education_title": "교육",
+      "education_body": "컴퓨터과학의 기초부터 생성형 AI까지, 직접 만들며 배우는 커리큘럼",
+      "education_link": "교과과정 보기",
+      "research_title": "연구",
+      "research_body": "자연어처리, 컴퓨터비전, Physical AI를 실제 연구 과제로 확장",
+      "research_link": "연구 살펴보기",
+      "industry_title": "산학협력",
+      "industry_body": "KBS 제주, AWS, 글로벌 대학과 함께 지역의 문제를 기술로 전환",
+      "industry_link": "협력 사례 보기"
+    },
+    "achievement": {
+      "title": "AI로 지역의 질문에 답하다",
+      "body": "KBS 제주와 함께 32개 선거구의 현안과 공약을 한 곳에서 탐색하는 AI 선거 보도 센터를 만들었습니다.",
+      "metric": "32",
+      "metric_label": "선거구를 연결한 인터랙티브 플랫폼",
+      "link": "성과 자세히 보기",
+      "image_alt": "KBS 제주 선거 보도 센터 화면"
+    },
+    "partners": {
+      "title": "현장과 연결된 교육",
+      "body": "학생의 프로젝트가 교실 안에서 끝나지 않도록, 기업과 연구기관의 실제 과제를 배움의 출발점으로 삼습니다.",
+      "logo_alt": "협력 기관 로고"
+    },
+    "stories": {
+      "title": "학생의 다음 장면",
+      "previous": "이전 학생 이야기",
+      "next": "다음 학생 이야기",
+      "go_to": "{name} 학생 이야기로 이동",
+      "position": "{current} / {total}"
+    },
+    "news": {
+      "title": "최근 소식",
+      "all": "소식 전체 보기",
+      "featured": "주요 소식",
+      "read": "기사 읽기"
+    },
+    "cta": {
+      "title": "다음 프로젝트는 제주에서 시작됩니다",
+      "body": "AI를 배우고, 만들고, 세상에 연결하고 싶다면 제주한라대학교 인공지능학과에서 시작하세요.",
+      "primary": "입학 안내",
+      "secondary": "문의하기"
+    }
+  },
   "stats": {
     "faculty": "교수진",
     "faculty_unit": "명",

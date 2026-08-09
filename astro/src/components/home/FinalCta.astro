@@ -1,0 +1,77 @@
+---
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = locale === 'en' ? '/en' : '';
+---
+
+<section class="home-final-cta relative overflow-hidden bg-deep py-20 text-white md:py-28">
+  <div class="home-final-cta-line" aria-hidden="true"></div>
+  <div class="container relative z-10">
+    <div class="max-w-3xl fade-up">
+      <h2 class="text-4xl font-bold leading-[1.02] tracking-[-0.055em] text-white md:text-6xl">
+        {t(locale, 'home.cta.title')}
+      </h2>
+      <p class="mt-6 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
+        {t(locale, 'home.cta.body')}
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a
+          href={`${prefix}/admissions/`}
+          class="inline-flex items-center gap-3 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white transition-[background-color,transform,box-shadow] duration-300 hover:bg-accent-hover hover:shadow-[0_12px_32px_rgba(61,126,219,0.24)] active:translate-y-px"
+        >
+          {t(locale, 'home.cta.primary')} <span aria-hidden="true">→</span>
+        </a>
+        <a
+          href={`${prefix}/contact/`}
+          class="inline-flex items-center gap-3 rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white/90 transition-[background-color,border-color,transform] duration-300 hover:border-accent hover:bg-white/5 hover:text-white active:translate-y-px"
+        >
+          {t(locale, 'home.cta.secondary')} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-final-cta-line {
+    position: absolute;
+    top: 0;
+    right: -4rem;
+    width: min(50vw, 40rem);
+    height: 100%;
+    border-left: 1px solid rgba(61, 126, 219, 0.28);
+    transform: skewX(-18deg);
+    opacity: 0.7;
+  }
+
+  .home-final-cta::after {
+    content: '';
+    position: absolute;
+    top: -10rem;
+    right: 4rem;
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(61, 126, 219, 0.18), transparent 69%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 767px) {
+    .home-final-cta-line {
+      right: -12rem;
+      width: 28rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-final-cta-line {
+      transform: none;
+    }
+  }
+</style>

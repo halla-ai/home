@@ -40,7 +40,7 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
 <BaseLayout title={pageTitle} description={description} image={image} locale={locale}>
   <article class="pb-24 lg:pb-32">
     <!-- Project header -->
-    <header class="page-hero py-20 lg:py-28">
+    <header class="page-hero cinematic-surface py-20 lg:py-28">
       <div class="container relative z-10">
         <Breadcrumb items={crumbs} />
 
@@ -110,7 +110,7 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
                   class="group flex flex-col gap-1.5 p-5 rounded-xl border border-border dark:border-white/10 hover:border-accent hover:shadow-sm transition-all duration-200"
                 >
                   <span class="text-xs text-muted flex items-center gap-1">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    <i class="ph ph-arrow-left text-sm" aria-hidden="true"></i>
                     {t(locale, 'common.prev')}
                   </span>
                   <span class="text-sm font-medium text-deep dark:text-white group-hover:text-accent transition-colors line-clamp-2">
@@ -125,7 +125,7 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
                 >
                   <span class="text-xs text-muted flex items-center gap-1 sm:justify-end">
                     {t(locale, 'common.next')}
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    <i class="ph ph-arrow-right text-sm" aria-hidden="true"></i>
                   </span>
                   <span class="text-sm font-medium text-deep dark:text-white group-hover:text-accent transition-colors line-clamp-2">
                     {next.title}

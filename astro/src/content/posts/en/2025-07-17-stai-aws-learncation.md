@@ -1,6 +1,6 @@
 ---
 title: "STAI-AWS 2025 Learncation: AI for Climate Action Comes to Jeju"
-description: "STAI-AWS 2025 Learncation program under the Jeju RISE initiative — 30+ students from KAIST, Yonsei, and Cheju Halla University join AWS for a climate AI hackathon and learncation"
+description: "STAI-AWS 2025 Learncation program under the Jeju RISE initiative, 30+ students from KAIST, Yonsei, and Cheju Halla University join AWS for a climate AI hackathon and learncation"
 date: 2025-07-17
 tags: [STAI, AWS, RISE, AI, Climate Action, Learncation, hackathon]
 categories: Education
@@ -27,7 +27,7 @@ During the mid-program period of July 7-8, a learncation program combining educa
 
 On July 10, team research presentations were conducted on topics including 'AI Solutions for Crisis Response to Climate Change,' 'AI Technology for Strengthening Climate Resilience in Urban and Rural Areas,' and 'AI-based Solutions for Improving Climate Resilience in Developing Countries.'
 
-The **STAI-tuned Team**, presenting on "Development of an AI-based Dual Verification Platform for Climate Infrastructure in Developing Countries," won the Grand Prize — the **Jeju Governor's Award**. The team will subsequently participate in the KOICA-organized 'AI for Climate Action Award' international competition.
+The **STAI-tuned Team**, presenting on "Development of an AI-based Dual Verification Platform for Climate Infrastructure in Developing Countries," won the Grand Prize, the **Jeju Governor's Award**. The team will subsequently participate in the KOICA-organized 'AI for Climate Action Award' international competition.
 
 ![Grand Prize](/images/posts/20250717/nALodKTG_1752540516_image03.jpg)
 

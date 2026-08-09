@@ -19,7 +19,7 @@ The opening ceremony was attended by key officials including Lee Young-jun, Depu
 
 The bootcamp ran from December 21, 2025 to February 4, 2026 in a hybrid format over seven weeks. After completing two weeks of online pre-training, participants joined on-site education in Jeju, which was held over two weeks each at ESTsoft's Jeju Campus and Cheju Halla University.
 
-A total of 50 participants were selected from university students interested in aerospace regardless of major or nationality — 20 from Jeju, 20 from outside Jeju, and 10 international students — creating a multinational, multidisciplinary collaborative learning environment.
+A total of 50 participants were selected from university students interested in aerospace regardless of major or nationality (20 from Jeju, 20 from outside Jeju, and 10 international students), creating a multinational, multidisciplinary collaborative learning environment.
 
 ![Bootcamp Session](/images/posts/20260204/bootcamp/IMG_6731.jpg)
 
@@ -39,7 +39,7 @@ The curriculum was designed with a practical focus, featuring a space design wor
 
 ![Mentoring](/images/posts/20260204/bootcamp/KakaoTalk_Photo_2026-03-14-19-17-48.jpeg)
 
-### Hackathon — 48 Hours of Real-World Challenge
+### Hackathon: 48 Hours of Real-World Challenge
 
 The RISE Project at Cheju Halla University (Director: Ko Seok-yong) held the 2026 Jeju RISE·AWS Global Space Bootcamp Hackathon over two days from February 2 (Mon) to 3 (Tue) at the Halla Convention Center. A total of 46 bootcamp trainees and 78 overall participants joined an intensive project sprint.
 

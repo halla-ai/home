@@ -54,6 +54,6 @@ Four student researchers from the Department of Artificial Intelligence particip
 
 ## Project Information
 
-- **Research Period**: July 2025 – February 2028 (3 years)
+- **Research Period**: July 2025 - February 2028 (3 years)
 - **Total R&D Budget**: 900 million KRW
 - **Principal Investigator (PI)**: Professor Young Joon Lee, Department of Artificial Intelligence, Cheju Halla University

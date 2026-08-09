@@ -48,6 +48,6 @@ Student researchers participate in reviewing the latest NLP/LLM papers through r
 
 ## Project Information
 
-- **Research Period**: August 2025 – December 2027 (29 months)
+- **Research Period**: August 2025 - December 2027 (29 months)
 - **Total R&D Budget**: Approximately 1.7 billion KRW
 - **Principal Investigator (PI)**: Professor Young Joon Lee, Department of Artificial Intelligence, Cheju Halla University

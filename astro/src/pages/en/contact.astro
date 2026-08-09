@@ -2,9 +2,10 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import Card from '../../components/ui/Card.astro';
 import { t } from '../../i18n/ui';
+import { siteConfig } from '../../config/site';
 
 const locale = 'en';
-const FORM_ACTION = 'https://formsubmit.co/ajax/info@jeju.ai';
+const FORM_ACTION = `https://formsubmit.co/ajax/${siteConfig.email}`;
 ---
 
 <PageLayout
@@ -25,7 +26,7 @@ const FORM_ACTION = 'https://formsubmit.co/ajax/info@jeju.ai';
           </div>
           <div>
             <p class="text-sm font-semibold text-deep dark:text-slate-200">Email</p>
-            <a href="mailto:info@jeju.ai" class="text-sm text-accent hover:text-accent-hover transition-colors">info@jeju.ai</a>
+            <a href={`mailto:${siteConfig.email}`} class="text-sm text-accent hover:text-accent-hover transition-colors">{siteConfig.email}</a>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -36,7 +37,7 @@ const FORM_ACTION = 'https://formsubmit.co/ajax/info@jeju.ai';
           </div>
           <div>
             <p class="text-sm font-semibold text-deep dark:text-slate-200">Phone</p>
-            <p class="text-sm text-muted">064-741-7575</p>
+            <a href={`tel:${siteConfig.phone}`} class="text-sm text-muted hover:text-accent transition-colors">{siteConfig.phone}</a>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -48,7 +49,7 @@ const FORM_ACTION = 'https://formsubmit.co/ajax/info@jeju.ai';
           </div>
           <div>
             <p class="text-sm font-semibold text-deep dark:text-slate-200">Address</p>
-            <p class="text-sm text-muted leading-relaxed">38 Halla Daehak-ro, Jeju-si, Jeju Special Self-Governing Province 63092</p>
+            <p class="text-sm text-muted leading-relaxed">{siteConfig.address.en}</p>
           </div>
         </div>
       </div>
@@ -63,7 +64,7 @@ const FORM_ACTION = 'https://formsubmit.co/ajax/info@jeju.ai';
         Your message has been sent successfully. We will get back to you shortly.
       </div>
       <div id="form-error" class="hidden mt-6 p-4 rounded-xl bg-ember/10 border border-ember/20 text-sm text-ember font-medium">
-        Failed to send. Please email us directly at <a href="mailto:info@jeju.ai" class="underline">info@jeju.ai</a>.
+        Failed to send. Please email us directly at <a href={`mailto:${siteConfig.email}`} class="underline">{siteConfig.email}</a>.
       </div>
 
       <form id="contact-form" class="mt-8 space-y-5">

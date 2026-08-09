@@ -1,5 +1,5 @@
 ---
-title: "인공지능학과, 스탠퍼드 d.school 방문 — 디자인씽킹 멘토와 재회"
+title: "인공지능학과, 스탠퍼드 d.school 방문: 디자인씽킹 멘토와 재회"
 description: "글로벌 스페이스 부트캠프 해외연수 중 제주한라대학교 인공지능학과 학생들이 스탠퍼드대학교 d.school을 방문해, 1월 제주 워크숍을 이끌었던 멘토들과 재회했다."
 date: 2026-02-13
 image: "/images/posts/20260213/stanford-dschool-group-photo.webp"

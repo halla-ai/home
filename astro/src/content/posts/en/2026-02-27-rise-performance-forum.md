@@ -1,5 +1,5 @@
 ---
-title: "2025 Jeju RISE Performance Forum — AI Department Wins Presidential Award"
+title: "2025 Jeju RISE Performance Forum: AI Department Wins Presidential Award"
 description: "The 2025 Jeju RISE Performance Forum was held over two days at Cheju Halla Convention Center. The AI department team won the University Innovation Presidential Award for their Physical AI Data Augmentation Platform presentation."
 date: 2026-02-27
 image: "/images/posts/20260223/IMG_8782.jpg"
@@ -19,15 +19,15 @@ The first day of the forum featured an opening ceremony accompanied by a celebra
 
 Kim Han-young, Chairperson of the Central RISE Committee, delivered a keynote speech on "Super-Regional RISE and Industry-Academia Collaboration." He presented the vision of the RISE initiative for collaborative growth among regions, industries, and universities, along with the direction of super-regional cooperation models.
 
-![Keynote — Super-Regional RISE and Industry-Academia Collaboration](/images/posts/20260223/screenshot-forum-03.png)
+![Keynote: Super-Regional RISE and Industry-Academia Collaboration](/images/posts/20260223/screenshot-forum-03.png)
 
 Lee Myung-hyun, Chairperson of the 5-Hub 3-Special Zone Special Committee under the Presidential Committee for Balanced National Development, followed with a lecture on "5-Hub 3-Special Zone Balanced Growth Strategy and Regional Talent Development," emphasizing the importance of regional talent cultivation within the national balanced development strategy.
 
-![Keynote — 5-Hub 3-Special Zone Balanced Growth Strategy](/images/posts/20260223/screenshot-forum-02.png)
+![Keynote: 5-Hub 3-Special Zone Balanced Growth Strategy](/images/posts/20260223/screenshot-forum-02.png)
 
-### Outstanding Student Achievement — Physical AI Data Augmentation Platform
+### Outstanding Student Achievement: Physical AI Data Augmentation Platform
 
-The Cheju Halla University AI Department team (Kim Jae-eun, Moon Jae-hyun, Hong Seong-gwan, Kim Woong-bin) presented "Physical AI Data Augmentation Platform — Transforming Robot Learning" during the outstanding student achievement session. This research was conducted as part of the RISE industry-academia joint technology development project on "Research Collaboration for Development and Demonstration of Unmanned Road Damage Repair Technology," incorporating joint research outcomes with Seoul National University and KAIST.
+The Cheju Halla University AI Department team (Kim Jae-eun, Moon Jae-hyun, Hong Seong-gwan, Kim Woong-bin) presented "Physical AI Data Augmentation Platform: Transforming Robot Learning" during the outstanding student achievement session. This research was conducted as part of the RISE industry-academia joint technology development project on "Research Collaboration for Development and Demonstration of Unmanned Road Damage Repair Technology," incorporating joint research outcomes with Seoul National University and KAIST.
 
 ![Outstanding achievement presentation](/images/posts/20260223/KakaoTalk_Photo_2026-03-14-20-06-53.jpeg)
 

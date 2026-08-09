@@ -22,7 +22,7 @@ education:
   - "Ph.D. in Information and Communication Engineering, Technical University of Berlin, Germany"
 experience:
   - "Current) Professor, Dept. of AI, Cheju Halla University"
-  - "Current) Professor, Faculty of Applied Computer Science, University of Augsburg (2002–present)"
+  - "Current) Professor, Faculty of Applied Computer Science, University of Augsburg (2002-present)"
   - "Former) Professor, Dept. of Computer Software, University of Science and Technology (UST)"
   - "Former) Visiting Professor, National Institute of Informatics (NII) / Graduate School, University of Tokyo, Japan"
 scholar: "http://scholar.google.com/citations?user=nsMAMUkAAAAJ&hl=en"

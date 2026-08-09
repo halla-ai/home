@@ -1,0 +1,108 @@
+---
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const partners = [
+  { name: 'Samsung Electronics', src: '/images/career/company-samsung.png', width: 314, height: 190 },
+  { name: 'LG Electronics', src: '/images/career/company-lg.png', width: 314, height: 190 },
+  { name: 'Kakao', src: '/images/career/company-kakao.png', width: 316, height: 190 },
+  { name: 'NHN', src: '/images/career/company-nhn.png', width: 314, height: 190 },
+  { name: 'SK Telecom', src: '/images/career/company-skt.png', width: 314, height: 190 },
+  { name: 'AWS', src: '/images/home/partner-aws.webp', width: 240, height: 144 },
+  { name: 'Dassault Systemes', src: '/images/home/partner-dassault.webp', width: 400, height: 126 },
+  { name: 'Saltlux', src: '/images/home/partner-saltlux.webp', width: 400, height: 108 },
+];
+---
+
+<section class="home-partners bg-stone py-20 dark:bg-abyss md:py-28">
+  <div class="container">
+    <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+      <div class="fade-up">
+        <h2 class="max-w-sm text-3xl font-bold leading-tight tracking-[-0.045em] text-deep dark:text-white md:text-5xl">
+          {t(locale, 'home.partners.title')}
+        </h2>
+        <p class="mt-6 max-w-md text-base leading-7 text-muted dark:text-slate-400 md:text-lg">
+          {t(locale, 'home.partners.body')}
+        </p>
+      </div>
+
+      <div class="home-partner-wall fade-up fade-up-d2" aria-label={locale === 'ko' ? '협력 기관' : 'Partner organizations'}>
+        {partners.map((partner) => (
+          <div class="home-partner-mark" title={partner.name}>
+            <img
+              src={partner.src}
+              alt={`${t(locale, 'home.partners.logo_alt')}: ${partner.name}`}
+              width={partner.width}
+              height={partner.height}
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-partner-wall {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .home-partner-mark {
+    display: grid;
+    min-height: 6.25rem;
+    place-items: center;
+    border: 1px solid rgba(15, 35, 68, 0.12);
+    border-radius: 0.7rem;
+    background: #fff;
+    padding: 0.85rem;
+    transition: border-color 220ms ease, transform 280ms var(--ease-out-expo);
+  }
+
+  .home-partner-mark:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+  }
+
+  .home-partner-mark img {
+    display: block;
+    max-height: 3.15rem;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.72;
+  }
+
+  .home-partner-mark:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  @media (max-width: 767px) {
+    .home-partner-wall {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-partner-mark {
+      min-height: 5.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-partner-mark {
+      transition: none;
+    }
+
+    .home-partner-mark:hover {
+      transform: none;
+    }
+  }
+</style>

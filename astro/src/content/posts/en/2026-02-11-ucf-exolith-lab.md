@@ -1,5 +1,5 @@
 ---
-title: "AI Department Visits UCF Exolith Lab — Exploring Lunar Soil Simulant Research"
+title: "AI Department Visits UCF Exolith Lab, Exploring Lunar Soil Simulant Research"
 description: "As part of the Global Space Bootcamp study tour, Cheju Halla University AI Department students visited UCF's Exolith Lab, experienced the CRATER regolith facility, and discussed international collaboration opportunities."
 date: 2026-02-11
 image: "/images/posts/20260211/ucf-group-photo.webp"
@@ -20,7 +20,7 @@ The highlight of the visit was the **CRATER regolith bin**, a state-of-the-art 1
 
 ![Inside the Exolith Lab research facility](/images/posts/20260211/ucf-exolith-lab-visit-2.webp)
 
-The visit sparked discussions about leveraging Jeju's abundant basalt resources to produce lunar soil simulant locally — a development that could open new opportunities for space research and education in Korea.
+The visit sparked discussions about leveraging Jeju's abundant basalt resources to produce lunar soil simulant locally, a development that could open new opportunities for space research and education in Korea.
 
 ### International Collaboration Discussions
 

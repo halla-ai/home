@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Phosphor";
+  src: url("/fonts/Phosphor-subset.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.ph {
+  font-family: "Phosphor" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ph-arrow-left::before { content: "\e058"; }
+.ph-arrow-right::before { content: "\e06c"; }
+.ph-arrow-up::before { content: "\e08e"; }
+.ph-calendar-blank::before { content: "\e10a"; }
+.ph-caret-left::before { content: "\e138"; }
+.ph-caret-right::before { content: "\e13a"; }
+.ph-chats-circle::before { content: "\e17e"; }
+.ph-clock::before { content: "\e19a"; }
+.ph-globe::before { content: "\e288"; }
+.ph-list::before { content: "\e2f0"; }
+.ph-moon::before { content: "\e330"; }
+.ph-sun::before { content: "\e472"; }
+.ph-user::before { content: "\e4c2"; }
+.ph-x::before { content: "\e4f6"; }
+.ph-youtube-logo::before { content: "\e4fc"; }

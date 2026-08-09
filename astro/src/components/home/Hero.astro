@@ -10,45 +10,102 @@ const { locale } = Astro.props;
 const prefix = locale === 'en' ? '/en' : '';
 ---
 
-<section class="relative min-h-[min(70vh,640px)] flex items-center bg-void overflow-hidden pb-32 md:pb-40">
-  <!-- Animated gradient mesh background -->
-  <div class="hero-gradient-mesh" aria-hidden="true"></div>
+<section class="home-hero relative overflow-hidden bg-void text-white">
+  <div class="home-hero-grid" aria-hidden="true"></div>
+  <div class="container relative z-10 flex min-h-[min(760px,100svh)] items-center py-24 md:py-20 lg:py-16">
+    <div class="grid w-full items-center gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:gap-14">
+      <div class="max-w-xl">
+        <p class="text-xs font-medium tracking-[0.2em] text-accent md:text-sm">
+          {t(locale, 'home.hero.eyebrow')}
+        </p>
+        <h1 class="mt-5 max-w-[11ch] text-[clamp(2.75rem,6vw,5.4rem)] font-extrabold leading-[0.98] tracking-[-0.055em] text-white">
+          {t(locale, 'home.hero.title')}
+        </h1>
+        <p class="mt-6 max-w-[34rem] text-base leading-7 text-slate-300 md:text-lg">
+          {t(locale, 'home.hero.body')}
+        </p>
+        <div class="hero-reveal hero-reveal-3 mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href={`${prefix}/admissions/`}
+            class="inline-flex items-center gap-3 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white transition-[background-color,transform,box-shadow] duration-300 hover:bg-accent-hover hover:shadow-[0_12px_32px_rgba(61,126,219,0.24)] active:translate-y-px"
+          >
+            {t(locale, 'home.hero.primary')}
+            <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href={`${prefix}/about/`}
+            class="inline-flex items-center gap-3 rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white/90 transition-[background-color,border-color,transform] duration-300 hover:border-accent hover:bg-white/5 hover:text-white active:translate-y-px"
+          >
+            {t(locale, 'home.hero.secondary')}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
 
-  <!-- Grid overlay -->
-  <div class="hero-grid" aria-hidden="true"></div>
-
-  <!-- Content -->
-  <div class="container relative z-10 py-24 md:py-32 lg:py-36">
-    <div class="max-w-2xl">
-      <p class="text-accent text-xs md:text-sm font-medium tracking-[0.25em] uppercase hero-reveal">
-        {t(locale, 'hero.label')}
-      </p>
-      <h1 class="mt-6 md:mt-8 text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[1.03] tracking-[-0.035em] text-white hero-reveal hero-reveal-1">
-        {t(locale, 'hero.title')}
-      </h1>
-      <p class="mt-8 md:mt-10 text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed hero-reveal hero-reveal-2">
-        {t(locale, 'hero.description')}
-      </p>
-      <div class="mt-12 md:mt-14 flex flex-wrap gap-4 hero-reveal hero-reveal-3">
-        <a
-          href={`${prefix}/about/`}
-          class="btn-solid-gradient inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-semibold text-white"
-        >
-          {t(locale, 'hero.cta_about')}
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-        <a
-          href={`${prefix}/admissions/`}
-          class="btn-glow inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-semibold text-white/90"
-        >
-          {t(locale, 'hero.cta_admissions')}
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
+      <div class="relative lg:justify-self-end">
+        <figure class="relative ml-auto w-full max-w-[680px] overflow-hidden rounded-[1.15rem] border border-white/15 bg-deep shadow-[0_24px_80px_rgba(0,0,0,0.34)] lg:rotate-[1.2deg]">
+          <div class="absolute inset-0 z-10 bg-gradient-to-t from-void/70 via-transparent to-transparent" aria-hidden="true"></div>
+          <img
+            src="/images/home/hero-classroom.webp"
+            srcset="/images/home/hero-classroom-640.webp 640w, /images/home/hero-classroom-768.webp 768w, /images/home/hero-classroom-960.webp 960w, /images/home/hero-classroom.webp 1280w"
+            sizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
+            alt={t(locale, 'home.hero.visual_alt')}
+            width="1280"
+            height="960"
+            class="block aspect-[4/3] h-full w-full object-cover object-center"
+            fetchpriority="high"
+          />
+          <figcaption class="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between gap-4 p-4 text-[10px] font-medium tracking-[0.16em] text-white/80 md:p-5">
+            <span>{t(locale, 'home.hero.meta')}</span>
+            <span class="text-accent" aria-hidden="true">01</span>
+          </figcaption>
+        </figure>
+        <div class="pointer-events-none absolute -bottom-5 -left-5 h-20 w-20 border-b border-l border-accent/70" aria-hidden="true"></div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .home-hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.42;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 68px 68px;
+    mask-image: linear-gradient(90deg, black 0%, transparent 85%);
+    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 85%);
+  }
+
+  .home-hero::after {
+    content: '';
+    position: absolute;
+    top: -10rem;
+    right: -12rem;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(61, 126, 219, 0.18), transparent 68%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 767px) {
+    .home-hero .container {
+      min-height: 0;
+      padding-top: 7.25rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .home-hero figure {
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-hero figure {
+      transform: none;
+    }
+  }
+</style>

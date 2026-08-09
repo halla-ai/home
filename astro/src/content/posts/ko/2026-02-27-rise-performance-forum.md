@@ -1,5 +1,5 @@
 ---
-title: "2025 제주RISE 성과포럼 — 인공지능학과, 대학혁신상 총장상 수상"
+title: "2025 제주RISE 성과포럼: 인공지능학과, 대학혁신상 총장상 수상"
 description: "2025 제주RISE 성과포럼이 제주한라컨벤션센터에서 이틀간 개최됐다. 인공지능학과 팀이 Physical AI Data Augmentation Platform 발표로 대학혁신상 총장상을 수상했다."
 date: 2026-02-27
 image: "/images/posts/20260223/IMG_8782.jpg"
@@ -19,15 +19,15 @@ categories: Achievement
 
 김한영 중앙RISE위원장이 "초광역 RISE와 지산학 협력"을 주제로 기조강연을 진행했다. 지역·산업·대학이 함께 성장하는 RISE 사업의 비전과 초광역 협력 모델의 방향성을 제시했다.
 
-![기조강연 — 초광역 RISE와 지산학 협력](/images/posts/20260223/screenshot-forum-03.png)
+![기조강연: 초광역 RISE와 지산학 협력](/images/posts/20260223/screenshot-forum-03.png)
 
 이어서 이명현 지방시대위원회 5극 3특 특별위원장이 "5극 3특 균형성장 전략과 지역 인재양성 방안"을 주제로 강연하며, 국가 균형발전 전략 속에서 지역 인재 양성의 중요성을 강조했다.
 
-![기조강연 — 5극 3특 균형성장 전략과 지역 인재양성 방안](/images/posts/20260223/screenshot-forum-02.png)
+![기조강연: 5극 3특 균형성장 전략과 지역 인재양성 방안](/images/posts/20260223/screenshot-forum-02.png)
 
-### 학생 우수성과 발표 — Physical AI Data Augmentation Platform
+### 학생 우수성과 발표: Physical AI Data Augmentation Platform
 
-제주한라대학교 인공지능학과 팀(김재은, 문재현, 홍성관, 김웅빈)이 학생 우수성과 발표 세션에서 "Physical AI Data Augmentation Platform — Transforming Robot Learning"을 발표했다. 이 연구는 RISE 사업 산학공동 기술개발과제인 "도로파손 무인복구 기술 개발과 실증을 위한 연구 협력" 프로젝트의 일환으로 진행됐으며, 서울대학교·KAIST와의 공동 연구 성과를 담고 있다.
+제주한라대학교 인공지능학과 팀(김재은, 문재현, 홍성관, 김웅빈)이 학생 우수성과 발표 세션에서 "Physical AI Data Augmentation Platform: Transforming Robot Learning"을 발표했다. 이 연구는 RISE 사업 산학공동 기술개발과제인 "도로파손 무인복구 기술 개발과 실증을 위한 연구 협력" 프로젝트의 일환으로 진행됐으며, 서울대학교·KAIST와의 공동 연구 성과를 담고 있다.
 
 ![우수성과 발표](/images/posts/20260223/KakaoTalk_Photo_2026-03-14-20-06-53.jpeg)
 
