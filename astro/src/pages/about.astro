@@ -14,9 +14,50 @@ const { Content } = await render(page);
 <PageLayout
   title={t(locale, 'nav.about')}
   description={page.data.description || ''}
+  heroMedia={{ src: '/images/about/about.png', alt: '인공지능학과 AI 컴퓨팅 인프라' }}
   locale={locale}
 >
-  <article class="prose prose-lg max-w-none">
-    <Content />
-  </article>
+  <div class="about-page overflow-hidden rounded-[1.5rem] border border-border bg-white/80 px-5 py-8 shadow-sm dark:border-white/[0.08] dark:bg-white/[0.025] sm:px-8 md:px-12 md:py-12">
+    <article class="prose prose-lg max-w-none">
+      <Content />
+    </article>
+  </div>
 </PageLayout>
+
+<style>
+  .about-page :global(table) {
+    margin-top: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.875rem;
+    overflow: hidden;
+  }
+
+  .about-page :global(.gallery-box) {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: rgba(61, 126, 219, 0.025);
+  }
+
+  .about-page :global(h3) {
+    margin-top: 2.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .about-page :global(.gallery-box + ul) {
+    margin: 0 0 1.75rem;
+    padding: 1rem 1.25rem 1rem 2.25rem;
+    border-left: 2px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+    background: rgba(61, 126, 219, 0.03);
+    border-radius: 0 0.75rem 0.75rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .about-page :global(table) {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+</style>

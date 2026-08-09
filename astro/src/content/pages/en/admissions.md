@@ -6,7 +6,7 @@ image: "/images/admissions/admissions.png"
 
 ## Educational Goals
 
-As the only ICT-specialized department in the province, we train professional technical personnel equipped with both applied skills and flexible field adaptability required by the rapidly growing intelligent systems industry — including Artificial Intelligence (AI), Big Data, Security (Blockchain), and Robotics.
+As the only ICT-specialized department in the province, we train professional technical personnel equipped with both applied skills and flexible field adaptability required by the rapidly growing intelligent systems industry, including Artificial Intelligence (AI), Big Data, Security (Blockchain), and Robotics.
 
 ## Course Plan
 

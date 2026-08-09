@@ -10,7 +10,7 @@ The Dark Lens team representing Cheju Halla University (Lee Kyubum, Kim Eunji, M
 
 ---
 
-## Project Overview – AI and LLM-Based Dark Tourism Service
+## Project Overview - AI and LLM-Based Dark Tourism Service
 The Dark Lens team proposed a dark tourism service that spotlights Jeju's historical sites and tragic events. The service uses Large Language Models (LLM) to provide real-time guides and personalized location recommendations, elevating the travel experience of tourists.
 
 ### Key Features

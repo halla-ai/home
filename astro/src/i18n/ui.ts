@@ -53,6 +53,12 @@ export function getAlternateLocalePath(url: URL, targetLocale: Locale): string {
   const currentLocale = getLocaleFromUrl(url);
   const pathname = url.pathname;
 
+  // Tag vocabularies are localized and do not have a guaranteed one-to-one
+  // translation. Route language changes to the other locale's tag index.
+  if (/^\/(?:en\/)?tags\/[^/]+\/?$/.test(pathname)) {
+    return targetLocale === 'en' ? '/en/tags/' : '/tags/';
+  }
+
   if (currentLocale === 'ko' && targetLocale === 'en') {
     // / → /en/, /about/ → /en/about/
     return `/en${pathname}`;
@@ -75,10 +81,14 @@ export function getContentPrefix(locale: Locale): string {
 
 /**
  * Build a tag URL for the given locale.
- * e.g. tagUrl('ko', 'AI') => '/tags/AI/'
- *      tagUrl('en', 'Hallasan Soju') => '/en/tags/Hallasan%20Soju/'
+ * e.g. tagUrl('ko', 'AI') => '/tags/ai/'
+ *      tagUrl('en', 'Hallasan Soju') => '/en/tags/hallasan%20soju/'
  */
+export function tagSlug(tag: string): string {
+  return tag.trim().toLocaleLowerCase('en-US');
+}
+
 export function tagUrl(locale: Locale, tag: string): string {
   const prefix = locale === 'ko' ? '' : '/en';
-  return `${prefix}/tags/${encodeURIComponent(tag)}/`;
+  return `${prefix}/tags/${encodeURIComponent(tagSlug(tag))}/`;
 }

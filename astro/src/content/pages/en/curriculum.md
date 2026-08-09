@@ -138,15 +138,15 @@ The Department of Artificial Intelligence aims to train experts in Artificial In
 ### Course Plan
 
 1. Staged Learning Structure:
-   - Years 1–2: Focus on foundational courses (e.g., Introduction to AI, Python Programming, Data Structures, etc.)
-   - Years 3–4: Focus on advanced and applied courses (e.g., Deep Learning, Collaborative Robot Applications, Machine Learning Systems, etc.)
+   - Years 1-2: Focus on foundational courses (e.g., Introduction to AI, Python Programming, Data Structures, etc.)
+   - Years 3-4: Focus on advanced and applied courses (e.g., Deep Learning, Collaborative Robot Applications, Machine Learning Systems, etc.)
 2. Systematic Track-Based Education:
    - AI Core: Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, etc.
    - Software & Systems: Operating Systems, Computer Architecture, Cloud Computing, etc.
    - Data Analysis: Big Data Fundamentals, R Programming, Intelligent Systems, etc.
    - AI Application Technologies: Robotics Fundamentals, Collaborative Robot Applications, Game Programming, etc.
 3. Practical Competency Enhancement:
-   - Capstone Design 1–4 conducted consecutively across Years 3 and 4
+   - Capstone Design 1-4 conducted consecutively across Years 3 and 4
    - Industry-linked projects and internship opportunities provided
 4. Reflecting Latest Technology Trends:
    - Regular curriculum updates to incorporate new technologies and industry requirements
@@ -441,6 +441,6 @@ graph TD
 
   Covers the latest AI technology trends and future prospects. Introduces next-generation AI technologies such as quantum computing and neuromorphic computing, and explores the future development direction of AI and its potential impact.
 
-- **Capstone Design 1–4**
+- **Capstone Design 1-4**
 
   A process of planning, designing, and implementing actual projects by integrating knowledge learned throughout the undergraduate program, conducted over 4 semesters. Students gain practical experience through industry-linked projects and experience the full process of AI system development.

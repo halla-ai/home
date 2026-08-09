@@ -1,20 +1,25 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
-import { t, tagUrl } from '../../i18n/ui';
+import { t, tagSlug, tagUrl } from '../../i18n/ui';
 
 const locale = 'ko';
 const allPosts = await getCollection('posts');
 const localePosts = allPosts.filter((p) => p.id.startsWith(`${locale}/`));
 
-const tagCounts = new Map<string, number>();
+const tagCounts = new Map<string, { label: string; count: number }>();
 localePosts.forEach((post) => {
   post.data.tags.forEach((tag: string) => {
-    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    const slug = tagSlug(tag);
+    const current = tagCounts.get(slug);
+    tagCounts.set(slug, {
+      label: current && (/[A-Z]/.test(current.label) || !/[A-Z]/.test(tag)) ? current.label : tag,
+      count: (current?.count || 0) + 1,
+    });
   });
 });
 
-const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
+const sortedTags = [...tagCounts.values()].sort((a, b) => b.count - a.count);
 ---
 
 <PageLayout
@@ -22,14 +27,17 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
   description="주제별 포스트 탐색"
   locale={locale}
 >
-  <div class="flex flex-wrap gap-3">
-    {sortedTags.map(([tag, count]) => (
+  <div class="grid gap-x-10 md:grid-cols-2">
+    {sortedTags.map(({ label, count }, index) => (
       <a
-        href={tagUrl('ko', tag)}
-        class="inline-flex items-center gap-2 rounded-lg border border-border dark:border-white/[0.08] bg-white dark:bg-abyss px-5 py-3 text-sm font-medium text-deep dark:text-white transition hover:border-accent hover:bg-accent-light"
+        href={tagUrl('ko', label)}
+        class="group flex items-baseline justify-between gap-6 border-t border-border py-5 transition-colors hover:border-accent dark:border-white/[0.1]"
       >
-        {tag}
-        <span class="rounded-full bg-surface dark:bg-void/50 px-2 py-0.5 text-xs text-muted">{count}</span>
+        <span class="flex min-w-0 items-baseline gap-4">
+          <span class="font-mono text-xs tabular-nums text-accent/70">{String(index + 1).padStart(2, '0')}</span>
+          <span class="truncate text-lg font-semibold text-deep transition-colors group-hover:text-accent dark:text-white">{label}</span>
+        </span>
+        <span class="shrink-0 text-sm tabular-nums text-muted dark:text-slate-500">{count}개 포스트</span>
       </a>
     ))}
   </div>

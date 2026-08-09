@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import PostLayout from '../../../layouts/PostLayout.astro';
+import type { Locale } from '../../../i18n/ui';
 
 export async function getStaticPaths() {
   const locale = 'en';
@@ -32,6 +33,7 @@ export async function getStaticPaths() {
 }
 
 const { post, locale, prev, next } = Astro.props;
+const typedLocale = locale as Locale;
 const { Content } = await render(post);
 
 const readingTime = Math.max(1, Math.ceil((post.body?.split(/\s+/).length || 0) / 200));
@@ -45,7 +47,7 @@ const readingTime = Math.max(1, Math.ceil((post.body?.split(/\s+/).length || 0) 
   image={post.data.image}
   readingTime={readingTime}
   author={post.data.author}
-  locale={locale}
+  locale={typedLocale}
   prev={prev}
   next={next}
 >

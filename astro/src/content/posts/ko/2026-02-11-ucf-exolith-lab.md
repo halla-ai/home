@@ -1,5 +1,5 @@
 ---
-title: "인공지능학과, UCF Exolith Lab 방문 — 월면토 시뮬런트 연구시설 탐방"
+title: "인공지능학과, UCF Exolith Lab 방문: 월면토 시뮬런트 연구시설 탐방"
 description: "글로벌 스페이스 부트캠프 해외연수의 일환으로, 제주한라대학교 인공지능학과 학생들이 미국 UCF Exolith Lab을 방문해 CRATER 레골리스 시설을 체험하고 국제 협력 가능성을 논의했다."
 date: 2026-02-11
 image: "/images/posts/20260211/ucf-group-photo.webp"
@@ -16,7 +16,7 @@ draft: false
 
 이번 방문의 핵심은 **CRATER 레골리스 빈(regolith bin)** 시설 체험이었다. CRATER는 10×10미터 규모의 시험 시설로, 120톤 이상의 달 고지대 시뮬런트가 채워져 있다. 연구자와 학생들이 실제 달 토양과 유사한 물질을 직접 다루며 실험할 수 있는 환경을 제공한다.
 
-![CRATER 레골리스 빈 시설 — 120톤 규모의 달 고지대 시뮬런트](/images/posts/20260211/ucf-crater-regolith-bin.webp)
+![CRATER 레골리스 빈 시설: 120톤 규모의 달 고지대 시뮬런트](/images/posts/20260211/ucf-crater-regolith-bin.webp)
 
 ![Exolith Lab 연구 시설 내부](/images/posts/20260211/ucf-exolith-lab-visit-2.webp)
 
@@ -24,7 +24,7 @@ draft: false
 
 ### 국제 협력 논의
 
-![연구팀 논의 — 원격 로버 대회 및 제주-UCF 협력 방안](/images/posts/20260211/ucf-team-photo.webp)
+![연구팀 논의: 원격 로버 대회 및 제주-UCF 협력 방안](/images/posts/20260211/ucf-team-photo.webp)
 
 시설 투어 이후에는 향후 협력 방안에 대한 논의가 이어졌다. 특히 제주, UCF, 멕시코 학생들을 연결하는 **원격 로버 대회(remote rover competition)** 구상이 주목을 받았다. 이러한 국제 협업은 학생들에게 실전 경험을 제공하는 동시에, 기관 간 지속적인 파트너십 구축에 기여할 수 있다.
 

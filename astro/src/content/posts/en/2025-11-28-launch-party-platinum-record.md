@@ -1,6 +1,6 @@
 ---
 title: "\"What if We Sent Jeju's Stories to Mars?\" Cheju Halla University Breaks Educational Mold with Space-AI Fusion Launch Party"
-description: "From the classroom to Hamdeok Beach — an immersive project applying Stanford d.school methods"
+description: "From the classroom to Hamdeok Beach, an immersive project applying Stanford d.school methods"
 date: 2025-11-28 19:00:00 +0900
 tags:
   [
@@ -32,7 +32,7 @@ The heart of this program was 'immersion' and 'connection.' With Stanford d.scho
 
 ### Continuing the Dream of Voyager: The 'Platinum Record' Project
 
-The Golden Record that flew into space aboard Voyager 1 in 1977 carried the civilization of humanity. Paying homage to this, students asked the question: "What would Jeju's stories of 2025 look like if sent to space?" — and created their own 'Platinum Records.' In the process, they used generative AI to give concrete form to their messages through text, images, and sound, fusing technology with humanistic imagination.
+The Golden Record that flew into space aboard Voyager 1 in 1977 carried the civilization of humanity. Paying homage to this, students asked the question: "What would Jeju's stories of 2025 look like if sent to space?", and created their own 'Platinum Records.' In the process, they used generative AI to give concrete form to their messages through text, images, and sound, fusing technology with humanistic imagination.
 
 ### Introducing Astronaut Training Methods: 'Micro Missions'
 

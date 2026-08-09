@@ -24,6 +24,62 @@
     "cta_about": "About Us",
     "cta_admissions": "Admissions"
   },
+  "home": {
+    "hero": {
+      "eyebrow": "CHEJU HALLA UNIVERSITY / AI",
+      "title": "AI connected to real life",
+      "body": "Learn in Jeju, collaborate across borders, and solve real problems with AI.",
+      "primary": "Admissions",
+      "secondary": "Explore the department",
+      "visual_alt": "Cheju Halla University AI students discussing a project together",
+      "meta": "AI DEPARTMENT / 2026"
+    },
+    "routes": {
+      "title": "Learning continues beyond the classroom",
+      "body": "Build strong foundations, deepen them through research, and turn industry questions into working projects.",
+      "education_title": "Education",
+      "education_body": "From computer science foundations to generative AI, a curriculum built by making",
+      "education_link": "View the curriculum",
+      "research_title": "Research",
+      "research_body": "Extend NLP, computer vision, and Physical AI into supervised research projects",
+      "research_link": "Explore research",
+      "industry_title": "Partnerships",
+      "industry_body": "Work with KBS Jeju, AWS, and global universities on problems that matter locally",
+      "industry_link": "See partnerships"
+    },
+    "achievement": {
+      "title": "Answering local questions with AI",
+      "body": "With KBS Jeju, we built an AI election newsroom that brings issues and pledges from 32 districts into one place.",
+      "metric": "32",
+      "metric_label": "districts connected in one platform",
+      "link": "Read the achievement",
+      "image_alt": "KBS Jeju election newsroom interface"
+    },
+    "partners": {
+      "title": "Education connected to the field",
+      "body": "Student projects should not end at the classroom door. Real challenges from companies and research partners become the starting point for learning.",
+      "logo_alt": "Partner organization logo"
+    },
+    "stories": {
+      "title": "The next scene belongs to you",
+      "previous": "Previous student story",
+      "next": "Next student story",
+      "go_to": "Go to the story by {name}",
+      "position": "{current} / {total}"
+    },
+    "news": {
+      "title": "Latest news",
+      "all": "View all news",
+      "featured": "Featured news",
+      "read": "Read story"
+    },
+    "cta": {
+      "title": "Your next project starts in Jeju",
+      "body": "If you want to learn AI, build with it, and connect your work to the world, start at Cheju Halla University.",
+      "primary": "Admissions",
+      "secondary": "Contact us"
+    }
+  },
   "stats": {
     "faculty": "Faculty",
     "faculty_unit": "",

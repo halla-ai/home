@@ -1,6 +1,6 @@
 ---
 title: "Cheju Halla University Ready for 'Takeoff' in Aerospace Talent Development"
-description: "Industry-academia-government joint workshop on the 28th — 'Introducing real-data hands-on education beyond theory'"
+description: "Industry-academia-government joint workshop on the 28th, 'Introducing real-data hands-on education beyond theory'"
 date: 2025-11-28 18:00:00 +0900
 tags:
   [
@@ -19,13 +19,13 @@ The RISE Business Division of Cheju Halla University (Director Ko Seokyong) has 
 
 The Cheju Halla University RISE Business Division announced the successful completion of the 'Aerospace-Centered AI Convergence Major Curriculum Cooperation Workshop' held at the Ramada Jeju Hamdeok Hotel on Thursday the 28th.
 
-This event was organized as part of Jeju Special Self-Governing Province's RISE (Regional Innovation System & Education) project. The workshop brought together representatives from Jeju Special Self-Governing Province's Space Mobility Division, the Jeju Creative Economy Innovation Center, Hallim Technical High School, as well as Airstars, Pix4D, NaraSpace, Telefix, and JINSystem — spanning universities, high schools, companies, and local government — to explore talent development strategies that can drive Jeju's future aerospace industry ecosystem.
+This event was organized as part of Jeju Special Self-Governing Province's RISE (Regional Innovation System & Education) project. The workshop brought together representatives from Jeju Special Self-Governing Province's Space Mobility Division, the Jeju Creative Economy Innovation Center, Hallim Technical High School, as well as Airstars, Pix4D, NaraSpace, Telefix, and JINSystem to explore talent development strategies across universities, high schools, companies, and local government that can drive Jeju's future aerospace industry ecosystem.
 
 ### Hands-On Education That Goes Beyond Theory to Touch 'Real Data'
 
 The central theme of the workshop was unquestionably 'real-world relevance.' Participants agreed on moving away from the existing theory-centered education and bringing the actual satellite data and AI technologies that companies work with into the classroom.
 
-Participating companies put their heads together to design curricula that can be immediately applied in the field — including ▲satellite data preprocessing and ▲on-board AI technology. In particular, in-depth discussions were held on measures to increase data accessibility and strengthen students' practical capabilities, including designating 'data safe zones' to enable the use for educational purposes of satellite data that had previously been difficult to access due to security concerns.
+Participating companies put their heads together to design curricula that can be immediately applied in the field, including ▲satellite data preprocessing and ▲on-board AI technology. In particular, in-depth discussions were held on measures to increase data accessibility and strengthen students' practical capabilities, including designating 'data safe zones' to enable the use for educational purposes of satellite data that had previously been difficult to access due to security concerns.
 
 ### Hallim Technical High School (HW) × Cheju Halla University (SW/AI) × Companies (Data) Alliance
 

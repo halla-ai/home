@@ -1,6 +1,6 @@
 ---
 title: "COSS GlobalConnectIoT: Learning Technology and Collaboration in Europe"
-description: "COSS IoT global field study program — broadening global perspectives through EPFL campus visits and UN ITU conference observation in Switzerland"
+description: "COSS IoT global field study program, broadening global perspectives through EPFL campus visits and UN ITU conference observation in Switzerland"
 date: 2025-01-19
 tags: [COSS, IoT, GlobalConnectIoT, Europe, Switzerland, Education]
 categories: Education

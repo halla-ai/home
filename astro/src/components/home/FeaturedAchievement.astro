@@ -1,0 +1,65 @@
+---
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = locale === 'en' ? '/en' : '';
+---
+
+<section class="home-achievement bg-void py-20 text-white md:py-28">
+  <div class="container">
+    <div class="grid items-center gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:gap-20">
+      <div class="fade-up">
+        <p class="font-mono text-[0.68rem] tracking-[0.16em] text-accent">2026 / FIELD NOTE</p>
+        <h2 class="mt-5 max-w-xl text-3xl font-bold leading-[1.06] tracking-[-0.045em] text-white md:text-5xl">
+          {t(locale, 'home.achievement.title')}
+        </h2>
+        <p class="mt-6 max-w-lg text-base leading-7 text-slate-400 md:text-lg">
+          {t(locale, 'home.achievement.body')}
+        </p>
+        <div class="mt-9 flex items-end gap-4 border-t border-white/15 pt-5">
+          <strong class="font-display text-6xl font-bold leading-none tracking-[-0.08em] text-accent md:text-8xl">
+            {t(locale, 'home.achievement.metric')}
+          </strong>
+          <span class="max-w-[10rem] pb-1 text-xs leading-5 text-slate-400 md:text-sm">
+            {t(locale, 'home.achievement.metric_label')}
+          </span>
+        </div>
+        <a
+          href={`${prefix}/posts/2026-05-15-kbs-jeju-election-center-ai/`}
+          class="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-white transition-colors duration-200 hover:text-accent"
+        >
+          {t(locale, 'home.achievement.link')} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <a
+        href={`${prefix}/posts/2026-05-15-kbs-jeju-election-center-ai/`}
+        class="group relative block overflow-hidden rounded-[1.15rem] border border-white/15 bg-abyss fade-up fade-up-d2"
+      >
+        <div class="absolute inset-0 z-10 bg-gradient-to-t from-void/45 to-transparent" aria-hidden="true"></div>
+        <img
+          src="/images/posts/2026-05-15-kbs-jeju-election-center-ai/01-election-center-hero.jpg"
+          alt={t(locale, 'home.achievement.image_alt')}
+          class="block aspect-[1.9/1] w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+          loading="lazy"
+        />
+        <span class="absolute bottom-4 right-5 z-20 text-xs font-semibold text-white/75 transition-colors duration-200 group-hover:text-accent">
+          KBS JEJU <span aria-hidden="true">↗</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .home-achievement img {
+      transition: none;
+    }
+  }
+</style>

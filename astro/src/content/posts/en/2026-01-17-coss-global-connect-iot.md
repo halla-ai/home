@@ -1,6 +1,6 @@
 ---
 title: "COSS GlobalConnectIoT: Meeting the Future of IoT in Australia"
-description: "COSS IoT global field study program — visiting CSIRO research facilities and conducting team projects on the Gold Coast, Australia"
+description: "COSS IoT global field study program, visiting CSIRO research facilities and conducting team projects on the Gold Coast, Australia"
 date: 2026-01-17
 tags: [COSS, IoT, GlobalConnectIoT, Australia, Global, Education]
 categories: Education
@@ -31,7 +31,7 @@ During the field study, students carried out team projects to develop problem-so
 
 ### Eating Together, Learning Together, Growing Together
 
-Beyond academics, students cooked together, experienced local culture, and strengthened teamwork. Walking along the Gold Coast shores and sharing local cuisine built bonds among peers — another valuable outcome of the program.
+Beyond academics, students cooked together, experienced local culture, and strengthened teamwork. Walking along the Gold Coast shores and sharing local cuisine built bonds among peers, which was another valuable outcome of the program.
 
 ![Cooking Together](/images/posts/20260131/IMG_0730.jpg)
 

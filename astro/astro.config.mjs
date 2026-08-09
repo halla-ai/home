@@ -7,6 +7,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://halla.ai',
   output: 'static',
+  build: {
+    inlineStylesheets: 'always',
+  },
   i18n: {
     defaultLocale: 'ko',
     locales: ['ko', 'en'],
@@ -17,7 +20,16 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => {
+        const tagMatch = new URL(page).pathname.match(/^\/(?:en\/)?tags\/([^/]+)\/?$/);
+        if (!tagMatch) return true;
+        const tag = decodeURIComponent(tagMatch[1]);
+        return tag === tag.toLocaleLowerCase('en-US');
+      },
+    }),
+  ],
   markdown: {
     shikiConfig: {
       theme: 'github-dark',

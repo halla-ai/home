@@ -1,70 +1,7 @@
-/* ── Hero gradient mesh (from STAIxBWLB) ──────── */
-
-@keyframes hero-mesh-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes hero-mesh-shift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(5%, -3%) scale(1.05); }
-  66% { transform: translate(-3%, 5%) scale(0.97); }
-}
-
-.hero-gradient-mesh {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  contain: paint;
-}
-
-.hero-gradient-mesh::before,
-.hero-gradient-mesh::after {
-  will-change: transform;
-}
-
-.hero-gradient-mesh::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
-  animation: hero-mesh-rotate 20s linear infinite;
-}
-
-.hero-gradient-mesh::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 70% 30%, rgba(34, 211, 238, 0.12) 0%, transparent 45%),
-    radial-gradient(ellipse at 30% 70%, rgba(14, 165, 233, 0.1) 0%, transparent 45%);
-  animation: hero-mesh-shift 16s ease-in-out infinite;
-}
-
-/* Hero grid overlay */
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
-}
-
-/* ── Hero reveal animation ────────────────────── */
-
 @keyframes hero-reveal {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -73,97 +10,63 @@
 }
 
 .hero-reveal {
-  opacity: 0;
-  animation: hero-reveal 0.8s var(--ease-out-expo) forwards;
+  animation: hero-reveal 700ms var(--ease-out-expo) both;
 }
-.hero-reveal-1 { animation-delay: 0.15s; }
-.hero-reveal-2 { animation-delay: 0.3s; }
-.hero-reveal-3 { animation-delay: 0.45s; }
-.hero-reveal-4 { animation-delay: 0.6s; }
 
-/* ── Scroll reveal ────────────────────────────── */
-/* Initial hidden state only — Motion (BaseLayout) drives the animation. */
+.hero-reveal-1 {
+  animation-delay: 90ms;
+}
+
+.hero-reveal-2 {
+  animation-delay: 180ms;
+}
+
+.hero-reveal-3 {
+  animation-delay: 270ms;
+}
+
+.hero-reveal-4 {
+  animation-delay: 360ms;
+}
 
 .fade-up {
-  opacity: 0;
-  transform: translateY(32px);
+  opacity: 1;
+  transform: none;
 }
-
-/* ── Gradient text (blue → cyan) ──────────────── */
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-cyan), var(--color-sky));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent);
 }
 
-/* ── Film grain overlay (from STAIxBWLB) ──────── */
-
-.film-grain {
-  position: fixed;
-  inset: 0;
-  z-index: 30;
-  pointer-events: none;
-  opacity: 0.025;
+.film-grain,
+.hero-gradient-mesh,
+.hero-grid {
+  display: none;
 }
 
-.film-grain svg {
-  width: 200%;
-  height: 200%;
+.cinematic-surface {
+  background:
+    linear-gradient(180deg, rgb(5 10 18 / 0.3), rgb(5 10 18 / 0.92)),
+    url("/images/home/basalt-data-landscape.jpg") center / cover no-repeat;
 }
-
-/* ── Reduced motion ───────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-gradient-mesh::before,
-  .hero-gradient-mesh::after {
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  .hero-reveal {
-    animation: none;
-    opacity: 1;
-  }
+
+  .hero-reveal,
   .fade-up {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .card::before,
-  .card-bento::before,
-  .card-bento::after {
-    animation: none;
-    transition: none;
-  }
-  /* Hover lifts and header cross-fade go quiet — feedback stays, motion goes */
-  .card,
-  .card-flat,
-  .card-bento,
-  .site-header,
-  #mobile-menu {
-    transition: none;
-  }
-  .card:hover,
-  .card-bento:hover {
-    transform: none;
-  }
-  .group:hover .group-hover\:scale-105,
-  .group:hover .group-hover\:scale-\[1\.03\] {
-    transform: none;
-  }
-  .film-grain {
-    display: none;
-  }
-  img {
-    transition: none;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
-/* ── Scrollbar (dark themed) ──────────────────── */
-
 .dark {
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: var(--color-void); }
-  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+  scrollbar-color: rgb(255 255 255 / 0.18) var(--color-void);
 }

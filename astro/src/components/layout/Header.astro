@@ -31,23 +31,27 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="site-header header-solid">
+<header class={`site-header ${Astro.url.pathname === '/' || Astro.url.pathname === '/en/' ? 'header-transparent' : 'header-solid'}`}>
   <div class="container">
     <div class="flex items-center justify-between h-16 gap-4">
       <!-- Logo -->
       <a
         href={locale === 'ko' ? '/' : '/en/'}
         class="flex items-center gap-2.5 shrink-0 group"
-        aria-label={t(locale, 'site.title')}
+        aria-label={locale === 'en' ? 'Artificial Intelligence, Cheju Halla University' : '인공지능학과 제주한라대학교'}
       >
         <img
           src="/images/logo/logo-icon.svg"
           alt={locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}
+          width="40"
+          height="40"
           class="logo-color h-10 w-auto"
         />
         <img
           src="/images/logo/logo-icon-white.svg"
           alt={locale === 'en' ? 'Cheju Halla University' : '제주한라대학교'}
+          width="40"
+          height="40"
           class="logo-white h-10 w-auto"
         />
         <div class="hidden sm:block leading-tight pl-2.5">
@@ -80,7 +84,7 @@ function isActive(href: string): boolean {
 
       <!-- Right: language switcher + theme toggle + mobile hamburger -->
       <div class="flex items-center gap-2 shrink-0">
-        <div class="hidden sm:block">
+        <div class="hidden lg:block">
           <LanguageSwitcher locale={locale} />
         </div>
         <ThemeToggle locale={locale} />
@@ -91,19 +95,9 @@ function isActive(href: string): boolean {
           aria-label="Open menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
-          class="hamburger-btn md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg transition-colors duration-200"
+          class="hamburger-btn md:hidden inline-flex items-center justify-center w-10 h-10"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="1.5"
-            aria-hidden="true"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          <i class="ph ph-list text-xl" aria-hidden="true"></i>
         </button>
       </div>
     </div>
@@ -117,33 +111,17 @@ function isActive(href: string): boolean {
     var header = document.querySelector('.site-header');
     if (!header) return;
 
-    var isHeroPage = document.body.classList.contains('has-hero');
-    var solid = true;
-    var ticking = false;
+    if (!document.body.classList.contains('has-hero')) return;
 
-    function apply() {
-      ticking = false;
-      var y = window.scrollY;
-      if (isHeroPage) {
-        // Hysteresis: two thresholds so hovering near the boundary
-        // doesn't thrash the class list.
-        if (!solid && y > 80) solid = true;
-        else if (solid && y < 56) solid = false;
-      } else {
-        solid = true;
-      }
-      header.classList.toggle('header-solid', solid);
-      header.classList.toggle('header-transparent', !solid);
-    }
+    var sentinel = document.getElementById('header-sentinel');
+    if (!sentinel) return;
 
-    function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(apply);
-      }
-    }
+    var observer = new IntersectionObserver(function (entries) {
+      var transparent = entries[0] && entries[0].isIntersecting;
+      header.classList.toggle('header-transparent', transparent);
+      header.classList.toggle('header-solid', !transparent);
+    }, { threshold: 0 });
 
-    apply();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    observer.observe(sentinel);
   })();
 </script>

@@ -2,17 +2,19 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="404 - Page Not Found" description="Page not found" locale="en">
-  <section class="flex min-h-[60vh] items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-8xl font-bold text-deep dark:text-white">404</h1>
-      <p class="mt-4 text-xl text-muted">Page not found</p>
-      <a
-        href="/en/"
-        class="mt-8 inline-flex items-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
-      >
-        Back to home
-      </a>
+<BaseLayout title="404 - Page Not Found" description="Page not found" locale="en" heroPage>
+  <section class="relative isolate flex min-h-[calc(100dvh-5rem)] items-center overflow-hidden bg-void px-6 py-24 text-white">
+    <div class="absolute -right-24 top-1/4 -z-10 h-96 w-96 rounded-full bg-accent/20 blur-3xl" aria-hidden="true"></div>
+    <div class="container">
+      <div class="max-w-xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-accent">Department of Artificial Intelligence</p>
+        <p class="mt-8 text-[clamp(7rem,22vw,15rem)] font-black leading-none tracking-[-0.08em] text-white/10" aria-hidden="true">404</p>
+        <h1 class="-mt-10 text-3xl font-bold tracking-tight md:text-5xl">Page not found</h1>
+        <p class="mt-4 max-w-md text-base leading-relaxed text-slate-300">The address may have changed or the page may no longer exist. Continue to the pages you need.</p>
+        <a href="/en/" class="mt-8 inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-semibold text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+          Back to home <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

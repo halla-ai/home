@@ -22,15 +22,16 @@ const {
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} class="dark">
   <head>
     <BaseHead title={title} description={description} image={image} locale={locale} />
   </head>
-  <body class={`min-h-screen flex flex-col bg-white dark:bg-void dark:text-slate-200 transition-colors duration-200 ${heroPage ? 'has-hero' : ''}`}>
+  <body class={`min-h-screen flex flex-col ${heroPage ? 'has-hero' : ''}`}>
     <a href="#main-content" class="skip-link">
       {locale === 'ko' ? '본문으로 건너뛰기' : 'Skip to main content'}
     </a>
 
+    <div id="header-sentinel" class="pointer-events-none absolute left-0 top-0 h-20 w-px" aria-hidden="true"></div>
     <Header locale={locale} />
 
     {/* Spacer for fixed header on non-hero pages */}
@@ -42,29 +43,15 @@ const {
 
     <Footer locale={locale} />
 
-    <!-- Film grain texture -->
-    <div class="film-grain" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <filter id="grain">
-          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#grain)" />
-      </svg>
-    </div>
-
-    <!-- Scroll reveal: Motion inView, staggered per sibling group -->
+    <!-- Progressive enhancement: content stays visible if JavaScript fails. -->
     <script>
-      import { inView, animate } from 'motion';
+      import { inView } from 'motion';
+      import { animate } from 'motion/mini';
       import { reduced } from '../scripts/motion';
 
       const revealEls = document.querySelectorAll<HTMLElement>('.fade-up');
 
-      if (reduced()) {
-        revealEls.forEach((el) => {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
-        });
-      } else {
+      if (!reduced()) {
         revealEls.forEach((el) => {
           const siblings = Array.from(el.parentElement?.children ?? []).filter(
             (c): c is HTMLElement =>
@@ -74,12 +61,17 @@ const {
           const stop = inView(
             el,
             () => {
+              el.style.opacity = '0';
+              el.style.transform = 'translateY(18px)';
               animate(
                 el,
-                { opacity: 1, transform: 'translateY(0px)' },
+                {
+                  opacity: 1,
+                  transform: 'translateY(0px)',
+                },
                 {
                   duration: 0.6,
-                  easing: [0.16, 1, 0.3, 1],
+                  ease: [0.16, 1, 0.3, 1],
                   delay: Math.min(i * 0.06, 0.3),
                 },
               );

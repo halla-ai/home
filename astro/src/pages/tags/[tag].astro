@@ -1,8 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import Card from '../../components/ui/Card.astro';
 import { getCollection } from 'astro:content';
-import { t } from '../../i18n/ui';
+import { t, tagSlug, type Locale } from '../../i18n/ui';
 
 export async function getStaticPaths() {
   const locale = 'ko';
@@ -12,19 +11,34 @@ export async function getStaticPaths() {
   const tags = new Set<string>();
   localePosts.forEach((post) => post.data.tags.forEach((tag: string) => tags.add(tag)));
 
-  return [...tags].map((tag) => ({
-    params: { tag },
+  const canonicalTags = new Map<string, string>();
+  tags.forEach((tag) => {
+    const slug = tagSlug(tag);
+    const current = canonicalTags.get(slug);
+    if (!current || (!/[A-Z]/.test(current) && /[A-Z]/.test(tag))) canonicalTags.set(slug, tag);
+  });
+
+  const buildPath = (routeTag: string, label: string) => ({
+    params: { tag: routeTag },
     props: {
-      tag,
+      tag: label,
       locale,
       posts: localePosts
-        .filter((p) => p.data.tags.includes(tag))
+        .filter((p) => p.data.tags.some((postTag: string) => tagSlug(postTag) === tagSlug(label)))
         .sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
     },
-  }));
+  });
+
+  const canonicalPaths = [...canonicalTags].map(([slug, label]) => buildPath(slug, label));
+  const legacyPaths = [...tags]
+    .filter((tag) => tag !== tagSlug(tag))
+    .map((tag) => buildPath(tag, tag));
+
+  return [...canonicalPaths, ...legacyPaths];
 }
 
 const { tag, locale, posts } = Astro.props;
+const typedLocale = locale as Locale;
 
 function formatDate(date: Date): string {
   return date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -34,27 +48,25 @@ function formatDate(date: Date): string {
 <PageLayout
   title={tag}
   description={`"${tag}" 태그가 포함된 포스트`}
-  locale={locale}
-  breadcrumbs={[{ label: t(locale, 'common.tags'), href: '/tags/' }, { label: tag }]}
+  locale={typedLocale}
+  breadcrumbs={[{ label: t(typedLocale, 'common.tags'), href: '/tags/' }, { label: tag }]}
 >
-  <div class="grid gap-6 sm:grid-cols-2">
+  <div class="grid gap-x-10 gap-y-10 md:grid-cols-2">
     {posts.map((post: any) => {
       const slug = post.id.replace(`${locale}/`, '');
       return (
-        <Card
-          href={`/posts/${slug}/`}
-          class="group overflow-hidden"
-        >
+        <a href={`/posts/${slug}/`} class="group block border-t border-border pt-5 dark:border-white/[0.1]">
           {post.data.image && (
-            <div class="aspect-video overflow-hidden">
-              <img src={post.data.image} alt={post.data.title} class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+            <div class="aspect-[16/9] overflow-hidden rounded-xl bg-stone dark:bg-white/[0.04]">
+              <img src={post.data.image} alt={post.data.title} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" loading="lazy" />
             </div>
           )}
-          <div class="p-5">
-            <time class="text-xs text-muted" datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-            <h3 class="mt-2 text-lg font-bold text-deep dark:text-white group-hover:text-accent">{post.data.title}</h3>
+          <div class="mt-5">
+            <time class="text-xs font-medium uppercase tracking-wider text-accent/80" datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+            <h3 class="mt-2 text-xl font-bold leading-snug text-deep transition-colors group-hover:text-accent dark:text-white">{post.data.title}</h3>
+            {post.data.description && <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-muted dark:text-slate-400">{post.data.description}</p>}
           </div>
-        </Card>
+        </a>
       );
     })}
   </div>

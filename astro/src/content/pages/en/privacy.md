@@ -23,7 +23,7 @@ We may update this Privacy Policy from time to time for personal, operational, l
 
 **Contact Us**
 
-For more information about our privacy practices, or if you have questions, please contact us by email at <a href="mailto:info@jeju.ai">info@jeju.ai</a>.
+For more information about our privacy practices, or if you have questions, please contact us by email at <a href="mailto:yj.lee@chu.ac.kr">yj.lee@chu.ac.kr</a>.
 
 **Privacy Officer**
 

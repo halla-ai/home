@@ -23,14 +23,7 @@ const { title, viewAllHref, viewAllLabel = 'View All' } = Astro.props;
         class="text-sm font-medium text-accent hover:text-accent-hover flex items-center gap-1.5 transition-colors duration-200 group"
       >
         {viewAllLabel}
-        <svg
-          class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
+        <i class="ph ph-arrow-right text-base transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true"></i>
       </a>
     )
   }

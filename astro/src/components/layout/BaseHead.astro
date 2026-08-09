@@ -1,5 +1,7 @@
 ---
 import '../../assets/styles/global.css';
+import { siteConfig } from '../../config/site';
+import { tagSlug } from '../../i18n/ui';
 
 interface Props {
   title: string;
@@ -15,7 +17,11 @@ const {
   locale = 'ko',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const tagRouteMatch = Astro.url.pathname.match(/^(\/(?:en\/)?tags\/)([^/]+)\/?$/);
+const canonicalPath = tagRouteMatch
+  ? `${tagRouteMatch[1]}${encodeURIComponent(tagSlug(decodeURIComponent(tagRouteMatch[2])))}/`
+  : Astro.url.pathname;
+const canonicalURL = new URL(canonicalPath, Astro.site);
 const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
 const alternateLocale = locale === 'ko' ? 'en' : 'ko';
 const alternatePath =
@@ -23,38 +29,38 @@ const alternatePath =
     ? `/en${Astro.url.pathname}`
     : Astro.url.pathname.replace(/^\/en/, '') || '/';
 const alternateURL = new URL(alternatePath, Astro.site);
+const isLocalizedTagDetail = /^\/(?:en\/)?tags\/[^/]+\/?$/.test(Astro.url.pathname);
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
+<link
+  rel="preload"
+  href="/fonts/PretendardVariable-subset.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+{isHomepage && (
+  <link
+    rel="preload"
+    as="image"
+    href="/images/home/hero-classroom-768.webp"
+    imagesrcset="/images/home/hero-classroom-640.webp 640w, /images/home/hero-classroom-768.webp 768w, /images/home/hero-classroom-960.webp 960w, /images/home/hero-classroom.webp 1280w"
+    imagesizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
+    fetchpriority="high"
+  />
+)}
 
-<!-- Dark mode init: runs before first paint to avoid a light flash -->
+<!-- Dark-first init: runs before first paint; an explicit saved light preference wins. -->
 <script is:inline>
   (function () {
     var stored = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (stored === 'dark' || (!stored && prefersDark)) {
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.toggle('dark', stored !== 'light');
   })();
 </script>
-
-<!-- Google Fonts: Outfit (display) -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- Pretendard Variable Font (Korean body) -->
-<link
-  rel="stylesheet"
-  as="style"
-  crossorigin
-  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
-/>
 
 <!-- Primary Meta -->
 <title>{title}</title>
@@ -77,10 +83,14 @@ const alternateURL = new URL(alternatePath, Astro.site);
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
-<!-- Hreflang alternates -->
-<link rel="alternate" hreflang="ko" href={locale === 'ko' ? canonicalURL : new URL(alternatePath, Astro.site)} />
-<link rel="alternate" hreflang="en" href={locale === 'en' ? canonicalURL : alternateURL} />
-<link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace(/^\/en/, '') || '/', Astro.site)} />
+<!-- Hreflang alternates. Localized tag vocabularies have no guaranteed pair. -->
+{!isLocalizedTagDetail && (
+  <>
+    <link rel="alternate" hreflang="ko" href={locale === 'ko' ? canonicalURL : new URL(alternatePath, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={locale === 'en' ? canonicalURL : alternateURL} />
+    <link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace(/^\/en/, '') || '/', Astro.site)} />
+  </>
+)}
 
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -92,12 +102,12 @@ const alternateURL = new URL(alternatePath, Astro.site);
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": locale === 'en' ? "Cheju Halla University - Artificial Intelligence" : "제주한라대학교 인공지능학과",
-  "url": "https://halla.ai",
+  "url": siteConfig.url,
   "inLanguage": [locale === 'en' ? "en" : "ko"],
   "publisher": {
     "@type": "EducationalOrganization",
     "name": locale === 'en' ? "Cheju Halla University" : "제주한라대학교",
-    "url": "https://www.chu.ac.kr"
+    "url": siteConfig.universityUrl
   }
 })} />
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -105,38 +115,43 @@ const alternateURL = new URL(alternatePath, Astro.site);
   "@type": "EducationalOrganization",
   "name": locale === 'en' ? "Department of Artificial Intelligence, Cheju Halla University" : "제주한라대학교 인공지능학과",
   "alternateName": locale === 'en' ? "제주한라대학교 인공지능학과" : "Department of Artificial Intelligence, Cheju Halla University",
-  "url": "https://halla.ai",
-  "logo": "https://halla.ai/images/logo-icon.svg",
-  "image": "https://halla.ai/images/og-default.jpg",
+  "url": siteConfig.url,
+  "logo": new URL(siteConfig.logo, siteConfig.url).href,
+  "image": new URL('/images/og-default.jpg', siteConfig.url).href,
   "description": locale === 'en'
     ? "The Department of Artificial Intelligence at Cheju Halla University trains next-generation AI specialists through hands-on education in machine learning, NLP, computer vision, robotics, and cybersecurity."
     : "제주한라대학교 인공지능학과는 머신러닝, 자연어처리, 컴퓨터비전, 로봇공학, 사이버보안 분야의 실무 중심 AI 교육을 제공합니다.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "38 Halladaehak-ro",
-    "addressLocality": "Jeju",
-    "addressRegion": "Jeju Special Self-Governing Province",
-    "postalCode": "63092",
-    "addressCountry": "KR"
+    "streetAddress": siteConfig.address.streetAddress,
+    "addressLocality": siteConfig.address.addressLocality,
+    "addressRegion": siteConfig.address.addressRegion,
+    "postalCode": siteConfig.address.postalCode,
+    "addressCountry": siteConfig.address.addressCountry
   },
-  "telephone": "+82-64-741-7430",
-  "email": "info@jeju.ai",
+  "telephone": siteConfig.phone,
+  "email": siteConfig.email,
   "parentOrganization": {
     "@type": "CollegeOrUniversity",
     "name": locale === 'en' ? "Cheju Halla University" : "제주한라대학교",
-    "url": "https://www.chu.ac.kr",
-    "sameAs": ["https://ko.wikipedia.org/wiki/제주한라대학교"]
+    "url": siteConfig.universityUrl,
+    "sameAs": [siteConfig.socials.wikipedia]
   },
-  "sameAs": [
-    "https://github.com/halla-ai"
-  ]
+  "sameAs": [siteConfig.universityUrl, ...Object.values(siteConfig.socials)]
 })} />
 
-<!-- Google Analytics -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-QP4FVB9F1X"></script>
+<!-- Google Analytics: production only, so local previews stay private and deterministic. -->
 <script is:inline>
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    var analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-QP4FVB9F1X';
+    document.head.appendChild(analyticsScript);
+  }
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-QP4FVB9F1X');
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    gtag('js', new Date());
+    gtag('config', 'G-QP4FVB9F1X');
+  }
 </script>

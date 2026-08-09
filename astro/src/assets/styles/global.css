@@ -1,68 +1,86 @@
+@import "@fontsource-variable/outfit";
+@import "./phosphor.css";
 @import "tailwindcss";
 
-/* Enable class-based dark mode (.dark on <html>) */
+@font-face {
+  font-family: "Pretendard Variable";
+  src: url("/fonts/PretendardVariable-subset.woff2") format("woff2-variations");
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: swap;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Depth — Jeju basalt */
-  --color-void: #050a18;
-  --color-abyss: #0a1628;
-  --color-deep: #0f2344;
-  --color-navy: #1a3a6b;
-  --color-navy-dark: #0c1d3a;
-  --color-navy-darkest: #060d1a;
+  --color-void: #050a12;
+  --color-abyss: #07101f;
+  --color-deep: #0b1728;
+  --color-navy: #12243c;
+  --color-navy-mid: #102035;
+  --color-navy-dark: #081321;
+  --color-navy-darkest: #050a12;
 
-  /* Surface */
-  --color-stone: #edf0f5;
-  --color-chalk: #f7f8fb;
-  --color-surface: #edf0f5;
+  --color-stone: #e8edf3;
+  --color-chalk: #f2f5f8;
+  --color-surface: #edf1f5;
 
-  /* Accent — Jeju tidal */
-  --color-accent: #0ea5e9;
-  --color-accent-hover: #0284c7;
-  --color-accent-light: #e0f2fe;
-  --color-accent-lighter: #f0f9ff;
+  --color-accent: #3d7edb;
+  --color-accent-hover: #2f6ec8;
+  --color-accent-light: #dce9f9;
+  --color-accent-lighter: #eef4fc;
+  --color-cyan: #3d7edb;
+  --color-sky: #3d7edb;
 
-  /* Warm accent */
-  --color-ember: #f97316;
-  --color-ember-light: #fff7ed;
+  --color-ember: #c85b42;
+  --color-ember-light: #fff1ed;
+  --color-emerald: #287d62;
+  --color-emerald-light: #eaf6f1;
 
-  /* Success / info */
-  --color-emerald: #10b981;
-  --color-emerald-light: #ecfdf5;
+  --color-text-bright: #f4f7fb;
+  --color-text-light: #dde5ef;
+  --color-text-soft: #c5d0de;
+  --color-text-dim: #93a3b7;
+  --color-text: #0c1727;
+  --color-text-navy: #14243a;
+  --color-muted: #607187;
+  --color-border: #cbd5e1;
 
-  /* Gradient accents */
-  --color-cyan: #22d3ee;
-  --color-sky: #38bdf8;
+  --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: "Outfit Variable", "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
-  /* Dark mode text (slate scale) */
-  --color-text-bright: #f1f5f9;
-  --color-text-light: #e2e8f0;
-  --color-text-soft: #cbd5e1;
-  --color-text-dim: #94a3b8;
-
-  /* Neutrals */
-  --color-text: #0f172a;
-  --color-text-navy: #1e3a5f;
-  --color-muted: #64748b;
-  --color-border: #dce2eb;
-  --color-navy-mid: #132d54;
-
-  /* Typography */
-  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
-    system-ui, 'Helvetica Neue', 'Noto Sans KR', sans-serif;
-  --font-display: 'Outfit', 'Pretendard Variable', 'Pretendard', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-fast: 150ms;
-  --dur-base: 250ms;
-  --dur-slow: 400ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+  --spacing-section: clamp(4.5rem, 8vw, 7.5rem);
+}
 
-  /* Rhythm */
-  --spacing-section: clamp(4rem, 8vw, 8rem);
+:root {
+  --page-bg: #f2f5f8;
+  --page-bg-elevated: #ffffff;
+  --page-surface: #e8edf3;
+  --page-border: #cbd5e1;
+  --page-text: #0c1727;
+  --page-muted: #607187;
+  --radius-surface: 1rem;
+  --radius-control: 0.625rem;
+  --shadow-elevated: 0 18px 50px rgb(14 28 47 / 0.12);
+  --z-header: 40;
+  --z-overlay: 60;
+  --z-modal: 80;
+}
+
+.dark {
+  --page-bg: #050a12;
+  --page-bg-elevated: #0b1728;
+  --page-surface: #101d2f;
+  --page-border: rgb(255 255 255 / 0.1);
+  --page-text: #f4f7fb;
+  --page-muted: #a9b6c8;
+  --shadow-elevated: 0 22px 60px rgb(0 0 0 / 0.38);
 }
 
 @import "./base.css";
