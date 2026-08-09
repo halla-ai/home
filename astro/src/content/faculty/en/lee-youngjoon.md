@@ -3,7 +3,7 @@ order: 3
 name: 이영준
 name_en: Young Joon Lee
 title: Associate Professor
-photo: /images/faculty/yjlee.jpeg
+photo: /images/faculty/yjlee-2019.jpeg
 specialization: Business Administration (Ph.D.), Economics (M.S.), Information Industrial Engineering (B.S.)
 research_areas:
   - Artificial Intelligence

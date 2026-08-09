@@ -1,7 +1,7 @@
 ---
 title: "입학안내"
 description: "AI 시대를 이끌어갈 인재를 찾습니다"
-image: "/images/admissions/admissions.png"
+image: "/images/heroes/admissions-hero.jpg"
 ---
 
 ## 교육목표

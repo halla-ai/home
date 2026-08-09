@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { pageHero } from '../../config/pageHeroes';
 import { getCollection } from 'astro:content';
 import { t, tagSlug, type Locale } from '../../i18n/ui';
 
@@ -48,6 +49,7 @@ function formatDate(date: Date): string {
 <PageLayout
   title={tag}
   description={`"${tag}" 태그가 포함된 포스트`}
+  heroMedia={pageHero('tags', typedLocale)}
   locale={typedLocale}
   breadcrumbs={[{ label: t(typedLocale, 'common.tags'), href: '/tags/' }, { label: tag }]}
 >

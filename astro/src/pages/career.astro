@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { pageHero } from '../config/pageHeroes';
 
 const locale = 'ko';
 
@@ -84,7 +85,7 @@ const employmentCompanies = [
 <PageLayout
   title="산학협력"
   description="기업·기관과의 산학협력을 통해 현장 중심의 AI 전문가를 양성합니다"
-  heroMedia={{ src: '/images/career/career.png', alt: '인공지능학과 산학협력 현장', position: 'center 42%' }}
+  heroMedia={pageHero('career', locale)}
   locale={locale}
 >
   <section class="mb-16 border-y border-border py-6 dark:border-white/[0.1]" aria-label="산학협력 현황">

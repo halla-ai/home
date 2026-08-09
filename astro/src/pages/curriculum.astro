@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { pageHero } from '../config/pageHeroes';
 import { t } from '../i18n/ui';
 
 const locale = 'ko';
@@ -78,7 +79,7 @@ const highlights = [
 <PageLayout
   title={t(locale, 'nav.curriculum')}
   description="AI 전문인력 양성을 위한 체계적 교육과정"
-  heroMedia={{ src: '/images/curriculum/curriculum.png', alt: '인공지능학과 교육과정과 실습 현장' }}
+  heroMedia={pageHero('curriculum', locale)}
   locale={locale}
 >
   <section class="mb-16">

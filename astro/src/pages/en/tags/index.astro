@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
+import { pageHero } from '../../../config/pageHeroes';
 import { getCollection } from 'astro:content';
 import { t, tagSlug, tagUrl } from '../../../i18n/ui';
 
@@ -28,6 +29,7 @@ const sortedTags = [...tagCounts.values()].sort((a, b) => b.count - a.count);
 <PageLayout
   title={t(locale, 'common.tags')}
   description="Browse posts by topic"
+  heroMedia={pageHero('tags', locale)}
   locale={locale}
 >
   <div class="grid gap-x-10 md:grid-cols-2">

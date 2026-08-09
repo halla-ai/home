@@ -1,7 +1,7 @@
 ---
 title: "Admissions"
 description: "We are looking for talent to lead the AI era"
-image: "/images/admissions/admissions.png"
+image: "/images/heroes/admissions-hero.jpg"
 ---
 
 ## Educational Goals
