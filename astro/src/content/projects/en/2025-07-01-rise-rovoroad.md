@@ -3,7 +3,7 @@ title: "Development and Demonstration of Unmanned Road Damage Restoration Techno
 subtitle: "RISE Industry-Academia Joint Research"
 summary: "Building the world's first unmanned road pavement maintenance system combining AI robotics and advanced materials technology"
 date: 2025-07-01
-image: "/images/research/rise-rovoroad.jpg"
+image: "/images/research/projects/road-repair-robot.jpg"
 tools: "AI Road Damage Detection, Unmanned Restoration Robot, Eco-friendly Repair Materials, Integrated Control System"
 ---
 

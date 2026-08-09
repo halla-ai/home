@@ -3,7 +3,7 @@ title: "지능형 교육 플랫폼을 위한 Agentic RAG 기술 연구"
 subtitle: "RISE 산학공동연구"
 summary: "Agentic RAG 기술과 소크라테스식 대화 기법을 융합한 차세대 지능형 교육 플랫폼 구축"
 date: 2025-08-01
-image: "/images/research/rise-saltlux.jpeg"
+image: "/images/research/projects/agentic-rag-education.jpg"
 tools: "Agentic RAG, Multi-Agent, Knowledge Tracing, Constitutional AI"
 ---
 

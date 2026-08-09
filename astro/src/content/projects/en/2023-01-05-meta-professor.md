@@ -3,7 +3,7 @@ title: MetaHuman Professor Platform
 subtitle: NLP
 summary: "Research on meta-learning-based AI professor identification and MetaHuman education platform"
 date: 2023-01-05 08:01:35 +0300
-image: "/images/projects/project-meta-professor.png"
+image: "/images/research/projects/meta-professor.jpg"
 ---
 
 A research project utilizing meta-learning techniques to identify professors in academic papers and develop an AI-powered education platform based on these findings.

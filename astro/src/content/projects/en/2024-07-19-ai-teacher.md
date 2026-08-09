@@ -4,7 +4,7 @@ subtitle: AI
 summary: "An innovative MetaHuman AI instructor platform powered by Unreal Engine 5 and ChatGPT-4"
 tools: 1. Unreal Engine 5, 2. ChatGPT-4, 3. Eleven Labs Voice Model
 date: 2024-07-19
-image: "/images/projects/AI-Teacher.jpg"
+image: "/images/research/projects/ai-teacher.jpg"
 ---
 
 We are proud to introduce the MetaHuman AI Instructor. This innovative educational platform, developed by combining Unreal Engine 5 and ChatGPT-4, will take the future of education to the next level.

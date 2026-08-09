@@ -10,6 +10,11 @@ interface Props {
   heroMedia?: {
     src: string;
     alt: string;
+    avif?: string;
+    webp?: string;
+    sizes?: string;
+    width?: number;
+    height?: number;
     position?: string;
   };
   locale?: Locale;
@@ -29,6 +34,10 @@ const homeCrumb = { label: t(locale, 'common.breadcrumb_home'), href: locale ===
 const crumbs = breadcrumbs
   ? [homeCrumb, ...breadcrumbs]
   : [homeCrumb, { label: title }];
+
+const heroWidth = heroMedia?.width ?? 1920;
+const heroHeight = heroMedia?.height ?? 900;
+const heroSizes = heroMedia?.sizes ?? '100vw';
 ---
 
 <BaseLayout
@@ -41,15 +50,22 @@ const crumbs = breadcrumbs
   <section class="page-hero isolate min-h-[26rem] md:min-h-[31rem]">
     {heroMedia && (
       <div class="absolute inset-0 -z-10" aria-hidden="true">
-        <img
-          src={heroMedia.src}
-          alt={heroMedia.alt}
-          class="h-full w-full object-cover opacity-55 dark:opacity-45"
-          style={`object-position: ${heroMedia.position ?? 'center'}`}
-          loading="eager"
-        />
-        <div class="absolute inset-0 bg-gradient-to-r from-void via-void/80 to-void/25 dark:from-void dark:via-void/85 dark:to-void/35"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-void via-transparent to-void/25"></div>
+        <picture class="block h-full w-full">
+          {heroMedia.avif && <source srcset={heroMedia.avif} type="image/avif" sizes={heroSizes} />}
+          {heroMedia.webp && <source srcset={heroMedia.webp} type="image/webp" sizes={heroSizes} />}
+          <img
+            src={heroMedia.src}
+            alt={heroMedia.alt}
+            width={heroWidth}
+            height={heroHeight}
+            sizes={heroSizes}
+            class="h-full w-full object-cover opacity-80 dark:opacity-75"
+            style={`object-position: ${heroMedia.position ?? 'center'}`}
+            loading="eager"
+          />
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-r from-void/95 via-void/62 to-transparent dark:from-void/95 dark:via-void/65 dark:to-void/5"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-void/90 via-transparent to-void/10"></div>
       </div>
     )}
     <div class="container relative z-10 flex min-h-[26rem] items-end py-12 md:min-h-[31rem] md:py-16">

@@ -13,36 +13,58 @@ const projects = allProjects
 <PageLayout
   title={t(locale, 'nav.research')}
   description="인공지능학과의 주요 연구 프로젝트"
-  heroMedia={{ src: '/images/research/research.png', alt: '인공지능학과 연구 프로젝트 현장' }}
+  heroMedia={{
+    src: '/images/research/research-overview.jpg',
+    avif: '/images/research/research-overview-960.avif 960w, /images/research/research-overview.avif 1920w',
+    webp: '/images/research/research-overview-960.webp 960w, /images/research/research-overview.webp 1920w',
+    alt: '로봇, 비전 센서, 가상현실 장비로 구성된 인공지능 연구 환경',
+    width: 1920,
+    height: 1080,
+    sizes: '100vw',
+  }}
   locale={locale}
 >
   <div class="mb-12 max-w-2xl">
     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Research portfolio</p>
-    <p class="mt-4 text-lg leading-relaxed text-muted dark:text-slate-300">학생과 교수진이 산업 현장의 문제를 AI 연구와 실증 프로젝트로 풀어갑니다.</p>
+    <p class="mt-4 break-all text-lg leading-relaxed text-muted dark:text-slate-300">학생과 교수진이 산업 현장의 문제를 AI 연구와 실증 프로젝트로 풀어갑니다.</p>
   </div>
 
   <div class="grid gap-x-10 gap-y-12 md:grid-cols-2">
-    {projects.map((project, index) => {
+    {projects.map((project) => {
       const slug = project.id.replace(`${locale}/`, '');
+      const imageBase = project.data.image?.replace(/\.[^/.]+$/, '');
+      const imageAvif = imageBase ? `${imageBase}.avif` : undefined;
+      const imageWebp = imageBase ? `${imageBase}.webp` : undefined;
       const tools = project.data.tools
         ? (Array.isArray(project.data.tools) ? project.data.tools : project.data.tools.split(',').map((tool: string) => tool.trim()))
         : [];
       return (
         <article class="group border-t border-border pt-6 dark:border-white/[0.1]">
           <a href={`/research/${slug}/`} class="block">
-            <div class="flex items-baseline justify-between gap-4">
-              <span class="font-mono text-xs tabular-nums text-accent/70">{String(index + 1).padStart(2, '0')}</span>
+            <div class="flex justify-end">
               <time class="font-mono text-[11px] tabular-nums text-muted dark:text-slate-500" datetime={project.data.date.toISOString()}>{project.data.date.getFullYear()}</time>
             </div>
             {project.data.image && (
               <div class="mt-5 aspect-[16/10] overflow-hidden rounded-xl bg-stone dark:bg-white/[0.04]">
-                <img src={project.data.image} alt={project.data.title} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" loading="lazy" />
+                <picture class="block h-full w-full">
+                  {imageAvif && <source srcset={`${imageBase}-800.avif 800w, ${imageAvif} 1600w`} type="image/avif" sizes="(min-width: 768px) calc((100vw - 2.5rem) / 2), calc(100vw - 2rem)" />}
+                  {imageWebp && <source srcset={`${imageBase}-800.webp 800w, ${imageWebp} 1600w`} type="image/webp" sizes="(min-width: 768px) calc((100vw - 2.5rem) / 2), calc(100vw - 2rem)" />}
+                  <img
+                    src={project.data.image}
+                    alt={project.data.title}
+                    width="800"
+                    height="500"
+                    sizes="(min-width: 768px) calc((100vw - 2.5rem) / 2), calc(100vw - 2rem)"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
             )}
             <div class="mt-5">
               {project.data.subtitle && <p class="text-xs font-semibold uppercase tracking-wider text-accent">{project.data.subtitle}</p>}
               <h2 class="mt-2 text-xl font-bold leading-snug text-deep transition-colors group-hover:text-accent dark:text-white">{project.data.title}</h2>
-              <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-muted dark:text-slate-400">{project.data.summary}</p>
+              <p class="mt-3 line-clamp-3 text-base leading-relaxed text-muted dark:text-slate-400">{project.data.summary}</p>
               {tools.length > 0 && (
                 <ul class="mt-4 flex flex-wrap gap-x-3 gap-y-1.5">
                   {tools.map((tool: string) => <li class="text-xs text-muted before:mr-2 before:text-accent before:content-['/'] dark:text-slate-500">{tool}</li>)}

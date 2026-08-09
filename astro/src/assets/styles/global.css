@@ -86,3 +86,21 @@
 @import "./base.css";
 @import "./components.css";
 @import "./utilities.css";
+
+/* Readability defaults for body copy and long-form content. */
+body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose {
+  max-width: 68ch;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+@media (min-width: 768px) {
+  .prose {
+    font-size: 19px;
+  }
+}

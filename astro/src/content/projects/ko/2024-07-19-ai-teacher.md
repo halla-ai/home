@@ -4,7 +4,7 @@ subtitle: AI
 summary: "Unreal Engine 5와 ChatGPT-4를 활용한 혁신적인 메타휴먼 AI 강사 플랫폼"
 tools: 1. Unreal Engine 5, 2. ChatGPT-4, 3. Eleven Labs Voice Model
 date: 2024-07-19
-image: "/images/projects/AI-Teacher.jpg"
+image: "/images/research/projects/ai-teacher.jpg"
 ---
 
 메타휴먼 AI강사를 자랑스럽게 소개합니다. Unreal Engine 5와 ChatGPT-4를 결합하여 개발한 이 혁신적인 교육 플랫폼은 미래의 교육을 한 단계 끌어올릴 것입니다.

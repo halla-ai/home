@@ -47,8 +47,9 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
   <link
     rel="preload"
     as="image"
-    href="/images/home/hero-classroom-768.webp"
-    imagesrcset="/images/home/hero-classroom-640.webp 640w, /images/home/hero-classroom-768.webp 768w, /images/home/hero-classroom-960.webp 960w, /images/home/hero-classroom.webp 1280w"
+    type="image/avif"
+    href="/images/home/hero-ai-lab-960.avif"
+    imagesrcset="/images/home/hero-ai-lab-640.avif 640w, /images/home/hero-ai-lab-960.avif 960w, /images/home/hero-ai-lab.avif 1600w"
     imagesizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
     fetchpriority="high"
   />

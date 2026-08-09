@@ -27,6 +27,10 @@ const {
 
 const prefix = locale === 'en' ? '/en' : '';
 const researchHref = `${prefix}/research/`;
+const imageBase = image?.replace(/\.[^/.]+$/, '');
+const imageAvif = imageBase ? `${imageBase}.avif` : undefined;
+const imageWebp = imageBase ? `${imageBase}.webp` : undefined;
+const imageSizes = '(max-width: 767px) calc(100vw - 2rem), min(1200px, calc(100vw - 4rem))';
 
 const crumbs = [
   { label: t(locale, 'common.breadcrumb_home'), href: locale === 'en' ? '/en/' : '/' },
@@ -80,12 +84,19 @@ const pageTitle = `${title} | ${t(locale, 'site.title')}`;
     {
       image && (
         <div class="container -mt-6 relative z-10">
-          <img
-            src={image}
-            alt={title}
-            class="w-full max-h-[480px] object-cover rounded-2xl shadow-lg ring-1 ring-black/5 dark:ring-white/5"
-            loading="eager"
-          />
+          <picture class="block overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 dark:ring-white/5">
+            {imageAvif && <source srcset={`${imageBase}-800.avif 800w, ${imageAvif} 1600w`} type="image/avif" sizes={imageSizes} />}
+            {imageWebp && <source srcset={`${imageBase}-800.webp 800w, ${imageWebp} 1600w`} type="image/webp" sizes={imageSizes} />}
+            <img
+              src={image}
+              alt={title}
+              width="1600"
+              height="1000"
+              sizes={imageSizes}
+              class="block w-full max-h-[480px] object-cover"
+              loading="eager"
+            />
+          </picture>
         </div>
       )
     }

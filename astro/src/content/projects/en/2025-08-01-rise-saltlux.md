@@ -3,7 +3,7 @@ title: "Agentic RAG Technology Research for Intelligent Educational Platforms"
 subtitle: "RISE Industry-Academia Joint Research"
 summary: "Building a next-generation intelligent educational platform that fuses Agentic RAG technology with Socratic dialogue methods"
 date: 2025-08-01
-image: "/images/research/rise-saltlux.jpeg"
+image: "/images/research/projects/agentic-rag-education.jpg"
 tools: "Agentic RAG, Multi-Agent, Knowledge Tracing, Constitutional AI"
 ---
 
