@@ -11,8 +11,28 @@ const prefix = locale === 'en' ? '/en' : '';
 ---
 
 <section class="home-hero relative overflow-hidden bg-void text-white">
-  <div class="home-hero-grid" aria-hidden="true"></div>
-  <div class="container relative z-10 flex min-h-[min(760px,100svh)] items-center py-24 md:py-20 lg:py-16">
+  <picture class="absolute inset-0 block h-full w-full" aria-hidden="true">
+    <source
+      srcset="/images/home/hero-topology-960.avif 960w, /images/home/hero-topology.avif 1920w"
+      sizes="100vw"
+      type="image/avif"
+    />
+    <source
+      srcset="/images/home/hero-topology-960.webp 960w, /images/home/hero-topology.webp 1920w"
+      sizes="100vw"
+      type="image/webp"
+    />
+    <img
+      src="/images/home/hero-topology.jpg"
+      alt=""
+      width="1920"
+      height="1080"
+      class="h-full w-full object-cover object-center opacity-80"
+      fetchpriority="low"
+    />
+  </picture>
+  <div class="home-hero-scrim absolute inset-0" aria-hidden="true"></div>
+  <div class="container relative z-10 flex min-h-[min(760px,100dvh)] items-center py-24 md:py-20 lg:py-16">
     <div class="grid w-full items-center gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:gap-14">
       <div class="max-w-xl">
         <p class="text-xs font-medium tracking-[0.2em] text-accent md:text-sm">
@@ -44,21 +64,28 @@ const prefix = locale === 'en' ? '/en' : '';
 
       <div class="relative lg:justify-self-end">
         <figure class="relative ml-auto w-full max-w-[680px] overflow-hidden rounded-[1.15rem] border border-white/15 bg-deep shadow-[0_24px_80px_rgba(0,0,0,0.34)] lg:rotate-[1.2deg]">
-          <div class="absolute inset-0 z-10 bg-gradient-to-t from-void/70 via-transparent to-transparent" aria-hidden="true"></div>
-          <img
-            src="/images/home/hero-classroom.webp"
-            srcset="/images/home/hero-classroom-640.webp 640w, /images/home/hero-classroom-768.webp 768w, /images/home/hero-classroom-960.webp 960w, /images/home/hero-classroom.webp 1280w"
-            sizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
-            alt={t(locale, 'home.hero.visual_alt')}
-            width="1280"
-            height="960"
-            class="block aspect-[4/3] h-full w-full object-cover object-center"
-            fetchpriority="high"
-          />
-          <figcaption class="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between gap-4 p-4 text-[10px] font-medium tracking-[0.16em] text-white/80 md:p-5">
-            <span>{t(locale, 'home.hero.meta')}</span>
-            <span class="text-accent" aria-hidden="true">01</span>
-          </figcaption>
+          <div class="absolute inset-0 z-10 bg-gradient-to-t from-void/45 via-transparent to-transparent" aria-hidden="true"></div>
+          <picture class="block">
+            <source
+              srcset="/images/home/hero-ai-lab-640.avif 640w, /images/home/hero-ai-lab-960.avif 960w, /images/home/hero-ai-lab.avif 1600w"
+              sizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
+              type="image/avif"
+            />
+            <source
+              srcset="/images/home/hero-ai-lab-640.webp 640w, /images/home/hero-ai-lab-960.webp 960w, /images/home/hero-ai-lab.webp 1600w"
+              sizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
+              type="image/webp"
+            />
+            <img
+              src="/images/home/hero-ai-lab.jpg"
+              alt={t(locale, 'home.hero.visual_alt')}
+              width="1600"
+              height="1200"
+              sizes="(max-width: 1023px) calc(100vw - 2rem), min(58vw, 680px)"
+              class="block aspect-[4/3] h-full w-full object-cover object-center"
+              fetchpriority="high"
+            />
+          </picture>
         </figure>
         <div class="pointer-events-none absolute -bottom-5 -left-5 h-20 w-20 border-b border-l border-accent/70" aria-hidden="true"></div>
       </div>
@@ -67,28 +94,10 @@ const prefix = locale === 'en' ? '/en' : '';
 </section>
 
 <style>
-  .home-hero-grid {
-    position: absolute;
-    inset: 0;
-    opacity: 0.42;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 68px 68px;
-    mask-image: linear-gradient(90deg, black 0%, transparent 85%);
-    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 85%);
-  }
-
-  .home-hero::after {
-    content: '';
-    position: absolute;
-    top: -10rem;
-    right: -12rem;
-    width: 40rem;
-    height: 40rem;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(61, 126, 219, 0.18), transparent 68%);
-    pointer-events: none;
+  .home-hero-scrim {
+    background:
+      linear-gradient(90deg, rgba(5, 10, 18, 0.94) 0%, rgba(5, 10, 18, 0.78) 38%, rgba(5, 10, 18, 0.34) 72%, rgba(5, 10, 18, 0.52) 100%),
+      linear-gradient(0deg, rgba(5, 10, 18, 0.78) 0%, transparent 44%, rgba(5, 10, 18, 0.2) 100%);
   }
 
   @media (max-width: 767px) {
@@ -96,6 +105,12 @@ const prefix = locale === 'en' ? '/en' : '';
       min-height: 0;
       padding-top: 7.25rem;
       padding-bottom: 3.5rem;
+    }
+
+    .home-hero-scrim {
+      background:
+        linear-gradient(180deg, rgba(5, 10, 18, 0.9) 0%, rgba(5, 10, 18, 0.72) 52%, rgba(5, 10, 18, 0.88) 100%),
+        linear-gradient(90deg, rgba(5, 10, 18, 0.82), rgba(5, 10, 18, 0.4));
     }
 
     .home-hero figure {

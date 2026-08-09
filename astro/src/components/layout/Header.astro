@@ -1,5 +1,10 @@
 ---
 import { t, type Locale } from '../../i18n/ui';
+import {
+  isNavigationActive,
+  navigationHref,
+  primaryNavigation,
+} from '../../config/navigation';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import MobileMenu from './MobileMenu.astro';
 import ThemeToggle from '../ui/ThemeToggle.astro';
@@ -10,30 +15,16 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const prefix = locale === 'en' ? '/en' : '';
 const currentPath = Astro.url.pathname;
-
-const navItems = [
-  { key: 'about', href: `${prefix}/about/` },
-  { key: 'faculty', href: `${prefix}/faculty/` },
-  { key: 'curriculum', href: `${prefix}/curriculum/` },
-  { key: 'research', href: `${prefix}/research/` },
-  { key: 'posts', href: `${prefix}/posts/` },
-  { key: 'career', href: `${prefix}/career/` },
-  { key: 'admissions', href: `${prefix}/admissions/` },
-];
-
-function isActive(href: string): boolean {
-  if (href === `${prefix}/` || href === '/') {
-    return currentPath === href;
-  }
-  return currentPath.startsWith(href);
-}
+const navItems = primaryNavigation.map((item) => ({
+  ...item,
+  href: navigationHref(locale, item),
+}));
 ---
 
 <header class={`site-header ${Astro.url.pathname === '/' || Astro.url.pathname === '/en/' ? 'header-transparent' : 'header-solid'}`}>
   <div class="container">
-    <div class="flex items-center justify-between h-16 gap-4">
+    <div class="flex min-h-[72px] items-center justify-between gap-4">
       <!-- Logo -->
       <a
         href={locale === 'ko' ? '/' : '/en/'}
@@ -64,17 +55,17 @@ function isActive(href: string): boolean {
         </div>
       </a>
 
-      <!-- Desktop nav (condensed on tablet) -->
+      <!-- Desktop nav: keep all seven primary links on one line at xl. -->
       <nav
-        class="hidden md:flex items-center gap-0 lg:gap-1 flex-1 justify-center"
-        aria-label="Primary navigation"
+        class="hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:flex"
+        aria-label={locale === 'ko' ? '주요 메뉴' : 'Primary navigation'}
       >
         {
           navItems.map((item) => (
             <a
               href={item.href}
-              class={`nav-link px-2 lg:px-3 py-2 text-xs lg:text-[13px] font-medium transition-colors duration-200`}
-              aria-current={isActive(item.href) ? 'page' : undefined}
+              class="nav-link shrink-0 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              aria-current={isNavigationActive(currentPath, item.href) ? 'page' : undefined}
             >
               {t(locale, `nav.${item.key}`)}
             </a>
@@ -82,22 +73,24 @@ function isActive(href: string): boolean {
         }
       </nav>
 
-      <!-- Right: language switcher + theme toggle + mobile hamburger -->
+      <!-- Right: language switcher + theme toggle + below-xl menu trigger -->
       <div class="flex items-center gap-2 shrink-0">
         <div class="hidden lg:block">
           <LanguageSwitcher locale={locale} />
         </div>
         <ThemeToggle locale={locale} />
 
-        <!-- Hamburger (mobile) -->
+        <!-- Full-width mega-menu trigger below xl -->
         <button
           id="mobile-open"
-          aria-label="Open menu"
+          type="button"
+          aria-label={locale === 'ko' ? '메뉴 열기' : 'Open menu'}
           aria-expanded="false"
           aria-controls="mobile-menu"
-          class="hamburger-btn md:hidden inline-flex items-center justify-center w-10 h-10"
+          class="hamburger-btn inline-flex h-10 items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold xl:hidden"
         >
-          <i class="ph ph-list text-xl" aria-hidden="true"></i>
+          <i class="ph ph-list text-lg" aria-hidden="true"></i>
+          <span>{locale === 'ko' ? '메뉴' : 'Menu'}</span>
         </button>
       </div>
     </div>

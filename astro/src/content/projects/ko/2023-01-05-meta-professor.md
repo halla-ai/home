@@ -3,7 +3,7 @@ title: 메타휴먼 교수 플랫폼
 subtitle: 자연어처리
 summary: "메타러닝 기반 AI 교수 식별 및 메타휴먼 교육 플랫폼 연구"
 date: 2023-01-05 08:01:35 +0300
-image: "/images/projects/project-meta-professor.png"
+image: "/images/research/projects/meta-professor.jpg"
 ---
 
 메타러닝 기법을 활용하여 학술 논문에서 교수를 식별하고, 이를 기반으로 한 AI 교육 플랫폼을 연구하는 프로젝트입니다.

@@ -4,7 +4,7 @@ subtitle: 컴퓨터 비전
 summary: "컴퓨터 비전 알고리즘 기반 자율주행 차량 제어 연구"
 tools: OpenCV, TensorFlow, Keras
 date: 2023-09-10 08:01:35 +0300
-image: "/images/projects/project-autonomous-car.png"
+image: "/images/research/projects/autonomous-driving.jpg"
 ---
 
 컴퓨터 비전 기술을 활용하여 도로와 장애물을 인식하고, 자율적으로 주행 경로를 결정하는 차량 제어 시스템을 연구하는 프로젝트입니다.

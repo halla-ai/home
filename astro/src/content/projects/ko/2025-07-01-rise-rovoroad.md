@@ -3,7 +3,7 @@ title: "도로파손 무인복구 기술 개발과 실증"
 subtitle: "RISE 산학공동연구"
 summary: "AI 로보틱스와 신소재 기술을 결합한 세계 최초의 도로포장 무인 유지보수 시스템 구축"
 date: 2025-07-01
-image: "/images/research/rise-rovoroad.jpg"
+image: "/images/research/projects/road-repair-robot.jpg"
 tools: "AI 도로파손 탐지, 무인복구 로봇, 친환경 보수재, 통합관제시스템"
 ---
 

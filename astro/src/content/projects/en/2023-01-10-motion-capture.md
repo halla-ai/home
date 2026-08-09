@@ -4,7 +4,7 @@ subtitle: Computer Vision
 summary: Motion capture is the process of recording the movement of objects or people. It is used in animation, video games, and virtual reality. It is also used in robotics, medicine, and sports.
 tools: 1. MediaPipe, 2. OpenPose, 3. OpenCV
 date: 2023-01-10 08:01:35 +0300
-image: "/images/projects/project-motion-capture.png"
+image: "/images/research/projects/motion-capture.jpg"
 ---
 
 Motion capture and motion synthesis are two crucial techniques in the field of computer graphics, animation, and virtual reality, enabling the creation of realistic and interactive character animations. They play a vital role in various industries, including film, gaming, sports, and medical applications. This introduction will provide an overview of motion capture and motion synthesis, explaining their importance and how they work together to bring digital characters to life.
