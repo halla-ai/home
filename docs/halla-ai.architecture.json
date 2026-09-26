@@ -8,7 +8,7 @@
     "quality_profile": "showcase",
     "repository": { "url": "https://github.com/halla-ai/home", "provider": "github", "revision": "a966536fb29a04187c13ca348d7656ed30a9f04f" },
     "views": [
-      { "id": "visitor-path", "label": "Visitor path", "focus": ["visitor", "site"], "note": "Follow a visitor from halla.ai into a bilingual static route; small scripts drive the theme toggle, mobile menu, and motion." },
+      { "id": "visitor-path", "label": "Visitor path", "focus": ["visitor", "site"], "note": "Follow a visitor from halla.ai into a bilingual static route; scripts run theme, menu, and motion, and inject Google Analytics gtag.js." },
       { "id": "content-path", "label": "Bilingual content flow", "focus": ["collections", "i18n", "site"], "note": "See how ko/en Markdown collections and src/i18n translation files feed the same layouts." },
       { "id": "build-path", "label": "Build and deploy", "focus": ["repo", "ci", "gh-pages"], "note": "Trace a push from main through GitHub Actions to GitHub Pages." }
     ]

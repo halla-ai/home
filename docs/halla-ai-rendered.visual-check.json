@@ -6,9 +6,9 @@
   "status": "pass",
   "visualReview": "pending",
   "artifact": {
-    "path": "/Users/yj.lee/workspace/work/sites/halla-ai/.claude/worktrees/archify/docs/halla-ai-rendered.html",
-    "sha256": "7ca691ae9135f4ee1ceff6116ff69cfffb236f3efb997e989e432bfa0790c1aa",
-    "bytes": 806950
+    "path": "/Users/yj.lee/workspace/work/sites/halla-ai/.claude/worktrees/archify-gtag/docs/halla-ai-rendered.html",
+    "sha256": "6c4d1679d470db0ede28ebf910aff5e4f582e6d1ca418dae91a042a5dae61212",
+    "bytes": 806961
   },
   "state": {
     "detail": "read",
