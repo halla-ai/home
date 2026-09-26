@@ -38,6 +38,8 @@ astro/
 └── astro.config.mjs
 ```
 
+Interactive blueprint: [docs/halla-ai-rendered.html](docs/halla-ai-rendered.html) (spec: [halla-ai.architecture.json](docs/halla-ai.architecture.json)).
+
 ## Content Rules
 
 - **Bilingual**: All content must be created in **both** `ko/` and `en/` directories with the same filename. Never create content in only one language.
