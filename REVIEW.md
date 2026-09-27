@@ -12,7 +12,7 @@ Run these passes and tag every finding with its pass:
 - Compliance: the change matches the issue spec and the approved plan.
   Workflow changes (`.github/workflows/`) are checked for timeouts, concurrency,
   and one build per commit.
-- Instruction prose (changes to AGENTS.md, SKILL.md, or prompts): for each "do not X", would
+- Instruction prose (changes to AGENTS.md, REVIEW.md, SKILL.md, or prompts): for each "do not X", would
   "do Y" alone keep the force and the boundary? Keep it for safety, permission, and contract
   boundaries. Would the principle generalize better without an example? Keep examples that fix
   a format or a high-failure behavior. Is a chain of cases standing in for a judgment? Does a new
@@ -23,10 +23,8 @@ Run these passes and tag every finding with its pass:
 Content rules from `AGENTS.md` and `README.md` that the Compliance pass checks:
 
 - Bilingual parity: content and pages land in both `ko/` and `en/` with the same filename,
-  and every Korean page has its English mirror under `src/pages/en/`.
+  and every Korean page has its English mirror under `astro/src/pages/en/`.
 - The English university name is "Cheju Halla University", never "Jeju Halla University".
-- A research project is registered only with a named supervising professor or principal
-  investigator, and its page ends with the Research Information section.
 - Images under `astro/public/images/` are at most 1920px wide, and file names contain no
   Korean characters.
 
@@ -38,8 +36,9 @@ issue instead of widening the change. Report what was reviewed and what was not 
 
 ## Re-review
 
-Give the reviewer the diff, the spec, and this file only: no fix-status claims, earlier dispositions,
-or do-not-reflag notes. Judge recurrence by the violated invariant, not by wording.
+Hand the reviewer the diff, the spec, and this file, and let it read the rest of the repo (AGENTS.md
+included). Do not hand it fix-status claims, earlier dispositions, or do-not-reflag notes. Judge
+recurrence by the violated invariant, not by wording.
 
 ## What Important means here
 
@@ -54,7 +53,9 @@ Report at most 5 nits per review; summarize the rest as a count.
 
 - Generated paths: `astro/pnpm-lock.yaml`, `astro/dist/`, `astro/.astro/`, and the
   architecture blueprint outputs `docs/halla-ai-rendered.html` and
-  `docs/halla-ai-rendered.visual-check.*` (rendered from `docs/halla-ai.architecture.json`)
+  `docs/halla-ai-rendered.visual-check.*` (rendered from `docs/halla-ai.architecture.json`).
+  Lockfiles are skipped for style only: a lockfile change without a matching manifest change stays
+  in the Security pass.
 - Anything CI already enforces: nothing runs on pull requests. `.github/workflows/deploy.yaml`
   runs `pnpm install --frozen-lockfile` and `pnpm build` in `astro/` only on push to `main`,
   so a build or content-schema break is still in scope on a PR.
