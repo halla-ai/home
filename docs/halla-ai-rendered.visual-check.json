@@ -6,11 +6,11 @@
   "status": "pass",
   "visualReview": "pending",
   "provenance": "current",
-  "deliveryReceiptId": "07cead07-8492-4c1e-a80d-7eda1fc471d9",
+  "deliveryReceiptId": "cf4891dc-417f-4e8d-9eaa-c4f9a77f9235",
   "artifact": {
     "path": "docs/halla-ai-rendered.html",
-    "sha256": "7dc310ade4252339edc706d94e7b7dcc24f21303a2f004b0bf127eb51b4ad274",
-    "bytes": 759072
+    "sha256": "1c1cf28fbe45a204b179debd940f43fcd8a0c172375b48c3203ab510ab0de20a",
+    "bytes": 759156
   },
   "state": {
     "detail": "read",
@@ -937,13 +937,13 @@
         "file": "halla-ai-rendered.visual-check.html"
       },
       {
-        "sha256": "fc46d4ae231f74e554785555f7d2a17a5431395a503eef017f82539a8c06219c",
-        "bytes": 92870,
+        "sha256": "3ab8f167c7e04fe0d4bbd1b2bb0d775068454c6207ace9eb7ea5c7e1f4d676d0",
+        "bytes": 92898,
         "file": "halla-ai-rendered.visual-check.1440x900.light.png"
       },
       {
-        "sha256": "d6420f58a31fb60f8232b21b7d9d68fa0b7f36aa1bc9ca34476ae7abce880032",
-        "bytes": 98786,
+        "sha256": "275896013b5070827678479c742099de360b8afc8b9db457e146363e9469b0bb",
+        "bytes": 98785,
         "file": "halla-ai-rendered.visual-check.1440x900.dark.png"
       },
       {
