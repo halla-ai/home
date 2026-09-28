@@ -8,22 +8,23 @@
     "repository": { "url": "https://github.com/halla-ai/home", "provider": "github", "revision": "8083feeda1906329ca5e9eb71b364900af28b487" }
   },
   "components": [
-    { "id": "repo", "type": "backend", "label": "GitHub Repo", "sublabel": "main branch", "pos": [250, 110], "size": [140, 60], "sources": [{ "path": ".github/workflows/deploy.yaml", "line": 3, "end_line": 7, "label": "main push triggers deploy" }] },
-    { "id": "visitor", "type": "external", "label": "Visitors", "sublabel": "applicants and public", "pos": [725, 110], "size": [150, 60], "sources": [{ "path": "README.md", "line": 3, "label": "official department website" }, { "path": "astro/src/pages/admissions.astro", "line": 7, "end_line": 17, "label": "admissions page" }] },
-    { "id": "ci", "type": "cloud", "label": "GitHub Actions", "sublabel": "deploy.yaml, astro/dist", "pos": [250, 300], "size": [140, 60], "tag": "pages-artifact", "sources": [{ "path": ".github/workflows/deploy.yaml", "line": 19, "end_line": 50, "label": "build job uploads astro/dist" }] },
-    { "id": "site", "type": "frontend", "label": "Astro 6 Static Site", "sublabel": "halla.ai", "pos": [720, 300], "size": [160, 64], "tag": "Tailwind CSS 4", "sources": [{ "path": "astro/astro.config.mjs", "line": 7, "end_line": 38, "label": "static output, ko/en i18n routing" }] },
-    { "id": "collections", "type": "database", "label": "Content Collections", "sublabel": "5 collections, ko/en", "pos": [480, 300], "size": [160, 64], "tag": "59 posts, 8 faculty", "sources": [{ "path": "astro/src/content.config.ts", "line": 75, "end_line": 81, "label": "five collections" }] },
-    { "id": "gh-pages", "type": "cloud", "label": "GitHub Pages", "sublabel": "halla.ai", "pos": [250, 470], "size": [140, 60], "sources": [{ "path": ".github/workflows/deploy.yaml", "line": 52, "end_line": 61, "label": "deploy-pages job" }, { "path": "astro/public/CNAME", "line": 1, "label": "halla.ai custom domain" }] },
-    { "id": "i18n", "type": "database", "label": "Translation Files", "sublabel": "src/i18n: ko.json + en.json", "pos": [715, 470], "size": [170, 60], "tag": "t(locale, key.path)", "sources": [{ "path": "astro/src/i18n/ui.ts", "line": 14, "label": "t() with ko fallback" }] }
+    { "id": "repo", "type": "backend", "label": "GitHub Repo", "sublabel": "main branch", "pos": [280, 110], "size": [140, 60], "sources": [{ "path": ".github/workflows/deploy.yaml", "line": 3, "end_line": 7, "label": "main push triggers deploy" }] },
+    { "id": "visitor", "type": "external", "label": "Visitors", "sublabel": "applicants and public", "pos": [40, 490], "size": [150, 60], "sources": [{ "path": "README.md", "line": 3, "label": "official department website" }, { "path": "astro/src/pages/admissions.astro", "line": 7, "end_line": 17, "label": "admissions page" }] },
+    { "id": "ci", "type": "cloud", "label": "GitHub Actions", "sublabel": "deploy.yaml, astro/dist", "pos": [280, 302], "size": [140, 60], "tag": "pages-artifact", "sources": [{ "path": ".github/workflows/deploy.yaml", "line": 44, "end_line": 45, "label": "cd astro && pnpm build" }, { "path": ".github/workflows/deploy.yaml", "line": 19, "end_line": 50, "label": "build job uploads astro/dist" }] },
+    { "id": "site", "type": "frontend", "label": "Astro 6 Static Site", "sublabel": "halla.ai", "pos": [575, 300], "size": [160, 64], "tag": "Tailwind CSS 4", "sources": [{ "path": "astro/astro.config.mjs", "line": 7, "end_line": 38, "label": "static output, ko/en i18n routing" }] },
+    { "id": "collections", "type": "database", "label": "Content Collections", "sublabel": "5 collections, ko/en", "pos": [575, 110], "size": [160, 64], "tag": "59 posts, 8 faculty", "sources": [{ "path": "astro/src/content.config.ts", "line": 75, "end_line": 81, "label": "five collections" }, { "path": "astro/src/pages/admissions.astro", "line": 8, "label": "getCollection(pages)" }] },
+    { "id": "gh-pages", "type": "cloud", "label": "GitHub Pages", "sublabel": "halla.ai", "pos": [280, 490], "size": [140, 60], "sources": [{ "path": ".github/workflows/deploy.yaml", "line": 52, "end_line": 61, "label": "deploy-pages job" }, { "path": "astro/public/CNAME", "line": 1, "label": "halla.ai custom domain" }] },
+    { "id": "i18n", "type": "database", "label": "Translation Files", "sublabel": "src/i18n: ko.json + en.json", "pos": [570, 490], "size": [170, 60], "tag": "t(locale, key.path)", "sources": [{ "path": "astro/src/i18n/ui.ts", "line": 14, "label": "t() with ko fallback" }] }
   ],
   "boundaries": [
-    { "kind": "region", "label": "Astro Static Build", "wraps": ["site", "collections", "i18n"] }
+    { "kind": "region", "label": "Astro Static Build", "wraps": ["site", "collections", "i18n"], "pad": 16 }
   ],
   "connections": [
     { "id": "repo-to-ci", "from": "repo", "to": "ci", "label": "push main" },
+    { "id": "ci-to-site", "from": "ci", "to": "site", "label": "pnpm build" },
     { "id": "ci-to-gh-pages", "from": "ci", "to": "gh-pages", "label": "deploy" },
-    { "id": "visitor-to-site", "from": "visitor", "to": "site", "label": "browse" },
-    { "id": "collections-to-site", "from": "collections", "to": "site", "label": "reads" },
+    { "id": "gh-pages-to-visitor", "from": "gh-pages", "to": "visitor", "label": "serves" },
+    { "id": "collections-to-site", "from": "collections", "to": "site", "label": "getCollection()" },
     { "id": "i18n-to-site", "from": "i18n", "to": "site", "label": "t() lookups" }
   ],
   "cards": [

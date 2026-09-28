@@ -6,11 +6,11 @@
   "status": "pass",
   "visualReview": "pending",
   "provenance": "current",
-  "deliveryReceiptId": "cf4891dc-417f-4e8d-9eaa-c4f9a77f9235",
+  "deliveryReceiptId": "d966f14d-a91b-48e2-98b7-1d18f4c715f7",
   "artifact": {
     "path": "docs/halla-ai-rendered.html",
-    "sha256": "1c1cf28fbe45a204b179debd940f43fcd8a0c172375b48c3203ab510ab0de20a",
-    "bytes": 759156
+    "sha256": "e0c528e2460452bea36b51686566af4cd25ab75c12d66e0daff017b66bf4538d",
+    "bytes": 760611
   },
   "state": {
     "detail": "read",
@@ -41,17 +41,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1183,
-        "diagramWidth": 1153,
+        "readerWidth": 961,
+        "diagramWidth": 931,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 52,
           "diagramChromePx": 78,
           "svgPx": 746,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -93,17 +93,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1235,
-        "diagramWidth": 1205,
+        "readerWidth": 1003,
+        "diagramWidth": 973,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 60,
           "diagramChromePx": 84,
           "svgPx": 780,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -145,17 +145,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1359,
-        "diagramWidth": 1329,
+        "readerWidth": 1103,
+        "diagramWidth": 1073,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 60,
           "diagramChromePx": 84,
           "svgPx": 860,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -197,17 +197,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1722,
-        "diagramWidth": 1672,
+        "readerWidth": 1400,
+        "diagramWidth": 1350,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 68,
           "diagramChromePx": 94,
           "svgPx": 1082,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -302,17 +302,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1183,
-        "diagramWidth": 1153,
+        "readerWidth": 961,
+        "diagramWidth": 931,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 52,
           "diagramChromePx": 78,
           "svgPx": 746,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -354,17 +354,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1235,
-        "diagramWidth": 1205,
+        "readerWidth": 1003,
+        "diagramWidth": 973,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 60,
           "diagramChromePx": 84,
           "svgPx": 780,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -406,17 +406,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1359,
-        "diagramWidth": 1329,
+        "readerWidth": 1103,
+        "diagramWidth": 1073,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 60,
           "diagramChromePx": 84,
           "svgPx": 860,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -458,17 +458,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1722,
-        "diagramWidth": 1672,
+        "readerWidth": 1400,
+        "diagramWidth": 1350,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 68,
           "diagramChromePx": 94,
           "svgPx": 1082,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -515,17 +515,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1183,
-        "diagramWidth": 1153,
+        "readerWidth": 961,
+        "diagramWidth": 931,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 52,
           "diagramChromePx": 78,
           "svgPx": 746,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -567,17 +567,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1235,
-        "diagramWidth": 1205,
+        "readerWidth": 1003,
+        "diagramWidth": 973,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 60,
           "diagramChromePx": 84,
           "svgPx": 780,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -619,17 +619,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1359,
-        "diagramWidth": 1329,
+        "readerWidth": 1103,
+        "diagramWidth": 1073,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 60,
           "diagramChromePx": 84,
           "svgPx": 860,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -671,17 +671,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1722,
-        "diagramWidth": 1672,
+        "readerWidth": 1400,
+        "diagramWidth": 1350,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 68,
           "diagramChromePx": 94,
           "svgPx": 1082,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -728,17 +728,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1183,
-        "diagramWidth": 1153,
+        "readerWidth": 961,
+        "diagramWidth": 931,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 52,
           "diagramChromePx": 78,
           "svgPx": 746,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -781,17 +781,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1183,
-        "diagramWidth": 1153,
+        "readerWidth": 961,
+        "diagramWidth": 931,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 52,
           "diagramChromePx": 78,
           "svgPx": 746,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -834,17 +834,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1722,
-        "diagramWidth": 1672,
+        "readerWidth": 1400,
+        "diagramWidth": 1350,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 68,
           "diagramChromePx": 94,
           "svgPx": 1082,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -887,17 +887,17 @@
         "readerOverflow": null,
         "readerFit": "intrinsic-height",
         "ok": true,
-        "readerWidth": 1722,
-        "diagramWidth": 1672,
+        "readerWidth": 1400,
+        "diagramWidth": 1350,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 68,
           "diagramChromePx": 94,
           "svgPx": 1082,
           "cardsPx": 0,
-          "viewBoxHeight": 618
+          "viewBoxHeight": 638
         },
-        "viewBoxWidth": 955,
+        "viewBoxWidth": 796,
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 9,
         "minimumProjectedEdgeTextPx": 8,
@@ -937,23 +937,23 @@
         "file": "halla-ai-rendered.visual-check.html"
       },
       {
-        "sha256": "3ab8f167c7e04fe0d4bbd1b2bb0d775068454c6207ace9eb7ea5c7e1f4d676d0",
-        "bytes": 92898,
+        "sha256": "7e4bb6079788e48ba22ad0e56d8ebabadc31ae7fed4ffdce14813a2e06c42f9a",
+        "bytes": 92570,
         "file": "halla-ai-rendered.visual-check.1440x900.light.png"
       },
       {
-        "sha256": "275896013b5070827678479c742099de360b8afc8b9db457e146363e9469b0bb",
-        "bytes": 98785,
+        "sha256": "05d1aa4675a0a51e6673359f5ef8a10a1f0a2d99334cde02f12da52b806fd04a",
+        "bytes": 98533,
         "file": "halla-ai-rendered.visual-check.1440x900.dark.png"
       },
       {
-        "sha256": "623ea8665b49c2d28c64c580c1fc7a7bedb89fd530dc78c3095310426961a197",
-        "bytes": 136747,
+        "sha256": "dab13596d4fe610f97251b52691c228adb0fd9e2e8c58a621a14f1baf749c512",
+        "bytes": 138104,
         "file": "halla-ai-rendered.visual-check.2048x1320.light.png"
       },
       {
-        "sha256": "5a00a92f46b34b3c9f3114b249e4bd4affe074e7d220dbb392f93544d40e4af5",
-        "bytes": 146490,
+        "sha256": "9d3282f254e3881deb314e8dffb07f466fd360833a923b1ff8147d52b8b1addf",
+        "bytes": 148677,
         "file": "halla-ai-rendered.visual-check.2048x1320.dark.png"
       }
     ]
